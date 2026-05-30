@@ -6,14 +6,33 @@
 
 ---
 
-You've probably seen the posts: solo founders shipping SaaS in a weekend, indie builders launching real AI products from their laptops, people who had never written code now running real businesses. You follow along. Three hours in, you're debugging a system you don't understand.
+You've seen the posts. Solo founders shipping SaaS in a weekend. Indie builders launching real AI products from their laptops. People who had never written code running real businesses. You follow along. Three hours in, you're debugging a system you don't understand, wondering if this is actually for you.
 
-This course fixes that.
+**It is. And this is how.**
 
-- **18 days, one thing at a time.** No information overload. You build one piece each day and understand it before moving on.
-- **1–2 hours per day.** Engineers go faster. EAs go slower. Both finish on Day 18.
-- **A real shipped product, no team required.** By Day 18 you have a live URL, real auth, a working AI feature, and real users. Total cost: ~$10 in credits.
-- **Use AI to build with AI.** Your AI tool (Claude Code, Cursor, Windsurf — your choice) reads the course files and helps you ship. You direct. You review. You ship.
+---
+
+### What is OneMillion Builders?
+
+**OneMillion is on a mission to take one million people — anyone with an idea — from zero to a fully built, deployed, and selling product in 18 days.**
+
+Not a tutorial. Not a sandbox. A real product, on a real server, with real users.
+
+We do this by giving you a set of AI agents that work alongside you through every step:
+
+- **Define** — capture your idea and write a clear product requirements document
+- **Architect** — design the software so it's built to last, not just to ship
+- **Plan** — break the build into day-by-day steps you can actually execute
+- **Build** — write the code, review it, and ship it — with AI doing the heavy lifting
+- **Secure** — run automated security checks before anything goes live
+- **Deploy** — get your product onto a real web server or cloud in minutes
+- **Sell** — build a go-to-market plan: how to launch, market, and evangelize your product
+
+**No prior coding knowledge required.** The agents guide you through every decision. If you've never written a line of code, you finish on Day 18. If you're an engineer, you blaze through and go deeper.
+
+**1–2 hours per day. 18 days. One shipped product.**
+
+By the end, you have a live URL, real users, working AI features, and a launch plan. Total cost to build: ~$10 in credits.
 
 &nbsp;
 
