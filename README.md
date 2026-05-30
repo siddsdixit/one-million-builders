@@ -4,7 +4,7 @@
 
 *By [Sid Dixit](https://www.linkedin.com/in/siddharthdixit/)*
 
-![teach-one-million](onemillion-builder/diagrams/hero-image.png)
+![teach-one-million](onemillion-builder/diagrams/hero-animated.gif)
 
 ---
 

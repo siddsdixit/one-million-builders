@@ -1,0 +1,25 @@
+{
+  "name": "onemillion-github-hero",
+  "version": "1.0.0",
+  "description": "Remotion composition for teach-one-million GitHub README hero",
+  "scripts": {
+    "studio": "remotion studio",
+    "build": "remotion render src/index.ts GitHubHero out/hero.mp4 --codec h264 --crf 16",
+    "build:gif": "npm run build && rm -rf out/frames && mkdir -p out/frames && ffmpeg -y -i out/hero.mp4 -vf 'fps=18,scale=960:-1:flags=lanczos' out/frames/%04d.png && gifski out/frames/*.png -o ../onemillion-builder/diagrams/hero-animated.gif --width 960 --fps 18 --quality 80 && echo 'Done: diagrams/hero-animated.gif'"
+  },
+  "dependencies": {
+    "@remotion/bundler": "^4.0.306",
+    "@remotion/cli": "^4.0.306",
+    "@remotion/renderer": "^4.0.306",
+    "remotion": "^4.0.306"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.0.0"
+  },
+  "remotion": {
+    "entryPoint": "src/index.ts"
+  }
+}
