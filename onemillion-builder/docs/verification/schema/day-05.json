@@ -18,7 +18,8 @@
       "id": "supabase_env_vars",
       "type": "file_contains",
       "path": ".env.local",
-      "required_strings": ["NEXT_PUBLIC_SUPABASE_URL", "NEXT_PUBLIC_SUPABASE_ANON_KEY"]
+      "required_strings": ["NEXT_PUBLIC_SUPABASE_URL"],
+      "any_of_strings": ["NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY", "NEXT_PUBLIC_SUPABASE_ANON_KEY"]
     },
     {
       "id": "env_local_gitignored",
@@ -98,6 +99,16 @@
       "url_source": "build_from_vercel_base",
       "path_suffix": "/signup",
       "expected_status": [200, 304]
+    },
+    {
+      "id": "deployment_matches_signup_source",
+      "type": "deployment_matches_source",
+      "url_source": "build_from_vercel_base",
+      "path_suffix": "/signup",
+      "source_globs": ["app/**/signup/page.tsx"],
+      "min_marker_count": 1,
+      "expected_status": [200, 304],
+      "note": "Fetches the live /signup route and confirms it contains text from the local signup page source."
     }
   ]
 }

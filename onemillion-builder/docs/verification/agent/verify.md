@@ -21,6 +21,7 @@ The builder runs the Day Done Protocol or asks for `/verify-day X` (where X is 1
    - `code_quality_checks` — code pattern checks
    - `manual_checks` — yes/no questions to ask the builder
    - `remote_checks` — HTTP checks against deployed URLs
+   - `deployment_matches_source` — fetches the live deployment and confirms meaningful local source text appears on the deployed page
 
 2. **Run structural checks.** For each check in `structural_checks`, perform the verification:
    - `file_exists`: Use Read or Bash to check if file exists
@@ -41,7 +42,10 @@ The builder runs the Day Done Protocol or asks for `/verify-day X` (where X is 1
 5. **Run remote checks.** Use Bash with `curl` or similar:
    - `http_check`: Fetch the URL, confirm status matches `expected_status`
    - `shell_command`: Run the command, check output matches `expected_pattern`
+   - `deployment_matches_source`: Fetch the live URL, read the listed local source files, extract meaningful human-visible text markers, and confirm at least the required number appear in the fetched deployment HTML/text
    - For URLs that need to be built from a base, ask the builder for their base Vercel URL
+
+Remote checks must produce evidence, not vague confirmation. Report the URL fetched, status code, and the local marker(s) found in the deployment. If a URL returns 200 but the live page looks unrelated to the local source, mark the day NEEDS REVISION.
 
 6. **Compile the report** in this format:
 
@@ -83,6 +87,7 @@ PASS or NEEDS REVISION
 
 - For Days 1-3 (no code): focus is on file artifacts in `.onemillion/`.
 - For Days 4-6 (code days): includes structural code checks + remote HTTP checks.
+- For deploy days: a passing URL is not enough. The deployment must plausibly match the code/build by showing local source markers or other inspectable product evidence.
 - Days 7-18 currently use prompt-based verifiers unless schema files have been added locally.
 
 Begin by asking the builder which day they want to verify, then load the corresponding schema or daily verifier prompt.

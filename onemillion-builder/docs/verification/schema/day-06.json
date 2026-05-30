@@ -58,6 +58,17 @@
       "url_source": "ask_builder",
       "url_prompt": "What is your Vercel URL?",
       "expected_status": [200, 304]
+    },
+    {
+      "id": "deployment_matches_local_app_source",
+      "type": "deployment_matches_source",
+      "url_source": "ask_builder",
+      "source_paths": ["app/page.tsx"],
+      "source_globs": ["app/*/page.tsx"],
+      "exclude": ["app/login/page.tsx", "app/signup/page.tsx"],
+      "min_marker_count": 1,
+      "expected_status": [200, 304],
+      "note": "Fetches the live app and confirms at least one meaningful local page text marker appears in the deployment."
     }
   ]
 }

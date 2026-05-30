@@ -50,6 +50,15 @@
       "url_source": "ask_builder",
       "url_prompt": "What is your Vercel URL?",
       "expected_status": [200, 304]
+    },
+    {
+      "id": "deployment_matches_homepage_source",
+      "type": "deployment_matches_source",
+      "url_source": "ask_builder",
+      "source_paths": ["app/page.tsx"],
+      "min_marker_count": 1,
+      "expected_status": [200, 304],
+      "note": "Fetches the live deployment and confirms at least one meaningful text marker from app/page.tsx appears in the deployed page."
     }
   ]
 }

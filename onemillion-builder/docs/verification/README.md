@@ -12,11 +12,13 @@ This is what makes Builder #N credible: every Builder on the wall genuinely ship
 
 Every day in the course has an `ai-instructions-day-XX.md` file. This is a fallback verifier prompt. The primary path is to say `day done`; your harness then reads the manifest completion gate and verifies the day.
 
-1. Reads your project files
-2. Checks structural requirements (files exist, code patterns present)
-3. Reviews quality (PRD specific enough, prompts well-formed, etc.)
-4. Reports pass / needs-revision with specifics
-5. Writes the report to `.onemillion/verification-day-XX.md`
+1. Reads your project files and required `.onemillion/` artifacts
+2. Checks structural requirements (files exist, JSON is valid, code patterns present)
+3. Fetches deployed URLs when the day has a deployment gate
+4. Confirms the live deployment contains meaningful text markers from the local source where possible
+5. Reviews quality (PRD specific enough, prompts well-formed, etc.)
+6. Reports pass / needs-revision with specifics
+7. Writes the report to `.onemillion/verification-day-XX.md`
 
 You run this at the end of each day. Pass it, move on. Fail it, fix the issues and re-run.
 
@@ -35,7 +37,9 @@ Your official Builder #N is issued after the Builder Claim is accepted.
 ## Two Layers Of Verification
 
 ### Layer 1: Structural Checks
-File exists. JSON is valid. URL returns 200. API endpoint behavior matches expectations. RLS is enabled. These are binary — either they're true or they're not.
+File exists. JSON is valid. URL returns 200. The live page contains text from the local source. API endpoint behavior matches expectations. RLS is enabled. These are binary — either they're true or they're not.
+
+Deployment verification is not just "the URL loaded." For deploy days, the verifier should fetch the live URL and compare what it sees against local code or expected artifacts. Example: Day 4 checks that the live homepage contains meaningful text from `app/page.tsx`; Day 5 checks that `/signup` contains text from the local signup page.
 
 ### Layer 2: Quality Checks (AI-Graded)
 Is the PRD actually specific enough? Is the prompt well-designed? Does the landing page communicate clearly? These require judgment. Claude reviews and reports.
@@ -54,6 +58,19 @@ This is the supported path for the current version of the course. After each day
 4. It checks the completion gate.
 5. It writes `.onemillion/verification-day-XX.md`.
 6. If the day passes, it advances your state to the next day.
+
+### CLI Verification
+
+Engineers can also run the schema-backed verifier directly:
+
+```bash
+python onemillion-builder/docs/verification/scripts/verify.py 4 \
+  --project-dir my-onemillion-build \
+  --deployment-url https://your-app.vercel.app \
+  --write-report
+```
+
+The CLI verifies local artifacts, runs schema checks, fetches deployment URLs, and writes `.onemillion/verification-day-XX.md` when `--write-report` is provided.
 
 ---
 
