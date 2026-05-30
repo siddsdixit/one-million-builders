@@ -2,7 +2,7 @@
 
 *Created by [Sid Dixit](https://www.linkedin.com/in/siddharthdixit/)*
 
-![OneMillion — Build in 18 days](diagrams/hero-image.png)
+![OneMillion — Build in 18 days](diagrams/hero-animated.gif)
 
 ---
 
