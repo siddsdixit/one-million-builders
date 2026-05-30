@@ -26,6 +26,18 @@ This is the week that turns your AI-native app from "thing on Vercel.app" to "ac
 
 ---
 
+## Agent Modes This Week
+
+Use the portable OneMillion agents in this order:
+
+```text
+/guard → /ship → /sell
+```
+
+Guard checks production risk. Ship deploys the product. Sell turns the finished build into a launch page, outreach, and feedback loop.
+
+---
+
 ## The 5 Pillars This Week
 
 | Pillar | Where it shows up |

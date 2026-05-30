@@ -1,6 +1,6 @@
 # Day 18 Final Verification — Prepare Builder #N Claim
 
-**How to use:** Paste this entire prompt into Claude Code from your project folder.
+**How to use:** Paste this entire prompt into your coding harness from your project folder.
 
 This is the FINAL verification. Pass = your build is ready to submit for Builder #N review.
 

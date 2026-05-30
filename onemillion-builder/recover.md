@@ -34,13 +34,9 @@ If the app starts, you are in good shape. If it fails, copy the error.
 
 ---
 
-## Step 3: Ask Claude Code To Resume With You
+## Step 3: Ask Your Harness To Resume With You
 
-Open Claude Code from your project folder:
-
-```bash
-claude
-```
+Open your coding harness from the course repo or your product folder. Ask it to read `AGENTS.md` if it has not already.
 
 Paste this:
 
@@ -58,6 +54,7 @@ Inspect my project and tell me:
 1. What day I should resume from
 2. Whether my app is currently healthy
 3. The next smallest action I should take
+4. Which OneMillion agent I should use next
 
 Do not rewrite unrelated code. Ask for one missing detail at a time if needed.
 ```
@@ -98,4 +95,3 @@ No shame, no streaks. Just back to building.
 
 #BuildingWith1M
 ```
-

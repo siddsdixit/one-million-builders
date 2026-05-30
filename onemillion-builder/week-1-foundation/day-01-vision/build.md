@@ -162,7 +162,7 @@ That's the public commitment. You shipped on Day 1. You're not a course-taker an
 
 ## Step 6: Run Day 1 Verification
 
-You're going to ask Claude Code to check your work. This is how every day ends — the AI verifies that you actually did what you were supposed to.
+You're going to ask your coding harness to check your work. This is how every day ends — the AI verifies that you actually did what you were supposed to.
 
 In your terminal, in `my-onemillion-build`:
 
@@ -170,7 +170,7 @@ In your terminal, in `my-onemillion-build`:
 claude
 ```
 
-Claude Code starts. Once it's ready, paste the entire contents of [`ai-instructions-day-01.md`](./ai-instructions-day-01.md) into the chat.
+Your coding harness starts. Once it is ready, ask it to run the day verifier or paste the fallback verifier prompt.
 
 **You should see:** Claude reads your `.onemillion/project.json`, checks each requirement, and reports back. Either:
 - ✅ **Pass** — Day 1 complete, you can move on to Day 2
@@ -206,7 +206,7 @@ If verification did not pass yet, keep **Last verified day** at the previous pas
 
 ## If You Are Stuck
 
-Open Claude Code from your project folder:
+Open your coding harness from your project folder:
 
 ```bash
 claude
@@ -238,7 +238,7 @@ Ask for one missing detail at a time if needed.
 | `mkdir: cannot create directory: Permission denied` | You're trying to create in a protected folder. Run `cd ~` first to go to your home folder. |
 | Editor command `code` not found | Open VS Code manually, then File → Open → navigate to your folder. Then in VS Code: Cmd/Ctrl+Shift+P → "Shell Command: Install 'code' command". |
 | JSON syntax error in verification | Check for missing commas, missing quotes, or trailing commas. Use [jsonlint.com](https://jsonlint.com) to find the issue. |
-| Claude says "I can't find project.json" | Make sure you're running `claude` from inside `my-onemillion-build`, not from your home folder. |
+| your harness says "I can't find project.json" | Make sure you're running `claude` from inside `my-onemillion-build`, not from your home folder. |
 | `.onemillion/` folder not visible | It's hidden (starts with `.`). Use `ls -la` to see it, or in VS Code use Cmd+Shift+. to toggle hidden files. |
 
 ---

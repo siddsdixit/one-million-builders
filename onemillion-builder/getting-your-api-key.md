@@ -2,7 +2,7 @@
 
 You need exactly **two API keys** to take this course:
 
-1. **Anthropic** — powers Claude Code and your AI features
+1. **Anthropic** — powers your product's AI features if you choose Claude as the model provider
 2. **Supabase** — your database and auth (you'll get this on Day 5, but you can do it now)
 
 Each takes about 5 minutes. Total cost over 18 days: $5–15.
@@ -11,7 +11,7 @@ Each takes about 5 minutes. Total cost over 18 days: $5–15.
 
 ## What's An API Key?
 
-An API key is a password that lets your code talk to an external service. It's how Claude Code calls Anthropic. It's how your app reads from Supabase. Without it, your code can't do anything beyond what's on your own machine.
+An API key is a password that lets your code talk to an external service. It's how your app calls an AI provider. It's how your app reads from Supabase. Without it, your code can't do anything beyond what's on your own machine.
 
 **Treat API keys like passwords:**
 - Never paste them in public (GitHub, Slack, screenshots, screen-share)
@@ -20,7 +20,7 @@ An API key is a password that lets your code talk to an external service. It's h
 
 ---
 
-## 1. Anthropic API Key (For Claude Code + AI Features)
+## 1. Anthropic API Key (For AI Features)
 
 ### Step-by-Step
 

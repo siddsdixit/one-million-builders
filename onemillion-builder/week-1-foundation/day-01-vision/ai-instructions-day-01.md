@@ -1,6 +1,6 @@
 # Day 1 Verification Prompt
 
-**How to use:** Paste the entire content below (starting from "You are a OneMillion course verifier...") into Claude Code. Claude Code will execute the checks and report results.
+**How to use:** Paste the entire content below into your coding harness. It will execute the checks and report results.
 
 ---
 

@@ -184,7 +184,7 @@ If all of that works, Day 5 is done.
 
 ## Verify Your Day 5
 
-Paste contents of [`ai-instructions-day-05.md`](./ai-instructions-day-05.md) into Claude Code. It will:
+Paste the contents of [`ai-instructions-day-05.md`](./ai-instructions-day-05.md) into your coding harness. It will:
 - Check Supabase libraries are installed
 - Verify env vars are set
 - Check auth routes exist

@@ -13,6 +13,18 @@ No AI yet. That's Week 2. Week 1 is about getting the bones in place — auth, d
 
 ---
 
+## Agent Modes This Week
+
+Use the portable OneMillion agents in this order:
+
+```text
+/idea → /spec → /design → /plan → /build
+```
+
+Week 1 is where your harness uses those agents to create your first `.onemillion/` artifacts, lock scope, design the product shape, and start the app.
+
+---
+
 ## The Six Days
 
 | Day | Title | What you ship | Time |
@@ -40,8 +52,7 @@ No AI yet. That's Week 2. Week 1 is about getting the bones in place — auth, d
 
 ## What You Need Before Starting
 
-- ✅ Local dev environment installed ([getting-started.md](../getting-started.md))
-- ✅ Anthropic API key ([getting-your-api-key.md](../getting-your-api-key.md))
+- ✅ A coding harness ready to read `AGENTS.md` ([getting-started.md](../getting-started.md))
 - ✅ GitHub, Supabase, Vercel accounts (signed up, no setup yet)
 - ✅ ~10 hours of total time over the next 6 days
 

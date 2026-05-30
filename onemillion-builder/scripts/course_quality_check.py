@@ -3,10 +3,12 @@ from __future__ import annotations
 
 import re
 import sys
+import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 REPO = ROOT.parent
+AGENTS_ROOT = REPO / "onemillion-agents"
 
 errors: list[str] = []
 
@@ -112,6 +114,130 @@ def check_day_navigation() -> None:
                 errors.append(f"{rel(file)} missing day navigation item: {item}")
 
 
+def check_agent_architecture() -> None:
+    required_files = [
+        REPO / "AGENTS.md",
+        ROOT / "course-manifest.json",
+        ROOT / "agent-flow.md",
+        ROOT / "day-done.md",
+        ROOT / "install-agents.sh",
+        ROOT / "uninstall-agents.sh",
+        AGENTS_ROOT / "README.md",
+        AGENTS_ROOT / "agents" / "orchestrator.md",
+    ]
+    for path in required_files:
+        if not path.exists():
+            errors.append(f"missing required agent architecture file: {rel(path)}")
+
+    required_agents = [
+        "ask",
+        "build",
+        "debug",
+        "design",
+        "guard",
+        "idea",
+        "orchestrator",
+        "plan",
+        "refactor",
+        "research",
+        "review",
+        "revise",
+        "sell",
+        "ship",
+        "spec",
+        "test",
+        "validate-plan",
+        "validate-spec",
+    ]
+    for agent in required_agents:
+        path = AGENTS_ROOT / "agents" / f"{agent}.md"
+        if not path.exists():
+            errors.append(f"missing portable agent: {rel(path)}")
+
+    required_harness_docs = [
+        "README",
+        "claude-code",
+        "cursor",
+        "codex",
+        "gemini",
+        "antigravity",
+        "copilot",
+    ]
+    for doc in required_harness_docs:
+        path = ROOT / "harnesses" / f"{doc}.md"
+        if not path.exists():
+            errors.append(f"missing harness doc: {rel(path)}")
+
+
+def check_manifest() -> None:
+    path = ROOT / "course-manifest.json"
+    if not path.exists():
+        return
+
+    try:
+        manifest = json.loads(path.read_text())
+    except json.JSONDecodeError as exc:
+        errors.append(f"{rel(path)} is invalid JSON: {exc}")
+        return
+
+    days = manifest.get("days")
+    if not isinstance(days, list) or len(days) != 18:
+        errors.append(f"{rel(path)} must contain exactly 18 days")
+        return
+
+    seen_days = set()
+    for entry in days:
+        day = entry.get("day")
+        seen_days.add(day)
+        for field in [
+            "title",
+            "primary_agent",
+            "lesson",
+            "build",
+            "resources",
+            "verifier",
+            "learning_focus",
+            "external_tools",
+            "human_decisions",
+            "completion_gate",
+        ]:
+            if field not in entry:
+                errors.append(f"{rel(path)} day {day} missing field: {field}")
+        for field in ["lesson", "build", "resources", "verifier"]:
+            value = entry.get(field)
+            if isinstance(value, str) and not (REPO / value).exists():
+                errors.append(f"{rel(path)} day {day} has missing {field}: {value}")
+        agent = entry.get("primary_agent")
+        if isinstance(agent, str) and not (AGENTS_ROOT / "agents" / f"{agent}.md").exists():
+            errors.append(f"{rel(path)} day {day} references missing agent: {agent}")
+
+    if seen_days != set(range(1, 19)):
+        errors.append(f"{rel(path)} days must be numbered 1-18")
+
+
+def check_harness_neutral_entrypoints() -> None:
+    entry_files = [
+        REPO / "README.md",
+        REPO / "AGENTS.md",
+        ROOT / "README.md",
+        ROOT / "START-HERE.md",
+        ROOT / "getting-started.md",
+        ROOT / "agent-flow.md",
+    ]
+    required_terms = [
+        "AGENTS.md",
+        "course-manifest.json",
+    ]
+    for file in entry_files:
+        if not file.exists():
+            errors.append(f"missing entry file: {rel(file)}")
+            continue
+        text = file.read_text()
+        for term in required_terms:
+            if term not in text:
+                errors.append(f"{rel(file)} missing harness-neutral term: {term}")
+
+
 def main() -> int:
     check_day_files()
     check_links()
@@ -120,6 +246,9 @@ def main() -> int:
     check_stuck_prompts()
     check_progress_tracker()
     check_day_navigation()
+    check_agent_architecture()
+    check_manifest()
+    check_harness_neutral_entrypoints()
     if errors:
         for error in errors:
             print(f"ERROR: {error}")

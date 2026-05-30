@@ -1,6 +1,6 @@
 # Day 6 Verification Prompt
 
-**How to use:** Paste this entire prompt into Claude Code from within your project folder.
+**How to use:** Paste this entire prompt into your coding harness from within your project folder.
 
 ---
 

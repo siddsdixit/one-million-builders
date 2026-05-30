@@ -1,6 +1,6 @@
 # Day 9 Verification Prompt
 
-**How to use:** Paste this entire prompt into Claude Code from your project folder.
+**How to use:** Paste this entire prompt into your coding harness from your project folder.
 
 ---
 
@@ -43,7 +43,7 @@ You are a OneMillion course verifier. Today is Day 9 — Streaming UI.
 
 **Optional remote check:**
 
-11. If the builder shares their Vercel URL, do a POST request to the AI endpoint (with valid auth) and check response headers for `text/event-stream` or similar streaming Content-Type. (May not be feasible from Claude Code; skip if difficult.)
+11. If the builder shares their Vercel URL, do a POST request to the AI endpoint (with valid auth) and check response headers for `text/event-stream` or similar streaming Content-Type. (May not be feasible from every coding harness; skip if difficult.)
 
 ## Report format
 

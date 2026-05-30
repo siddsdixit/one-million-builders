@@ -35,18 +35,24 @@ If you paused for a while, use [I Fell Behind](./recover.md) to find your last v
 Three escalation steps:
 
 1. **Read the day's troubleshooting table** (bottom of every `build.md`). Most problems are listed there.
-2. **Re-run the AI verifier** for that day — paste the `ai-instructions-day-XX.md` prompt into Claude Code. It will tell you specifically what's missing.
+2. **Say `day done` to your coding harness.** It reads the completion gate for that day and tells you specifically what's missing.
 3. **Ask for help in the channel you have access to.** If you're in a cohort, ask in the cohort community. If you're self-serve, open a GitHub issue and tag the day number.
 
 If your local machine is the blocker, switch to **Codespaces** ([see the browser setup path](./getting-started-codespaces.md)). Most setup problems are local-environment-related. Codespaces eliminates them.
 
 ---
 
-## 4. Can I use Cursor, Windsurf, or another AI tool instead of Claude Code?
+## 4. What tool do I use for the course?
 
-For this version of the course, **Claude Code is the supported path**.
+For this version of the course, use your favorite coding harness.
 
-The course teaches an **agentic SDLC framework**, but the daily instructions and verifiers assume Claude Code. Other tools may work, but they are not the official path yet.
+The repo contains `AGENTS.md`, `course-manifest.json`, and portable OneMillion agents. Claude Code, Cursor, Codex, Gemini, Antigravity, Copilot, and similar tools can read those files and become your course orchestrator.
+
+```text
+/idea → /spec → /design → /plan → /build → /test → /guard → /ship → /sell
+```
+
+If your harness supports native slash commands or subagents, use them. If not, tell it to read `AGENTS.md` and emulate the mapped agent for the day.
 
 ---
 
@@ -60,7 +66,7 @@ Many builders take 30 or 60 calendar days to complete the 18 days of work. Some 
 
 The only failure mode is not coming back. If life pulls you away, just come back when it lets you. We're not Duolingo. The course waits.
 
-When you come back, use [I Fell Behind](./recover.md). It gives you one Claude Code prompt to find your current state and restart.
+When you come back, use [I Fell Behind](./recover.md). It gives you one harness-neutral prompt to find your current state and restart.
 
 ## 5. Can I skip days or do them out of order?
 
@@ -87,14 +93,14 @@ After Day 3 your PRD is locked. Don't pivot after that — finish what you start
 
 Welcome to engineering. This is normal.
 
-Your code lives in a Git repo. Every change is reversible. The course shows you how to commit at safe checkpoints. If something breaks badly, first ask Claude Code to inspect your Git history:
+Your code lives in a Git repo. Every change is reversible. The course shows you how to commit at safe checkpoints. If something breaks badly, first ask your coding harness to inspect your Git history:
 
 ```bash
 git status
 git log --oneline -5
 ```
 
-Paste that output into Claude Code and ask for the safest recovery plan. Do not run destructive Git commands until you understand which files will change.
+Paste that output into your coding harness and ask for the safest recovery plan. Do not run destructive Git commands until you understand which files will change.
 
 If things really go sideways, you can delete the project and start over. You'll lose your code, not your skill.
 
@@ -118,7 +124,7 @@ It is not a toy tutorial. It is a real product foundation. You can keep building
 
 ## 9. What if I'm not in a cohort?
 
-Self-serve works fine. The entire course content + Claude Code verification flow is in this repo. You'll miss the cohort layer:
+Self-serve works fine. The entire course content and portable agent flow are in this repo. You'll miss the cohort layer:
 
 1. **Live Saturday sessions** — available during live cohorts.
 2. **Cohort community** — available to cohort members.
@@ -167,4 +173,4 @@ Builder #N is the credential. What you do with it is up to you.
 
 ---
 
-→ **More:** [Manifesto](../MANIFESTO.md) · [Getting Started](./getting-started.md) · [API Keys + Cost](./getting-your-api-key.md) · [Day 1](./week-1-foundation/day-01-vision/learn.md)
+→ **More:** [Manifesto](../MANIFESTO.md) · [Getting Started](./getting-started.md) · [Agent-Led Learning Flow](./agent-flow.md) · [Day 1](./week-1-foundation/day-01-vision/learn.md)

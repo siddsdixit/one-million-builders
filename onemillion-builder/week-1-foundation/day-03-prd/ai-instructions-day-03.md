@@ -1,6 +1,6 @@
 # Day 3 Verification Prompt
 
-**How to use:** Paste this entire prompt into Claude Code.
+**How to use:** Paste this entire prompt into your coding harness.
 
 ---
 

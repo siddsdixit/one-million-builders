@@ -85,7 +85,7 @@ cd ~/my-onemillion-build
 claude
 ```
 
-Once Claude Code starts, ask it:
+Once your coding harness is ready, ask it:
 
 ```
 Edit app/page.tsx so the homepage says:
@@ -262,7 +262,7 @@ If verification did not pass yet, keep **Last verified day** at the previous pas
 
 ## If You Are Stuck
 
-Open Claude Code from your project folder:
+Open your coding harness from your project folder:
 
 ```bash
 claude
@@ -295,7 +295,7 @@ Ask for one missing detail at a time if needed.
 | Port 3000 already in use | Something else is running on 3000. Either close it, or run `npm run dev -- -p 3001` to use port 3001. |
 | `localhost:3000` shows "This site can't be reached" | Your dev server isn't running. Check the first terminal — `npm run dev` should still be running there. If not, restart it. |
 | `git push` says "authentication required" | GitHub needs a Personal Access Token. Use `gh auth login` (install GitHub CLI: `brew install gh`) or follow [GitHub auth docs](https://docs.github.com/en/authentication). |
-| Vercel deployment fails | Click the failed deployment → view logs. Most common: a TypeScript error. Claude can fix it: paste the error into Claude Code. |
+| Vercel deployment fails | Click the failed deployment → view logs. Most common: a TypeScript error. Your coding harness can fix it: paste the error into the harness. |
 | Vercel shows "404 Not Found" after deploy | Wait 60 seconds and refresh. Build is still propagating. If still 404 after 5 min: check Vercel build logs for errors. |
 | Made changes locally but Vercel still shows old version | You forgot to `git add` and `git commit` before `git push`. Run all three. |
 | `app/page.tsx` looks weird (lots of imports and JSX) | That's normal. Just replace the contents with what Claude generated. |

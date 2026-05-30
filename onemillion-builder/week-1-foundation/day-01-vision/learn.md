@@ -202,7 +202,7 @@ If all 5 are true, you're done. If any are false, fix that before tomorrow.
 
 ## Verify Your Day 1
 
-Paste the contents of [`ai-instructions-day-01.md`](./ai-instructions-day-01.md) into Claude Code. It will:
+Paste the contents of [`ai-instructions-day-01.md`](./ai-instructions-day-01.md) into your coding harness. It will:
 - Check your project.json structure
 - Validate your idea is specific enough
 - Report pass/needs-revision

@@ -54,7 +54,7 @@ Then add the same to Vercel:
 
 ---
 
-## Step 3: Use Claude Code To Build The Route
+## Step 3: Use Your Coding Harness To Build The Route
 
 ```bash
 claude
@@ -200,7 +200,7 @@ If verification did not pass yet, keep **Last verified day** at the previous pas
 
 ## If You Are Stuck
 
-Open Claude Code from your project folder:
+Open your coding harness from your project folder:
 
 ```bash
 claude

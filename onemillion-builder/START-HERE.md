@@ -1,45 +1,84 @@
 # Start Here
 
-Pick the path that matches your reality today. Do not overthink it.
+Use the coding harness you already like: Claude Code, Cursor, Codex, Gemini, Antigravity, Copilot, or another tool that can read a GitHub repo and work in files.
+
+The course is designed around a universal bootstrap file:
+
+```text
+AGENTS.md
+```
+
+That file tells your harness how to become your OneMillion learning orchestrator. The day-by-day map lives in `course-manifest.json`.
 
 ---
 
-## I Have Never Coded
+## Fast Path
 
-Start in the browser with GitHub Codespaces.
+Paste this into your favorite coding harness:
 
-This avoids local installs, PATH issues, old laptops, locked-down work machines, and terminal setup problems. You still learn the OneMillion process: spec, build, verify, ship.
+```text
+I am starting the OneMillion course.
 
-→ **Start:** [Getting Started With Codespaces](getting-started-codespaces.md)
+Course repo:
+https://github.com/siddsdixit/teach-one-million
 
----
+Read AGENTS.md and the course manifest.
+Become my OneMillion learning orchestrator.
+Start me at Day 1.
+Teach me one day at a time.
+When I say "day done", verify the day and advance me.
+Do not skip the learning or do the external tool steps for me.
+```
 
-## I Can Use A Terminal
-
-Install the tools locally on your laptop.
-
-This gives you the most transferable setup. Pick this if you have admin rights on your laptop and you are comfortable pasting commands into Terminal or Git Bash.
-
-→ **Start:** [Getting Started Locally](getting-started.md)
-
----
-
-## I Am An Engineer
-
-Use the fast path:
-
-1. Confirm Node.js 20+, Git, and an editor are installed.
-2. Install Claude Code: `npm install -g @anthropic-ai/claude-code`
-3. Create an Anthropic API key.
-4. Sign up for GitHub, Supabase, and Vercel.
-5. Begin Day 0.
-
-→ **Reference:** [Getting Started Locally](getting-started.md)  
-→ **Begin:** [Day 0 — Public Commitment](day-0-commit/README.md)
+If your harness can read GitHub links reliably, it will guide you from there.
 
 ---
 
-## One Rule
+## Reliable Path
 
-For this version of the course, use **Claude Code**. The daily build instructions and verification prompts are written for it.
+If the fast path feels vague or your harness cannot read the link well, clone the repo:
 
+```bash
+git clone https://github.com/siddsdixit/teach-one-million.git
+cd teach-one-million
+```
+
+Open that folder in your coding harness.
+
+Then say:
+
+```text
+Read AGENTS.md and start the OneMillion course.
+```
+
+---
+
+## Optional Native Adapter Install
+
+Some harnesses work better when their native rules/agents are installed locally.
+
+From the cloned repo:
+
+```bash
+./onemillion-builder/install-agents.sh
+```
+
+This adds local adapters for Claude Code, Cursor, Antigravity, Gemini, and GitHub Copilot.
+
+You do not need this if your harness is already following `AGENTS.md`.
+
+---
+
+## What Happens Next
+
+The orchestrator starts Day 1 with the Idea agent.
+
+You will:
+
+- compare possible ideas
+- choose a specific user
+- name a painful moment
+- create your first `.onemillion/` artifacts
+- stop only when Day 1 is actually complete
+
+You are not here to watch an AI build alone. You are here to learn how to direct agents.

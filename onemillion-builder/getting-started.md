@@ -1,221 +1,119 @@
-# Getting Started Locally
+# Getting Started
 
-**Time: 30-60 minutes. One-time setup.**
+OneMillion runs inside your coding harness.
 
-By the end of this guide you'll have:
-- A working dev environment on your laptop
-- Claude Code installed and authenticated
-- A GitHub account
-- A Supabase account
-- A Vercel account
-- An Anthropic API key
+You can use:
 
-That's it. Then you go to [Day 1](./week-1-foundation/day-01-vision/learn.md).
+- Claude Code
+- Cursor
+- Codex
+- Gemini
+- Antigravity
+- GitHub Copilot / VS Code
+- another agentic coding tool that can read files and edit a workspace
 
-> 🧭 **Never coded before?** Start with [Getting Started With Codespaces](./getting-started-codespaces.md). It gets you into the course faster by avoiding local install problems.
-
-> 🔧 **Engineers:** You probably have most of this already. Skip to step 4 (Claude Code) if Node/Git/an editor are installed.
+The course repo contains the instructions, agents, manifest, examples, and daily lessons. Your harness becomes the teacher by reading them.
 
 ---
 
-## Before You Start
+## The First Prompt
 
-This is the local setup path. Pick it if you have admin rights on your laptop, an OS update from the past 2 years, and you are comfortable pasting commands into Terminal or Git Bash.
+Paste this into your harness:
 
-If that does not describe you, use [Codespaces](./getting-started-codespaces.md).
+```text
+I am starting the OneMillion course.
+
+Course repo:
+https://github.com/siddsdixit/teach-one-million
+
+Read AGENTS.md and the course manifest.
+Become my OneMillion learning orchestrator.
+Start me at Day 1.
+Teach me one day at a time.
+When I say "day done", verify the day and advance me.
+Do not skip the learning or do the external tool steps for me.
+```
 
 ---
 
-## Step 1: Install Node.js (the engine your app runs on)
+## If Your Harness Needs Local Files
 
-Node.js is the runtime your Next.js app needs. You'll use it daily.
-
-### Mac
-
-Open **Terminal** (Cmd+Space, type "Terminal", press Enter). Paste this and press Enter:
+Clone the repo:
 
 ```bash
-curl -fsSL https://nodejs.org/dist/v20.18.0/node-v20.18.0.pkg -o /tmp/node.pkg && sudo installer -pkg /tmp/node.pkg -target /
+git clone https://github.com/siddsdixit/teach-one-million.git
+cd teach-one-million
 ```
 
-Verify it worked:
-```bash
-node -v
+Open the folder in your coding harness.
+
+Then say:
+
+```text
+Read AGENTS.md and start Day 1.
 ```
-
-**You should see:** `v20.18.0` (or higher).
-
-### Windows
-
-1. Go to [nodejs.org](https://nodejs.org)
-2. Click the green button labeled **"20.x.x LTS"** (the one on the left)
-3. Run the installer. Click Next on every screen. Default options are fine.
-4. Open **PowerShell** (Start menu → type "PowerShell")
-5. Type `node -v` and press Enter
-
-**You should see:** `v20.18.0` (or higher).
-
-> 🆘 **If you see `command not found` or `node is not recognized`:** Close and reopen your terminal. It needs to re-read the PATH. Still not working? See [troubleshooting](#troubleshooting).
 
 ---
 
-## Step 2: Install Git (your time machine)
+## Optional Native Adapter Install
 
-Git tracks every change you make. Without it you can't deploy to Vercel.
-
-### Mac
-```bash
-xcode-select --install
-```
-A dialog box pops up. Click **Install**. Wait 5-10 minutes for Apple's developer tools.
-
-Verify: `git --version` → **You should see:** `git version 2.x.x`.
-
-### Windows
-1. Go to [git-scm.com/downloads](https://git-scm.com/downloads)
-2. Click **Download for Windows**
-3. Run installer. Default options.
-4. Open **Git Bash** from the Start menu (yes, a new terminal — Git Bash is what you'll use on Windows for the course)
-5. Type `git --version`
-
-**You should see:** `git version 2.x.x`.
-
-> 💡 **Windows note:** Use **Git Bash** as your terminal for the rest of the course, not PowerShell or CMD. Git Bash gives you Unix-style commands (`ls`, `cd`, etc.) — much easier when the course shows commands.
-
----
-
-## Step 3: Install VS Code (or your editor of choice)
-
-VS Code is the default. It's free and works on Mac + Windows.
-
-1. Go to [code.visualstudio.com](https://code.visualstudio.com)
-2. Download for your OS, run installer
-3. Open VS Code once to confirm it launched
-
-> 🔧 **Engineers:** For this version of the course, Claude Code is the supported path. You can use another editor if you prefer, but keep Claude Code as the AI builder so the daily instructions and verifiers match.
-
----
-
-## Step 4: Install Claude Code (your AI builder)
-
-This is your agentic AI tool. It lives in your terminal and writes code with you.
-
-In your terminal (Terminal on Mac, Git Bash on Windows):
+From inside the cloned repo:
 
 ```bash
-npm install -g @anthropic-ai/claude-code
+./onemillion-builder/install-agents.sh
 ```
 
-This takes 30-60 seconds. **You should see:** A long output ending with something like `added 142 packages in 38s`.
+This installs local adapter files:
 
-Verify it installed:
-```bash
-claude --version
+```text
+.claude/agents/
+.claude/commands/
+.cursor/rules/
+.agents/rules/
+.gemini/GEMINI.md
+.github/copilot-instructions.md
 ```
 
-**You should see:** A version number like `1.x.x` or `claude-code 2.x.x`.
+The universal source remains:
 
-> 🆘 **If you see `command not found` after install:** Close terminal, reopen. Still nothing? Run `npm config get prefix` — the result should be a directory in your PATH. See troubleshooting.
+```text
+AGENTS.md
+onemillion-builder/course-manifest.json
+onemillion-agents/
+```
 
 ---
 
-## Step 5: Get an Anthropic API Key
+## What You Still Learn Hands-On
 
-Claude Code needs an API key to talk to Anthropic's models.
+The harness does not replace the work.
 
-1. Go to [console.anthropic.com](https://console.anthropic.com)
-2. Sign up (Google or email, free)
-3. Click **Settings** → **API Keys** (left sidebar)
-4. Click **Create Key**, name it `onemillion-course`
-5. **Copy the key NOW** — it starts with `sk-ant-` — you won't see it again
+You will still learn and touch:
 
-Now tell Claude Code about it. In your terminal:
+- GitHub for source control
+- Vercel for deployment
+- Supabase for auth, database, and Row Level Security
+- AI API/server routes for your product feature
+- monitoring tools
+- Loom for Demo Day
+- outreach and user feedback
 
-```bash
-claude
-```
-
-The first time you run `claude`, it asks for your API key. Paste it.
-
-> 💰 **Cost reality:** You'll spend $5-15 in API credits over the 18 days. Anthropic gives you $5 free to start. Add $20 to your account and you'll have plenty. See [Getting Your API Keys](./getting-your-api-key.md) for the current cost breakdown.
-
-> 📖 **Detailed key setup with screenshots:** [getting-your-api-key.md](./getting-your-api-key.md).
+The agent teaches and guides. You make decisions and do the real external-tool steps.
 
 ---
 
-## Step 6: Sign Up For GitHub, Supabase, Vercel
+## Harness-Specific Guides
 
-You won't use these today. You'll use them starting Day 4. But signing up takes 5 minutes total and gets it out of the way.
-
-| Service | What it does | Sign up at |
-|---------|-------------|-----------|
-| **GitHub** | Stores your code, deploys to Vercel | [github.com/signup](https://github.com/signup) |
-| **Supabase** | Database + authentication for your app | [supabase.com](https://supabase.com) (use "Continue with GitHub") |
-| **Vercel** | Hosts your app on the internet | [vercel.com/signup](https://vercel.com/signup) (use "Continue with GitHub") |
-
-> 💡 **Pick a GitHub username you'll be proud of.** It becomes your builder identity. `your-real-name` not `coolguy420`.
-
-All three have **free tiers** that cover the full 18-day course with room to spare.
+- [Claude Code](harnesses/claude-code.md)
+- [Cursor](harnesses/cursor.md)
+- [Codex](harnesses/codex.md)
+- [Gemini](harnesses/gemini.md)
+- [Antigravity](harnesses/antigravity.md)
+- [GitHub Copilot](harnesses/copilot.md)
 
 ---
 
-## Step 7: Verify Everything Works
+## Next
 
-In your terminal, run this verification sequence:
-
-```bash
-node -v          # should show v20.x or higher
-git --version    # should show git version 2.x
-claude --version # should show a Claude Code version
-```
-
-If all three show versions, you're done.
-
-Now create a folder for your project:
-
-```bash
-mkdir my-onemillion-build
-cd my-onemillion-build
-claude
-```
-
-Once Claude Code starts, type:
-
-```
-Hello! Are you ready to help me build something?
-```
-
-If you get a response, you're set. **Setup is complete.**
-
----
-
-## Browser-Only Alternative
-
-If local install is taking more than 30 minutes or your laptop is locked down, switch to [Getting Started With Codespaces](./getting-started-codespaces.md).
-
----
-
-## Troubleshooting
-
-| Problem | Fix |
-|---------|-----|
-| `command not found: node` (Mac) | Close terminal, reopen. If still broken: `brew install node` (install Homebrew first if needed: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`) |
-| `node is not recognized` (Windows) | Restart your computer. The Node installer needs a reboot to update PATH on some Windows systems. |
-| `EACCES: permission denied` on `npm install -g` | Mac: prefix the command with `sudo` (`sudo npm install -g @anthropic-ai/claude-code`). Windows: run PowerShell/Git Bash as Administrator. |
-| `claude: command not found` after install | The npm global bin isn't in your PATH. Run `npm config get prefix` — add `/bin` (Mac) or `\bin` (Windows) to your PATH. Or: restart terminal. |
-| API key not accepted | Make sure you copied the FULL key (starts with `sk-ant-`, ~100 characters). No quotes around it. Check Anthropic console — has the key been deleted or rate-limited? |
-| `xcode-select: command not found` (Mac) | You're on a really old Mac. Update to macOS 12+ or use Codespaces fallback. |
-| Vercel/Supabase signup hangs | Some corporate networks block these. Try from your phone hotspot. |
-
----
-
-## What's Next
-
-You're set up. Now you build.
-
-→ **[Day 1: Vision + Mental Map](./week-1-foundation/day-01-vision/learn.md)** — your first day starts here.
-
-Or read the foundation:
-- [The Manifesto](../MANIFESTO.md) — why this exists
-- [How verification works](./verify/README.md) — how you earn Builder #N
-- [Getting Your API Keys](./getting-your-api-key.md) — what you'll actually spend
+→ [Day 0 — Public Commitment](day-0-commit/README.md)<br>
+→ [Day 1 — Vision + Mental Map](week-1-foundation/day-01-vision/learn.md)

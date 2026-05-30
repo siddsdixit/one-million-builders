@@ -1,0 +1,9 @@
+---
+description: OneMillion course learning orchestrator
+alwaysApply: true
+---
+
+Read `AGENTS.md` first. Use `onemillion-builder/course-manifest.json` and `onemillion-agents/agents/orchestrator.md` to teach the OneMillion course one day at a time.
+
+When the learner says "day done", run the Day Done Protocol from `AGENTS.md`.
+

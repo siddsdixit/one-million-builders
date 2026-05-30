@@ -9,7 +9,7 @@ Use these at major checkpoints. Keep posts specific, humble, and useful.
 ```text
 Starting #OneMillion today.
 
-The plan: build and ship a real AI product in 18 days, using Claude Code.
+The plan: build and ship a real AI product in 18 days, using OneMillion's agent-led course flow.
 
 I'm building: [specific product]
 For: [specific user]
@@ -93,4 +93,3 @@ Submitting for Builder #N through OneMillion.
 
 #BuildingWith1M
 ```
-

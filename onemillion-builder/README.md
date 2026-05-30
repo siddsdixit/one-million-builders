@@ -5,7 +5,7 @@
 ![OneMillion — Build in 18 days](diagrams/hero-animated.gif)
 
 <p align="center">
-  <strong>Claude Code-first</strong> &bull;
+  <strong>Harness-neutral</strong> &bull;
   <strong>18 daily builds</strong> &bull;
   <strong>Beginner-friendly</strong> &bull;
   <strong>Ship a real AI product</strong>
@@ -28,7 +28,7 @@ You've seen the posts. Solo founders shipping SaaS in a weekend. Indie builders 
 - **18 days, one product at a time.** No information overload. You make one meaningful move each day and understand it before moving on.
 - **1–2 hours per day.** Short enough to fit around work, family, and the rest of real life.
 - **A deployed product, not a sandbox.** By the end, you have a live URL, working AI features, documented feedback from at least one real person, and a launch plan.
-- **Use AI to learn how to build with AI.** The course is designed around agents that help you spec, design, build, verify, secure, deploy, and sell.
+- **Use AI to learn how to build with AI.** The course is designed around portable OneMillion agents that help you ideate, spec, design, plan, build, test, guard, ship, and sell.
 - **Free forever.** Course content is MIT licensed. No bootcamp fee. No paywalled advanced tier.
 
 ---
@@ -39,19 +39,21 @@ You've seen the posts. Solo founders shipping SaaS in a weekend. Indie builders 
 
 Not a tutorial. Not a sandbox. A real product, on a real server, ready for real users.
 
-We do this by giving you a set of AI agents that work alongside you through every step:
+We do this through an **agent-readable course repo**. Open it in Claude Code, Cursor, Codex, Gemini, Antigravity, Copilot, or another coding harness. The harness reads `AGENTS.md` and `course-manifest.json`, becomes your OneMillion learning orchestrator, and guides one focused agent at a time:
 
-- 🧭 **Define** — capture your idea and write a clear product requirements document
-- 🏗️ **Architect** — design the software so it's built to last, not just to ship
-- 🗓️ **Plan** — break the build into day-by-day steps you can actually execute
-- ⚒️ **Build** — write the code, review it, and ship it — with AI doing the heavy lifting
-- 🔐 **Secure** — run automated security checks before anything goes live
-- 🚢 **Deploy** — get your product onto a real web server or cloud in minutes
-- 📣 **Sell** — build a go-to-market plan: how to launch, market, and evangelize your product
+```text
+/idea → /spec → /design → /plan → /build → /test → /guard → /ship → /sell
+```
+
+Utility modes are always available:
+
+```text
+/ask · /debug · /refactor · /orchestrator
+```
 
 **No prior coding knowledge required.** The agents guide you through every decision. If you've never written a line of code, the path is built for you. If you're an engineer, you blaze through and go deeper.
 
-By the end, you have a live URL, working AI features, documented feedback from at least one real person, and a launch plan. Total AI cost: usually $5–15 in Anthropic credits; optional domains are covered in the Day 14 guide.
+By the end, you have a live URL, working AI features, documented feedback from at least one real person, and a launch plan. No OneMillion login is required for the local course flow. Optional product infrastructure costs, like domains, are covered in the Day 14 guide.
 
 → **Start here:** [Start Here](START-HERE.md)<br>
 → Already set up? [Begin Day 0](day-0-commit/README.md)<br>
@@ -101,8 +103,8 @@ The same curriculum and verifiers apply either way.
 **Every day follows the same rhythm:**
 
 - 📖 **Learn.** Read a short concept that builds your mental model.
-- 🛠️ **Build.** Follow a hands-on guide where Claude Code does the heavy lifting. You direct. You review. You ship.
-- ✅ **Verify.** Paste a prompt into Claude Code. It checks your work and tells you what passed, what failed, and what to fix.
+- 🛠️ **Build.** Follow a hands-on guide where your coding harness does the heavy lifting. You direct. You review. You ship.
+- ✅ **Verify.** Say `day done`. Your harness checks the day's completion gate and tells you what passed, what failed, and what to fix.
 
 **Support is built in:**
 
@@ -116,7 +118,8 @@ The only thing you need to bring is the will to keep going. If you show up, we s
 **What you need to start:**
 
 - 💻 A laptop (Mac or Windows)
-- 🔑 An [Anthropic account](getting-your-api-key.md) — most builders spend $5–15 in AI credits
+- 🧩 A coding harness that can read files and edit a workspace
+- 🔑 GitHub, Supabase, and Vercel accounts for the app you ship
 - ⏱️ 1–2 hours a day
 
 **What you keep forever:**
@@ -132,7 +135,7 @@ When you graduate, the AI agents you built with don't go away. They stay in your
 - 🖥️ **A sample finished app shape** — [DeliverableDash app mock](examples/deliverabledash/app/README.md)
 - ✅ **The verification workflow** — [how Builder #N is earned](verify/README.md)
 - 🎬 **A public launch artifact** — [Day 18 demo requirements](week-3-ship-and-sell/day-18-demo/learn.md)
-- 🔑 **The AI credit setup** — [Getting Your API Key](getting-your-api-key.md)
+- 🧩 **The harness-neutral setup** — [Getting Started](getting-started.md)
 - 📣 **Public milestone posts** — [Share Templates](share-templates.md)
 
 ---
@@ -187,8 +190,8 @@ Zero prior experience required. If you can follow step-by-step instructions, cop
 ## 🛠️ What You Need to Start
 
 - 💻 A laptop (Mac or Windows)
-- 🔑 An Anthropic API key ([here's how to get one](getting-your-api-key.md)) — most builders spend $5–15 in AI credits
-- 🤖 Claude Code — the supported AI builder for this version of the course. [Getting Started](getting-started.md) walks you through setup.
+- 🧩 A coding harness such as Claude Code, Cursor, Codex, Gemini, Antigravity, or Copilot. [Getting Started](getting-started.md) walks you through setup.
+- 🔑 GitHub, Supabase, and Vercel accounts for source control, database/auth, and deployment
 
 Total setup: 15-60 minutes depending on your path. Start here: [START-HERE.md](START-HERE.md)
 
@@ -206,14 +209,15 @@ First 100 builders ever earn permanent **Founding Builder** status.
 
 ## ❓ FAQ
 
-Have questions about cost, technical requirements, Claude Code setup, or what happens if you fall behind? [Read the FAQ](FAQ.md).
+Have questions about cost, technical requirements, harness setup, or what happens if you fall behind? [Read the FAQ](FAQ.md).
 
 ---
 
 ## 🔗 Related
 
 - [The Manifesto: The Age of Agentic Engineering](../MANIFESTO.md)
-- [Getting Your API Key](getting-your-api-key.md) — AI credit setup and cost guidance
+- [Getting Started](getting-started.md) — harness-neutral setup
+- [Agent-Led Learning Flow](agent-flow.md) — how the course runs inside your coding harness
 - [Best OneMillion Resources](best-onemillion-resources.md) — after-course exploration
 - [How Builder #N is earned](verify/README.md)
 

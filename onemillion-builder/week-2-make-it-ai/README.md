@@ -26,6 +26,18 @@ This is where OneMillion stops being "yet another web app course" and becomes th
 
 ---
 
+## Agent Modes This Week
+
+Use the portable OneMillion agents based on the work:
+
+```text
+/build → /test → /debug → /refactor
+```
+
+Build implements the AI feature. Test verifies behavior. Debug fixes broken flows. Refactor keeps the implementation clean without changing behavior.
+
+---
+
 ## The 5 Pillars This Week
 
 | Pillar | Where it shows up |
@@ -41,7 +53,7 @@ This is where OneMillion stops being "yet another web app course" and becomes th
 ## What You Need Before Week 2
 
 - ✅ Week 1 complete — working web app deployed with auth + CRUD
-- ✅ Anthropic API key with at least $5 in credits (you'll spend $2-5 this week)
+- ✅ Your coding harness can read `AGENTS.md` and edit your product workspace
 - ✅ Your Week 1 product is in a state where adding AI fits the PRD
 
 ---

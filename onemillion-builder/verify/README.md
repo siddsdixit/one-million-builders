@@ -10,7 +10,7 @@ This is what makes Builder #N credible: every Builder on the wall genuinely ship
 
 ### Per-Day Verification
 
-Every day in the course has an `ai-instructions-day-XX.md` file. This is a paste-able prompt you give to Claude Code. Claude Code then:
+Every day in the course has an `ai-instructions-day-XX.md` file. This is a fallback verifier prompt. The primary path is to say `day done`; your harness then reads the manifest completion gate and verifies the day.
 
 1. Reads your project files
 2. Checks structural requirements (files exist, code patterns present)
@@ -44,12 +44,16 @@ Is the PRD actually specific enough? Is the prompt well-designed? Does the landi
 
 ## Current Verification Path
 
-### Claude Code
+### Harness-Native Verification
+
 This is the supported path for the current version of the course. After each day:
-```
-claude
-```
-Then paste the contents of `ai-instructions-day-XX.md`. Claude Code does the verification in your terminal.
+
+1. Say `day done`.
+2. Your harness reads `.onemillion/state.json`.
+3. It reads the current day in `course-manifest.json`.
+4. It checks the completion gate.
+5. It writes `.onemillion/verification-day-XX.md`.
+6. If the day passes, it advances your state to the next day.
 
 ---
 
@@ -90,7 +94,7 @@ It's not bulletproof. It's good enough. The Builder Wall is a reputation system 
 ## What Happens After All 18 Days Pass
 
 ```
-1. Claude Code generates your verified Builder Claim data
+1. Your harness generates your verified Builder Claim data
 2. You submit a Builder Claim issue
 3. Sid reviews the claim
 4. Accepted claim receives the next official Builder #N

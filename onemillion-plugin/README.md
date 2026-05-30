@@ -1,44 +1,95 @@
-# onemillion-plugin
+# OneMillion Plugin
 
-**Spec-driven AI development inside your IDE.**
+**Optional native extension path for the OneMillion agent system.**
 
-*Part of [teach-one-million](../README.md) by [Sid Dixit](https://www.linkedin.com/in/siddharthdixit/)*
+The course does not depend on the plugin for the first local learning flow. The primary course architecture is harness-neutral:
 
----
+```text
+AGENTS.md + course-manifest.json + onemillion-agents/
+```
 
-## What It Does
+That lets learners start in Claude Code, Cursor, Codex, Gemini, Antigravity, Copilot, or another coding harness.
 
-The onemillion-plugin brings the 5-pillar agentic SDLC directly into VS Code, Cursor, and Windsurf. Instead of prompting AI to write code, you write a spec — and the plugin orchestrates the right agents to build, review, test, and ship it.
-
-**Spec before code. Always.**
-
----
-
-## The 5 Pillars (Built In)
-
-| Pillar | What It Does |
-|--------|-------------|
-| Spec before code | `/spec` — turn a feature idea into an engineering-ready spec |
-| Multi-agent decomposition | Routes to the right specialist agent per task |
-| Validation gates | Every output verified before moving to the next step |
-| Production hygiene | Security, secrets, RLS checks baked in |
-| Human review loop | You stay in control — AI suggests, you approve |
+The plugin remains the future first-class product experience: native modes, cloud sync, account features, and packaged extension delivery.
 
 ---
 
-## Status
+## Current Course Path
 
-🔜 **Coming soon.** Spec in progress.
+```text
+Paste GitHub link or clone repo
+→ harness reads AGENTS.md
+→ harness becomes OneMillion learning orchestrator
+→ learner progresses one day at a time
+```
 
-If you want to be notified when it launches: [join the cohort waitlist](../cohort/README.md).
+No OneMillion login is required for this local path.
 
 ---
 
-## Built On
+## Plugin Path
 
-- Claude Code agents (same agents powering onemillion-builder)
-- VS Code Extension API
-- Works with Claude Code, Cursor, Windsurf
+The native plugin gives builders guided modes:
+
+```text
+idea → spec → design → plan → build → test → guard → ship → sell
+```
+
+Utility modes:
+
+```text
+ask · debug · refactor · orchestrator · research · review · revise
+```
+
+---
+
+## Where The Real Source Lives
+
+Local source of truth on Sid's machine:
+
+```text
+/Users/siddsdixit/Documents/omc/Plugin
+```
+
+Important folders there:
+
+```text
+source/agents/          # canonical agent prompts
+source/skills/          # canonical skill references
+platforms/claude-code/  # generated Claude Code plugin output
+platforms/cursor/       # generated Cursor rules output
+platforms/roo-code/     # generated Roo Code modes/skills output
+```
+
+Docs source:
+
+```text
+/Users/siddsdixit/Documents/omc/Docs
+```
+
+Published docs target:
+
+```text
+https://docs.onemillion.build
+```
+
+---
+
+## Development Notes
+
+From `/Users/siddsdixit/Documents/omc/Plugin`:
+
+```bash
+npm run build
+```
+
+Builds platform outputs from `source/`.
+
+```bash
+SUPABASE_SERVICE_KEY=... npm run sync:supabase
+```
+
+Syncs modes/skills to Supabase for extension delivery.
 
 ---
 

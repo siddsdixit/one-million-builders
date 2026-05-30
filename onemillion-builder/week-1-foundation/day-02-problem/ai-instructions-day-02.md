@@ -1,6 +1,6 @@
 # Day 2 Verification Prompt
 
-**How to use:** Paste this entire prompt into Claude Code. The AI will execute the checks.
+**How to use:** Paste this entire prompt into your coding harness. The AI will execute the checks.
 
 ---
 

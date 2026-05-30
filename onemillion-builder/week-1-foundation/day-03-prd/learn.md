@@ -128,7 +128,7 @@ You read this on Day 14 when you're tempted to add "just one more feature." It t
 
 ## Part 3: How To Run Your PRD With AI (~5 min read)
 
-You're going to use Claude Code to help draft your PRD. Two ways to do it:
+You're going to use your coding harness to help draft your PRD. Two ways to do it:
 
 ### Approach 1: Direct draft
 You write a rough PRD, Claude critiques it.
@@ -162,7 +162,7 @@ After drafting, save to `.onemillion/prd.md`. Don't write directly — let Claud
 
 ## Today's Assignment
 
-1. Draft your PRD using Claude Code (~30 minutes)
+1. Draft your PRD using your coding harness (~30 minutes)
 2. Save to `.onemillion/prd.md`
 3. Lock it — no more pivots from here
 4. Run the Day 3 verification
@@ -247,7 +247,7 @@ Two pages. Five sections. Everything decided.
 
 ## Verify Your Day 3
 
-Paste the contents of [`ai-instructions-day-03.md`](./ai-instructions-day-03.md) into Claude Code. The verifier will:
+Paste the contents of [`ai-instructions-day-03.md`](./ai-instructions-day-03.md) into your coding harness. The verifier will:
 - Check all 5 sections exist
 - Validate Section 3 has exactly 3 user stories
 - Spot-check quality (named user? specific problem? Definition of Done concrete?)

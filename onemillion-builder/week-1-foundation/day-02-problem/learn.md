@@ -209,7 +209,7 @@ If your idea changed from Day 1: update `.onemillion/project.json` with the new 
 
 ## Verify Your Day 2
 
-Paste the contents of [`ai-instructions-day-02.md`](./ai-instructions-day-02.md) into Claude Code. It will:
+Paste the contents of [`ai-instructions-day-02.md`](./ai-instructions-day-02.md) into your coding harness. It will:
 - Check `notes.md` has 3+ properly structured conversations
 - Check each has direct quotes and specific stories (not generic complaints)
 - Verify your `project.json` idea still aligns with what you heard (or you've updated it)

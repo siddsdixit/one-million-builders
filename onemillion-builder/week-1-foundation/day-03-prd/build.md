@@ -21,7 +21,7 @@
 
 ---
 
-## Step 1: Start Claude Code
+## Step 1: Start your coding harness
 
 ```bash
 cd ~/my-onemillion-build
@@ -155,7 +155,7 @@ If verification did not pass yet, keep **Last verified day** at the previous pas
 
 ## If You Are Stuck
 
-Open Claude Code from your project folder:
+Open your coding harness from your project folder:
 
 ```bash
 claude
