@@ -25,13 +25,13 @@ If you've already done [getting-started.md](../../docs/getting-started.md), you 
 
 ## Step 1: Create Your Project Folder
 
-In your terminal, navigate to where you want the project to live. Usually your home folder:
+In your terminal, navigate to the root of your cloned course fork:
 
 ```bash
-cd ~
+cd /path/to/teach-one-million
 ```
 
-Then create the project folder:
+Then create the product folder inside that course repo:
 
 ```bash
 mkdir my-onemillion-build
@@ -40,7 +40,7 @@ cd my-onemillion-build
 
 **You should see:** Your terminal prompt now shows you're inside `my-onemillion-build`.
 
-> 💡 You can name the folder anything you want — `yoga-followup` or `client-tracker` or whatever fits your idea. The course uses `my-onemillion-build` as a placeholder.
+> 💡 Keep the product folder inside your cloned course repo. The installer and verifier expect `teach-one-million/my-onemillion-build` unless your harness deliberately updates `.onemillion/state.json`.
 
 ---
 
@@ -125,11 +125,11 @@ Save the file.
 
 ---
 
-## Step 5: 🎉 Bonus — Deploy Your First URL (10 min, browser only)
+## Step 5: 🎉 Optional Stretch — Deploy Your First URL (10 min, browser only)
 
-Before you finish Day 1, you're going to put your name on the internet.
+If you have the energy today, put your name on the internet.
 
-This is the magic moment. No coding. No terminal. Just a browser. By the end of these 10 minutes you'll have a real URL — `your-name.vercel.app` — that anyone in the world can visit. **Day 1 ends with you having shipped something public.**
+This is the magic moment. No coding. No terminal. Just a browser. By the end of these 10 minutes you'll have a real URL — `your-name.vercel.app` — that anyone in the world can visit. **Day 1 can end with you having shipped something public.**
 
 ### Step 4a — Open Vercel's template gallery
 Go to [vercel.com/templates/next.js](https://vercel.com/templates/next.js) (any free Next.js template works — recommended: pick the simplest one, like "Next.js Starter" or "Hello World").
@@ -182,13 +182,13 @@ If needs revision, fix the issues and re-paste the verification prompt.
 
 ## What Should Be True After Day 1
 
-- [ ] `~/my-onemillion-build/` folder exists
+- [ ] `teach-one-million/my-onemillion-build/` folder exists inside your cloned course repo
 - [ ] `.onemillion/progress.md` exists
 - [ ] `.onemillion/project.json` exists and is valid JSON
 - [ ] `product_type` is one of `web_app`, `ai_agent`, or `hybrid`
 - [ ] `idea` is 2 sentences with a specific user and specific pain
-- [ ] **Your Vercel template URL is live** (e.g., `https://your-name-onemillion-day-1.vercel.app`)
-- [ ] You sent the URL to at least one person (public commitment moment)
+- [ ] Optional stretch: your Vercel template URL is live (e.g., `https://your-name-onemillion-day-1.vercel.app`)
+- [ ] You told at least one person you started (or sent the optional URL)
 - [ ] Verification ran and returned "Pass" (or you've addressed all revision notes)
 
 ---

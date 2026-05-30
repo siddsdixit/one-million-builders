@@ -32,3 +32,19 @@ python3 onemillion-builder/tools/simulate_course.py --keep
 ```
 
 Passing the simulator does not prove the whole 18-day course is perfect. It proves the most important learner entry path, preflight gate, and verifier plumbing are not broken.
+
+## Persona Simulation
+
+```bash
+python3 onemillion-builder/tools/simulate_personas.py --report onemillion-builder/docs/qa/persona-simulation-report.md
+```
+
+This runs the course entry path as several synthetic target learners:
+
+- non-technical operator
+- product manager
+- designer-founder
+- experienced engineer
+- career changer
+
+It creates throwaway local course forks, runs the installer, creates Day 1 artifacts, runs verification, and scans the course for persona-specific friction. The markdown report is intended to be checked before publishing major course changes.

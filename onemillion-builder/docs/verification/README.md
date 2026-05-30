@@ -1,6 +1,6 @@
 # Verification System — How Builder #N Is Earned
 
-OneMillion's credential is not earned by clicking through videos. It's earned by passing **18 verification checks** — one per day. Each check confirms specific, verifiable artifacts exist in your project.
+OneMillion's credential is not earned by clicking through videos. It's earned by passing **Day 0 preflight verification plus 18 daily verification checks**. Each check confirms specific, verifiable artifacts exist in your project.
 
 This is what makes Builder #N credible: every Builder on the wall genuinely shipped what the course promised.
 
@@ -25,7 +25,7 @@ You run this at the end of each day. Pass it, move on. Fail it, fix the issues a
 ### Final Verification (Day 18)
 
 On Day 18, you run a final pass that:
-1. Confirms all 18 daily verifications have passed
+1. Confirms Day 0 preflight and all 18 daily verifications have passed
 2. Checks your deployed URL is still live
 3. Confirms anti-cheating signals (deployed URL is unique, commit history shows organic build, demo Loom features the builder)
 4. Generates the [Builder Claim packet](../builder-claim.md) for form/GitHub submission
@@ -61,7 +61,7 @@ This is the supported path for the current version of the course. After each day
 
 ### CLI Verification
 
-Engineers can also run the schema-backed verifier directly:
+Engineers can also run the schema-backed verifier directly for schema-backed days:
 
 ```bash
 python onemillion-builder/docs/verification/scripts/verify.py 4 \
@@ -71,6 +71,8 @@ python onemillion-builder/docs/verification/scripts/verify.py 4 \
 ```
 
 The CLI verifies local artifacts, runs schema checks, fetches deployment URLs, and writes `.onemillion/verification-day-XX.md` when `--write-report` is provided.
+
+Today the CLI has machine schemas for Days 1-6. Days 7-18 use the daily prompt verifier files plus harness inspection and human-reviewed proof artifacts. Do not treat a Day 7-18 prompt pass as the same thing as a fully automated schema pass.
 
 ---
 
@@ -105,7 +107,7 @@ The future GitHub Action will run verification automatically on every push and s
 
 ## The Schemas
 
-For builders who want to know exactly what's checked: see `verify/schema/day-XX.json` files. Today, schema files exist for Days 1-6. Days 7-18 currently use the daily `ai-instructions-day-XX.md` prompt verifiers.
+For builders who want to know exactly what's checked: see `verify/schema/day-XX.json` files. Today, schema files exist for Days 1-6. Days 7-18 currently use the daily `ai-instructions-day-XX.md` prompt verifiers and final Builder Claim review.
 
 Engineers: feel free to read the schemas. They're machine-readable specifications of what "pass" means for the schema-backed days.
 

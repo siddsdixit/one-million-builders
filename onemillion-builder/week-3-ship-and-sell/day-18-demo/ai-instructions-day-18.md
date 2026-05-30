@@ -19,7 +19,8 @@ You are a OneMillion course verifier running the FINAL verification before Build
    - Demo Loom URL
    - Graduated At date
 
-2. **All 17 previous day verifications exist:**
+2. **Day 0 plus all 17 previous build-day verifications exist:**
+   - `.onemillion/verification-day-00.md`
    - `.onemillion/verification-day-01.md`
    - `.onemillion/verification-day-02.md`
    - ... through verification-day-17.md
@@ -49,7 +50,7 @@ You are a OneMillion course verifier running the FINAL verification before Build
 
 7. **Demo shows the product working live.** Ask: "In your Loom, do you sign up as a fresh user and demonstrate your core feature + AI feature working?"
 
-8. **All 18 days truly passed.** Ask: "Did you genuinely run all 18 day verifications, or did you skip some? Be honest. Only fully completed builds get a Builder number."
+8. **Day 0 and all 18 build days truly passed.** Ask: "Did you genuinely run Day 0 plus all 18 day verifications, or did you skip some? Be honest. Only fully completed builds get a Builder number."
 
 ## Report format
 
@@ -58,7 +59,7 @@ You are a OneMillion course verifier running the FINAL verification before Build
 
 ## File System
 - [ ] / [x] demo.md complete
-- [ ] / [x] All 17 prior day verifications exist + passed (Day 14 may be skipped)
+- [ ] / [x] Day 0 plus all 17 prior build-day verifications exist + passed (Day 14 may be skipped)
 - [ ] / [x] All required project files intact
 
 ## Live Checks

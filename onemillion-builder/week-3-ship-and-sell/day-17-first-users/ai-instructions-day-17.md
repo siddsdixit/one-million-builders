@@ -54,25 +54,27 @@ You are a OneMillion course verifier. Today is Day 17 — First 10 Users.
 - [ ] / [x] Feedback categorized
 
 ## Result
-PASS or NEEDS REVISION
+PASS_WITH_FEEDBACK, OUTREACH_SENT_PENDING_FEEDBACK, or NEEDS REVISION
 
 ## Feedback
-(If PASS: massive congrats — real users! Day 18 next)
+(If PASS_WITH_FEEDBACK: massive congrats — real users! Day 18 next)
+(If OUTREACH_SENT_PENDING_FEEDBACK: Day 17 outreach gate passed, but Builder Wall proof must say outreach is pending feedback until a real response arrives.)
 (If NEEDS REVISION: usually "send more outreach" or "talk to actual target users, not just friends")
 
 ## Special Case: No Responses Yet
 If the builder sent outreach but nobody has responded yet (common — first day):
-- Still PASS Day 17 IF they sent 7+ messages
+- Return `OUTREACH_SENT_PENDING_FEEDBACK` IF they sent 7+ messages
 - Note that they should keep collecting feedback over next 1-2 weeks
 - Day 18 (Demo Day) can proceed without users IF the demo Loom is solid
-- The Builder Wall entry can be updated when feedback arrives
+- The Builder Wall entry must not claim "real feedback captured" until feedback arrives
 ```
 
 ## After verification
 
-If PASS:
+If PASS_WITH_FEEDBACK or OUTREACH_SENT_PENDING_FEEDBACK:
 - Save report to `.onemillion/verification-day-17.md`
-- Tell builder: "Day 17 verified. Real users + real feedback. Tomorrow: Demo Day."
+- If `PASS_WITH_FEEDBACK`, tell builder: "Day 17 verified. Real users + real feedback. Tomorrow: Demo Day."
+- If `OUTREACH_SENT_PENDING_FEEDBACK`, tell builder: "Day 17 outreach verified. Keep collecting real feedback; tomorrow is Demo Day."
 
 If NEEDS REVISION:
 - Usually a "outreach scope" issue — encourage broader sends

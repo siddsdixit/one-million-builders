@@ -20,6 +20,28 @@ When a day asks you to create an account, create a key, set permissions, or veri
 
 The first rule is the Preflight Gate: the course must run from your forked git clone with `origin` pointing to your fork and `upstream` pointing to Sid's repo.
 
+Tiny Git glossary:
+
+| Word | Meaning |
+|---|---|
+| **Fork** | Your copy of Sid's repo on GitHub. |
+| **Clone** | The copy of your fork on your laptop. |
+| **Origin** | The Git remote that points to your fork. |
+| **Upstream** | The Git remote that points back to Sid's original repo. |
+| **Downstream** | Your fork/local work receiving course updates from upstream. |
+
+Your product workspace lives inside that cloned course repo:
+
+```text
+teach-one-million/
+  onemillion-builder/      # course lessons, verifiers, harness instructions
+  onemillion-agents/       # agent definitions the harness uses to teach
+  my-onemillion-build/     # your product app, created on Day 1
+  .onemillion/             # course state, created by the installer
+```
+
+Keep `my-onemillion-build` at the repo root unless your harness deliberately updates `.onemillion/state.json`. This lets the orchestrator, daily verifiers, and your product code stay in one forked workspace.
+
 ---
 
 ## Mandatory Preflight
@@ -87,6 +109,7 @@ You will:
 - compare possible ideas
 - choose a specific user
 - name a painful moment
+- keep the first MVP to exactly 3 core jobs so you can finish
 - create your first `.onemillion/` artifacts
 - stop only when Day 1 is actually complete
 

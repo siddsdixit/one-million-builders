@@ -20,7 +20,7 @@ Today you set up a Next.js project, push it to GitHub, and deploy to Vercel. Fol
 - [ ] Day 3 verified (PRD locked)
 - [ ] GitHub, Vercel accounts ready (from getting-started.md)
 - [ ] Opened [Account Setup Playbook: Day 4](../../docs/account-setup.md#day-4-github-app-repo--vercel-deploy)
-- [ ] Terminal open, in your `my-onemillion-build` folder
+- [ ] Terminal open, in `teach-one-million/my-onemillion-build`
 - [ ] Editor ready to open
 
 > 💡 **Pro tip:** Have TWO terminal windows open today. One for running the dev server (it stays open). One for running git commands.
@@ -82,7 +82,7 @@ Open your browser to `http://localhost:3000`. You should see the default Next.js
 Open a SECOND terminal window. (Keep the first running.) In the new terminal:
 
 ```bash
-cd ~/my-onemillion-build
+cd /path/to/teach-one-million/my-onemillion-build
 claude
 ```
 

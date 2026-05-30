@@ -33,7 +33,7 @@ An API key is a password that lets your code talk to an external service. It's h
 7. Name it: `onemillion-course`
 8. **CRITICAL: Copy the key NOW.** It starts with `sk-ant-` and is about 100 characters long. You won't see it again — once you close the page, it's gone forever. (You can always create a new one, but you can't see the old one.)
 
-Paste it somewhere safe for now — your password manager, or a temporary text file you'll delete after Day 1.
+Save it somewhere safe now: ideally your password manager. When the course asks you to use it, put it only in `.env.local` and the required deployment environment variable screen. Never paste it into chat, screenshots, GitHub, Slack, or committed files.
 
 ### Add Credits
 

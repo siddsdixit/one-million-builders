@@ -8,6 +8,21 @@
   "completion_phrase": "day done",
   "agent_root": "onemillion-agents/agents",
   "principle": "Agent guides. Learner decides. Learner touches real tools. Agent verifies.",
+  "preflight_day": {
+    "day": 0,
+    "title": "Public Commitment + Fork Setup",
+    "path": "onemillion-builder/day-0-commit/README.md",
+    "verifier_report": ".onemillion/verification-day-00.md",
+    "completion_gate": [
+      "git worktree exists",
+      "AGENTS.md exists at repo root",
+      "onemillion-builder/course-manifest.json exists",
+      "origin points to learner fork",
+      "upstream points to siddsdixit/teach-one-million",
+      "learner confirms upstream repo is starred",
+      "learner made public or private commitment"
+    ]
+  },
   "preflight": {
     "required": true,
     "canonical_landing_page": "https://github.com/siddsdixit/teach-one-million/tree/main/onemillion-builder",

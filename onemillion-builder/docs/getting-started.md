@@ -40,6 +40,17 @@ cd teach-one-million
 
 Open your fork in your coding harness. If the repo is a downloaded zip, a loose folder, or Sid's upstream clone, the harness should stop and fix the setup before teaching.
 
+The course and your product stay together:
+
+```text
+teach-one-million/
+  onemillion-builder/      # course
+  onemillion-agents/       # agents
+  my-onemillion-build/     # your app
+```
+
+Day 1 creates `my-onemillion-build` inside the cloned course repo. Day 4 turns that folder into the real Next.js app. Do not create it in `~/` unless your harness also updates `.onemillion/state.json` and the verifier commands.
+
 ---
 
 ## The First Prompt

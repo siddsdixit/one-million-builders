@@ -1,0 +1,57 @@
+[
+  {
+    "id": "new_operator",
+    "name": "Maya",
+    "label": "Non-technical operator",
+    "background": "Executive assistant turned operations coordinator. Comfortable with browsers and spreadsheets, new to terminal and Git.",
+    "product_type": "web_app",
+    "idea": "Busy executive assistants lose track of recurring follow-ups after meetings because action items are scattered across notes, email, and Slack. I want a simple approval-based follow-up tracker that drafts reminders and shows what needs attention today.",
+    "target_user": "executive assistants at 20-200 person companies",
+    "likely_blockers": ["terminal vocabulary", "GitHub fork/clone", "too many external accounts", "fear of breaking things"],
+    "success_criteria": ["exact commands", "reassurance when setup is blocked", "visible daily progress"]
+  },
+  {
+    "id": "product_manager",
+    "name": "Ravi",
+    "label": "Product manager",
+    "background": "Product manager who writes specs but has never shipped code personally.",
+    "product_type": "hybrid",
+    "idea": "Product managers lose customer evidence because interview notes, Slack threads, and roadmap decisions live in different places. I want a research synthesis app that turns raw notes into tagged opportunities while keeping the PM in control of the final interpretation.",
+    "target_user": "B2B SaaS product managers running customer discovery",
+    "likely_blockers": ["scope creep", "over-polished PRD", "not wanting to touch deployment details"],
+    "success_criteria": ["clear scope locks", "decision checkpoints", "visible proof artifacts"]
+  },
+  {
+    "id": "designer_founder",
+    "name": "Lena",
+    "label": "Designer-founder",
+    "background": "UX designer with strong taste, light coding exposure, and a real audience.",
+    "product_type": "web_app",
+    "idea": "Freelance UX designers waste Sunday evenings turning client status notes into polished updates. I want a client update assistant that tracks deliverables and drafts weekly updates in the designer's voice for approval.",
+    "target_user": "freelance UX designers with 3-8 active clients",
+    "likely_blockers": ["generic UI output", "unclear visual quality bar", "feeling the app is too ugly to share"],
+    "success_criteria": ["design review moments", "real examples", "launch page guidance"]
+  },
+  {
+    "id": "experienced_engineer",
+    "name": "Alex",
+    "label": "Experienced engineer",
+    "background": "Full-stack engineer who wants to learn agentic SDLC and move faster without losing quality.",
+    "product_type": "ai_agent",
+    "idea": "Platform engineers spend too much time checking dashboards and Slack after incidents to understand what changed. I want an incident briefing agent that gathers deploys, alerts, and notes into a short morning brief with links to evidence.",
+    "target_user": "platform engineers on small SaaS teams",
+    "likely_blockers": ["course feels too beginner", "wants to skip gates", "security concerns around generated code"],
+    "success_criteria": ["deeper optional paths", "strict verification", "architecture rationale"]
+  },
+  {
+    "id": "career_changer",
+    "name": "Nora",
+    "label": "Career changer",
+    "background": "Former teacher learning to build software products. High motivation, low confidence.",
+    "product_type": "web_app",
+    "idea": "Tutors lose time writing personalized practice notes after each session. I want a tutoring follow-up app that stores session notes and drafts practice plans that the tutor reviews before sending.",
+    "target_user": "independent tutors working with middle and high school students",
+    "likely_blockers": ["imposter syndrome", "API keys and pricing anxiety", "getting stuck alone"],
+    "success_criteria": ["plain language", "cost clarity", "recovery path"]
+  }
+]

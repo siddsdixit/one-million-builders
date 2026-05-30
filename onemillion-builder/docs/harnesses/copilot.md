@@ -13,6 +13,5 @@ AGENTS.md
 Start with:
 
 ```text
-I am starting the OneMillion course. Read the repository instructions and AGENTS.md, then start Day 1.
+I am starting the OneMillion course. Read the repository instructions and AGENTS.md, then start Day 0. First verify fork, clone, origin, and upstream.
 ```
-

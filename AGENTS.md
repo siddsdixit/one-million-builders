@@ -77,12 +77,13 @@ When the learner says they are starting OneMillion:
 When the learner says `day done`:
 
 1. Read the current day from `.onemillion/state.json`.
-2. Read that day's `completion_gate` from `onemillion-builder/course-manifest.json`.
-3. Inspect required files and app behavior where possible.
-4. Ask concise manual confirmation questions for external actions you cannot inspect.
-5. Write `.onemillion/verification-day-XX.md`.
-6. Update `.onemillion/state.json` and `.onemillion/progress.md`.
-7. Advance to the next day and explain what tomorrow teaches.
+2. If the current day is `0`, read `preflight_day.completion_gate` from `onemillion-builder/course-manifest.json`. Verify fork/clone/origin/upstream and ask for concise confirmation that the learner starred/forked the repo and made the Day 0 public or private commitment. Write `.onemillion/verification-day-00.md`, then advance state to Day 1.
+3. If the current day is `1` through `18`, read that day's `completion_gate` from `onemillion-builder/course-manifest.json`.
+4. Inspect required files and app behavior where possible.
+5. Ask concise manual confirmation questions for external actions you cannot inspect.
+6. Write `.onemillion/verification-day-XX.md`.
+7. Update `.onemillion/state.json` and `.onemillion/progress.md`.
+8. Advance to the next day and explain what tomorrow teaches.
 
 ## First Message To The Learner
 

@@ -164,11 +164,28 @@ EOF
   exit 1
 fi
 
-mkdir -p "$ROOT_DIR/.claude/agents" "$ROOT_DIR/.claude/skills"
+mkdir -p "$ROOT_DIR/.claude/agents" "$ROOT_DIR/.claude/skills" "$ROOT_DIR/.claude/commands"
 mkdir -p "$ROOT_DIR/.cursor/rules" "$ROOT_DIR/.agents/rules" "$ROOT_DIR/.gemini" "$ROOT_DIR/.github/instructions"
 
 cp "$ROOT_DIR"/onemillion-agents/agents/*.md "$ROOT_DIR/.claude/agents/"
 cp -R "$ROOT_DIR"/onemillion-agents/skills/. "$ROOT_DIR/.claude/skills/"
+
+cat > "$ROOT_DIR/.claude/commands/onemillion.md" <<'RULE'
+# OneMillion
+
+Read `AGENTS.md`, `onemillion-builder/course-manifest.json`, and `onemillion-agents/agents/orchestrator.md`.
+
+Become the learner's OneMillion learning orchestrator.
+
+First enforce the Preflight Gate:
+
+- real git worktree
+- `origin` points to the learner's fork
+- `upstream` points to `siddsdixit/teach-one-million`
+- Day 0 public or private commitment before Day 1
+
+Then teach one day at a time. When the learner says `day done`, follow the Day Done Protocol in `AGENTS.md`; do not advance until the current gate passes.
+RULE
 
 cat > "$ROOT_DIR/.cursor/rules/onemillion-course.mdc" <<'RULE'
 ---

@@ -19,6 +19,21 @@ body:
     validations:
       required: true
   - type: input
+    id: github_username
+    attributes:
+      label: GitHub username
+      placeholder: "your-github-username"
+    validations:
+      required: true
+  - type: input
+    id: course_fork_url
+    attributes:
+      label: OneMillion course fork URL
+      description: Your fork of teach-one-million, not Sid's upstream repo.
+      placeholder: "https://github.com/you/teach-one-million"
+    validations:
+      required: true
+  - type: input
     id: product_name
     attributes:
       label: Product name
@@ -62,8 +77,26 @@ body:
     id: verification_summary
     attributes:
       label: Final verification summary
-      description: Paste the Result section from `.onemillion/verification-day-18.md`.
+      description: Paste the Result section from `.onemillion/verification-day-18.md`, including Day 0 + Day 1-18 status.
       render: markdown
+    validations:
+      required: true
+  - type: textarea
+    id: day18_report
+    attributes:
+      label: Day 18 report link or summary
+      description: Link to the Day 18 report in your course fork, or paste the key checks if the fork is private.
+      render: markdown
+    validations:
+      required: true
+  - type: dropdown
+    id: day17_feedback_status
+    attributes:
+      label: Day 17 feedback status
+      description: Choose the status from your Day 17 verification report.
+      options:
+        - PASS_WITH_FEEDBACK
+        - OUTREACH_SENT_PENDING_FEEDBACK
     validations:
       required: true
   - type: textarea
@@ -83,4 +116,8 @@ body:
         - label: My Loom demo is publicly viewable.
           required: true
         - label: I completed the Day 18 Claude Code verification.
+          required: true
+        - label: My course fork contains or can provide Day 0 through Day 18 verification evidence.
+          required: true
+        - label: I consent to be listed on the OneMillion Builder Wall if accepted.
           required: true

@@ -26,10 +26,10 @@
 - A picked **product type** (web app / AI agent / hybrid)
 - An **initial idea** written down in your project folder
 - A mental model of how software actually works — the four parts every product has
-- **A live URL on the internet** — `your-name.vercel.app` — your first deployment, before you've written a line of code
-- A **public commitment** — you'll send the URL to one person you know
+- Optional stretch: **a live URL on the internet** — `your-name.vercel.app` — your first deployment, before you've written a line of code
+- A **public commitment** — you'll tell one person you started
 
-Today is the day you go from "course-taker" to "person who has shipped something." It happens before you write any code.
+Today is the day you go from "course-taker" to "builder with a real product direction." If you do the optional Vercel stretch, you also ship your first public URL before writing any code.
 
 ---
 
@@ -139,9 +139,10 @@ Two sentences. What's the problem you're solving and who's it for? Don't optimiz
 
 ### Thing 3: Create your project folder
 
-In your terminal:
+In your terminal, from the root of your cloned course fork:
 
 ```bash
+cd /path/to/teach-one-million
 mkdir my-onemillion-build
 cd my-onemillion-build
 mkdir .onemillion
@@ -190,7 +191,7 @@ Don't worry if you're not there yet. Day 2 is literally about making your idea r
 
 ## What Should Be True After Day 1
 
-- [ ] I have a project folder created on my laptop (e.g., `my-onemillion-build/`)
+- [ ] I have a project folder created inside my cloned course fork (e.g., `teach-one-million/my-onemillion-build/`)
 - [ ] I have a `.onemillion/project.json` file with my `product_type` and `idea`
 - [ ] I can articulate my idea in 2 sentences to a friend
 - [ ] I've picked one of: `web_app`, `ai_agent`, `hybrid`

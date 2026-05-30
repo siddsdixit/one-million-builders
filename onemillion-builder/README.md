@@ -113,6 +113,8 @@ Support modes are always available:
 | **Hands-on building** | Your harness writes code with you, but you review and decide. |
 | **Real tools** | GitHub, Vercel, Supabase, Anthropic, Sentry, Loom. |
 | **Daily verification** | Say `day done`; your harness checks the gate before moving on. |
+| **Small scope** | The first MVP is capped at exactly 3 core jobs so you can finish. |
+| **Design review** | The course includes visual and UX quality checks before launch. |
 
 The rule:
 
@@ -124,6 +126,8 @@ Agent verifies.
 ```
 
 Whenever the course asks you to create an account, API key, dashboard setting, or public link, use the [Account Setup Playbook](docs/account-setup.md). It gives the exact link, exact permission, and exact QA check.
+
+Worried about cost? Start on free tiers, create API keys only when the day asks for them, and read the pricing notes in the setup playbook before adding payment details. You can pause before any paid step.
 
 ---
 

@@ -82,9 +82,9 @@ Starting #OneMillion today.
 The plan: in 18 days, build and ship a real AI-native product from scratch.
 1-2 hours/day. Free, open source. Anyone can do this.
 
-I'm building: [your one-sentence idea — keep it specific]
+I'm building: [your one-sentence idea — keep it specific, or "idea gets locked on Day 1"]
 
-For: [the specific person you're building it for — name them]
+For: [the specific person you're building it for — name them, or "specific user gets locked on Day 1"]
 
 I'll post a quick update at the end of each day. If you have feedback, ideas,
 or are doing this too, hit me in the comments.
@@ -107,8 +107,8 @@ Starting OneMillion today.
 Building a real AI-native product from scratch in 18 days. 1-2 hours/day.
 Free, open source.
 
-Building: [your one-sentence idea]
-For: [specific person]
+Building: [your one-sentence idea, or idea gets locked on Day 1]
+For: [specific person, or specific user gets locked on Day 1]
 
 Will post a daily update.
 
