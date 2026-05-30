@@ -9,3 +9,5 @@ loom-scripts/
 TODO.md
 landing/
 CLAUDE.md
+tools/
+diagrams/generate_assets.py

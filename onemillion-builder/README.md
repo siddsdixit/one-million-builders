@@ -19,13 +19,13 @@ This course fixes that.
 
 ## 🎓 Get Certified — Become a Builder
 
-Complete all 18 days and pass all 18 verifications → earn **Builder #N**. Sequential, permanent, public. Listed forever at [onemillion.build/builders](builders/README.md).
+Complete all 18 days and pass all 18 verifications → earn **Builder #N**. Sequential, permanent, public. Listed forever at [onemillion.build/builders](../builders/README.md).
 
 ![Sample Builder profile](diagrams/builder-profile-sample.png)
 
 🎁 First 100 builders ever get **Founding Builder** status: permanent badge + Sid's personal Slack + intro to one investor or hiring manager on graduation.
 
-Apply for the next cohort: [cohort/README.md](cohort/README.md)
+Apply for the next cohort: [cohort/README.md](../cohort/README.md)
 
 ---
 
@@ -99,7 +99,7 @@ Total setup: ~30 minutes. Start here: [getting-started.md](getting-started.md)
 
 Sid runs free weekend cohorts every 6–8 weeks. Saturday live session + 1 hr/day self-paced. Demo Day on the final Saturday.
 
-→ Apply for the next cohort: [cohort/README.md](cohort/README.md)
+→ Apply for the next cohort: [cohort/README.md](../cohort/README.md)
 
 🎁 First 100 builders ever earn permanent **Founding Builder** status.
 
