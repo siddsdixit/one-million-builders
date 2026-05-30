@@ -37,7 +37,7 @@
       "learner confirms upstream repo is starred"
     ]
   },
-  "provider_setup_playbook": "onemillion-builder/account-setup.md",
+  "provider_setup_playbook": "onemillion-builder/docs/account-setup.md",
   "provider_setup_links": {
     "github_course_fork": {
       "days": [0],

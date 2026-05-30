@@ -16,7 +16,7 @@ AGENTS.md
 
 That file tells your harness how to become your OneMillion learning orchestrator. The day-by-day map lives in `course-manifest.json`.
 
-When a day asks you to create an account, create a key, set permissions, or verify a dashboard, use [Account Setup Playbook](account-setup.md). It gives exact links and QA checks.
+When a day asks you to create an account, create a key, set permissions, or verify a dashboard, use [Account Setup Playbook](docs/account-setup.md). It gives exact links and QA checks.
 
 The first rule is the Preflight Gate: the course must run from your forked git clone with `origin` pointing to your fork and `upstream` pointing to Sid's repo.
 

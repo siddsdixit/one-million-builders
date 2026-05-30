@@ -17,7 +17,7 @@
 
 - [ ] Day 17 verified
 - [ ] Live app URL works in an incognito browser
-- [ ] Opened [Account Setup Playbook: Day 18](../../account-setup.md#day-18-loom--builder-claim)
+- [ ] Opened [Account Setup Playbook: Day 18](../../docs/account-setup.md#day-18-loom--builder-claim)
 
 ---
 
@@ -179,7 +179,7 @@ Tag @SidDixit. The Builder Wall thanks you.
 - [ ] `.onemillion/demo.md` saved with URLs
 - [ ] All 18 days verified
 - [ ] Builder Claim issue submitted for review
-- [ ] Account setup QA passed from [Account Setup Playbook: Day 18](../../account-setup.md#day-18-loom--builder-claim)
+- [ ] Account setup QA passed from [Account Setup Playbook: Day 18](../../docs/account-setup.md#day-18-loom--builder-claim)
 - [ ] You shared on LinkedIn (or you'll share within 24 hours)
 - [ ] You took 10 minutes to actually feel what you accomplished
 

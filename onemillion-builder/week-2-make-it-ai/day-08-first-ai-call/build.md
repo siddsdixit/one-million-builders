@@ -16,8 +16,8 @@
 ## Before You Start
 
 - [ ] Day 7 verified — AI feature spec locked
-- [ ] You have `ANTHROPIC_API_KEY` in your Anthropic console (from getting-your-api-key.md)
-- [ ] Opened [Account Setup Playbook: Day 8](../../account-setup.md#day-8-anthropic-api-key)
+- [ ] You have `ANTHROPIC_API_KEY` in your Anthropic console (from docs/api-key.md)
+- [ ] Opened [Account Setup Playbook: Day 8](../../docs/account-setup.md#day-8-anthropic-api-key)
 - [ ] Both terminal windows ready
 
 ---
@@ -183,7 +183,7 @@ Paste contents of [`ai-instructions-day-08.md`](./ai-instructions-day-08.md).
 - [ ] `ai` and `@ai-sdk/anthropic` in package.json
 - [ ] `ANTHROPIC_API_KEY` in `.env.local`
 - [ ] `ANTHROPIC_API_KEY` in Vercel (verify in dashboard)
-- [ ] Account setup QA passed from [Account Setup Playbook: Day 8](../../account-setup.md#day-8-anthropic-api-key)
+- [ ] Account setup QA passed from [Account Setup Playbook: Day 8](../../docs/account-setup.md#day-8-anthropic-api-key)
 - [ ] API route exists at `app/api/ai/[your-feature]/route.ts`
 - [ ] Route checks auth (returns 401 if no user)
 - [ ] Prompt has all 5 elements (role/goal/tone/constraints/format)

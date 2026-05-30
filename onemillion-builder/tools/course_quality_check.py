@@ -119,11 +119,11 @@ def check_agent_architecture() -> None:
         REPO / "AGENTS.md",
         ROOT / "AGENTS.md",
         ROOT / "course-manifest.json",
-        ROOT / "account-setup.md",
-        ROOT / "agent-flow.md",
-        ROOT / "day-done.md",
+        ROOT / "docs" / "account-setup.md",
+        ROOT / "docs" / "agent-flow.md",
+        ROOT / "docs" / "day-done.md",
         ROOT / "install-agents.sh",
-        ROOT / "uninstall-agents.sh",
+        ROOT / "tools" / "uninstall-agents.sh",
         AGENTS_ROOT / "README.md",
         AGENTS_ROOT / "agents" / "orchestrator.md",
     ]
@@ -166,7 +166,7 @@ def check_agent_architecture() -> None:
         "copilot",
     ]
     for doc in required_harness_docs:
-        path = ROOT / "harnesses" / f"{doc}.md"
+        path = ROOT / "docs" / "harnesses" / f"{doc}.md"
         if not path.exists():
             errors.append(f"missing harness doc: {rel(path)}")
 
@@ -235,7 +235,7 @@ def check_manifest() -> None:
         if not isinstance(value, list) or not value:
             errors.append(f"{rel(path)} preflight missing list: {field}")
 
-    if manifest.get("provider_setup_playbook") != "onemillion-builder/account-setup.md":
+    if manifest.get("provider_setup_playbook") != "onemillion-builder/docs/account-setup.md":
         errors.append(f"{rel(path)} must point to account setup playbook")
 
     setup_links = manifest.get("provider_setup_links")
@@ -261,9 +261,9 @@ def check_harness_neutral_entrypoints() -> None:
         ROOT / "AGENTS.md",
         ROOT / "README.md",
         ROOT / "START-HERE.md",
-        ROOT / "getting-started.md",
-        ROOT / "account-setup.md",
-        ROOT / "agent-flow.md",
+        ROOT / "docs" / "getting-started.md",
+        ROOT / "docs" / "account-setup.md",
+        ROOT / "docs" / "agent-flow.md",
     ]
     required_terms = [
         "AGENTS.md",

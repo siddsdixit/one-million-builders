@@ -19,7 +19,7 @@ Today you set up a Next.js project, push it to GitHub, and deploy to Vercel. Fol
 
 - [ ] Day 3 verified (PRD locked)
 - [ ] GitHub, Vercel accounts ready (from getting-started.md)
-- [ ] Opened [Account Setup Playbook: Day 4](../../account-setup.md#day-4-github-app-repo--vercel-deploy)
+- [ ] Opened [Account Setup Playbook: Day 4](../../docs/account-setup.md#day-4-github-app-repo--vercel-deploy)
 - [ ] Terminal open, in your `my-onemillion-build` folder
 - [ ] Editor ready to open
 
@@ -250,7 +250,7 @@ If pass: you're done with Day 4. If revision needed: fix and re-run.
 - [ ] Code is pushed to a GitHub repo
 - [ ] Your app is live at a Vercel URL
 - [ ] You made a change, pushed it, and saw Vercel redeploy
-- [ ] Account setup QA passed from [Account Setup Playbook: Day 4](../../account-setup.md#day-4-github-app-repo--vercel-deploy)
+- [ ] Account setup QA passed from [Account Setup Playbook: Day 4](../../docs/account-setup.md#day-4-github-app-repo--vercel-deploy)
 - [ ] Verification passed ✅
 
 ---
@@ -296,7 +296,7 @@ Ask for one missing detail at a time if needed.
 
 | Problem | Fix |
 |---------|-----|
-| `npx: command not found` | Node.js isn't installed correctly. Re-do Step 1 of [getting-started.md](../../getting-started.md). |
+| `npx: command not found` | Node.js isn't installed correctly. Re-do Step 1 of [getting-started.md](../../docs/getting-started.md). |
 | `npm install` takes forever (>5 min) | Slow connection. Wait it out. If it fails: `npm install --legacy-peer-deps`. |
 | Port 3000 already in use | Something else is running on 3000. Either close it, or run `npm run dev -- -p 3001` to use port 3001. |
 | `localhost:3000` shows "This site can't be reached" | Your dev server isn't running. Check the first terminal — `npm run dev` should still be running there. If not, restart it. |
@@ -306,7 +306,7 @@ Ask for one missing detail at a time if needed.
 | Made changes locally but Vercel still shows old version | You forgot to `git add` and `git commit` before `git push`. Run all three. |
 | `app/page.tsx` looks weird (lots of imports and JSX) | That's normal. Just replace the contents with what Claude generated. |
 
-If you're stuck for 30 min because your local machine is fighting you, switch to Codespaces ([browser setup path](../../getting-started-codespaces.md)) and try the day there.
+If you're stuck for 30 min because your local machine is fighting you, switch to Codespaces ([browser setup path](../../docs/codespaces.md)) and try the day there.
 
 ---
 

@@ -1,79 +1,63 @@
-# 🚀 OneMillion: Build a Real AI Product in 18 Days
-
-*Created by [Sid Dixit](https://www.linkedin.com/in/siddharthdixit/)*
-
-![OneMillion — Build in 18 days](diagrams/hero-animated.gif)
+# OneMillion Builder
 
 <p align="center">
-  <strong>Harness-neutral</strong> &bull;
-  <strong>18 daily builds</strong> &bull;
-  <strong>Beginner-friendly</strong> &bull;
-  <strong>Ship a real AI product</strong>
+  <img src="diagrams/hero-animated.gif" alt="OneMillion Builder - build a real AI product in 18 days" width="100%">
 </p>
 
 <p align="center">
-  <a href="START-HERE.md">Start Here</a> &bull;
-  <a href="#-mandatory-first-steps">Mandatory First Steps</a> &bull;
-  <a href="account-setup.md">Account Setup</a> &bull;
-  <a href="#-course-days">Course Days</a> &bull;
-  <a href="verify/README.md">Verification</a> &bull;
-  <a href="FAQ.md">FAQ</a> &bull;
-  <a href="../builders/README.md">Builder Wall</a>
+  <strong>Build and ship a real AI product in 18 days.</strong><br>
+  Beginner-friendly. Agent-guided. Free forever.
+</p>
+
+<p align="center">
+  <a href="START-HERE.md"><strong>Start Here</strong></a>
+  &nbsp;•&nbsp;
+  <a href="#start-in-5-minutes">5-Minute Setup</a>
+  &nbsp;•&nbsp;
+  <a href="#course-roadmap">Course Roadmap</a>
+  &nbsp;•&nbsp;
+  <a href="docs/FAQ.md">FAQ</a>
+</p>
+
+<p align="center">
+  <img alt="18 days" src="https://img.shields.io/badge/18_days-one_focused_build-111827?style=for-the-badge">
+  <img alt="Agent guided" src="https://img.shields.io/badge/agent_guided-Claude%20Code%20%7C%20Cursor%20%7C%20Codex-2563eb?style=for-the-badge">
+  <img alt="Free" src="https://img.shields.io/badge/free_forever-MIT-16a34a?style=for-the-badge">
 </p>
 
 ---
 
-You've seen the posts. Solo founders shipping SaaS in a weekend. Indie builders launching real AI products from their laptops. People who had never written code running real businesses. You follow along. Three hours in, you're debugging a system you don't understand, wondering if this is actually for you.
+## The Promise
 
-**It is. And this is how.**
+Most people get stuck because they try to learn coding, product thinking, AI, deployment, auth, databases, and launch all at once.
 
-- **Mandatory first move: star, fork, clone.** Your fork becomes your public learning workspace and proof trail.
-- **18 days, one product at a time.** No information overload. You make one meaningful move each day and understand it before moving on.
-- **1–2 hours per day.** Short enough to fit around work, family, and the rest of real life.
-- **A deployed product, not a sandbox.** By the end, you have a live URL, working AI features, documented feedback from at least one real person, and a launch plan.
-- **Use AI to learn how to build with AI.** The course is designed around portable OneMillion agents that help you ideate, spec, design, plan, build, test, guard, ship, and sell.
-- **Free forever.** Course content is MIT licensed. No bootcamp fee. No paywalled advanced tier.
+OneMillion turns that into one small daily move.
 
----
+By the end, you have:
 
-## ✨ What Is OneMillion Builders?
+| You ship | Proof you keep |
+|---|---|
+| A live web app | Public Vercel URL |
+| Real signup/login | Supabase auth + database |
+| A real AI feature | Claude-powered workflow |
+| Production hygiene | Security, monitoring, and checks |
+| A public demo | Loom + Builder Claim |
 
-**OneMillion is on a mission to take one million people — anyone with an idea — from zero to a real, deployed, launchable product in 18 days.**
-
-Not a tutorial. Not a sandbox. A real product, on a real server, ready for real users.
-
-We do this through an **agent-readable course repo**. Open it in Claude Code, Cursor, Codex, Gemini, Antigravity, Copilot, or another coding harness. The harness reads `AGENTS.md` and `course-manifest.json`, becomes your OneMillion learning orchestrator, and guides one focused agent at a time:
-
-```text
-/idea → /spec → /design → /plan → /build → /test → /guard → /ship → /sell
-```
-
-Utility modes are always available:
-
-```text
-/ask · /debug · /refactor · /orchestrator
-```
-
-**No prior coding knowledge required.** The agents guide you through every decision. If you've never written a line of code, the path is built for you. If you're an engineer, you blaze through and go deeper.
-
-By the end, you have a live URL, working AI features, documented feedback from at least one real person, and a launch plan. No OneMillion login is required for the local course flow. Optional product infrastructure costs, like domains, are covered in the Day 14 guide.
-
-→ **Start here:** [Start Here](START-HERE.md)<br>
-→ Already set up? [Begin Day 0](day-0-commit/README.md)<br>
-→ Returning after a break? [Recover your place](recover.md)
+No prior coding experience required. Your coding harness becomes your teacher, but you make the decisions and learn the tools.
 
 ---
 
-## ⭐ Mandatory First Steps
+## Start In 5 Minutes
 
-Before Day 1, every learner does this:
+The course starts from your own fork. That matters: your fork becomes your learning workspace, progress trail, and final proof.
 
-1. **Star** this repo so you can find it again and help the next builder discover it.
-2. **Fork** this repo into your own GitHub account.
-3. **Clone your fork**, not Sid's original repo.
-4. Run the installer so the repo can verify/fix `origin` and `upstream`.
-5. Open your fork in your favorite coding harness.
-6. Paste the start prompt below.
+| Step | Do this | Link |
+|---:|---|---|
+| 1 | Star the repo | [Open repo](https://github.com/siddsdixit/teach-one-million) |
+| 2 | Fork it into your GitHub account | [Fork now](https://github.com/siddsdixit/teach-one-million/fork) |
+| 3 | Clone your fork | Use the command below |
+| 4 | Run the installer | It checks/fixes `origin` and `upstream` |
+| 5 | Paste the start prompt | Claude Code, Cursor, Codex, Gemini, Antigravity, Copilot |
 
 ```bash
 git clone https://github.com/YOUR-USERNAME/teach-one-million.git
@@ -81,9 +65,7 @@ cd teach-one-million
 ./onemillion-builder/install-agents.sh
 ```
 
-If the GitHub CLI is installed and authenticated, the installer stars the upstream repo, creates or verifies your fork, sets `origin` to your fork, sets `upstream` to Sid's repo, and starts local course state. If it cannot verify the clone/fork/upstream setup, it stops before the course begins.
-
-Then tell your coding harness:
+Then paste this into your coding harness:
 
 ```text
 I am starting the OneMillion course from my fork.
@@ -97,189 +79,127 @@ When I say "day done", verify the day and advance me.
 Do not skip the learning or do the external tool steps for me.
 ```
 
-This course page is the canonical learner landing page:
+Need the slower walkthrough? Open [START-HERE.md](START-HERE.md).
+
+---
+
+## How The Course Feels
+
+|  |  |
+|---|---|
+| **Short daily lessons** | Read just enough to understand the idea before building. |
+| **Hands-on building** | Your harness writes code with you, but you review and decide. |
+| **Real tools** | GitHub, Vercel, Supabase, Anthropic, Sentry, Loom. |
+| **Daily verification** | Say `day done`; your harness checks the gate before moving on. |
+
+The rule:
 
 ```text
-https://github.com/siddsdixit/teach-one-million/tree/main/onemillion-builder
+Agent guides.
+Learner decides.
+Learner touches real tools.
+Agent verifies.
 ```
 
-When any day asks for an external account, key, dashboard permission, or public link, use [Account Setup Playbook](account-setup.md). It gives the exact link, exact permission, and QA check for GitHub, Vercel, Supabase, Anthropic, Sentry, UptimeRobot, and Loom.
+Whenever the course asks you to create an account, API key, dashboard setting, or public link, use the [Account Setup Playbook](docs/account-setup.md). It gives the exact link, exact permission, and exact QA check.
 
 ---
 
-## 🗺️ Course Map
+## Course Roadmap
 
-| Stage | Days | Outcome | Start |
-|-------|------|---------|-------|
-| 🧱 **Foundation** | 1-6 | Deployed web app with auth, database, and one core feature | [Week 1](week-1-foundation/README.md) |
-| 🧠 **Make It AI** | 7-12 | Real Claude-powered feature with streaming, tools, RAG, and quality gates | [Week 2](week-2-make-it-ai/README.md) |
-| 🚢 **Ship & Sell** | 13-18 | Production hygiene, landing page, outreach, demo, and Builder Claim | [Week 3](week-3-ship-and-sell/README.md) |
+| Stage | Days | What you learn | What you have at the end |
+|---|---:|---|---|
+| **Foundation** | 1-6 | Idea, PRD, stack, GitHub, Vercel, Supabase | A live app with auth, database, and one core feature |
+| **Make It AI** | 7-12 | AI spec, Claude API, streaming, tools, RAG, quality gates | A real AI feature inside your product |
+| **Ship & Sell** | 13-18 | Security, monitoring, landing page, outreach, demo | A launch-ready product and Builder Claim |
 
-Each day has the same rhythm: **learn → build → verify → update progress**.
-
----
-
-## 🎓 Get Certified — Become a Builder
-
-Complete all 18 days, pass final verification, and submit your Builder Claim. Once accepted, you earn **Builder #N**: sequential, permanent, public, and listed forever at [onemillion.build/builders](../builders/README.md).
-
-Each day has an AI verification prompt. Day 18 requires your daily verification reports, a public repo, a deployed URL, a Loom demo, and final anti-cheating checks. See [How Builder #N is earned](verify/README.md).
-
-![Sample Builder profile](diagrams/builder-profile-sample.png)
-
-First 100 builders ever get **Founding Builder** status: permanent badge + Sid's personal Slack + intro to one investor or hiring manager on graduation.
-
-Apply for the next cohort: [cohort/README.md](../cohort/README.md)
+<p align="center">
+  <a href="week-1-foundation/README.md"><strong>Week 1: Foundation</strong></a>
+  &nbsp;•&nbsp;
+  <a href="week-2-make-it-ai/README.md"><strong>Week 2: Make It AI</strong></a>
+  &nbsp;•&nbsp;
+  <a href="week-3-ship-and-sell/README.md"><strong>Week 3: Ship & Sell</strong></a>
+</p>
 
 ---
 
-## 💡 How It Works
+## Daily Path
 
-You don't need to know how to code. If you do — great, you'll go faster. Either way, you finish.
-
-Here's the journey: over 18 days, you become a **lean, AI-powered builder** — someone who can take an idea from a napkin concept to a production-shaped product deployed on the cloud. Not a toy tutorial. A working application — an AI agent, a web app, or a hybrid of both — that is ready for first users and real feedback.
-
-You can do OneMillion two ways:
-
-- 🧑‍💻 **Self-paced.** Follow the 18 days in this repo on your own schedule.
-- 🧑‍🤝‍🧑 **Live cohort.** Join a free group when applications are open.
-
-The same curriculum and verifiers apply either way.
-
-**Every day follows the same rhythm:**
-
-- 📖 **Learn.** Read a short concept that builds your mental model.
-- 🛠️ **Build.** Follow a hands-on guide where your coding harness does the heavy lifting. You direct. You review. You ship.
-- ✅ **Verify.** Say `day done`. Your harness checks the day's completion gate and tells you what passed, what failed, and what to fix.
-
-**Support is built in:**
-
-- 🎥 **Video walkthroughs** — Sid walks through the course so you have a human reference
-- 🗓️ **Weekly live sessions** — group calls to unblock, answer questions, and keep you moving
-- 💬 **Slack community** — a dedicated channel where builders help each other in real time
-- 🧑‍🏫 **Mentors on call** — real people who've been through the build, ready to answer when you're stuck
-
-The only thing you need to bring is the will to keep going. If you show up, we show up: walkthroughs, community support, office hours, and mentors are designed to keep you moving when you get stuck.
-
-**What you need to start:**
-
-- 💻 A laptop (Mac or Windows)
-- 🧩 A coding harness that can read files and edit a workspace
-- 🔑 GitHub, Supabase, and Vercel accounts for the app you ship
-- ⏱️ 1–2 hours a day
-
-**What you keep forever:**
-
-When you graduate, the AI agents you built with don't go away. They stay in your toolkit — ready to help you spec, design, build, test, secure, deploy, and sell the next product. And the one after that. **You've learned how to wield AI. That skill compounds for life.**
+| Day | Focus | Outcome |
+|---:|---|---|
+| [0](day-0-commit/README.md) | Public commitment + GitHub setup | Fork, clone, and commit to finishing |
+| [1](week-1-foundation/day-01-vision/learn.md) | Vision + mental map | Pick the product direction |
+| [2](week-1-foundation/day-02-problem/learn.md) | Problem + Mom Test | Validate pain before writing code |
+| [3](week-1-foundation/day-03-prd/learn.md) | PRD | Lock the MVP scope |
+| [4](week-1-foundation/day-04-stack/learn.md) | Stack + first deploy | Next.js app live on Vercel |
+| [5](week-1-foundation/day-05-auth/learn.md) | Auth + database | Supabase signup/login + first table |
+| [6](week-1-foundation/day-06-core-feature/learn.md) | Core feature | Main workflow working end-to-end |
+| [7](week-2-make-it-ai/day-07-ai-spec/learn.md) | AI feature spec | Measurable AI behavior |
+| [8](week-2-make-it-ai/day-08-first-ai-call/learn.md) | First AI call | Claude output in your app |
+| [9](week-2-make-it-ai/day-09-streaming/learn.md) | Streaming UI | Token-by-token response UI |
+| [10](week-2-make-it-ai/day-10-tool-use/learn.md) | Tool use | AI reads or writes scoped app data |
+| [11](week-2-make-it-ai/day-11-rag/learn.md) | RAG | AI grounded in user data |
+| [12](week-2-make-it-ai/day-12-lock-the-ai/learn.md) | Quality gates | Tests, evals, and cost budget |
+| [13](week-3-ship-and-sell/day-13-hygiene/learn.md) | Production hygiene | Security and secrets audit |
+| [14](week-3-ship-and-sell/day-14-domain/learn.md) | Domain | Custom domain or documented skip |
+| [15](week-3-ship-and-sell/day-15-monitoring/learn.md) | Monitoring | Sentry, analytics, uptime |
+| [16](week-3-ship-and-sell/day-16-landing/learn.md) | Landing page | Clear public product page |
+| [17](week-3-ship-and-sell/day-17-first-users/learn.md) | First users | Outreach and feedback |
+| [18](week-3-ship-and-sell/day-18-demo/learn.md) | Demo Day | Loom demo + Builder Claim |
 
 ---
 
-## 🧩 See What You Produce
+## What You Need
 
-- 🪪 **A Day 18-style credential** — [sample Builder profile](diagrams/builder-profile-sample.png)
-- 📁 **A golden-path example** — [DeliverableDash artifacts](examples/deliverabledash/README.md)
-- 🖥️ **A sample finished app shape** — [DeliverableDash app mock](examples/deliverabledash/app/README.md)
-- ✅ **The verification workflow** — [how Builder #N is earned](verify/README.md)
-- 🎬 **A public launch artifact** — [Day 18 demo requirements](week-3-ship-and-sell/day-18-demo/learn.md)
-- 🧩 **The harness-neutral setup** — [Getting Started](getting-started.md)
-- 📣 **Public milestone posts** — [Share Templates](share-templates.md)
-
----
-
-## 📚 Course Days
-
-| Day | What You Build |
-|-----|----------------|
-| [Day 0: Public Commitment](day-0-commit/README.md) | A LinkedIn post that doubles your odds of finishing |
-| [Day 1: Vision + Mental Map](week-1-foundation/day-01-vision/learn.md) | A picked product idea + the mental model for how AI products work |
-| [Day 2: Problem + Mom Test](week-1-foundation/day-02-problem/learn.md) | 3 real conversations + validated pain before you write a line of code |
-| [Day 3: Write Your PRD](week-1-foundation/day-03-prd/learn.md) | Locked PRD — 5 sections, exactly 3 features, scope frozen |
-| [Day 4: Stack + First Deploy](week-1-foundation/day-04-stack/learn.md) | A real Next.js app live at your-app.vercel.app |
-| [Day 5: Auth + Database](week-1-foundation/day-05-auth/learn.md) | Signup → login → logout with Row Level Security |
-| [Day 6: Core Feature](week-1-foundation/day-06-core-feature/learn.md) | Your main feature working end-to-end |
-| [Day 7: AI Feature Spec](week-2-make-it-ai/day-07-ai-spec/learn.md) | Locked AI spec with measurable quality criteria |
-| [Day 8: First AI Call](week-2-make-it-ai/day-08-first-ai-call/learn.md) | Real Claude output flowing into your app |
-| [Day 9: Streaming UI](week-2-make-it-ai/day-09-streaming/learn.md) | Text appearing token by token in your UI |
-| [Day 10: Tool Use](week-2-make-it-ai/day-10-tool-use/learn.md) | AI reading and acting on your database |
-| [Day 11: RAG](week-2-make-it-ai/day-11-rag/learn.md) | AI personalized to each user's actual data |
-| [Day 12: Lock the AI](week-2-make-it-ai/day-12-lock-the-ai/learn.md) | Acceptance tests + cost budget + rate limits |
-| [Day 13: Production Hygiene](week-3-ship-and-sell/day-13-hygiene/learn.md) | 9-point audit — secrets, RLS, error handling |
-| [Day 14: Custom Domain](week-3-ship-and-sell/day-14-domain/learn.md) | Optional custom domain with SSL, or a documented decision to stay on Vercel |
-| [Day 15: Monitoring](week-3-ship-and-sell/day-15-monitoring/learn.md) | Sentry + Vercel Analytics + UptimeRobot live |
-| [Day 16: Landing Page](week-3-ship-and-sell/day-16-landing/learn.md) | Hero → Problem → Solution → Proof → CTA |
-| [Day 17: First 10 Users](week-3-ship-and-sell/day-17-first-users/learn.md) | At least 1 real user with documented feedback |
-| [Day 18: Demo Day → Builder Claim](week-3-ship-and-sell/day-18-demo/learn.md) | 5-min Loom + final verification + Builder Claim submission |
+| Need | Notes |
+|---|---|
+| Laptop | Mac, Windows, or Linux |
+| Coding harness | Claude Code, Cursor, Codex, Gemini, Antigravity, Copilot, or similar |
+| GitHub | Source control and proof trail |
+| Vercel | Deployment |
+| Supabase | Auth and database |
+| Anthropic API key | Added in Week 2 |
+| Time | 1-2 hours per day |
 
 ---
 
-## 🏆 What You Walk Away With
+## What You Earn
 
-- 🌐 **A deployed product** — live on Vercel, with an optional custom domain
-- 📦 **A GitHub repo** with 18 days of commits — proof you built it yourself
-- 🎓 **Builder #N after review** — sequential, permanent, public
-- 🪪 **A public profile** at onemillion.build/builders/[your-number] after your claim is accepted
-- 🔁 **A repeatable way to spec, build, verify, and ship your next product**
+Complete all 18 days, pass final verification, and submit your Builder Claim.
 
----
+| Credential | What it means |
+|---|---|
+| **Builder #N** | A sequential, permanent builder number after review |
+| **Public proof** | Live URL, demo Loom, daily verification reports |
+| **Reusable skill** | A repeatable agentic build process for your next product |
 
-## 🚀 Who This Course Is For
+See [How Builder #N is earned](docs/verification/README.md).
 
-- 🗂️ **Executive assistants** who've never opened a terminal
-- 🧠 **Product managers** who've written specs but never built the product
-- 👩‍💻 **Engineers** who want to master agentic SDLC and the modern way of building
-- 🌎 **Anyone** — yoga teachers, nurses, designers, retirees, career-changers
-
-Zero prior experience required. If you can follow step-by-step instructions, copy commands carefully, and ask AI for help when something breaks, you can do this.
+<p align="center">
+  <img src="diagrams/builder-profile-sample.png" alt="Sample OneMillion Builder profile" width="720">
+</p>
 
 ---
 
-## 🛠️ What You Need to Start
+## Helpful Links
 
-- 💻 A laptop (Mac or Windows)
-- 🧩 A coding harness such as Claude Code, Cursor, Codex, Gemini, Antigravity, or Copilot. [Getting Started](getting-started.md) walks you through setup.
-- 🔑 GitHub, Supabase, and Vercel accounts for source control, database/auth, and deployment
-
-Total setup: 15-60 minutes depending on your path. Start here: [START-HERE.md](START-HERE.md)
-
----
-
-## 🗓️ Live Cohorts
-
-Sid runs free weekend cohorts every 6–8 weeks. Saturday live session + 1 hr/day self-paced. Demo Day on the final Saturday.
-
-→ Apply for the next cohort: [cohort/README.md](../cohort/README.md)
-
-First 100 builders ever earn permanent **Founding Builder** status.
+| I need... | Go here |
+|---|---|
+| The full start guide | [START-HERE.md](START-HERE.md) |
+| Account links and permissions | [Account Setup Playbook](docs/account-setup.md) |
+| Harness-specific setup | [Harness Guides](docs/harnesses/README.md) |
+| Help after a break | [Recover Your Place](docs/recover.md) |
+| Verification details | [Verification](docs/verification/README.md) |
+| Common questions | [FAQ](docs/FAQ.md) |
+| Example finished artifacts | [DeliverableDash Example](docs/examples/deliverabledash/README.md) |
 
 ---
 
-## ❓ FAQ
-
-Have questions about cost, technical requirements, harness setup, or what happens if you fall behind? [Read the FAQ](FAQ.md).
-
----
-
-## 🔗 Related
-
-- [The Manifesto: The Age of Agentic Engineering](../MANIFESTO.md)
-- [Getting Started](getting-started.md) — harness-neutral setup
-- [Agent-Led Learning Flow](agent-flow.md) — how the course runs inside your coding harness
-- [Best OneMillion Resources](best-onemillion-resources.md) — after-course exploration
-- [How Builder #N is earned](verify/README.md)
+<p align="center">
+  <strong>The million starts with one.</strong><br>
+  <a href="START-HERE.md"><strong>Start Day 0</strong></a>
+</p>
 
 ---
 
-## 💬 Share the Love
-
-Finished the course? Tag [Sid Dixit](https://www.linkedin.com/in/siddharthdixit/) on LinkedIn with **#BuildingWith1M** and tell him what you built. It makes his day — and helps the next builder find the course.
-
----
-
-## 📄 License
-
-MIT. Free to use, fork, remix, and share. If you build on this, credit OneMillion and link back to this repo.
-
----
-
-🚀 **[Start Here](START-HERE.md)**<br>
-✅ Already set up? **[Begin Day 0](day-0-commit/README.md)**
+MIT licensed. Free for learners, forever.

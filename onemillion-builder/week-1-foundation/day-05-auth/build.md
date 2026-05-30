@@ -17,7 +17,7 @@
 
 - [ ] Day 4 verified (live URL working)
 - [ ] You skimmed [learn.md](./learn.md) (especially Part 3 — the auth flow)
-- [ ] Opened [Account Setup Playbook: Day 5](../../account-setup.md#day-5-supabase-auth--database)
+- [ ] Opened [Account Setup Playbook: Day 5](../../docs/account-setup.md#day-5-supabase-auth--database)
 - [ ] Terminal in your project folder
 - [ ] Both terminal windows open (one for `npm run dev`, one for git/claude)
 
@@ -246,7 +246,7 @@ The most common Day 5 failure mode: works locally, breaks in production silently
 
 - [ ] **RLS policy exists.** Same screen → Policies → at least one policy referencing `auth.uid()`.
 
-- [ ] **Account setup QA passed** from [Account Setup Playbook: Day 5](../../account-setup.md#day-5-supabase-auth--database).
+- [ ] **Account setup QA passed** from [Account Setup Playbook: Day 5](../../docs/account-setup.md#day-5-supabase-auth--database).
 
 If any box is unchecked: fix it before continuing. Don't skip.
 

@@ -3,7 +3,7 @@
 <p align="center">
   <a href="../README.md">Course Home</a> &bull;
   <a href="../week-2-make-it-ai/README.md">Previous Week</a> &bull;
-  <a href="../verify/README.md">Verification</a> &bull;
+  <a href="../docs/verification/README.md">Verification</a> &bull;
   <a href="../../builders/README.md">Builder Wall</a>
 </p>
 

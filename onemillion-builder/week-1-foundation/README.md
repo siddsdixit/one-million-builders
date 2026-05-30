@@ -4,7 +4,7 @@
   <a href="../README.md">Course Home</a> &bull;
   <a href="../START-HERE.md">Start Here</a> &bull;
   <a href="../week-2-make-it-ai/README.md">Next Week</a> &bull;
-  <a href="../recover.md">Recover</a>
+  <a href="../docs/recover.md">Recover</a>
 </p>
 
 **Outcome by end of Week 1:** A real web app deployed at your own URL with working signup/login and your core feature live.
@@ -52,7 +52,7 @@ Week 1 is where your harness uses those agents to create your first `.onemillion
 
 ## What You Need Before Starting
 
-- ✅ A coding harness ready to read `AGENTS.md` ([getting-started.md](../getting-started.md))
+- ✅ A coding harness ready to read `AGENTS.md` ([getting-started.md](../docs/getting-started.md))
 - ✅ GitHub, Supabase, Vercel accounts (signed up, no setup yet)
 - ✅ ~10 hours of total time over the next 6 days
 

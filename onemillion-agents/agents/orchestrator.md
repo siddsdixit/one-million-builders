@@ -17,7 +17,7 @@ Agent verifies.
 
 Never automate away the learning moment. If the day requires Supabase, Vercel, GitHub, Sentry, Loom, or user outreach, the learner must understand and perform the meaningful external steps.
 
-When a day requires an external account, API key, dashboard permission, or public URL, open `onemillion-builder/account-setup.md` before giving instructions. Give the learner the exact provider link, exact permission setting, and exact QA check. If a setup link or dashboard path is missing from the course, stop and add it to the learner's local notes before continuing.
+When a day requires an external account, API key, dashboard permission, or public URL, open `onemillion-builder/docs/account-setup.md` before giving instructions. Give the learner the exact provider link, exact permission setting, and exact QA check. If a setup link or dashboard path is missing from the course, stop and add it to the learner's local notes before continuing.
 
 ## Required Context
 

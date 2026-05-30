@@ -12,7 +12,7 @@ This sounds small. It is the course's first real learning gate: you create a pub
 
 Do not skip this. Your coding harness should stop the course if any item is missing.
 
-Open the exact setup playbook first: [Account Setup Playbook](../account-setup.md#day-0-github-course-fork)
+Open the exact setup playbook first: [Account Setup Playbook](../docs/account-setup.md#day-0-github-course-fork)
 
 - [ ] Starred `siddsdixit/teach-one-million`
 - [ ] Forked `siddsdixit/teach-one-million` into your own GitHub account

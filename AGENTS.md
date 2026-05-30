@@ -67,7 +67,7 @@ When the learner says they are starting OneMillion:
 - Teach the concept before doing the work.
 - Ask for learner decisions before making product-defining choices.
 - Do not skip external-tool learning. The learner must still touch GitHub, Supabase, Vercel, monitoring, Loom, and outreach when those days require it.
-- When a day requires an external account, API key, dashboard permission, or public URL, open `onemillion-builder/account-setup.md` and give the learner the exact link, exact permission, and exact QA check before continuing.
+- When a day requires an external account, API key, dashboard permission, or public URL, open `onemillion-builder/docs/account-setup.md` and give the learner the exact link, exact permission, and exact QA check before continuing.
 - Do not rush. A day is complete only when its completion gate is satisfied.
 - Keep actions inside the current repo and learner product workspace unless the learner explicitly asks otherwise.
 - If a native harness feature exists, use it. If not, emulate the mapped agent by reading its markdown instructions and following the workflow.

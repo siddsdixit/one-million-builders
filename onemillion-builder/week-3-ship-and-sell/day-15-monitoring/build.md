@@ -17,7 +17,7 @@
 
 - [ ] Day 14 verified
 - [ ] Live app URL works
-- [ ] Opened [Account Setup Playbook: Day 15](../../account-setup.md#day-15-monitoring)
+- [ ] Opened [Account Setup Playbook: Day 15](../../docs/account-setup.md#day-15-monitoring)
 
 ---
 
@@ -118,7 +118,7 @@ Paste contents of [`ai-instructions-day-15.md`](./ai-instructions-day-15.md).
 - [ ] `<Analytics />` component in app/layout.tsx
 - [ ] UptimeRobot monitoring your live URL
 - [ ] Confirmed email alerts work
-- [ ] Account setup QA passed from [Account Setup Playbook: Day 15](../../account-setup.md#day-15-monitoring)
+- [ ] Account setup QA passed from [Account Setup Playbook: Day 15](../../docs/account-setup.md#day-15-monitoring)
 - [ ] Verification passed ✅
 
 ---

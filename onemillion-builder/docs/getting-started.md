@@ -123,5 +123,5 @@ The agent teaches and guides. You make decisions and do the real external-tool s
 
 ## Next
 
-→ [Day 0 — Public Commitment](day-0-commit/README.md)<br>
-→ [Day 1 — Vision + Mental Map](week-1-foundation/day-01-vision/learn.md)
+→ [Day 0 — Public Commitment](../day-0-commit/README.md)<br>
+→ [Day 1 — Vision + Mental Map](../week-1-foundation/day-01-vision/learn.md)

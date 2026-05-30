@@ -11,7 +11,7 @@
 
 **No code today.** This is your "set up your project folder and write down your idea" day.
 
-If you've already done [getting-started.md](../../getting-started.md), you have all the tools. We're just creating a folder and a file.
+If you've already done [getting-started.md](../../docs/getting-started.md), you have all the tools. We're just creating a folder and a file.
 
 ---
 
@@ -88,7 +88,7 @@ Create `.onemillion/progress.md` and paste this:
 - **Next smallest action:** Finish project.json
 ```
 
-Fill in your name, product name if you have one, and target user. A fuller template lives at [templates/progress.md](../../templates/progress.md).
+Fill in your name, product name if you have one, and target user. A fuller template lives at [templates/progress.md](../../docs/templates/progress.md).
 
 ---
 

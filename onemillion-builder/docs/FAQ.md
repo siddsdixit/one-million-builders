@@ -38,7 +38,7 @@ Three escalation steps:
 2. **Say `day done` to your coding harness.** It reads the completion gate for that day and tells you specifically what's missing.
 3. **Ask for help in the channel you have access to.** If you're in a cohort, ask in the cohort community. If you're self-serve, open a GitHub issue and tag the day number.
 
-If your local machine is the blocker, switch to **Codespaces** ([see the browser setup path](./getting-started-codespaces.md)). Most setup problems are local-environment-related. Codespaces eliminates them.
+If your local machine is the blocker, switch to **Codespaces** ([see the browser setup path](./codespaces.md)). Most setup problems are local-environment-related. Codespaces eliminates them.
 
 ---
 
@@ -173,4 +173,4 @@ Builder #N is the credential. What you do with it is up to you.
 
 ---
 
-→ **More:** [Manifesto](../MANIFESTO.md) · [Getting Started](./getting-started.md) · [Agent-Led Learning Flow](./agent-flow.md) · [Day 1](./week-1-foundation/day-01-vision/learn.md)
+→ **More:** [Manifesto](../../MANIFESTO.md) · [Getting Started](./getting-started.md) · [Agent-Led Learning Flow](./agent-flow.md) · [Day 1](../week-1-foundation/day-01-vision/learn.md)

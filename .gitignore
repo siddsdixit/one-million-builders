@@ -9,6 +9,7 @@ onemillion-builder/loom-scripts/
 onemillion-builder/TODO.md
 onemillion-builder/landing/
 onemillion-builder/CLAUDE.md
+onemillion-builder/diagrams/generate_assets.py
 remotion/node_modules/
 remotion/.cache/
 remotion/out/

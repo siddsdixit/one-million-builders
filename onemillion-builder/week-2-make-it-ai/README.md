@@ -4,7 +4,7 @@
   <a href="../README.md">Course Home</a> &bull;
   <a href="../week-1-foundation/README.md">Previous Week</a> &bull;
   <a href="../week-3-ship-and-sell/README.md">Next Week</a> &bull;
-  <a href="../recover.md">Recover</a>
+  <a href="../docs/recover.md">Recover</a>
 </p>
 
 **Outcome by end of Week 2:** Your Week 1 app now has a real AI feature — streaming, tool-using, personalized to user data. Your product is AI-native, not AI-decorative.
