@@ -65,6 +65,9 @@ Here's the journey: over 18 days, you become a **lean, AI-powered builder** — 
 - 🎥 **Video walkthroughs** — Sid walks through every day on video so you always have a human reference
 - 🗓️ **Weekly live sessions** — group calls to unblock, answer questions, and keep you moving
 - 💬 **Slack community** — a dedicated channel where builders help each other in real time
+- 🧑‍🏫 **Mentors on call** — real people who've been through the build, ready to answer when you're stuck
+
+The only thing you need to bring is the will to keep going. **We will not let you fail.** If you show up, we show up. Every blocker gets resolved. Every question gets answered. No one finishes this course alone.
 
 **What you need to start:**
 
