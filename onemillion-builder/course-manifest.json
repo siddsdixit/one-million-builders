@@ -85,8 +85,9 @@
       "days": [18],
       "loom": "https://www.loom.com/",
       "loom_share": "https://loomhelp.zendesk.com/hc/en-us/articles/360002208157-How-to-share-your-recording",
+      "builder_claim_packet": "onemillion-builder/docs/builder-claim.md",
       "builder_claim": "https://github.com/siddsdixit/teach-one-million/issues/new/choose",
-      "qa": ["incognito can view Loom", "incognito can open live app", "Builder Claim issue submitted"]
+      "qa": ["incognito can view Loom", "incognito can open live app", "Builder Claim form or fallback submitted"]
     }
   },
   "utility_agents": ["ask", "debug", "refactor", "orchestrator", "research", "review", "revise"],

@@ -28,7 +28,7 @@ On Day 18, you run a final pass that:
 1. Confirms all 18 daily verifications have passed
 2. Checks your deployed URL is still live
 3. Confirms anti-cheating signals (deployed URL is unique, commit history shows organic build, demo Loom features the builder)
-4. Generates the submission data for Builder #N review
+4. Generates the [Builder Claim packet](../builder-claim.md) for form/GitHub submission
 
 Your official Builder #N is issued after the Builder Claim is accepted.
 
@@ -76,7 +76,22 @@ The CLI verifies local artifacts, runs schema checks, fetches deployment URLs, a
 
 ## Future Automation
 
-### Web Form
+### Submission Form
+The course is designed for a final Google Form or web form where builders paste their verified claim packet. The form should collect:
+
+- Builder name and email
+- GitHub username
+- OneMillion course fork URL
+- Product name and one-liner
+- Live app URL
+- Public Loom demo URL
+- Product repo URL if public
+- Verification summary
+- Builder Wall consent
+
+See [Builder Claim Submission](../builder-claim.md) for the exact field list.
+
+### Web Verifier
 The future web verifier will let builders:
 - Paste your GitHub repo URL
 - Paste your deployed app URL
@@ -111,8 +126,8 @@ It's not bulletproof. It's good enough. The Builder Wall is a reputation system 
 ## What Happens After All 18 Days Pass
 
 ```
-1. Your harness generates your verified Builder Claim data
-2. You submit a Builder Claim issue
+1. Your harness generates your verified Builder Claim packet
+2. You submit the official form if available, or the GitHub Builder Claim issue fallback
 3. Sid reviews the claim
 4. Accepted claim receives the next official Builder #N
 5. Builder profile / badge assets are added when Builder Wall automation is live

@@ -216,6 +216,7 @@ Pass criteria:
 
 - Loom signup/login: https://www.loom.com/
 - Loom sharing help: https://loomhelp.zendesk.com/hc/en-us/articles/360002208157-How-to-share-your-recording
+- Builder Claim packet: ./builder-claim.md
 - Builder Claim issue: https://github.com/siddsdixit/teach-one-million/issues/new/choose
 - Builder Wall: https://github.com/siddsdixit/teach-one-million/tree/main/builders
 
@@ -225,7 +226,7 @@ Pass criteria:
 2. Set sharing to public or "Anyone with the link can view."
 3. Test the Loom link in an incognito window.
 4. Save the live app URL, Loom URL, and proof summary in `.onemillion/demo.md`.
-5. Submit the Builder Claim issue.
+5. Submit the official Builder Claim form if your cohort has one, or use the GitHub Builder Claim issue fallback.
 
 ### Permissions
 

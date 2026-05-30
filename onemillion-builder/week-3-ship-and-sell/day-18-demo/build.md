@@ -136,18 +136,21 @@ If pass: Claude will generate the verified submission data you need for review. 
 
 ## Step 7: Submit Your Builder Application
 
-**Current path — GitHub Builder Claim issue:**
+Open the [Builder Claim Submission](../../docs/builder-claim.md) page. It lists the exact fields for the final form and the GitHub fallback.
+
+**Preferred path — Builder Claim Form:**
+
+If your cohort, live session, or Sid gave you a Google Form link, submit the claim packet there first. The form should ask for your live URL, Loom URL, GitHub/course fork, verification summary, and Builder Wall consent.
+
+**Current public fallback — GitHub Builder Claim issue:**
 
 1. Go to [github.com/siddsdixit/teach-one-million/issues/new/choose](https://github.com/siddsdixit/teach-one-million/issues/new/choose)
 2. Choose **Builder Claim**
-3. Paste the verified submission data from Day 18 verification
+3. Paste the verified claim packet from [Builder Claim Submission](../../docs/builder-claim.md)
 4. Include your live URL, Loom URL, repo URL if public, and short build summary
 5. Submit the issue
 
 Sid reviews claims manually until Builder Wall automation is live. Accepted claim = official Builder #N.
-
-**Future path — web claim form:**
-A web claim form is planned. The GitHub Builder Claim issue is the current path.
 
 ---
 
@@ -178,7 +181,7 @@ Tag @SidDixit. The Builder Wall thanks you.
 - [ ] 5-min Demo Loom recorded + public
 - [ ] `.onemillion/demo.md` saved with URLs
 - [ ] All 18 days verified
-- [ ] Builder Claim issue submitted for review
+- [ ] Builder Claim form or GitHub fallback submitted for review
 - [ ] Account setup QA passed from [Account Setup Playbook: Day 18](../../docs/account-setup.md#day-18-loom--builder-claim)
 - [ ] You shared on LinkedIn (or you'll share within 24 hours)
 - [ ] You took 10 minutes to actually feel what you accomplished

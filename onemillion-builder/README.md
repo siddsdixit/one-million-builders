@@ -240,6 +240,8 @@ Complete all 18 days, pass final verification, and submit your Builder Claim.
 | **Public proof** | Live URL, demo Loom, daily verification reports |
 | **Reusable skill** | A repeatable agentic build process for your next product |
 
+At the end, you submit a [Builder Claim packet](docs/builder-claim.md). Cohorts may use a Google Form for collection; self-paced learners can use the public GitHub Builder Claim fallback.
+
 See [How Builder #N is earned](docs/verification/README.md).
 
 First 100 accepted builders receive **Founding Builder** status. Live cohorts run periodically; apply when a cohort is open through [cohort/README.md](../cohort/README.md).
@@ -259,6 +261,7 @@ First 100 accepted builders receive **Founding Builder** status. Live cohorts ru
 | Harness-specific setup | [Harness Guides](docs/harnesses/README.md) |
 | Help after a break | [Recover Your Place](docs/recover.md) |
 | Verification details | [Verification](docs/verification/README.md) |
+| Final submission packet | [Builder Claim Submission](docs/builder-claim.md) |
 | Common questions | [FAQ](docs/FAQ.md) |
 | Example finished artifacts | [DeliverableDash Example](docs/examples/deliverabledash/README.md) |
 
