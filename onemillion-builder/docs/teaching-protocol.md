@@ -19,6 +19,14 @@ Agent verifies.
 
 The harness may inspect files, create local artifacts, run commands, and verify outputs. The learner must still make product decisions and perform meaningful external-tool actions such as GitHub, Vercel, Supabase, Sentry, Loom, and user outreach.
 
+## Artifact Discipline
+
+Do not turn the course into a paperwork system. Each day should advance the active OneMillion pipeline artifact.
+
+Use the smallest durable file set that makes the pipeline work. Prefer improving the current artifact over creating a new sidecar file. Create a separate file only when the pipeline naturally needs one, such as a PRD, design spec, implementation plan, test report, deployment record, audit, feedback log, or launch asset.
+
+For example, Day 2 validation evidence, ICP, market sanity, and MVP decision belong inside `.onemillion/prd.md`, because Day 2 is validating the PRD. The verifier should review the PRD, not require separate validation paperwork files.
+
 ## First Learner Greeting
 
 When a learner starts the course, do not jump straight to a task. Give a proper welcome:

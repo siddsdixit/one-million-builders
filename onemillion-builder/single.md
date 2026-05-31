@@ -97,6 +97,14 @@ Short form:
 idea -> research -> PRD -> validate spec -> design -> plan -> build -> review -> test -> guard -> ship -> sell
 ```
 
+Artifact rule:
+
+```text
+Do not create paperwork just to prove learning.
+Each day should advance the active OneMillion pipeline artifact.
+Create a separate file only when the pipeline naturally needs one, such as a PRD, design spec, implementation plan, test report, deployment record, or launch asset.
+```
+
 Tools arrive just in time. External tools enter only when the pipeline needs them:
 
 | Stage | Tool introduced | Why then |
@@ -276,41 +284,54 @@ The harness should not compress days unless the learner explicitly asks and the 
 - learner reviewed and saved the PRD
 - progress tracker exists
 
-## Day 2: Problem + Research
+## Day 2: Validate The PRD
 
-**Purpose:** test whether the idea is attached to a real pain and begin competitive research.
+**Purpose:** take the Day 1 PRD, read it as the product owner, validate it against real users/customers and market reality, then decide the first MVP.
 
-**Why it matters:** compliments are not evidence, and competitors are not a reason to quit. Day 2 teaches the learner to ask about past behavior, notice what users already do, and learn from alternatives.
+**Why it matters:** a PRD is a hypothesis until the learner and real users pressure-test it. Day 2 prevents the learner from blindly following AI-written product text, building for a vague audience, or trying to build the whole company instead of the first useful loop.
 
 **What the learner learns:**
 
-- Mom Test-style questions
-- how to separate pain from politeness
-- how to capture real notes
-- what competitive research means for a beginner: alternatives, workarounds, pricing, positioning, and missing trust
+- how to review and edit the Day 1 PRD until it feels like their document
+- what "validating a PRD" means
+- Mom Test-style user/customer questions
+- how to separate pain evidence from politeness
+- what ICP means and why it must be specific
+- what competitive and workaround research means for a beginner
+- how to sanity-check TAM/SAM/SOM without pretending guesses are facts
+- the difference between full product vision and MVP
+- how to decide the first build loop
 
 **What the learner does:**
 
+- opens `.onemillion/prd.md`
+- edits anything they disagree with
 - identifies people to talk to
-- asks about their real past behavior
-- captures notes in `.onemillion/notes.md`
-- documents 3+ conversations or honest outreach attempts
-- captures 3-5 competitors, substitutes, or manual workarounds in `.onemillion/research.md`
+- asks about their real past behavior and reaction to the proposed PRD workflow
+- adds Day 2 sections directly inside `.onemillion/prd.md`
+- records validation evidence, competitors/workarounds, ICP, TAM/SAM/SOM sanity, full product versus MVP, and the Keep/Refine/Pivot verdict inside the PRD
 
 **What the harness does:**
 
+- teaches PRD validation before assigning research tasks
+- explains that the learner owns the PRD, not the AI
 - helps write non-leading questions
-- helps structure notes
+- helps structure notes and outreach
 - checks that evidence is not just compliments
-- acts as research support without inventing evidence
+- helps compare alternatives and workarounds
+- explains ICP, TAM/SAM/SOM, MVP, and full product vision in simple language
+- helps update the PRD from evidence without inventing evidence
+- does not create sidecar paperwork files unless the pipeline actually needs them
 
 **Done means:**
 
-- `.onemillion/notes.md` exists
-- `.onemillion/research.md` exists
-- notes include real names/roles or clear anonymized identifiers
-- there are 3+ conversations or documented outreach attempts
-- the learner knows whether to keep, narrow, or pivot the idea
+- `.onemillion/prd.md` includes a Day 2 Learner Review
+- `.onemillion/prd.md` includes validation evidence with real names/roles, clear anonymized identifiers, or explicit serious outreach/research attempts
+- `.onemillion/prd.md` includes competitor/workaround insight
+- `.onemillion/prd.md` includes ICP and TAM/SAM/SOM sanity
+- the learner knows whether to keep, refine, or pivot the PRD
+- the learner knows the full product vision and the first MVP
+- `.onemillion/prd.md` includes the Day 2 verdict and MVP decision
 
 ## Day 3: Write Your PRD
 

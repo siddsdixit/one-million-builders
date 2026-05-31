@@ -138,17 +138,17 @@
     },
     {
       "day": 2,
-      "title": "Problem + Research",
+      "title": "Validate The PRD",
       "primary_agent": "idea",
       "supporting_agents": ["research"],
       "lesson": "onemillion-builder/week-1-foundation/day-02-problem/learn.md",
       "build": "onemillion-builder/week-1-foundation/day-02-problem/build.md",
       "resources": "onemillion-builder/week-1-foundation/day-02-problem/resources.md",
       "verifier": "onemillion-builder/week-1-foundation/day-02-problem/ai-instructions-day-02.md",
-      "learning_focus": ["ask Mom Test questions", "capture real user notes", "separate pain from compliments", "compare alternatives and workarounds"],
+      "learning_focus": ["review and edit the Day 1 PRD", "validate pain with real users/customers", "compare competitors and workarounds", "define ICP", "sanity-check TAM/SAM/SOM", "separate full product vision from MVP", "update the PRD from evidence"],
       "external_tools": ["phone", "email", "calendar", "notes"],
-      "human_decisions": ["who to interview", "what evidence is strong enough", "whether to pivot"],
-      "completion_gate": [".onemillion/notes.md", ".onemillion/research.md", "3+ conversations or documented outreach attempts", "3+ alternatives/substitutes/workarounds"]
+      "human_decisions": ["who to interview", "what evidence is strong enough", "whether to keep, refine, or pivot", "target ICP", "MVP scope", "PRD edits"],
+      "completion_gate": [".onemillion/prd.md includes Day 2 Learner Review", ".onemillion/prd.md includes validation evidence", ".onemillion/prd.md includes competitors/workarounds", ".onemillion/prd.md includes ICP and TAM/SAM/SOM sanity", ".onemillion/prd.md includes full product versus MVP", ".onemillion/prd.md includes Keep/Refine/Pivot verdict"]
     },
     {
       "day": 3,

@@ -240,4 +240,4 @@ Tomorrow: research and evidence.
 
 ---
 
-→ **Next:** [Day 2 — Problem + Research](../day-02-problem/learn.md)
+→ **Next:** [Day 2 — Validate The PRD](../day-02-problem/learn.md)

@@ -196,7 +196,7 @@ Self-paced and cohort learners use the same curriculum, the same daily gates, an
 |---:|---|---|
 | [0](day-0-commit/README.md) | Orientation + commitment | Mission, pipeline, reflection, fork, clone, and public/private commitment |
 | [1](week-1-foundation/day-01-vision/learn.md) | Idea agent + PRD draft | Learn good ideas, define user pain, and review first PRD |
-| [2](week-1-foundation/day-02-problem/learn.md) | Problem + research | Validate pain and compare alternatives before writing code |
+| [2](week-1-foundation/day-02-problem/learn.md) | Validate the PRD | User evidence, ICP, MVP, and PRD validation update |
 | [3](week-1-foundation/day-03-prd/learn.md) | PRD + user stories | Lock MVP scope, use cases, KPIs, and done criteria |
 | [4](week-1-foundation/day-04-stack/learn.md) | Stack + first deploy | Next.js app live on Vercel |
 | [5](week-1-foundation/day-05-auth/learn.md) | Auth + database | Supabase signup/login + first table |

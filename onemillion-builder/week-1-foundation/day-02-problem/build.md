@@ -9,195 +9,257 @@
   <a href="./loom.md">Video</a>
 </p>
 
-**Still no code.** Today's "build" is having 3 conversations, studying alternatives, and writing down what you heard.
+**Still no code.** Today you improve one artifact:
 
-If you're nervous about reaching out to people, that's normal. Push through it. By tomorrow you'll be glad you did.
+```text
+.onemillion/prd.md
+```
 
 ---
 
 ## Before You Start
 
-- [ ] Day 1 verified ✅
-- [ ] You've read [learn.md](./learn.md) (especially Part 2 — the good vs bad questions)
-- [ ] You've identified 3+ people to talk to (read on for help)
-- [ ] You understand that workarounds and competitors are evidence, not discouragement
+- [ ] Day 1 verified.
+- [ ] `.onemillion/prd.md` exists.
+- [ ] You have at least one potential user, customer, community, or public thread to learn from.
 
 ---
 
-## Step 1: Identify 3 People To Talk To
+## Step 1: Ask The Harness To Teach PRD Validation
 
-You need people who have the problem. Not people who like you.
+Paste this:
 
-### Where to find them
+```text
+I am on OneMillion Day 2.
 
-**For consumer products** (productivity tools, fitness apps, etc.):
-- Friends of friends who match your target — "Hey, do you know anyone who's freelance? I'm researching a tool for them."
-- Reddit communities related to the problem — search the subreddit, find recent posts complaining about your problem, DM the poster
-- Twitter/X search — search the phrase "I wish there was a tool for..." and DM people venting
+Teach me how to validate my Day 1 PRD.
 
-**For B2B products** (CRM, internal tools, etc.):
-- LinkedIn DMs — search for the job title, DM 10 people, expect ~2 responses
-- Friends who work at companies with the problem
-- Indie Hackers community
+Explain:
+- why the PRD is a hypothesis
+- how to review and edit the PRD as the product owner
+- how to validate pain with real users
+- how to ask non-leading questions
+- how to compare competitors and manual workarounds
+- what ICP means
+- what TAM/SAM/SOM means in simple terms
+- what MVP means
+- how MVP differs from the full product
+- when to Keep, Refine, or Pivot the PRD
 
-**For products solving your own problem:**
-- You already know people with this problem. Reach out to them.
-
-### How to ask for the conversation
-
-A good DM/email:
-
-```
-Hey [name],
-
-I'm researching a problem I think you've experienced — [the pain in one sentence].
-
-Not selling anything. I'm not even sure I'm going to build it. Just trying to understand the pain better.
-
-Got 15 minutes this week for a call? Even a 10-minute voice message would be helpful.
+Then guide me one step at a time.
+Use .onemillion/prd.md as the single source of truth for today's work.
 ```
 
-That's it. Don't pitch your idea. Don't promise to follow up with the product. Just ask for the conversation.
-
-> 💡 **Acceptable response rate is 1 in 3.** If you message 10 people, expect 3 conversations. That's normal. Don't get discouraged.
-
 ---
 
-## Step 2: Have The Conversations
+## Step 2: Open And Edit The PRD
 
-### Format
-- 15-30 minutes, voice or video preferred (text is ok if necessary)
-- They talk 80% of the time. You ask questions and listen.
-- Record audio if you can (with their permission) — even just for your own notes
+Open `.onemillion/prd.md`.
 
-### The structure
-1. **First 2 minutes:** Thank them, restate why you're talking ("trying to understand the problem, not pitching anything")
-2. **Next 20 minutes:** Mom Test questions. Walk through their experience. Ask "what happened next?" relentlessly.
-3. **Last 5 minutes:** Ask if there's anyone else they think you should talk to (referrals = gold)
+Read it fully. Edit anything you disagree with.
 
-### What you're listening for
-- **Specific moments** — not "scheduling is hard" but "last Sunday I spent 90 minutes on..."
-- **Workarounds** — what they currently do instead. This is your competition.
-- **Cost** — time, money, emotional toll. Quantify the pain.
-- **Volunteer pricing** — if they mention what they'd pay, write it down. Big signal.
-
----
-
-## Step 3: Write Down What You Heard
-
-In your editor, create `.onemillion/notes.md`. For each conversation, add an entry:
+Then add this section near the top:
 
 ```markdown
-# Conversation Notes
+## Day 2 Learner Review
 
-## Conversation 1: Sarah, Freelance UX Designer
-**Date:** 2026-05-19
-**How:** 25-min Zoom call
+Reviewed on: 2026-05-31
+Status: Confirmed / Needs refinement / Pivot needed
 
-### The pain story (specific):
-Last Sunday she spent an hour and a half cross-referencing Notion, email, and Slack
-trying to figure out which of her 4 clients she still owed mockups to. She wasn't
-sure she'd remembered everything.
+What I changed:
+- [Change]
+- [Change]
 
-### What she's tried to solve it:
-- Notion templates (works for tracking, but doesn't notify her)
-- Calendar reminders (gets ignored under the noise)
-- A whiteboard in her office (only works when she's at her desk)
-
-### Cost of not solving:
-- 90 min every Sunday on review
-- Lost a client last year ($8K project) by forgetting to send files
-
-### Direct quotes:
-- "I'd pay $50/month to never feel that Sunday panic again."
-- "I just want one place to see everything I owe."
-- "The worst part is I KNOW I'm forgetting something."
-
-### Vibes:
-Real pain. She's been thinking about it for months. Already has a workaround budget
-in her head ($50/mo). Would buy if I built it.
-
----
-
-## Conversation 2: ...
-
-## Conversation 3: ...
+What I still need to validate:
+- [Question]
+- [Question]
 ```
 
-Don't worry about perfect formatting. Capture what was said.
+Do not continue until the PRD feels like your current best understanding of the product.
 
 ---
 
-## Step 4: Capture Competitors And Workarounds
+## Step 3: Talk To Users Or Study Real Workflows
 
-Competitive research does not mean "find a startup exactly like mine and quit." It means learning what users already do when your product does not exist.
+Try to talk to 3 people who match or are close to the target user.
 
-Create `.onemillion/research.md`:
+If you cannot get 3 live conversations today, document serious outreach attempts and do at least one of:
+
+- one live conversation
+- one detailed async response
+- one workflow observation
+- one public forum/thread analysis from people with the same pain
+
+Add this section to `.onemillion/prd.md`:
 
 ```markdown
-# Competitive Research
+## Day 2 Validation Evidence
 
-## Alternatives
+### Evidence 1: [Name or anonymized profile], [role/context]
+Date:
+How: Phone / Zoom / Slack / email / forum / observation
 
-| Alternative | What users use it for | What it does well | Gap or frustration |
-|---|---|---|---|
-| [Name/link] | [job] | [strength] | [gap] |
-| [Name/link] | [job] | [strength] | [gap] |
-| [Name/link] | [job] | [strength] | [gap] |
+Current workflow:
 
-## Manual Workarounds
+Pain evidence:
 
-- [Spreadsheet, Notion doc, calendar reminders, Slack messages, VA, email, paper checklist, etc.]
+Reaction to PRD workflow:
 
-## What I Learned
+Missing use cases:
 
-- [Insight 1]
-- [Insight 2]
-- [Insight 3]
+Data reality:
+
+Direct quote or specific observation:
+
+PRD implication: Keep / Refine / Pivot because...
+
+### Evidence 2
+
+### Evidence 3
 ```
 
-Capture at least 3 alternatives, substitutes, or manual workarounds. Links are helpful when available, but not required for purely manual workarounds.
+Use anonymized names if needed, but be specific enough that the evidence is believable.
 
 ---
 
-## Step 5: Reflect On Your Idea
+## Step 4: Add Competitor And Workaround Notes
 
-After 3 conversations, ask yourself:
+Add this section to `.onemillion/prd.md`:
 
-1. **Do these people actually have the problem I thought they had?**
-   - If yes: continue with Day 1 idea
-   - If no: pivot (it happens, that's the data working)
+```markdown
+## Day 2 Competitors And Workarounds
 
-2. **Is the problem severe enough that they'd pay or take time to use a solution?**
-   - If yes: continue
-   - If no: pivot to a more painful problem
+| Alternative | What it solves | What it does well | Gap | PRD implication |
+|---|---|---|---|---|
+| [Tool/workaround] | [job] | [strength] | [gap] | [what to change/keep] |
+| [Tool/workaround] | [job] | [strength] | [gap] | [what to change/keep] |
+| [Tool/workaround] | [job] | [strength] | [gap] | [what to change/keep] |
+```
 
-3. **What did I hear that I didn't expect?**
-   - This is often the most valuable insight. Surprise = learning.
-
-If you pivot, update `.onemillion/project.json` with the new `idea` field.
+Include manual workarounds. A spreadsheet can be a competitor.
 
 ---
 
-## Step 6: Run Day 2 Verification
+## Step 5: Add ICP And Market Sanity
 
-```bash
-claude
+Add this section to `.onemillion/prd.md`:
+
+```markdown
+## Day 2 ICP And Market Sanity
+
+### Ideal Customer Profile
+[Specific first customer profile.]
+
+### Painful Workflow
+[What workflow hurts?]
+
+### Current Workaround
+[What do they do today?]
+
+### Data They Have
+[What files, tools, formats, or systems exist?]
+
+### Why They Care Now
+[Why this matters enough to act.]
+
+### Why They Are Reachable
+[Where/how the builder can find them.]
+
+### TAM / SAM / SOM
+- TAM: [broad category, marked as assumption if not verified]
+- SAM: [realistic segment]
+- SOM: [first reachable group]
 ```
 
-Paste the contents of [`ai-instructions-day-02.md`](./ai-instructions-day-02.md).
+---
 
-Claude will read `notes.md` and `research.md`, count conversations, check structure, and report pass / needs revision.
+## Step 6: Add Full Product Versus MVP
+
+Add this section to `.onemillion/prd.md`:
+
+```markdown
+## Day 2 MVP Decision
+
+### Full Product Vision
+[If this became a mature product, what would it eventually include?]
+
+### Minimum Viable Product
+[The smallest version that proves the core user value.]
+
+### First Build Loop
+1. [User does this]
+2. [Product does this]
+3. [User gets this value]
+
+### Must Have For MVP
+- [Feature/workflow/data requirement]
+- [Feature/workflow/data requirement]
+- [Feature/workflow/data requirement]
+
+### Not In MVP
+- [Full product feature that waits]
+- [Full product feature that waits]
+- [Full product feature that waits]
+
+### MVP Success Criteria
+- [What must be true for the first build to count as useful?]
+
+### KPI / Key Goal For MVP
+- [Measurable signal]
+```
+
+Keep it small. The MVP is the first useful build, not the whole company.
+
+---
+
+## Step 7: Add The Day 2 Verdict
+
+Add this final section to `.onemillion/prd.md`:
+
+```markdown
+## Day 2 Validation Update
+
+Verdict: Keep / Refine / Pivot
+
+What the evidence confirmed:
+- [Confirmed point]
+
+What the evidence challenged:
+- [Challenged point]
+
+Missing use cases:
+- [Use case or "None found yet"]
+
+PRD changes made:
+- [Change]
+
+MVP decision:
+- [What the first build includes]
+- [What moved out of MVP]
+
+Final decision:
+[One paragraph explaining why the PRD is ready or what changed.]
+```
+
+---
+
+## Step 8: Run Day 2 Verification
+
+From your project folder, paste the contents of [`ai-instructions-day-02.md`](./ai-instructions-day-02.md) into your coding harness.
+
+The verifier should read `.onemillion/prd.md` only and decide whether the PRD is good enough to continue.
 
 ---
 
 ## What Should Be True After Day 2
 
-- [ ] `.onemillion/notes.md` exists with 3+ structured conversation records
-- [ ] `.onemillion/research.md` exists with 3+ alternatives, substitutes, or workarounds
-- [ ] Each conversation has: name, date, pain story, workarounds, direct quotes
-- [ ] You either confirmed Day 1 idea or pivoted (and updated project.json)
-- [ ] Verification passed ✅
+- [ ] `.onemillion/prd.md` includes a Day 2 learner review.
+- [ ] `.onemillion/prd.md` includes validation evidence.
+- [ ] `.onemillion/prd.md` includes competitors/workarounds.
+- [ ] `.onemillion/prd.md` includes ICP and TAM/SAM/SOM sanity.
+- [ ] `.onemillion/prd.md` includes full product versus MVP.
+- [ ] `.onemillion/prd.md` includes a Day 2 verdict.
+- [ ] Verification passed.
 
 ---
 
@@ -210,17 +272,9 @@ Before you close today, open `.onemillion/progress.md` and update:
 - **Current blocker:** None, or the exact blocker to resume from
 - **Next smallest action:** Open Day 3.
 
-If verification did not pass yet, keep **Last verified day** at the previous passed day and write the blocker clearly.
-
 ## If You Are Stuck
 
-Open your coding harness from your project folder:
-
-```bash
-claude
-```
-
-Paste this:
+Open your coding harness from your project folder and paste this:
 
 ```text
 I am on OneMillion Day 02.
@@ -232,22 +286,11 @@ Here is what happened:
 [paste the error, terminal output, or describe what I see]
 
 Diagnose the likely cause and give me the next smallest action.
-Do not rewrite unrelated code.
+Do not create extra Day 2 paperwork files.
+Keep .onemillion/prd.md as the single source of truth for Day 2.
 Ask for one missing detail at a time if needed.
 ```
 
 ---
 
-## Troubleshooting
-
-| Problem | Fix |
-|---------|-----|
-| Nobody responded to my DMs | Cast a wider net (DM 20 not 10). Or try Reddit/Discord communities — strangers respond more than you think. |
-| The people I talked to didn't really have the problem | Pick different people. Or your target user is wrong — reflect, then pivot. |
-| All three conversations felt fake (they said nice things, no specifics) | You were probably pitching, not listening. Re-read Part 2 of learn.md. Try again with a different person. |
-| Conversations took forever | 15 min is fine. Don't apologize for ending. People appreciate brevity. |
-| I'm scared to reach out to strangers | Normal. Do it anyway. The fear gets smaller after the first one. Promise. |
-
----
-
-→ **Done with Day 2?** Move to [Day 3 — Write Your PRD](../day-03-prd/learn.md).
+→ **Done with Day 2?** Move to [Day 3 — Lock The Spec](../day-03-prd/learn.md).

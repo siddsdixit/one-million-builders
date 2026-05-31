@@ -111,7 +111,7 @@ PASS or NEEDS REVISION
 If PASS:
 
 - Save the report to `.onemillion/verification-day-01.md`.
-- Tell the builder: "Day 1 verified. You have an idea brief and PRD draft. Move to Day 2: Problem + Research."
+- Tell the builder: "Day 1 verified. You have an idea brief and PRD draft. Move to Day 2: Validate The PRD."
 
 If NEEDS REVISION:
 

@@ -161,9 +161,9 @@ You're going to use your coding harness to help draft your PRD. Two ways to do i
 You write a rough PRD, Claude critiques it.
 
 ```
-I'm starting Day 3 of the OneMillion course. Here's my conversation notes
-[paste notes.md]. Here's my idea [paste from project.json]. Help me draft
-a PRD with 8 sections: Problem, Target User, Research Evidence,
+I'm starting Day 3 of the OneMillion course. Here is my validated PRD from
+Day 2: [paste .onemillion/prd.md]. Help me tighten it into a locked PRD with
+8 sections: Problem, Target User, Research Evidence,
 3 Core Jobs/User Stories, Use Cases, KPIs, Out of Scope, Definition of Done.
 Don't add fluff. Push back if any section is vague.
 ```

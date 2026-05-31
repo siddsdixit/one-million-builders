@@ -52,18 +52,13 @@ sections:
 7. Out of Scope
 8. Definition of Done
 
-Here are my conversation notes:
-[paste contents of .onemillion/notes.md]
+Here is my validated PRD from Day 2:
+[paste contents of .onemillion/prd.md]
 
-Here is my competitive research:
-[paste contents of .onemillion/research.md]
-
-Here's my idea from Day 1:
-[paste contents of .onemillion/project.json]
-
-Draft my PRD. Keep the MVP to exactly 3 core jobs. Push back if any section
-feels vague, generic, oversized, or unsupported by the research. The goal is
-to lock scope today so I can start building tomorrow.
+Tighten this into a locked Day 3 PRD. Keep the MVP to exactly 3 core jobs.
+Push back if any section feels vague, generic, oversized, or unsupported by
+the validation evidence. The goal is to lock scope today so I can start
+building tomorrow.
 ```
 
 Claude drafts. Review it. If a section feels off, ask Claude to revise that specific section. Iterate 2-3 times until it sings.
@@ -76,14 +71,11 @@ In Claude, paste this:
 I'm starting Day 3 of OneMillion. Help me write my PRD by asking me one
 question at a time, section by section.
 
-Here are my Day 2 conversation notes:
-[paste contents of .onemillion/notes.md]
-
-Here is my competitive research:
-[paste contents of .onemillion/research.md]
+Here is my validated PRD from Day 2:
+[paste contents of .onemillion/prd.md]
 
 Start with Section 1 (Problem): ask me what specific pain my user feels, with
-evidence from my conversations.
+evidence from my Day 2 validation.
 ```
 
 Claude asks a question. You answer. Claude asks the next. By the end, your PRD writes itself.
@@ -104,7 +96,7 @@ This looks good. Save the final PRD to .onemillion/prd.md
 ls .onemillion/
 ```
 
-You should see: `project.json`, `notes.md`, `prd.md`, and possibly verification files from earlier days.
+You should see: `project.json`, `prd.md`, and possibly verification files from earlier days.
 
 ---
 

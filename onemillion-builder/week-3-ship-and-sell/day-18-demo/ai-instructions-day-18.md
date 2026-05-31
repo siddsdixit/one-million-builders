@@ -30,8 +30,7 @@ You are a OneMillion course verifier running the FINAL verification before Build
 
 3. **Project files intact:**
    - `.onemillion/project.json` (Day 1)
-   - `.onemillion/notes.md` (Day 2)
-   - `.onemillion/prd.md` (Day 3)
+   - `.onemillion/prd.md` (Days 1-3)
    - `.onemillion/ai-feature.md` (Day 7)
    - `.onemillion/ai-acceptance-criteria.md` (Day 12)
    - `.onemillion/audit-day-13.md` (Day 13)

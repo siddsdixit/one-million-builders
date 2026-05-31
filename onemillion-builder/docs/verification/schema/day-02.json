@@ -1,64 +1,75 @@
 {
   "day": 2,
-  "title": "Problem + Research",
+  "title": "Validate The PRD",
+  "artifact_policy": "Review the pipeline artifact. Do not require sidecar paperwork files.",
+  "primary_artifact": ".onemillion/prd.md",
   "structural_checks": [
     {
-      "id": "notes_md_exists",
+      "id": "prd_exists",
       "type": "file_exists",
-      "path": ".onemillion/notes.md"
+      "path": ".onemillion/prd.md"
     },
     {
-      "id": "min_three_conversations",
-      "type": "markdown_section_count",
-      "path": ".onemillion/notes.md",
-      "section_pattern": "## Conversation",
-      "min_count": 3
+      "id": "learner_review",
+      "type": "file_contains",
+      "path": ".onemillion/prd.md",
+      "required_strings": ["Day 2 Learner Review"]
     },
     {
-      "id": "each_conversation_has_quote",
-      "type": "markdown_section_field",
-      "path": ".onemillion/notes.md",
-      "section_pattern": "## Conversation",
-      "required_subsection": "Direct quotes",
-      "applies_to": "each"
+      "id": "validation_evidence",
+      "type": "file_contains",
+      "path": ".onemillion/prd.md",
+      "required_strings": ["Day 2 Validation Evidence"]
     },
     {
-      "id": "each_conversation_has_date",
-      "type": "markdown_section_field",
-      "path": ".onemillion/notes.md",
-      "section_pattern": "## Conversation",
-      "required_text": "Date:",
-      "applies_to": "each"
+      "id": "competitors_workarounds",
+      "type": "file_contains",
+      "path": ".onemillion/prd.md",
+      "any_of_strings": ["Competitors", "Workarounds", "Alternatives"]
     },
     {
-      "id": "research_md_exists",
-      "type": "file_exists",
-      "path": ".onemillion/research.md"
+      "id": "icp_market",
+      "type": "file_contains",
+      "path": ".onemillion/prd.md",
+      "required_strings": ["ICP", "TAM", "SAM", "SOM"]
     },
     {
-      "id": "research_has_three_items",
-      "type": "regex_count",
-      "path": ".onemillion/research.md",
-      "pattern": "(?:^|\\n)(?:- |\\|)",
-      "min_count": 3
+      "id": "mvp_decision",
+      "type": "file_contains",
+      "path": ".onemillion/prd.md",
+      "required_strings": ["MVP", "Full Product", "First Build"]
+    },
+    {
+      "id": "day_2_verdict",
+      "type": "file_contains",
+      "path": ".onemillion/prd.md",
+      "any_of_strings": ["Keep", "Refine", "Pivot"]
     }
   ],
   "quality_checks": [
     {
-      "id": "pain_specificity",
-      "criteria": "Pain stories describe specific moments (when, where, what happened), not generic complaints"
+      "id": "pain_validated",
+      "criteria": "PRD shows the learner evaluated whether the pain is real using user/customer evidence, workflow observation, public-thread analysis, or serious outreach attempts"
     },
     {
-      "id": "quotes_authentic",
-      "criteria": "Direct quotes sound like real human speech — specific anchors, frustration words, prices, etc."
+      "id": "competitor_insight",
+      "criteria": "PRD explains what alternatives do well, what gaps remain, and what the product should learn from them"
     },
     {
-      "id": "target_users",
-      "criteria": "Conversations are with target users, not the builder's friends/family (unless explicitly noted)"
+      "id": "icp_specific",
+      "criteria": "ICP is specific enough to find, contact, and interview"
     },
     {
-      "id": "research_insight",
-      "criteria": "Research identifies alternatives, substitutes, or manual workarounds and explains at least one gap"
+      "id": "market_sizing_honest",
+      "criteria": "TAM/SAM/SOM notes distinguish assumptions from facts and identify a reachable SOM"
+    },
+    {
+      "id": "mvp_scoped",
+      "criteria": "PRD clearly separates the full product vision from the first MVP and keeps the MVP focused on the core user value"
+    },
+    {
+      "id": "prd_changes_evidence_based",
+      "criteria": "PRD changes or Keep verdict are tied to validation evidence"
     }
   ]
 }

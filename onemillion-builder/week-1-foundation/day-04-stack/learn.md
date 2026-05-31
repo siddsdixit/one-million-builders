@@ -134,7 +134,6 @@ After Day 4, your folder structure should look like this:
 my-onemillion-build/
 ├── .onemillion/
 │   ├── project.json
-│   ├── notes.md
 │   ├── prd.md
 │   ├── verification-day-01.md
 │   ├── verification-day-02.md

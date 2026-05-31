@@ -308,4 +308,4 @@ Ask for one missing detail at a time if needed.
 
 ---
 
-→ **Done with Day 1?** Move to [Day 2 — Problem + Research](../day-02-problem/learn.md).
+→ **Done with Day 1?** Move to [Day 2 — Validate The PRD](../day-02-problem/learn.md).

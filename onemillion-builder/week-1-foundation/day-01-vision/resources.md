@@ -22,4 +22,4 @@
 - Builder Wall — see what others have built: [builders](../../../builders/README.md)
 
 ## What's next
-- [Day 2 — Problem + Research](../day-02-problem/learn.md)
+- [Day 2 — Validate The PRD](../day-02-problem/learn.md)
