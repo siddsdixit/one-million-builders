@@ -117,3 +117,22 @@ python3 onemillion-builder/tools/simulate_personas.py --report onemillion-builde
 - Week 2 may still feel heavy for true beginners. The course should eventually provide a minimum shippable AI path and mark streaming/RAG/tool depth as product-dependent.
 - A real end-to-end learner simulation should eventually create a throwaway Next.js app, push to a test GitHub repo, deploy to Vercel, and verify Supabase/API-key setup with disposable credentials.
 
+## Follow-Up: Harness Teaching Experience
+
+A real dry run showed a major experience gap: after preflight, the harness could still respond like a task runner instead of a teacher. The bad pattern was:
+
+```text
+Preflight passed. You are at Day 0. Make a commitment, then say day done.
+```
+
+The course now treats this as a regression. The required behavior is:
+
+- greet the learner properly
+- explain what OneMillion is
+- explain the AI/human contract
+- introduce the current day
+- provide copy-ready actions
+- define what counts as done
+- tell the learner when to say `day done`
+
+The canonical rule lives in `onemillion-builder/docs/teaching-protocol.md`, and `simulate_personas.py` now checks for the required teaching-surface terms.

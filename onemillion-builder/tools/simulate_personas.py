@@ -100,6 +100,10 @@ def scan_persona_friction(persona: dict) -> list[str]:
     frictions: list[str] = []
     readme = (ROOT / "README.md").read_text()
     start = (ROOT / "START-HERE.md").read_text()
+    agents = (REPO / "AGENTS.md").read_text()
+    orchestrator = (REPO / "onemillion-agents/agents/orchestrator.md").read_text()
+    teaching = (ROOT / "docs/teaching-protocol.md").read_text()
+    day0 = (ROOT / "day-0-commit/README.md").read_text()
     day1 = (ROOT / "week-1-foundation/day-01-vision/build.md").read_text()
     account = (ROOT / "docs/account-setup.md").read_text()
     harness_readme = (ROOT / "docs/harnesses/README.md").read_text()
@@ -155,6 +159,24 @@ def scan_persona_friction(persona: dict) -> list[str]:
 
     if re.search(r"start Day 1", harness_docs, flags=re.IGNORECASE):
         frictions.append("Harness docs skip the mandatory Day 0 preflight.")
+
+    teaching_surface = "\n".join([agents, orchestrator, teaching, day0, harness_docs]).lower()
+    required_teaching_terms = {
+        "proper greeting": "Harness teaching protocol must require a proper greeting.",
+        "explain the course": "Harness teaching protocol must explain what the course is before assigning work.",
+        "ai/human contract": "Harness teaching protocol must explain the AI/human contract.",
+        "copy-ready": "Harness teaching protocol must provide copy-ready learner actions.",
+        "what counts as done": "Harness teaching protocol must define the completion gate in learner language.",
+        "do not give bare task assignments": "Harness teaching protocol must ban bare 'do Day X' assignments.",
+    }
+    for term, message in required_teaching_terms.items():
+        if term not in teaching_surface:
+            frictions.append(message)
+
+    day0_lower = day0.lower()
+    for term in ["welcome to onemillion", "what this course is", "today is day 0", "what counts as done for day 0"]:
+        if term not in day0_lower:
+            frictions.append(f"Day 0 opening script missing required teaching phrase: {term}")
 
     return frictions
 

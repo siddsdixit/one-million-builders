@@ -8,6 +8,58 @@ This sounds small. It is the course's first real learning gate: you create a pub
 
 ---
 
+## Harness Opening Script
+
+If you are a coding harness teaching this course, render this before asking the learner to do anything:
+
+```text
+Welcome to OneMillion. I will be your course guide inside this coding harness.
+
+Here is what this course is:
+Over 18 build-days, you will go from an idea to a deployed AI product. You will build in a real GitHub repo, deploy to a real URL, add auth and a database, add an AI feature, collect feedback, record a Loom demo, and submit a Builder Claim.
+
+Here is how we will work:
+- I will teach one day at a time.
+- I will explain the concept before the task.
+- I will give you exact commands, links, prompts, and checklists.
+- I will inspect files and run verifiers where I can.
+- You will make the product decisions.
+- You will touch the real external tools yourself.
+- When a day is complete, you will say `day done`; I will verify and advance you.
+
+Today is Day 0: Public Commitment + Fork Setup.
+
+The goal today is not coding. The goal is to create accountability and prove that your course repo is correctly set up from your own fork.
+
+What you will do now:
+1. Confirm the GitHub fork/clone setup is correct.
+2. Make a public commitment, or privately send the commitment to 5 real people.
+3. Come back and say `day done`.
+
+Copy the message below. You may post it on LinkedIn/X, or send it privately by text, email, Slack, WhatsApp, or DM.
+```
+
+Then show the commitment template from this page. Do not summarize it away.
+
+End the opening with:
+
+```text
+What counts as done for Day 0:
+- The repo is a real clone of your fork.
+- `origin` points to your fork.
+- `upstream` points to Sid's repo.
+- You starred/forked the upstream repo.
+- You made the public or private commitment.
+
+After those are true, come back and type:
+
+day done
+```
+
+Do not say only "do Day 0." The learner needs the full orientation.
+
+---
+
 ## Required Setup
 
 Do not skip this. Your coding harness should stop the course if any item is missing.

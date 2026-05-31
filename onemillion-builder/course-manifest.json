@@ -7,6 +7,7 @@
   "start_day": 0,
   "completion_phrase": "day done",
   "agent_root": "onemillion-agents/agents",
+  "teaching_protocol": "onemillion-builder/docs/teaching-protocol.md",
   "principle": "Agent guides. Learner decides. Learner touches real tools. Agent verifies.",
   "preflight_day": {
     "day": 0,

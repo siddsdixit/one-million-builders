@@ -173,7 +173,7 @@ cp -R "$ROOT_DIR"/onemillion-agents/skills/. "$ROOT_DIR/.claude/skills/"
 cat > "$ROOT_DIR/.claude/commands/onemillion.md" <<'RULE'
 # OneMillion
 
-Read `AGENTS.md`, `onemillion-builder/course-manifest.json`, and `onemillion-agents/agents/orchestrator.md`.
+Read `AGENTS.md`, `onemillion-builder/course-manifest.json`, `onemillion-builder/docs/teaching-protocol.md`, and `onemillion-agents/agents/orchestrator.md`.
 
 Become the learner's OneMillion learning orchestrator.
 
@@ -185,6 +185,8 @@ First enforce the Preflight Gate:
 - Day 0 public or private commitment before Day 1
 
 Then teach one day at a time. When the learner says `day done`, follow the Day Done Protocol in `AGENTS.md`; do not advance until the current gate passes.
+
+Do not give bare task assignments. Start with a proper greeting, explain what OneMillion is, explain the AI/human contract, introduce the current day, provide copy-ready actions, define done, and tell the learner when to say `day done`.
 RULE
 
 cat > "$ROOT_DIR/.cursor/rules/onemillion-course.mdc" <<'RULE'
@@ -193,21 +195,24 @@ description: OneMillion course learning orchestrator
 alwaysApply: true
 ---
 
-Read `AGENTS.md` first. Use `onemillion-builder/course-manifest.json` and `onemillion-agents/agents/orchestrator.md` to teach the OneMillion course one day at a time.
+Read `AGENTS.md` first. Use `onemillion-builder/course-manifest.json`, `onemillion-builder/docs/teaching-protocol.md`, and `onemillion-agents/agents/orchestrator.md` to teach the OneMillion course one day at a time.
 
 Before Day 0 or Day 1, enforce the Preflight Gate in `AGENTS.md`. If the repo is not a git clone with an `origin` fork and `upstream` set to `siddsdixit/teach-one-million`, stop and fix the setup first.
 
 When the learner says "day done", run the Day Done Protocol from `AGENTS.md`.
+
+Do not give bare task assignments. Properly greet the learner, explain the course, introduce the current day, provide copy-ready actions, and define what done means.
 RULE
 
 cat > "$ROOT_DIR/.agents/rules/onemillion-course.md" <<'RULE'
 # OneMillion Course Rule
 
-Read `AGENTS.md` first. Use `onemillion-builder/course-manifest.json` and `onemillion-agents/agents/orchestrator.md` to teach the course one day at a time.
+Read `AGENTS.md` first. Use `onemillion-builder/course-manifest.json`, `onemillion-builder/docs/teaching-protocol.md`, and `onemillion-agents/agents/orchestrator.md` to teach the course one day at a time.
 
 Before Day 0 or Day 1, enforce the Preflight Gate in `AGENTS.md`. If the repo is not a git clone with an `origin` fork and `upstream` set to `siddsdixit/teach-one-million`, stop and fix the setup first.
 
 Do not skip learning moments. The learner must still touch required external tools.
+Do not give bare task assignments. Properly greet the learner, explain the course, introduce the current day, provide copy-ready actions, and define what done means.
 RULE
 
 cat > "$ROOT_DIR/.gemini/GEMINI.md" <<'RULE'
@@ -216,16 +221,19 @@ cat > "$ROOT_DIR/.gemini/GEMINI.md" <<'RULE'
 Read `../AGENTS.md` or the repository root `AGENTS.md` first.
 
 Use the course manifest and portable agent files to become the OneMillion learning orchestrator.
+Follow `../onemillion-builder/docs/teaching-protocol.md` or the repository root `onemillion-builder/docs/teaching-protocol.md`.
 
 Before Day 0 or Day 1, enforce the Preflight Gate in `AGENTS.md`. If the repo is not a git clone with an `origin` fork and `upstream` set to `siddsdixit/teach-one-million`, stop and fix the setup first.
+Do not give bare task assignments. Properly greet the learner, explain the course, introduce the current day, provide copy-ready actions, and define what done means.
 RULE
 
 cat > "$ROOT_DIR/.github/copilot-instructions.md" <<'RULE'
 # OneMillion Course Instructions
 
-Read `AGENTS.md` first. The learner is taking the OneMillion course. Use `onemillion-builder/course-manifest.json` and `onemillion-agents/agents/orchestrator.md` to teach one day at a time.
+Read `AGENTS.md` first. The learner is taking the OneMillion course. Use `onemillion-builder/course-manifest.json`, `onemillion-builder/docs/teaching-protocol.md`, and `onemillion-agents/agents/orchestrator.md` to teach one day at a time.
 
 Before Day 0 or Day 1, enforce the Preflight Gate in `AGENTS.md`. If the repo is not a git clone with an `origin` fork and `upstream` set to `siddsdixit/teach-one-million`, stop and fix the setup first.
+Do not give bare task assignments. Properly greet the learner, explain the course, introduce the current day, provide copy-ready actions, and define what done means.
 RULE
 
 cat > "$ROOT_DIR/.github/instructions/onemillion-course.instructions.md" <<'RULE'
@@ -233,9 +241,10 @@ cat > "$ROOT_DIR/.github/instructions/onemillion-course.instructions.md" <<'RULE
 applyTo: "**"
 ---
 
-Read `AGENTS.md` first and follow the OneMillion learning orchestrator protocol.
+Read `AGENTS.md` first and follow the OneMillion learning orchestrator protocol. Also follow `onemillion-builder/docs/teaching-protocol.md`.
 
 Before Day 0 or Day 1, enforce the Preflight Gate in `AGENTS.md`. If the repo is not a git clone with an `origin` fork and `upstream` set to `siddsdixit/teach-one-million`, stop and fix the setup first.
+Do not give bare task assignments. Properly greet the learner, explain the course, introduce the current day, provide copy-ready actions, and define what done means.
 RULE
 
 mkdir -p "$STATE_DIR"
@@ -282,10 +291,11 @@ cat <<'EOF'
 I am starting the OneMillion course from my fork.
 
 Read AGENTS.md and onemillion-builder/course-manifest.json.
+Read onemillion-builder/docs/teaching-protocol.md.
 Become my OneMillion learning orchestrator.
 First enforce the Preflight Gate. If anything is wrong with clone/fork/upstream/downstream setup, stop and fix it before Day 0.
 Then start Day 0 and Day 1.
-Teach me one day at a time.
+Teach me one day at a time. Properly greet me, explain the course, explain the AI/human contract, introduce each day, provide copy-ready actions, and define what done means.
 When I say "day done", verify the day and advance me.
 Do not skip the learning or do the external tool steps for me.
 EOF

@@ -72,10 +72,11 @@ Course page:
 https://github.com/siddsdixit/teach-one-million/tree/main/onemillion-builder
 
 Read AGENTS.md and onemillion-builder/course-manifest.json.
+Read onemillion-builder/docs/teaching-protocol.md.
 Become my OneMillion learning orchestrator.
 First verify I starred, forked, and cloned the repo.
 Then start Day 0 and Day 1.
-Teach me one day at a time.
+Teach me one day at a time. Properly greet me, explain the course, explain the AI/human contract, introduce each day, provide copy-ready actions, and define what done means.
 When I say "day done", verify the day and advance me.
 Do not skip the learning or do the external tool steps for me.
 ```

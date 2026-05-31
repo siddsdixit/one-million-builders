@@ -18,3 +18,14 @@ Your harness should:
 
 If a gate is missing, the harness should not advance you. It should give the next smallest action.
 
+## What Should Happen Before You Say It
+
+Your harness should not simply tell you "do Day X." At the start of each day it should:
+
+1. Greet and orient you.
+2. Explain what today's lesson is about.
+3. Explain why it matters.
+4. Give the exact actions and copy-ready text or commands.
+5. Tell you what counts as done.
+
+Only say `day done` after the done checklist is actually true.

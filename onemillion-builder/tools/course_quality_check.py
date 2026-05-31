@@ -122,6 +122,7 @@ def check_agent_architecture() -> None:
         ROOT / "docs" / "account-setup.md",
         ROOT / "docs" / "agent-flow.md",
         ROOT / "docs" / "day-done.md",
+        ROOT / "docs" / "teaching-protocol.md",
         ROOT / "install-agents.sh",
         ROOT / "tools" / "uninstall-agents.sh",
         AGENTS_ROOT / "README.md",
@@ -237,6 +238,9 @@ def check_manifest() -> None:
 
     if manifest.get("provider_setup_playbook") != "onemillion-builder/docs/account-setup.md":
         errors.append(f"{rel(path)} must point to account setup playbook")
+
+    if manifest.get("teaching_protocol") != "onemillion-builder/docs/teaching-protocol.md":
+        errors.append(f"{rel(path)} must point to teaching protocol")
 
     setup_links = manifest.get("provider_setup_links")
     if not isinstance(setup_links, dict):

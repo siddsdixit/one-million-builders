@@ -48,3 +48,5 @@ This runs the course entry path as several synthetic target learners:
 - career changer
 
 It creates throwaway local course forks, runs the installer, creates Day 1 artifacts, runs verification, and scans the course for persona-specific friction. The markdown report is intended to be checked before publishing major course changes.
+
+It also checks the harness teaching contract: the course must require a proper greeting, explain what OneMillion is, explain the AI/human contract, provide copy-ready actions, define what counts as done, and avoid bare "do Day X" assignments.
