@@ -67,7 +67,7 @@ Pass criteria:
 
 ---
 
-## Day 4: GitHub App Repo + Vercel Deploy
+## Day 6: GitHub App Repo + Vercel Deploy
 
 ### Links
 
@@ -102,7 +102,7 @@ Pass criteria:
 
 ---
 
-## Day 5: Supabase Auth + Database
+## Day 7: Supabase Auth + Database
 
 ### Links
 
@@ -144,7 +144,7 @@ Pass criteria:
 
 ---
 
-## Day 8: Anthropic API Key
+## Day 11/12: Anthropic API Key
 
 ### Links
 

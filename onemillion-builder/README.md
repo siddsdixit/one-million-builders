@@ -39,7 +39,7 @@ That is exactly who this course is for.
 
 Most people get stuck because they try to learn coding, product thinking, AI, deployment, auth, databases, and launch all at once.
 
-OneMillion turns that into one small daily move.
+OneMillion turns that into one small daily move. You learn the same pipeline real product teams use, but with agents as patient teachers: idea, research, PRD, spec, design, architecture, build, review, test, guard, ship, and sell.
 
 By the end, you have:
 
@@ -54,6 +54,16 @@ By the end, you have:
 No prior coding experience required. Your coding harness becomes your teacher, but you make the decisions and learn the tools.
 
 This is not a toy tutorial. It is not a sandbox. You build a real product, in a real repo, deployed on a real URL, with a path to real users.
+
+The first five days are deliberately not "jump into code." They teach the foundation:
+
+| Day | You learn | Why it matters |
+|---:|---|---|
+| 0 | mission, pipeline, commitment, GitHub fork | You understand the course and create a proof trail |
+| 1 | good ideas, pain points, user stories, KPIs, PRD | You choose a problem worth building |
+| 2 | user validation, competitors, ICP, MVP | You test whether the PRD is real |
+| 3 | specs, CRUD, functional requirements, acceptance criteria | You freeze a buildable scope |
+| 4 | product design, MUI, screens, states, seed data, mockup | You see and approve the product before code |
 
 ---
 
@@ -112,7 +122,7 @@ Need the slower walkthrough? Open [START-HERE.md](START-HERE.md). Want the whole
 
 OneMillion is an agent-led apprenticeship. Open the repo in Claude Code, Cursor, Codex, Gemini, Antigravity, Copilot, or another coding harness. The harness reads `AGENTS.md`, `course-manifest.json`, `docs/teaching-protocol.md`, and `single.md`, then becomes your OneMillion learning orchestrator.
 
-You move through focused agent modes:
+You move through focused agent modes. In some harnesses these may be slash commands; in others, the orchestrator reads the course files and invokes the right mode for you.
 
 ```text
 /idea -> /spec -> /design -> /plan -> /build -> /test -> /guard -> /ship -> /sell
@@ -128,7 +138,7 @@ Support modes are always available:
 |---|---|
 | **Short daily lessons** | Read just enough to understand the idea before building. |
 | **Hands-on building** | Your harness writes code with you, but you review and decide. |
-| **Real tools** | GitHub, Vercel, Supabase, Anthropic, Sentry, Loom. |
+| **Real tools** | GitHub, Vercel, Supabase, Anthropic, monitoring, Loom. |
 | **Daily verification** | Say `day done`; your harness checks the gate before moving on. |
 | **Small scope** | The first MVP is capped at exactly 3 core jobs so you can finish. |
 | **Design review** | The course includes visual and UX quality checks before launch. |
@@ -152,7 +162,7 @@ The course teaches the OneMillion development pipeline explicitly. You will lear
 idea -> research -> PRD -> validate spec -> design -> plan -> build -> review -> test -> guard -> ship -> sell
 ```
 
-Tools arrive just in time. GitHub is required on Day 0 because your fork is the course workspace. Vercel appears when you deploy. Supabase appears when you add auth and database. Anthropic appears when the AI feature is specified. Monitoring appears when the product is live enough to need monitoring.
+Tools arrive just in time. GitHub is required on Day 0 because your fork is the course workspace. Vercel appears on Day 6 when you deploy the app shell. Supabase appears on Day 7 when you add auth and database. Anthropic appears on Day 11 or Day 12 when the AI feature is specified and ready to build. Monitoring appears on Day 16 when the product is live enough to need production checks.
 
 ---
 
@@ -201,7 +211,7 @@ Self-paced and cohort learners use the same curriculum, the same daily gates, an
 | [1](day-01-idea/learn.md) | Idea agent + PRD draft | Learn good ideas, define user pain, and review first PRD |
 | [2](day-02-validate-prd/learn.md) | Validate the PRD | User evidence, ICP, MVP, and PRD validation update |
 | [3](day-03-spec/learn.md) | Lock the spec | Functional requirements, CRUD blocks, user stories, acceptance criteria, KPIs, and done criteria |
-| [4](day-04-design/learn.md) | Design the product | MUI design system, screens, flows, and states |
+| [4](day-04-design/learn.md) | Design the product | Audience-based design, MUI design system, screens, flows, states, seed data, and mockup approval |
 | [5](day-05-plan-architecture/learn.md) | Plan architecture | Backend path decision, architecture, and sprint briefs |
 | [6](day-06-app-shell/learn.md) | App shell + first deploy | Next.js + MUI app live on Vercel |
 | [7](day-07-auth-db/learn.md) | Auth + database | Supabase signup/login, tables, and RLS |
@@ -211,7 +221,7 @@ Self-paced and cohort learners use the same curriculum, the same daily gates, an
 | [11](day-11-ai-spec/learn.md) | AI feature spec | Measurable AI behavior |
 | [12](day-12-first-ai-build/learn.md) | First AI build | Claude output in your app |
 | [13](day-13-ai-ux-safety/learn.md) | AI UX + safety | Loading/error states, review boundary, rate/cost guard |
-| [14](day-14-ai-data-tools/learn.md) | AI data + tools | RAG/tool use only if justified |
+| [14](day-14-ai-data-tools/learn.md) | AI data + tools | App data, tool use, or retrieval only if the product truly needs it |
 | [15](day-15-ai-quality-guard/learn.md) | AI quality + guard | AI evals, secrets, auth, RLS, and cost risk |
 | [16](day-16-ship-production/learn.md) | Ship production | Production verification, monitoring, optional domain |
 | [17](day-17-sell-users/learn.md) | Sell + first users | Landing/product copy, outreach, feedback |
@@ -226,9 +236,9 @@ Self-paced and cohort learners use the same curriculum, the same daily gates, an
 | Laptop | Mac, Windows, or Linux |
 | Coding harness | Claude Code, Cursor, Codex, Gemini, Antigravity, Copilot, or similar |
 | GitHub | Source control and proof trail |
-| Vercel | Deployment |
-| Supabase | Auth and database |
-| Anthropic API key | Added on Day 8 |
+| Vercel | Deployment, introduced on Day 6 |
+| Supabase | Auth and database, introduced on Day 7 |
+| Anthropic API key | Added on Day 11 or Day 12 |
 | Time | 1-2 hours per day |
 
 ---
@@ -252,6 +262,11 @@ The only hard requirement is that you keep going one verified day at a time.
 
 | Artifact | Why it matters |
 |---|---|
+| Day 0 reflection + fork | Proves the learner understands the mission and owns the workspace. |
+| PRD and refined PRD | Captures the product idea, evidence, ICP, MVP, and success criteria. |
+| Spec / refined PRD | Converts the idea into functional requirements and acceptance criteria. |
+| Design spec, design system, screens, seed data | Makes the product visible before architecture and code. |
+| Architecture + sprint briefs | Gives the build agent a safe contract to follow. |
 | [DeliverableDash example artifacts](docs/examples/deliverabledash/README.md) | Shows what a finished course trail can look like. |
 | [Sample finished app shape](docs/examples/deliverabledash/app/README.md) | Gives you a concrete reference for the end state. |
 | [Daily verification reports](docs/verification/README.md) | Proves each day passed before you advanced. |
