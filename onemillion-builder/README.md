@@ -181,11 +181,11 @@ Self-paced and cohort learners use the same curriculum, the same daily gates, an
 | **Ship & Sell** | 13-18 | Security, monitoring, landing page, outreach, demo | A launch-ready product and Builder Claim |
 
 <p align="center">
-  <a href="week-1-foundation/README.md"><strong>Week 1: Foundation</strong></a>
+  <a href="day-01-idea/learn.md"><strong>Days 1-6: Foundation</strong></a>
   &nbsp;•&nbsp;
-  <a href="week-2-make-it-ai/README.md"><strong>Week 2: Make It AI</strong></a>
+  <a href="day-07-ai-spec/learn.md"><strong>Days 7-12: Make It AI</strong></a>
   &nbsp;•&nbsp;
-  <a href="week-3-ship-and-sell/README.md"><strong>Week 3: Ship & Sell</strong></a>
+  <a href="day-13-production-hygiene/learn.md"><strong>Days 13-18: Ship & Sell</strong></a>
 </p>
 
 ---
@@ -194,25 +194,25 @@ Self-paced and cohort learners use the same curriculum, the same daily gates, an
 
 | Day | Focus | Outcome |
 |---:|---|---|
-| [0](day-0-commit/README.md) | Orientation + commitment | Mission, pipeline, reflection, fork, clone, and public/private commitment |
-| [1](week-1-foundation/day-01-vision/learn.md) | Idea agent + PRD draft | Learn good ideas, define user pain, and review first PRD |
-| [2](week-1-foundation/day-02-problem/learn.md) | Validate the PRD | User evidence, ICP, MVP, and PRD validation update |
-| [3](week-1-foundation/day-03-prd/learn.md) | Lock the spec | Exact user stories, use cases, acceptance criteria, KPIs, and done criteria |
-| [4](week-1-foundation/day-04-stack/learn.md) | Stack + first deploy | Next.js app live on Vercel |
-| [5](week-1-foundation/day-05-auth/learn.md) | Auth + database | Supabase signup/login + first table |
-| [6](week-1-foundation/day-06-core-feature/learn.md) | Core feature | Main workflow working end-to-end |
-| [7](week-2-make-it-ai/day-07-ai-spec/learn.md) | AI feature spec | Measurable AI behavior |
-| [8](week-2-make-it-ai/day-08-first-ai-call/learn.md) | First AI call | Claude output in your app |
-| [9](week-2-make-it-ai/day-09-streaming/learn.md) | Streaming UI | Token-by-token response UI |
-| [10](week-2-make-it-ai/day-10-tool-use/learn.md) | Tool use | AI reads or writes scoped app data |
-| [11](week-2-make-it-ai/day-11-rag/learn.md) | RAG | AI grounded in user data |
-| [12](week-2-make-it-ai/day-12-lock-the-ai/learn.md) | Quality gates | Tests, evals, and cost budget |
-| [13](week-3-ship-and-sell/day-13-hygiene/learn.md) | Production hygiene | Security and secrets audit |
-| [14](week-3-ship-and-sell/day-14-domain/learn.md) | Domain | Custom domain or documented skip |
-| [15](week-3-ship-and-sell/day-15-monitoring/learn.md) | Monitoring | Sentry, analytics, uptime |
-| [16](week-3-ship-and-sell/day-16-landing/learn.md) | Landing page | Clear public product page |
-| [17](week-3-ship-and-sell/day-17-first-users/learn.md) | First users | Outreach and feedback |
-| [18](week-3-ship-and-sell/day-18-demo/learn.md) | Demo Day | Loom demo + Builder Claim |
+| [0](day-00-orientation/README.md) | Orientation + commitment | Mission, pipeline, reflection, fork, clone, and public/private commitment |
+| [1](day-01-idea/learn.md) | Idea agent + PRD draft | Learn good ideas, define user pain, and review first PRD |
+| [2](day-02-validate-prd/learn.md) | Validate the PRD | User evidence, ICP, MVP, and PRD validation update |
+| [3](day-03-spec/learn.md) | Lock the spec | Functional requirements, CRUD blocks, user stories, acceptance criteria, KPIs, and done criteria |
+| [4](day-04-first-deploy/learn.md) | Stack + first deploy | Next.js app live on Vercel |
+| [5](day-05-auth-db/learn.md) | Auth + database | Supabase signup/login + first table |
+| [6](day-06-core-feature/learn.md) | Core feature | Main workflow working end-to-end |
+| [7](day-07-ai-spec/learn.md) | AI feature spec | Measurable AI behavior |
+| [8](day-08-first-ai-call/learn.md) | First AI call | Claude output in your app |
+| [9](day-09-streaming/learn.md) | Streaming UI | Token-by-token response UI |
+| [10](day-10-tool-use/learn.md) | Tool use | AI reads or writes scoped app data |
+| [11](day-11-rag/learn.md) | RAG | AI grounded in user data |
+| [12](day-12-lock-ai/learn.md) | Quality gates | Tests, evals, and cost budget |
+| [13](day-13-production-hygiene/learn.md) | Production hygiene | Security and secrets audit |
+| [14](day-14-domain/learn.md) | Domain | Custom domain or documented skip |
+| [15](day-15-monitoring/learn.md) | Monitoring | Sentry, analytics, uptime |
+| [16](day-16-landing/learn.md) | Landing page | Clear public product page |
+| [17](day-17-first-users/learn.md) | First users | Outreach and feedback |
+| [18](day-18-demo/learn.md) | Demo Day | Loom demo + Builder Claim |
 
 ---
 
@@ -225,7 +225,7 @@ Self-paced and cohort learners use the same curriculum, the same daily gates, an
 | GitHub | Source control and proof trail |
 | Vercel | Deployment |
 | Supabase | Auth and database |
-| Anthropic API key | Added in Week 2 |
+| Anthropic API key | Added on Day 8 |
 | Time | 1-2 hours per day |
 
 ---
@@ -252,7 +252,7 @@ The only hard requirement is that you keep going one verified day at a time.
 | [DeliverableDash example artifacts](docs/examples/deliverabledash/README.md) | Shows what a finished course trail can look like. |
 | [Sample finished app shape](docs/examples/deliverabledash/app/README.md) | Gives you a concrete reference for the end state. |
 | [Daily verification reports](docs/verification/README.md) | Proves each day passed before you advanced. |
-| [Day 18 demo](week-3-ship-and-sell/day-18-demo/learn.md) | Turns your product into something people can understand. |
+| [Day 18 demo](day-18-demo/learn.md) | Turns your product into something people can understand. |
 | [Share templates](docs/share-templates.md) | Helps you build in public without staring at a blank post. |
 
 The product is useful. The proof trail is useful. The repeatable way of building is the real prize.

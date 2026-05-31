@@ -39,10 +39,10 @@ Next: auth + database.
 
 ---
 
-## Day 6 — Week 1 Complete
+## Day 6 — Days 1-6 Complete
 
 ```text
-Week 1 of #OneMillion complete.
+Days 1-6 of #OneMillion complete.
 
 I now have:
 - live app

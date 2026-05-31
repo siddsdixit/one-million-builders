@@ -67,7 +67,7 @@ Main risks found:
 
 - Day 0 was mandatory but not clearly modeled as a verified preflight day
 - course fork, product repo, Day 1 URL, Day 4 URL, and optional custom domain could compete as "the proof"
-- Week 2 could feel like all advanced AI concepts are mandatory
+- Days 7-12 could feel like all advanced AI concepts are mandatory
 - Day 17 could imply real feedback even when only outreach was sent
 - Builder Claim issue template was missing fields from the claim packet
 
@@ -81,7 +81,7 @@ Fixes made:
 
 Remaining recommendation:
 
-- add a future "minimum shippable AI path" note to Week 2 that distinguishes one required useful AI action from optional streaming/RAG/tool depth.
+- add a future "minimum shippable AI path" note to Days 7-12 that distinguishes one required useful AI action from optional streaming/RAG/tool depth.
 
 ### Experienced Engineer
 
@@ -114,7 +114,7 @@ python3 onemillion-builder/tools/simulate_personas.py --report onemillion-builde
 ## Residual Risks
 
 - Days 7-18 are not schema-backed yet. The course is honest about this now, but future Builder Wall automation should add machine checks for the later days.
-- Week 2 may still feel heavy for true beginners. The course should eventually provide a minimum shippable AI path and mark streaming/RAG/tool depth as product-dependent.
+- Days 7-12 may still feel heavy for true beginners. The course should eventually provide a minimum shippable AI path and mark streaming/RAG/tool depth as product-dependent.
 - A real end-to-end learner simulation should eventually create a throwaway Next.js app, push to a test GitHub repo, deploy to Vercel, and verify Supabase/API-key setup with disposable credentials.
 
 ## Follow-Up: Harness Teaching Experience

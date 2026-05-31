@@ -333,14 +333,16 @@ The harness should not compress days unless the learner explicitly asks and the 
 
 ## Day 3: Lock The Spec
 
-**Purpose:** turn the validated PRD into a small buildable spec that agents can implement without guessing.
+**Purpose:** use the Spec agent to turn the validated PRD into a detailed build blueprint with functional requirements, CRUD building blocks, user stories, use cases, acceptance criteria, KPIs, and scope lock.
 
 **Why it matters:** Day 1 and Day 2 decide what is worth building. Day 3 makes it buildable. Without a locked spec, the build agents invent missing requirements or quietly expand scope.
 
 **What the learner learns:**
 
 - requirements before code
-- the difference between idea, requirement, user story, use case, acceptance criterion, and KPI
+- the difference between idea, functional requirement, user story, use case, acceptance criterion, and KPI
+- CRUD: create, read, update, delete
+- how CRUD breaks software into buildable blocks
 - exactly 3 core user stories
 - testable acceptance criteria
 - out-of-scope list
@@ -349,7 +351,12 @@ The harness should not compress days unless the learner explicitly asks and the 
 
 **What the learner does:**
 
-- updates `.onemillion/prd.md` with a Day 3 Locked Spec section
+- uses `.onemillion/prd.md` as the validated product input
+- calls the Spec agent to generate `.onemillion/refined-prd.md`
+- reviews the generated spec and moves items in or out of MVP
+- reruns the Spec agent when something is wrong or missing
+- lists functional requirements
+- maps core MVP entities to CRUD actions
 - locks exactly 3 core user stories
 - writes 2-3 real use cases
 - writes acceptance criteria
@@ -363,13 +370,17 @@ The harness should not compress days unless the learner explicitly asks and the 
 - acts as Spec agent
 - uses the validated PRD as input
 - asks clarifying questions
-- drafts and revises the locked spec section
+- drafts and revises `.onemillion/refined-prd.md`
 - uses Validate Spec to check scope
-- refuses to create sidecar spec files
+- checks that design, architecture, planning, and build agents can use the spec
+- avoids sidecar spec files beyond the pipeline artifact `.onemillion/refined-prd.md`
 
 **Done means:**
 
-- `.onemillion/prd.md` includes `Day 3 Locked Spec`
+- `.onemillion/refined-prd.md` exists
+- `.onemillion/refined-prd.md` includes `Day 3 Locked Spec`
+- functional requirements are listed
+- core MVP entities and CRUD actions are listed
 - exactly 3 core user stories are listed
 - use cases are real scenarios
 - acceptance criteria are testable

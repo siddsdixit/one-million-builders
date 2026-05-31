@@ -85,7 +85,8 @@ PASS or NEEDS REVISION
 
 ## Important Notes
 
-- For Days 1-3 (no code): focus on `.onemillion/project.json` and `.onemillion/prd.md`.
+- For Days 1-2 (no code): focus on `.onemillion/project.json` and `.onemillion/prd.md`.
+- For Day 3: validate `.onemillion/refined-prd.md` against `.onemillion/prd.md`.
 - For Days 4-6 (code days): includes structural code checks + remote HTTP checks.
 - For deploy days: a passing URL is not enough. The deployment must plausibly match the code/build by showing local source markers or other inspectable product evidence.
 - Days 7-18 use this same verifier with manifest gates, app/code inspection, deployment checks, and manual confirmations.

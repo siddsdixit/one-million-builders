@@ -27,7 +27,6 @@ Always use:
 - `onemillion-builder/docs/teaching-protocol.md`
 - `onemillion-builder/single.md`
 - `.onemillion/state.json` if present
-- `.onemillion/progress.md` if present
 - Current day `learn.md`
 - Current day `build.md`
 - Mapped agent file from `onemillion-agents/agents/`
@@ -84,7 +83,7 @@ Maintain `.onemillion/state.json` at the repo root:
 }
 ```
 
-Maintain `.onemillion/progress.md` with the current day, blocker, links, and next smallest action.
+Store current day, blocker, links, next smallest action, and verification state inside `.onemillion/state.json`.
 
 ## Daily Teaching Protocol
 
@@ -114,10 +113,9 @@ When the learner says `day done`:
 2. Check all inspectable completion-gate items.
 3. Ask manual confirmations for external actions that cannot be inspected.
 4. If incomplete, give the next smallest action and do not advance.
-5. If complete, write `.onemillion/verification-day-XX.md`.
+5. If complete, update `.onemillion/state.json` with the verification result.
 6. Update state to the next day.
-7. Update progress.
-8. Preview the next day in one paragraph.
+7. Preview the next day in one paragraph.
 
 ## Course Pace
 

@@ -173,4 +173,4 @@ Builder #N is the credential. What you do with it is up to you.
 
 ---
 
-→ **More:** [Manifesto](../../MANIFESTO.md) · [Getting Started](./getting-started.md) · [Agent-Led Learning Flow](./agent-flow.md) · [Day 1](../week-1-foundation/day-01-vision/learn.md)
+→ **More:** [Manifesto](../../MANIFESTO.md) · [Getting Started](./getting-started.md) · [Agent-Led Learning Flow](./agent-flow.md) · [Day 1](../day-01-idea/learn.md)

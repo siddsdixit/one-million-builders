@@ -16,7 +16,7 @@ cat .onemillion/state.json
 
 Look for `last_verified_day` and the `verification.days` object.
 
-If `last_verified_day` is missing, restart at [Day 1](../week-1-foundation/day-01-vision/learn.md).
+If `last_verified_day` is missing, restart at [Day 1](../day-01-idea/learn.md).
 
 ---
 
@@ -67,17 +67,17 @@ If your last verified day is:
 
 | Last verified | Resume here |
 |---------------|-------------|
-| None | [Day 1](../week-1-foundation/day-01-vision/learn.md) |
-| Day 1 | [Day 2](../week-1-foundation/day-02-problem/learn.md) |
-| Day 2 | [Day 3](../week-1-foundation/day-03-prd/learn.md) |
-| Day 3 | [Day 4](../week-1-foundation/day-04-stack/learn.md) |
-| Day 4 | [Day 5](../week-1-foundation/day-05-auth/learn.md) |
-| Day 5 | [Day 6](../week-1-foundation/day-06-core-feature/learn.md) |
-| Day 6 | [Week 2](../week-2-make-it-ai/README.md) |
-| Day 12 | [Week 3](../week-3-ship-and-sell/README.md) |
-| Day 17 | [Day 18](../week-3-ship-and-sell/day-18-demo/learn.md) |
+| None | [Day 1](../day-01-idea/learn.md) |
+| Day 1 | [Day 2](../day-02-validate-prd/learn.md) |
+| Day 2 | [Day 3](../day-03-spec/learn.md) |
+| Day 3 | [Day 4](../day-04-first-deploy/learn.md) |
+| Day 4 | [Day 5](../day-05-auth-db/learn.md) |
+| Day 5 | [Day 6](../day-06-core-feature/learn.md) |
+| Day 6 | [Day 7](../day-07-ai-spec/learn.md) |
+| Day 12 | [Day 13](../day-13-production-hygiene/learn.md) |
+| Day 17 | [Day 18](../day-18-demo/learn.md) |
 
-For any other day, open the next day in the same week folder.
+For any other day, open the next day in the same day folder.
 
 ---
 

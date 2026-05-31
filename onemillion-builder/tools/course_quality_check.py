@@ -24,8 +24,10 @@ def check_day_files() -> None:
         "loom.md",
         "resources.md",
     }
-    for day_dir in sorted(ROOT.glob("week-*/*")):
+    for day_dir in sorted(ROOT.glob("day-*")):
         if not day_dir.is_dir() or not day_dir.name.startswith("day-"):
+            continue
+        if day_dir.name.startswith("day-00-"):
             continue
         files = {p.name for p in day_dir.glob("*.md")}
         missing = expected - files
@@ -67,7 +69,7 @@ def check_forbidden_public_text() -> None:
 
 
 def check_learning_frames() -> None:
-    for file in ROOT.glob("week-*/*/learn.md"):
+    for file in ROOT.glob("day-*/learn.md"):
         text = file.read_text()
         for heading in [
             "## Learning Frame",
@@ -80,14 +82,14 @@ def check_learning_frames() -> None:
 
 
 def check_stuck_prompts() -> None:
-    for file in ROOT.glob("week-*/*/build.md"):
+    for file in ROOT.glob("day-*/build.md"):
         text = file.read_text()
         if "## If You Are Stuck" not in text:
             errors.append(f"{rel(file)} missing stuck-rescue prompt")
 
 
 def check_progress_tracker() -> None:
-    for file in ROOT.glob("week-*/*/build.md"):
+    for file in ROOT.glob("day-*/build.md"):
         text = file.read_text()
         if "## Update Orchestrator State" not in text:
             errors.append(f"{rel(file)} missing orchestrator state update")
@@ -96,13 +98,14 @@ def check_progress_tracker() -> None:
 def check_day_navigation() -> None:
     required = [
         "Course Home</a>",
-        "Week Overview</a>",
         "./learn.md",
         "./build.md",
         "./resources.md",
         "./loom.md",
     ]
-    for file in ROOT.glob("week-*/*/*.md"):
+    for file in ROOT.glob("day-*/*.md"):
+        if file.parent.name.startswith("day-00-"):
+            continue
         text = file.read_text()
         for item in required:
             if item not in text:

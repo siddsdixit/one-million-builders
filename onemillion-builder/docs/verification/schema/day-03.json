@@ -8,36 +8,80 @@
       "path": ".onemillion/prd.md"
     },
     {
+      "id": "refined_prd_exists",
+      "type": "file_exists",
+      "path": ".onemillion/refined-prd.md"
+    },
+    {
       "id": "locked_spec_present",
       "type": "markdown_required_sections",
-      "path": ".onemillion/prd.md",
-      "required_headings": ["Day 3 Locked Spec", "MVP Summary", "Core User Stories", "Use Cases", "Acceptance Criteria", "KPI", "Out Of Scope", "Definition Of Done", "Agent Build Rule"]
+      "path": ".onemillion/refined-prd.md",
+      "required_headings": ["Day 3 Locked Spec", "MVP Summary", "Feature Inventory", "Functional Requirements", "Core Entities And CRUD", "Complete Core Flow", "Core User Stories", "Use Cases", "Acceptance Criteria", "Data Schema", "Business Rules", "KPI", "Out Of Scope", "Definition Of Done", "Assumptions", "Agent Build Rule"]
     },
     {
       "id": "exactly_three_user_stories",
       "type": "regex_count",
-      "path": ".onemillion/prd.md",
+      "path": ".onemillion/refined-prd.md",
       "pattern": "As [^,]+, I want [^,]+ so that",
       "exact_count": 3
     },
     {
+      "id": "functional_requirements_have_items",
+      "type": "markdown_section_bullet_count",
+      "path": ".onemillion/refined-prd.md",
+      "section_heading_contains": "Functional Requirements",
+      "min_bullets": 3
+    },
+    {
+      "id": "crud_present",
+      "type": "file_contains",
+      "path": ".onemillion/refined-prd.md",
+      "required_strings": ["Create", "Read", "Update", "Delete"]
+    },
+    {
+      "id": "scope_tags_present",
+      "type": "file_contains",
+      "path": ".onemillion/refined-prd.md",
+      "required_strings": ["MVP", "POST-MVP"]
+    },
+    {
+      "id": "complete_core_flow_present",
+      "type": "file_contains",
+      "path": ".onemillion/refined-prd.md",
+      "required_strings": ["Trigger:", "Outcome:"]
+    },
+    {
+      "id": "data_schema_has_items",
+      "type": "markdown_section_bullet_count",
+      "path": ".onemillion/refined-prd.md",
+      "section_heading_contains": "Data Schema",
+      "min_bullets": 2
+    },
+    {
+      "id": "business_rules_have_items",
+      "type": "markdown_section_bullet_count",
+      "path": ".onemillion/refined-prd.md",
+      "section_heading_contains": "Business Rules",
+      "min_bullets": 3
+    },
+    {
       "id": "out_of_scope_has_items",
       "type": "markdown_section_bullet_count",
-      "path": ".onemillion/prd.md",
+      "path": ".onemillion/refined-prd.md",
       "section_heading_contains": "Out of Scope",
       "min_bullets": 5
     },
     {
       "id": "use_cases_have_items",
       "type": "markdown_section_bullet_count",
-      "path": ".onemillion/prd.md",
+      "path": ".onemillion/refined-prd.md",
       "section_heading_contains": "Use Case",
       "min_bullets": 2
     },
     {
       "id": "kpis_have_items",
       "type": "markdown_section_bullet_count",
-      "path": ".onemillion/prd.md",
+      "path": ".onemillion/refined-prd.md",
       "section_heading_contains": "KPI",
       "min_bullets": 2
     }
@@ -49,7 +93,23 @@
     },
     {
       "id": "agent_can_build",
-      "criteria": "A build agent can read the locked spec and know what to build without guessing"
+      "criteria": "Design, plan, and build agents can read the locked spec and know what to do next without guessing"
+    },
+    {
+      "id": "crud_is_mvp_relevant",
+      "criteria": "CRUD actions describe the core MVP entities and do not expand scope beyond the Day 2 MVP decision"
+    },
+    {
+      "id": "feature_inventory_is_sequenced",
+      "criteria": "Features are tagged MVP or POST-MVP, and POST-MVP items are sequenced later rather than silently deleted"
+    },
+    {
+      "id": "core_flow_is_coherent",
+      "criteria": "Complete Core Flow has a clear trigger, numbered steps, and useful outcome"
+    },
+    {
+      "id": "schema_and_rules_are_buildable",
+      "criteria": "Data schema names MVP entities with field types, and business rules clarify constraints that build/test agents need"
     },
     {
       "id": "definition_of_done_concrete",
