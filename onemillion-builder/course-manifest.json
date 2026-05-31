@@ -8,10 +8,11 @@
   "completion_phrase": "day done",
   "agent_root": "onemillion-agents/agents",
   "teaching_protocol": "onemillion-builder/docs/teaching-protocol.md",
+  "course_flow": "onemillion-builder/single.md",
   "principle": "Agent guides. Learner decides. Learner touches real tools. Agent verifies.",
   "preflight_day": {
     "day": 0,
-    "title": "Public Commitment + Fork Setup",
+    "title": "GitHub Workspace + Public Commitment",
     "path": "onemillion-builder/day-0-commit/README.md",
     "verifier_report": ".onemillion/verification-day-00.md",
     "completion_gate": [
@@ -122,31 +123,31 @@
   "days": [
     {
       "day": 1,
-      "title": "Vision + Mental Map",
+      "title": "OneMillion Pipeline + Idea Lab",
       "primary_agent": "idea",
       "supporting_agents": ["ask"],
       "lesson": "onemillion-builder/week-1-foundation/day-01-vision/learn.md",
       "build": "onemillion-builder/week-1-foundation/day-01-vision/build.md",
       "resources": "onemillion-builder/week-1-foundation/day-01-vision/resources.md",
       "verifier": "onemillion-builder/week-1-foundation/day-01-vision/ai-instructions-day-01.md",
-      "learning_focus": ["compare ideas", "choose one target user", "name the painful moment", "understand the agentic product map"],
+      "learning_focus": ["understand the OneMillion development pipeline", "learn the agent map", "compare ideas", "choose one target user", "name the painful moment"],
       "external_tools": [],
       "human_decisions": ["product direction", "target user", "problem statement", "product type"],
       "completion_gate": [".onemillion/progress.md", ".onemillion/project.json"]
     },
     {
       "day": 2,
-      "title": "Problem + Mom Test",
+      "title": "Problem + Research",
       "primary_agent": "idea",
       "supporting_agents": ["research"],
       "lesson": "onemillion-builder/week-1-foundation/day-02-problem/learn.md",
       "build": "onemillion-builder/week-1-foundation/day-02-problem/build.md",
       "resources": "onemillion-builder/week-1-foundation/day-02-problem/resources.md",
       "verifier": "onemillion-builder/week-1-foundation/day-02-problem/ai-instructions-day-02.md",
-      "learning_focus": ["ask Mom Test questions", "capture real user notes", "separate pain from compliments"],
+      "learning_focus": ["ask Mom Test questions", "capture real user notes", "separate pain from compliments", "compare alternatives and workarounds"],
       "external_tools": ["phone", "email", "calendar", "notes"],
       "human_decisions": ["who to interview", "what evidence is strong enough", "whether to pivot"],
-      "completion_gate": [".onemillion/notes.md", "3+ conversations or documented outreach attempts"]
+      "completion_gate": [".onemillion/notes.md", ".onemillion/research.md", "3+ conversations or documented outreach attempts", "3+ alternatives/substitutes/workarounds"]
     },
     {
       "day": 3,
@@ -157,10 +158,10 @@
       "build": "onemillion-builder/week-1-foundation/day-03-prd/build.md",
       "resources": "onemillion-builder/week-1-foundation/day-03-prd/resources.md",
       "verifier": "onemillion-builder/week-1-foundation/day-03-prd/ai-instructions-day-03.md",
-      "learning_focus": ["write requirements", "lock MVP scope", "define done"],
+      "learning_focus": ["write requirements", "lock MVP scope", "write user stories", "write use cases", "define KPIs", "define done"],
       "external_tools": [],
       "human_decisions": ["MVP features", "out-of-scope items", "definition of done"],
-      "completion_gate": [".onemillion/prd.md", "exactly 3 core features", "locked out-of-scope list"]
+      "completion_gate": [".onemillion/prd.md", "exactly 3 core jobs/user stories", "2+ use cases", "2+ KPIs/success signals", "locked out-of-scope list"]
     },
     {
       "day": 4,

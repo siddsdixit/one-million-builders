@@ -100,6 +100,7 @@ def scan_persona_friction(persona: dict) -> list[str]:
     frictions: list[str] = []
     readme = (ROOT / "README.md").read_text()
     start = (ROOT / "START-HERE.md").read_text()
+    single = (ROOT / "single.md").read_text()
     subdir_agents = (ROOT / "AGENTS.md").read_text()
     agents = (REPO / "AGENTS.md").read_text()
     orchestrator = (REPO / "onemillion-agents/agents/orchestrator.md").read_text()
@@ -121,7 +122,7 @@ def scan_persona_friction(persona: dict) -> list[str]:
     harness_docs = "\n".join(path.read_text() for path in (ROOT / "docs/harnesses").glob("*.md"))
 
     def missing(term: str, message: str) -> None:
-        haystack = "\n".join([readme, start, day1, account]).lower()
+        haystack = "\n".join([readme, start, single, day1, account]).lower()
         if term.lower() not in haystack:
             frictions.append(message)
 
@@ -171,7 +172,7 @@ def scan_persona_friction(persona: dict) -> list[str]:
     if re.search(r"start Day 1", harness_docs, flags=re.IGNORECASE):
         frictions.append("Harness docs skip the mandatory Day 0 preflight.")
 
-    teaching_surface = "\n".join([agents, orchestrator, teaching, day0, harness_docs]).lower()
+    teaching_surface = "\n".join([agents, orchestrator, teaching, single, day0, harness_docs]).lower()
     required_teaching_terms = {
         "proper greeting": "Harness teaching protocol must require a proper greeting.",
         "explain the course": "Harness teaching protocol must explain what the course is before assigning work.",
@@ -275,18 +276,33 @@ def scan_persona_friction(persona: dict) -> list[str]:
             if url not in text:
                 frictions.append(f"{day_label} must include exact provider link: {url}")
 
-    landing_surface = "\n".join([readme, start, subdir_agents]).lower()
+    landing_surface = "\n".join([readme, start, single, subdir_agents]).lower()
     landing_requirements = {
         "i am taking the onemillion course at": "Landing page must support the one-sentence harness start prompt.",
         "github signup": "Landing/start docs must guide learners who do not have GitHub yet.",
         "fork": "Landing/start docs must guide the required fork step.",
         "clone": "Landing/start docs must guide the required clone step.",
         "install": "Landing/start docs must guide the adapter/install step.",
+        "single.md": "Landing/start docs must route harnesses to the full course flow.",
+        "development pipeline": "Landing/start docs must frame the course around the OneMillion development pipeline.",
         "do not ask the learner to figure out the repo structure first": "Subdirectory AGENTS must tell harnesses to take over from the course URL.",
     }
     for term, message in landing_requirements.items():
         if term not in landing_surface:
             frictions.append(message)
+
+    single_lower = single.lower()
+    for term in [
+        "idea -> research -> prd -> validate spec -> design -> plan -> build -> review -> test -> guard -> ship -> sell",
+        "tools arrive just in time",
+        "day 0: github workspace",
+        "day 1: onemillion pipeline",
+        "user stories",
+        "use cases",
+        "kpis",
+    ]:
+        if term not in single_lower:
+            frictions.append(f"single.md missing pipeline/course-flow term: {term}")
 
     return frictions
 

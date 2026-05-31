@@ -17,7 +17,7 @@ The course is designed around a universal bootstrap file:
 AGENTS.md
 ```
 
-That file tells your harness how to become your OneMillion learning orchestrator. The day-by-day map lives in `course-manifest.json`.
+That file tells your harness how to become your OneMillion learning orchestrator. The day-by-day map lives in `course-manifest.json`. The full narrative course flow lives in [single.md](single.md).
 
 When a day asks you to create an account, create a key, set permissions, or verify a dashboard, use [Account Setup Playbook](docs/account-setup.md). It gives exact links and QA checks.
 
@@ -76,9 +76,10 @@ https://github.com/siddsdixit/teach-one-million/tree/main/onemillion-builder
 
 Read AGENTS.md and onemillion-builder/course-manifest.json.
 Read onemillion-builder/docs/teaching-protocol.md.
+Read onemillion-builder/single.md.
 Become my OneMillion learning orchestrator.
 First verify I starred, forked, and cloned the repo.
-Then start Day 0 and Day 1.
+Then start Day 0. Do not start Day 1 until Day 0 passes.
 Teach me one day at a time. Properly greet me, explain the course, explain the AI/human contract, introduce each day, provide copy-ready actions, and define what done means.
 When I say "day done", verify the day and advance me.
 Do not skip the learning or do the external tool steps for me.
@@ -106,10 +107,12 @@ If GitHub CLI is not available, the installer stops until your git remotes are c
 
 ## What Happens Next
 
-The orchestrator starts Day 1 with the Idea agent.
+The orchestrator starts Day 0 with GitHub fork verification and the commitment. After Day 0 passes, it starts Day 1 with the OneMillion development pipeline, the agent map, and the Idea agent.
 
 You will:
 
+- learn what the OneMillion development pipeline is and why the flow is spec-first
+- learn what each OneMillion agent does
 - compare possible ideas
 - choose a specific user
 - name a painful moment

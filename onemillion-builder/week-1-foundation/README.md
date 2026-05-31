@@ -29,9 +29,9 @@ Week 1 is where your harness uses those agents to create your first `.onemillion
 
 | Day | Title | What you ship | Time |
 |-----|-------|---------------|------|
-| **1** | [Vision + Mental Map](./day-01-vision/learn.md) | Picked product type + idea | 30–60 min |
-| **2** | [Problem + Mom Test](./day-02-problem/learn.md) | 3 real problems from real conversations | 45–75 min |
-| **3** | [Write Your PRD](./day-03-prd/learn.md) | Locked PRD with 5 sections | 45–90 min |
+| **1** | [OneMillion Pipeline + Idea Lab](./day-01-vision/learn.md) | Pipeline understood + product direction picked | 45–75 min |
+| **2** | [Problem + Research](./day-02-problem/learn.md) | 3 conversations + competitor/workaround research | 45–90 min |
+| **3** | [Write Your PRD](./day-03-prd/learn.md) | Locked PRD with user stories, use cases, and KPIs | 45–90 min |
 | **4** | [Stack + First Deploy](./day-04-stack/learn.md) | Hello-world live at yourapp.vercel.app | 1–2.5 hr |
 | **5** | [Auth + Database](./day-05-auth/learn.md) | Signup → login → logout working | 1–2.5 hr |
 | **6** | [Core Feature](./day-06-core-feature/learn.md) | Your main feature working live | 1.5–3 hr |
@@ -53,7 +53,8 @@ Week 1 is where your harness uses those agents to create your first `.onemillion
 ## What You Need Before Starting
 
 - ✅ A coding harness ready to read `AGENTS.md` ([getting-started.md](../docs/getting-started.md))
-- ✅ GitHub, Supabase, Vercel accounts (signed up, no setup yet)
+- ✅ GitHub fork/clone complete from Day 0
+- ✅ Vercel and Supabase can wait until Days 4 and 5, when the pipeline needs them
 - ✅ ~10 hours of total time over the next 6 days
 
 ---
@@ -78,4 +79,4 @@ You are ready for Week 2 if:
 
 Then you move on to **Week 2: Make It AI** — adding real AI features to the app you just built.
 
-→ **Start:** [Day 1 — Vision + Mental Map](./day-01-vision/learn.md)
+→ **Start:** [Day 1 — OneMillion Pipeline + Idea Lab](./day-01-vision/learn.md)

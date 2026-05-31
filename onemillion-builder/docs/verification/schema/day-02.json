@@ -1,6 +1,6 @@
 {
   "day": 2,
-  "title": "Problem + Mom Test",
+  "title": "Problem + Research",
   "structural_checks": [
     {
       "id": "notes_md_exists",
@@ -29,6 +29,18 @@
       "section_pattern": "## Conversation",
       "required_text": "Date:",
       "applies_to": "each"
+    },
+    {
+      "id": "research_md_exists",
+      "type": "file_exists",
+      "path": ".onemillion/research.md"
+    },
+    {
+      "id": "research_has_three_items",
+      "type": "regex_count",
+      "path": ".onemillion/research.md",
+      "pattern": "(?:^|\\n)(?:- |\\|)",
+      "min_count": 3
     }
   ],
   "quality_checks": [
@@ -43,6 +55,10 @@
     {
       "id": "target_users",
       "criteria": "Conversations are with target users, not the builder's friends/family (unless explicitly noted)"
+    },
+    {
+      "id": "research_insight",
+      "criteria": "Research identifies alternatives, substitutes, or manual workarounds and explains at least one gap"
     }
   ]
 }

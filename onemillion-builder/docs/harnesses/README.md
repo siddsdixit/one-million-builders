@@ -10,7 +10,7 @@ I am starting the OneMillion course.
 Course repo:
 https://github.com/siddsdixit/teach-one-million
 
-Read AGENTS.md, the course manifest, and onemillion-builder/docs/teaching-protocol.md.
+Read AGENTS.md, onemillion-builder/course-manifest.json, onemillion-builder/docs/teaching-protocol.md, and onemillion-builder/single.md.
 Become my OneMillion learning orchestrator.
 Start me at Day 0.
 First verify fork, clone, origin, and upstream.

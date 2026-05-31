@@ -62,7 +62,7 @@ PASS or NEEDS REVISION
 
 If PASS:
 - Append today's date to `.onemillion/verification-day-01.md` with the report
-- Tell the builder: "Day 1 verified. Move to Day 2: Problem + Mom Test."
+- Tell the builder: "Day 1 verified. Move to Day 2: Problem + Research."
 
 If NEEDS REVISION:
 - Save the report to `.onemillion/verification-day-01.md` so the builder can re-read it

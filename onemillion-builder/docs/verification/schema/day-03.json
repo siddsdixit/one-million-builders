@@ -8,10 +8,10 @@
       "path": ".onemillion/prd.md"
     },
     {
-      "id": "five_sections_present",
+      "id": "eight_sections_present",
       "type": "markdown_required_sections",
       "path": ".onemillion/prd.md",
-      "required_headings": ["Problem", "User", "Feature", "Scope", "Done"]
+      "required_headings": ["Problem", "User", "Research", "Use Case", "KPI", "Scope", "Done"]
     },
     {
       "id": "exactly_three_user_stories",
@@ -26,6 +26,20 @@
       "path": ".onemillion/prd.md",
       "section_heading_contains": "Out of Scope",
       "min_bullets": 5
+    },
+    {
+      "id": "use_cases_have_items",
+      "type": "markdown_section_bullet_count",
+      "path": ".onemillion/prd.md",
+      "section_heading_contains": "Use Case",
+      "min_bullets": 2
+    },
+    {
+      "id": "kpis_have_items",
+      "type": "markdown_section_bullet_count",
+      "path": ".onemillion/prd.md",
+      "section_heading_contains": "KPI",
+      "min_bullets": 2
     }
   ],
   "quality_checks": [
@@ -39,11 +53,15 @@
     },
     {
       "id": "definition_of_done_concrete",
-      "criteria": "Section 5 describes a specific working state of v1, not vague aspirations"
+      "criteria": "Definition of Done describes a specific working state of v1, not vague aspirations"
     },
     {
       "id": "user_stories_concrete",
       "criteria": "Each user story names a concrete action (see, send, mark, create, filter), not vague verbs like 'use' or 'manage'"
+    },
+    {
+      "id": "kpis_measure_usefulness",
+      "criteria": "KPIs measure product usefulness or behavior, not vanity metrics alone"
     }
   ]
 }

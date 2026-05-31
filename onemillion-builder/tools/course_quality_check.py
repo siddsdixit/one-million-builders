@@ -119,6 +119,7 @@ def check_agent_architecture() -> None:
         REPO / "AGENTS.md",
         ROOT / "AGENTS.md",
         ROOT / "course-manifest.json",
+        ROOT / "single.md",
         ROOT / "docs" / "account-setup.md",
         ROOT / "docs" / "agent-flow.md",
         ROOT / "docs" / "day-done.md",
@@ -242,6 +243,9 @@ def check_manifest() -> None:
     if manifest.get("teaching_protocol") != "onemillion-builder/docs/teaching-protocol.md":
         errors.append(f"{rel(path)} must point to teaching protocol")
 
+    if manifest.get("course_flow") != "onemillion-builder/single.md":
+        errors.append(f"{rel(path)} must point to single course flow")
+
     setup_links = manifest.get("provider_setup_links")
     if not isinstance(setup_links, dict):
         errors.append(f"{rel(path)} missing provider_setup_links")
@@ -266,6 +270,7 @@ def check_harness_neutral_entrypoints() -> None:
         ROOT / "AGENTS.md",
         ROOT / "README.md",
         ROOT / "START-HERE.md",
+        ROOT / "single.md",
         ROOT / "docs" / "getting-started.md",
         ROOT / "docs" / "account-setup.md",
         ROOT / "docs" / "agent-flow.md",

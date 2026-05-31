@@ -1,4 +1,4 @@
-# Day 2 — Problem + Mom Test
+# Day 2 — Problem + Research
 
 <p align="center">
   <a href="../../README.md">Course Home</a> &bull;
@@ -222,7 +222,7 @@ Paste the contents of [`ai-instructions-day-02.md`](./ai-instructions-day-02.md)
 ```
 ✅ Day 2 done: 3 Mom Test conversations + pivot/lock idea
 🔴 Stuck on: [optional]
-🎯 Tomorrow: PRD with 5 sections
+🎯 Tomorrow: PRD with user stories, use cases, KPIs, and scope
 #BuildingWithOneMillion
 ```
 

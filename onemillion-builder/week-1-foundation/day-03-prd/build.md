@@ -15,8 +15,8 @@
 
 ## Before You Start
 
-- [ ] Day 2 verified (3+ conversations recorded)
-- [ ] You've read [learn.md](./learn.md) (especially Part 2 — the 5 sections)
+- [ ] Day 2 verified (3+ conversations and competitive research recorded)
+- [ ] You've read [learn.md](./learn.md)
 - [ ] Terminal open, in your `my-onemillion-build` folder
 
 ---
@@ -41,17 +41,28 @@ Pick one of the two approaches from learn.md.
 In Claude, paste this:
 
 ```
-I'm starting Day 3 of OneMillion. I need to write a PRD with exactly 5
-sections: Problem, User (one named person), 3 Core Features (user story format),
-Out of Scope, Definition of Done.
+I'm starting Day 3 of OneMillion. I need to write a PRD with exactly 8
+sections:
+1. Problem
+2. Target User
+3. Research Evidence
+4. 3 Core Jobs / User Stories
+5. Use Cases
+6. KPIs / Success Signals
+7. Out of Scope
+8. Definition of Done
 
 Here are my conversation notes:
 [paste contents of .onemillion/notes.md]
 
+Here is my competitive research:
+[paste contents of .onemillion/research.md]
+
 Here's my idea from Day 1:
 [paste contents of .onemillion/project.json]
 
-Draft my PRD. Push back if any section feels vague or generic. The goal is
+Draft my PRD. Keep the MVP to exactly 3 core jobs. Push back if any section
+feels vague, generic, oversized, or unsupported by the research. The goal is
 to lock scope today so I can start building tomorrow.
 ```
 
@@ -67,6 +78,9 @@ question at a time, section by section.
 
 Here are my Day 2 conversation notes:
 [paste contents of .onemillion/notes.md]
+
+Here is my competitive research:
+[paste contents of .onemillion/research.md]
 
 Start with Section 1 (Problem): ask me what specific pain my user feels, with
 evidence from my conversations.
@@ -128,15 +142,18 @@ claude
 
 Paste the contents of [`ai-instructions-day-03.md`](./ai-instructions-day-03.md).
 
-Claude reads `prd.md`, checks all 5 sections, validates user story format, and reports pass / needs-revision.
+Claude reads `prd.md`, checks all 8 sections, validates user story format, and reports pass / needs-revision.
 
 ---
 
 ## What Should Be True After Day 3
 
-- [ ] `.onemillion/prd.md` exists with all 5 sections
-- [ ] Section 3 has exactly 3 user stories in `As [user], I want [action] so that [outcome]` format
-- [ ] Section 4 has at least 5 out-of-scope items
+- [ ] `.onemillion/prd.md` exists with all 8 sections
+- [ ] It includes problem, target user, research evidence, 3 core jobs/user stories, use cases, KPIs, out-of-scope, and definition of done
+- [ ] The core jobs section has exactly 3 user stories in `As [user], I want [action] so that [outcome]` format
+- [ ] The use cases section has at least 2 real scenarios
+- [ ] The KPI section has at least 2 measurable success signals
+- [ ] The out-of-scope section has at least 5 out-of-scope items
 - [ ] You've committed the PRD to git
 - [ ] Verification passed ✅
 
@@ -183,7 +200,7 @@ Ask for one missing detail at a time if needed.
 
 | Problem | Fix |
 |---------|-----|
-| Claude wrote a 10-section PRD | Tell it: "Reduce to exactly 5 sections: Problem, User, 3 Features, Out of Scope, Definition of Done. No more." |
+| Claude wrote a 10-section PRD | Tell it: "Reduce to exactly 8 sections: Problem, Target User, Research Evidence, 3 Core Jobs/User Stories, Use Cases, KPIs, Out of Scope, Definition of Done. No more." |
 | My PRD has 5 features instead of 3 | Cut to the 3 most essential. Move the rest to Out of Scope. This is the hardest part of Day 3. |
 | My user story format is wrong | Format must be exactly: `As [user], I want [action] so that [outcome]`. Claude can fix this — ask it. |
 | I keep wanting to pivot to a new idea | After Day 3, don't pivot. Ship this one. Then build the next idea. The skill compounds. |

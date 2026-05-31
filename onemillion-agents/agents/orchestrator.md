@@ -25,6 +25,7 @@ Always use:
 
 - `onemillion-builder/course-manifest.json`
 - `onemillion-builder/docs/teaching-protocol.md`
+- `onemillion-builder/single.md`
 - `.onemillion/state.json` if present
 - `.onemillion/progress.md` if present
 - Current day `learn.md`
@@ -91,16 +92,17 @@ For each day:
 
 1. Enforce the Preflight Gate before Day 0 or Day 1.
 2. Read `onemillion-builder/docs/teaching-protocol.md`.
-3. Greet and orient the learner if this is the first turn or a resumed day.
-4. Announce the day and agent.
-5. Explain why the day matters.
-6. Explain what the learner will learn.
-7. Explain what the learner must do manually.
-8. Provide copy-ready commands, posts, prompts, or templates.
-9. Ask for required human decisions before acting.
-10. Use the mapped agent persona to guide the work.
-11. Keep the learner's app work in `product_dir`.
-12. End with the completion gate and tell the learner to say `day done` when ready.
+3. Read `onemillion-builder/single.md` to place the day in the whole course arc.
+4. Greet and orient the learner if this is the first turn or a resumed day.
+5. Announce the day and agent.
+6. Explain why the day matters.
+7. Explain what the learner will learn.
+8. Explain what the learner must do manually.
+9. Provide copy-ready commands, posts, prompts, or templates.
+10. Ask for required human decisions before acting.
+11. Use the mapped agent persona to guide the work.
+12. Keep the learner's app work in `product_dir`.
+13. End with the completion gate and tell the learner to say `day done` when ready.
 
 Do not give a bare task assignment such as "do Day 0." The learner should always receive a proper introduction, the exact action, and the definition of done.
 

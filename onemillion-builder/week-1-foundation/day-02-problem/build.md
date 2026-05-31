@@ -9,7 +9,7 @@
   <a href="./loom.md">Video</a>
 </p>
 
-**Still no code.** Today's "build" is having 3 conversations and writing down what you heard.
+**Still no code.** Today's "build" is having 3 conversations, studying alternatives, and writing down what you heard.
 
 If you're nervous about reaching out to people, that's normal. Push through it. By tomorrow you'll be glad you did.
 
@@ -20,6 +20,7 @@ If you're nervous about reaching out to people, that's normal. Push through it. 
 - [ ] Day 1 verified ✅
 - [ ] You've read [learn.md](./learn.md) (especially Part 2 — the good vs bad questions)
 - [ ] You've identified 3+ people to talk to (read on for help)
+- [ ] You understand that workarounds and competitors are evidence, not discouragement
 
 ---
 
@@ -127,7 +128,39 @@ Don't worry about perfect formatting. Capture what was said.
 
 ---
 
-## Step 4: Reflect On Your Idea
+## Step 4: Capture Competitors And Workarounds
+
+Competitive research does not mean "find a startup exactly like mine and quit." It means learning what users already do when your product does not exist.
+
+Create `.onemillion/research.md`:
+
+```markdown
+# Competitive Research
+
+## Alternatives
+
+| Alternative | What users use it for | What it does well | Gap or frustration |
+|---|---|---|---|
+| [Name/link] | [job] | [strength] | [gap] |
+| [Name/link] | [job] | [strength] | [gap] |
+| [Name/link] | [job] | [strength] | [gap] |
+
+## Manual Workarounds
+
+- [Spreadsheet, Notion doc, calendar reminders, Slack messages, VA, email, paper checklist, etc.]
+
+## What I Learned
+
+- [Insight 1]
+- [Insight 2]
+- [Insight 3]
+```
+
+Capture at least 3 alternatives, substitutes, or manual workarounds. Links are helpful when available, but not required for purely manual workarounds.
+
+---
+
+## Step 5: Reflect On Your Idea
 
 After 3 conversations, ask yourself:
 
@@ -146,7 +179,7 @@ If you pivot, update `.onemillion/project.json` with the new `idea` field.
 
 ---
 
-## Step 5: Run Day 2 Verification
+## Step 6: Run Day 2 Verification
 
 ```bash
 claude
@@ -154,13 +187,14 @@ claude
 
 Paste the contents of [`ai-instructions-day-02.md`](./ai-instructions-day-02.md).
 
-Claude will read `notes.md`, count conversations, check structure, and report pass / needs revision.
+Claude will read `notes.md` and `research.md`, count conversations, check structure, and report pass / needs revision.
 
 ---
 
 ## What Should Be True After Day 2
 
 - [ ] `.onemillion/notes.md` exists with 3+ structured conversation records
+- [ ] `.onemillion/research.md` exists with 3+ alternatives, substitutes, or workarounds
 - [ ] Each conversation has: name, date, pain story, workarounds, direct quotes
 - [ ] You either confirmed Day 1 idea or pivoted (and updated project.json)
 - [ ] Verification passed ✅

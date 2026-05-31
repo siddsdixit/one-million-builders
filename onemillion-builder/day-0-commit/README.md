@@ -1,6 +1,6 @@
-# Day 0 — Public Commitment
+# Day 0 — GitHub Workspace + Public Commitment
 
-**Time: 10-15 minutes. Mandatory before Day 1.**
+**Time: 20-30 minutes. Mandatory before Day 1.**
 
 Before you start Day 1, set up your fork and make a commitment. Publicly if you can. Privately to five real people if you cannot post yet.
 
@@ -27,9 +27,19 @@ Here is how we will work:
 - You will touch the real external tools yourself.
 - When a day is complete, you will say `day done`; I will verify and advance you.
 
-Today is Day 0: Public Commitment + Fork Setup.
+Today is Day 0: GitHub Workspace + Public Commitment.
 
-The goal today is not coding. The goal is to create accountability and prove that your course repo is correctly set up from your own fork.
+The goal today is not coding. The goal is to create your builder workspace, create accountability, and prove that your course repo is correctly set up from your own fork.
+
+The course follows the OneMillion development pipeline:
+idea -> research -> PRD -> validate spec -> design -> plan -> build -> review -> test -> guard -> ship -> sell.
+
+We introduce external tools only when the pipeline needs them:
+- GitHub today, because your fork is the course workspace and proof trail.
+- Vercel on Day 4, when you have an app shell to deploy.
+- Supabase on Day 5, when you add auth and database.
+- Anthropic on Day 8, when your AI feature is specified.
+- Sentry, analytics, and uptime monitoring on Day 15, when production needs observability.
 
 What you will do now:
 1. Confirm the GitHub fork/clone setup is correct.
@@ -40,10 +50,12 @@ What you will do now:
 6. Come back and say `day done`.
 
 Use these exact links:
+- GitHub signup: https://github.com/signup
+- Course repo: https://github.com/siddsdixit/teach-one-million
+- Fork course repo: https://github.com/siddsdixit/teach-one-million/fork
 - LinkedIn post composer: https://www.linkedin.com/feed/
 - Sid's LinkedIn profile to tag: https://www.linkedin.com/in/siddharthdixit
 - X post composer: https://x.com/compose/post
-- Course repo to include: https://github.com/siddsdixit/teach-one-million
 ```
 
 Then show the full LinkedIn, X, and private-message templates from this page. Do not summarize them away. Ask the learner which path they want to use, then tell them exactly where to paste the chosen message.
@@ -94,6 +106,12 @@ Run this from the repo root if you have not already:
 4. Fork directly: https://github.com/siddsdixit/teach-one-million/fork
 5. Install GitHub CLI if you want the easiest terminal path: https://cli.github.com/
 6. If Git is not installed, use GitHub's setup guide: https://docs.github.com/en/get-started/git-basics/set-up-git
+
+### Accounts Come Just In Time
+
+Do not create Vercel, Supabase, Anthropic, Sentry, or UptimeRobot projects today unless your harness is explicitly helping with the matching day.
+
+The exact links are still documented in [Account Setup Playbook](../docs/account-setup.md), but the course introduces them when the pipeline needs them.
 
 ### QA: Prove The Setup Is Correct
 

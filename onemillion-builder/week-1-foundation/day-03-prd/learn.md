@@ -21,8 +21,8 @@
 
 ## What You'll Have After Today
 
-- A **locked PRD** in `.onemillion/prd.md` with 5 sections
-- A scoped product type, locked features, locked out-of-scope
+- A **locked PRD** in `.onemillion/prd.md` with 8 sections
+- A scoped product type, locked user stories, use cases, KPIs, and out-of-scope
 - A clear answer to "is this done?" that you can hold yourself to
 - The end of "what if I added..." — scope is locked from here forward
 
@@ -49,13 +49,13 @@ That last one is the whole game. Vague PRDs produce vague code. The AI is great 
 
 This is the first pillar of agentic engineering: **spec before code**. Never let AI generate without a spec it can validate against.
 
-> 🔧 **Engineers:** You've seen PRDs before. The OneMillion PRD is intentionally lighter than corporate PRDs — 5 sections, max 2 pages. Heavier PRDs trigger paralysis in non-engineers. The 5 sections are what matter; everything else is fluff.
+> 🔧 **Engineers:** You've seen PRDs before. The OneMillion PRD is intentionally lighter than corporate PRDs, but it still includes the pieces agents need: evidence, user stories, use cases, KPIs, scope, and done criteria. Heavier PRDs trigger paralysis in non-engineers. This version is the minimum useful spec.
 
 ---
 
-## Part 2: The Five-Section PRD (~15 min read)
+## Part 2: The Eight-Section PRD (~15 min read)
 
-Yours has 5 sections. No more. No less.
+Yours has 8 sections. No more. No less.
 
 ### Section 1: Problem
 **One paragraph.** Specific pain. Who experiences it. Evidence it's real.
@@ -81,7 +81,16 @@ What's in there:
 - A failure story (gives you the emotional anchor)
 - Pricing intuition (anchors what you can charge)
 
-### Section 3: Core Features — Exactly 3
+### Section 3: Research Evidence
+
+**What did you learn from Day 2?** Summarize conversation patterns, alternatives, substitutes, workarounds, and competitor gaps.
+
+*Example:*
+- 5/5 designers already use Notion or spreadsheets to track deliverables.
+- 4/5 said the painful moment is Sunday night review, not daily task entry.
+- Existing project management tools feel too broad; the gap is a simple client-deliverable view.
+
+### Section 4: Core Jobs / User Stories — Exactly 3
 **Format:** *As [user], I want [action] so that [outcome].*
 
 Three. Not five. Not seven. Three. This is the most important constraint in the entire PRD.
@@ -104,10 +113,28 @@ Why three? Because the AI can ship three features cleanly in 6 days (Week 1). It
 
 The bad example is what gets you stuck on Day 12 with nothing working. The good example is what gets you shipped on Day 18.
 
-### Section 4: Out of Scope
+### Section 5: Use Cases
+
+**Real scenarios the product must handle.** These are not features. They are moments from the user's life.
+
+*Example:*
+- Sunday review: Sarah opens the dashboard and sees every deliverable due this week, sorted by client and due date.
+- Client follow-up: Sarah marks a deliverable sent and sends a status update without opening three separate tools.
+- Approval dispute: Sarah can see whether a client approved a deliverable and when.
+
+### Section 6: KPIs / Success Signals
+
+**How you know the product is useful.** Keep these measurable and connected to the pain.
+
+*Example:*
+- A new user creates 3+ deliverables in the first session.
+- A user sends at least one status update from the dashboard.
+- Sarah's weekly review drops from 90 minutes to under 20 minutes.
+
+### Section 7: Out of Scope
 **The features you explicitly will NOT build in v1.**
 
-This is as important as Section 3. Every idea that isn't in Core Features goes here. This is where you write down every feature that's tempting but doesn't make the cut.
+This is as important as the 3 core jobs. Every idea that isn't in Core Jobs goes here. This is where you write down every feature that's tempting but doesn't make the cut.
 
 *Example:*
 - **Out of scope (v2 or later):** Invoicing, time tracking, client self-service portal, mobile app, calendar integration, automated follow-ups, AI suggestions, multi-currency, team accounts.
@@ -116,7 +143,7 @@ You will be tempted to add these mid-build. The PRD says no. The PRD wins. Add t
 
 > 💡 The phrase you'll say out loud most often during the build: **"That's a v2 feature."** Practice it now. It's how you actually ship.
 
-### Section 5: Definition of Done
+### Section 8: Definition of Done
 **What does v1 look like, exactly?** A few sentences. Concrete enough that you'll know when you're done.
 
 *Example:*
@@ -136,9 +163,9 @@ You write a rough PRD, Claude critiques it.
 ```
 I'm starting Day 3 of the OneMillion course. Here's my conversation notes
 [paste notes.md]. Here's my idea [paste from project.json]. Help me draft
-a PRD with 5 sections: Problem, User (one named person), 3 core features
-(user story format), Out of Scope, Definition of Done. Don't add fluff.
-Push back if any section is vague.
+a PRD with 8 sections: Problem, Target User, Research Evidence,
+3 Core Jobs/User Stories, Use Cases, KPIs, Out of Scope, Definition of Done.
+Don't add fluff. Push back if any section is vague.
 ```
 
 Claude will draft. You'll review. Iterate 2-3 times. Done.
@@ -189,7 +216,13 @@ time. Uses Notion to track projects, email + Slack for client communication.
 Lost a major client last year due to a missed deliverable. Charges $80/hr.
 Would pay $50/month for a tool that eliminates the Sunday review.
 
-## 3. Core Features
+## 3. Research Evidence
+- 5/5 conversation participants described a weekly review ritual.
+- 4/5 use Notion or spreadsheets today.
+- 3/5 said general project management tools are too heavy for client deliverables.
+- The gap is a focused client-deliverable dashboard with low-friction status updates.
+
+## 4. Core Jobs / User Stories
 - As Sarah, I want to see all deliverables I owe across all clients in one
   dashboard so I never miss a deadline.
 - As Sarah, I want to send a quick status update to a client from the same
@@ -197,7 +230,17 @@ Would pay $50/month for a tool that eliminates the Sunday review.
 - As Sarah, I want clients to mark a deliverable approved so there's no
   dispute about whether I finished the work.
 
-## 4. Out of Scope (v2 or later)
+## 5. Use Cases
+- Sunday review: Sarah opens the dashboard and sees all deliverables due this week.
+- Status update: Sarah marks a deliverable sent and sends a client update from the same screen.
+- Approval record: Sarah can tell whether a client approved a deliverable and when.
+
+## 6. KPIs / Success Signals
+- A new user creates 3+ deliverables in the first session.
+- A user sends one client status update from the app.
+- Weekly review time drops from 90 minutes to under 20 minutes.
+
+## 7. Out of Scope (v2 or later)
 - Invoicing
 - Time tracking
 - Client self-service portal
@@ -207,7 +250,7 @@ Would pay $50/month for a tool that eliminates the Sunday review.
 - AI suggestions (might be added Week 2)
 - Team accounts
 
-## 5. Definition of Done
+## 8. Definition of Done
 A freelance designer can sign up, add up to 4 clients, create a project
 under each client with a name + due date, mark deliverables as in-progress
 / sent / approved, and send a one-click status update via email. The
@@ -216,13 +259,13 @@ dashboard shows everything they owe, sorted by due date.
 Product type: web_app
 ```
 
-Two pages. Five sections. Everything decided.
+Two to three pages. Eight sections. Everything decided.
 
 ---
 
 ## Common Mistakes (Today)
 
-1. **Too many features.** If you have 5+ in Section 3, you'll fail. Cut to 3. Brutally. The rest go to Section 4.
+1. **Too many features.** If you have 5+ in the Core Jobs section, you'll fail. Cut to 3. Brutally. The rest go to Out of Scope.
 
 2. **Vague users.** "Freelancers" or "small business owners" — too broad. Pick ONE specific human. The product gets shaped by who you're building for.
 
@@ -237,9 +280,11 @@ Two pages. Five sections. Everything decided.
 ## What Should Be True After Day 3
 
 - [ ] `.onemillion/prd.md` exists
-- [ ] All 5 sections present and filled in
-- [ ] Section 3 has exactly 3 user stories in proper format
-- [ ] Section 4 has at least 5 out-of-scope items
+- [ ] All 8 sections present and filled in
+- [ ] Core Jobs has exactly 3 user stories in proper format
+- [ ] Use Cases has at least 2 realistic scenarios
+- [ ] KPIs has at least 2 measurable success signals
+- [ ] Out of Scope has at least 5 items
 - [ ] You've read your PRD aloud and it sounds like a real product
 - [ ] You commit: scope is locked from here
 
@@ -248,9 +293,9 @@ Two pages. Five sections. Everything decided.
 ## Verify Your Day 3
 
 Paste the contents of [`ai-instructions-day-03.md`](./ai-instructions-day-03.md) into your coding harness. The verifier will:
-- Check all 5 sections exist
-- Validate Section 3 has exactly 3 user stories
-- Spot-check quality (named user? specific problem? Definition of Done concrete?)
+- Validate all 8 sections exist
+- Validate Core Jobs has exactly 3 user stories
+- Spot-check quality (named user? specific problem? research evidence? use cases? KPIs? Definition of Done concrete?)
 - Report pass / needs revision
 
 ---
@@ -258,7 +303,7 @@ Paste the contents of [`ai-instructions-day-03.md`](./ai-instructions-day-03.md)
 ## Share It
 
 ```
-✅ Day 3 done: PRD locked with 5 sections + 3 features
+✅ Day 3 done: PRD locked with 8 sections + 3 core jobs
 🎯 Tomorrow: stack setup + first deploy 🚀
 #BuildingWithOneMillion
 ```

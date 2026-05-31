@@ -1,4 +1,4 @@
-# Day 1 — Vision + Mental Map
+# Day 1 — OneMillion Pipeline + Idea Lab
 
 <p align="center">
   <a href="../../README.md">Course Home</a> &bull;
@@ -9,7 +9,7 @@
   <a href="./loom.md">Video</a>
 </p>
 
-**Week 1 | ~30–60 min | No code today**
+**Week 1 | ~45–75 min | No code today**
 
 > 💜 **First, the most important thing about this course:** you will miss days. That's normal. The 18 days are units of progress, not calendar days. Skip a day, take a week off, come back when life lets you. **No shame, no streaks, no badges taken away.** Builder #N gets earned when you finish, not by when you finish. The only way to fail is to never come back.
 
@@ -17,19 +17,19 @@
 
 ## Learning Frame
 
-- **Mental model:** A product is a promise to a specific person with a specific problem.
+- **Mental model:** The OneMillion pipeline turns a vague idea into a shipped product through small verified stages.
 - **What can go wrong:** You pick an idea that is too broad or too vague.
-- **What to ignore today:** Ignore tech stack, design, auth, and AI implementation today.
+- **What to ignore today:** Ignore Vercel, Supabase, API keys, design polish, auth, and AI implementation today.
 
 ## What You'll Have After Today
 
 - A picked **product type** (web app / AI agent / hybrid)
 - An **initial idea** written down in your project folder
+- A plain-English understanding of the OneMillion development pipeline
+- A map of which OneMillion agents help at each stage
 - A mental model of how software actually works — the four parts every product has
-- Optional stretch: **a live URL on the internet** — `your-name.vercel.app` — your first deployment, before you've written a line of code
-- A **public commitment** — you'll tell one person you started
 
-Today is the day you go from "course-taker" to "builder with a real product direction." If you do the optional Vercel stretch, you also ship your first public URL before writing any code.
+Today is the day you go from "course-taker" to "builder who understands the system." You are not just picking an idea. You are learning the pipeline you will use for every product after this one.
 
 ---
 
@@ -39,7 +39,56 @@ Video walkthrough: coming soon. The written guide is complete.
 
 ---
 
-## Part 1: How Every Software Product Actually Works (~10 min read)
+## Part 1: The OneMillion Development Pipeline (~15 min read)
+
+OneMillion is built around a simple belief:
+
+```text
+Do not ask AI to "build an app."
+Give AI a clear pipeline, a clear spec, and a clear verification gate.
+```
+
+The pipeline is:
+
+```text
+idea -> research -> PRD -> validate spec -> design -> plan -> build -> review -> test -> guard -> ship -> sell
+```
+
+Each stage has a job:
+
+| Stage | Agent | What happens |
+|---|---|---|
+| Idea | `idea` | Turn a vague thought into a specific user, painful moment, and product direction. |
+| Research | `idea` + `research` | Learn from real conversations, competitors, substitutes, and current workarounds. |
+| PRD | `spec` | Write the product promise, target user, core jobs, user stories, use cases, KPIs, out-of-scope, and done criteria. |
+| Validate spec | `validate-spec` | Catch vague, oversized, contradictory, or unbuildable requirements before code. |
+| Design | `design` | Turn requirements into screens, flows, states, copy, and UX rules. |
+| Plan | `plan` | Decide architecture, data model, routes, milestones, and build sequence. |
+| Validate plan | `validate-plan` | Catch missing dependencies and impossible sequencing before implementation. |
+| Build | `build` | Implement the next smallest working slice. |
+| Review | `review` | Compare code against the spec and catch drift. |
+| Test | `test` | Prove behavior locally and in the browser. |
+| Guard | `guard` | Check secrets, auth, RLS, privacy, prompt safety, rate limits, and production risk. |
+| Ship | `ship` | Deploy, verify, and keep rollback/recovery clear. |
+| Sell | `sell` | Explain the product, reach real users, collect feedback, and submit your demo. |
+
+This is why the days are ordered the way they are. You are not doing random tasks. You are walking the OneMillion pipeline once, slowly, with the harness teaching each stage.
+
+External tools arrive only when the pipeline needs them:
+
+| Tool | When it appears | Why |
+|---|---|---|
+| GitHub | Day 0 | Your fork is the course workspace and proof trail. |
+| Vercel | Day 4 | You have an app shell worth deploying. |
+| Supabase | Day 5 | You need auth, users, and persistent data. |
+| Anthropic | Day 8 | Your AI feature has a spec. |
+| Sentry, analytics, uptime | Day 15 | Your product is live enough to monitor. |
+
+Today uses the `idea` agent. Its job is not to pick the idea for you. Its job is to help you sharpen the idea until it names a specific person, a specific pain, and a product shape small enough to finish.
+
+---
+
+## Part 2: How Every Software Product Actually Works (~10 min read)
 
 This is the most important 10 minutes of the entire course. If you skip it, every day after gets harder.
 
@@ -74,7 +123,7 @@ That's it. Every product follows this loop. Once you internalize this, software 
 
 ---
 
-## Part 2: Three Things You Can Build (~10 min read)
+## Part 3: Three Things You Can Build (~10 min read)
 
 Before Day 3 (your PRD), you need to know which of three product shapes you're aiming for. The shape determines every decision after.
 
@@ -232,4 +281,4 @@ If you're in a cohort or want to build in public, post in Slack or on LinkedIn:
 
 ---
 
-→ **Next:** [Day 2 — Problem + Mom Test](../day-02-problem/learn.md)
+→ **Next:** [Day 2 — Problem + Research](../day-02-problem/learn.md)

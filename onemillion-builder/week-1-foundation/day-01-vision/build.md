@@ -9,7 +9,7 @@
   <a href="./loom.md">Video</a>
 </p>
 
-**No code today.** This is your "set up your project folder and write down your idea" day.
+**No code today.** This is your "learn the OneMillion pipeline, set up your product folder, and write down your idea" day.
 
 If you've already done [getting-started.md](../../docs/getting-started.md), you have all the tools. We're just creating a folder and a file.
 
@@ -18,12 +18,36 @@ If you've already done [getting-started.md](../../docs/getting-started.md), you 
 ## Before You Start
 
 - [ ] Terminal is open (Mac: Terminal app. Windows: Git Bash.)
-- [ ] You've decided on a `product_type` (web_app / ai_agent / hybrid) — see [learn.md](./learn.md) Part 2
+- [ ] You have read the OneMillion pipeline section in [learn.md](./learn.md)
+- [ ] You've decided on a `product_type` (web_app / ai_agent / hybrid) — see [learn.md](./learn.md) Part 3
 - [ ] You've drafted an idea (2 sentences) — see [learn.md](./learn.md) Today's Assignment
 
 ---
 
-## Step 1: Create Your Project Folder
+## Step 1: Ask Your Harness To Explain The Pipeline
+
+Before you create files, make the harness teach the OneMillion development pipeline in plain language:
+
+```text
+I am on OneMillion Day 1.
+
+Before we create files, explain the OneMillion development pipeline:
+idea -> research -> PRD -> validate spec -> design -> plan -> build -> review -> test -> guard -> ship -> sell.
+
+For each stage, tell me:
+1. what the stage is for,
+2. which OneMillion agent helps,
+3. what artifact gets produced,
+4. why this matters for my product.
+
+Keep it beginner-friendly and then help me pick my Day 1 product direction.
+```
+
+You should understand that Day 1 is not random brainstorming. It is the first stage of the pipeline.
+
+---
+
+## Step 2: Create Your Project Folder
 
 In your terminal, navigate to the root of your cloned course fork:
 
@@ -44,7 +68,7 @@ cd my-onemillion-build
 
 ---
 
-## Step 2: Create The Hidden Course Folder
+## Step 3: Create The Hidden Course Folder
 
 The course uses a folder called `.onemillion/` (the dot makes it hidden) to track your progress and store course-specific files. Create it:
 
@@ -56,7 +80,7 @@ mkdir .onemillion
 
 ---
 
-## Step 3: Create Your Progress Tracker
+## Step 4: Create Your Progress Tracker
 
 The course uses `.onemillion/progress.md` as your restart point. If you fall behind, this file tells you where to resume.
 
@@ -92,7 +116,7 @@ Fill in your name, product name if you have one, and target user. A fuller templ
 
 ---
 
-## Step 4: Create `project.json`
+## Step 5: Create `project.json`
 
 This file holds the answers to "what am I building?" The verifier reads it on every day to check your progress.
 
@@ -125,41 +149,6 @@ Save the file.
 
 ---
 
-## Step 5: 🎉 Optional Stretch — Deploy Your First URL (10 min, browser only)
-
-If you have the energy today, put your name on the internet.
-
-This is the magic moment. No coding. No terminal. Just a browser. By the end of these 10 minutes you'll have a real URL — `your-name.vercel.app` — that anyone in the world can visit. **Day 1 can end with you having shipped something public.**
-
-### Step 4a — Open Vercel's template gallery
-Go to [vercel.com/templates/next.js](https://vercel.com/templates/next.js) (any free Next.js template works — recommended: pick the simplest one, like "Next.js Starter" or "Hello World").
-
-### Step 4b — Click "Deploy"
-You'll be asked to sign in to Vercel (use your GitHub if you've set that up; otherwise sign in with email).
-
-### Step 4c — Pick a project name
-Use something like `[your-first-name]-onemillion-day-1` (e.g., `priya-onemillion-day-1`).
-
-Click **Create**. Vercel does the rest — clones the template, deploys it, gives you a URL.
-
-### Step 4d — Wait 60 seconds, then click your URL
-Your URL will be `https://[whatever-you-named-it].vercel.app`. Open it.
-
-**You should see:** a working Next.js homepage. It's not yours yet — it's a template. But it's running on the internet, with your name in the URL, deployed by you.
-
-### Step 4e — Send the URL to ONE person
-A friend. Your spouse. A coworker. Your group chat. Whoever. Say:
-
-> "Day 1 of OneMillion done. Started building. Here's my URL: [your URL]. Going to make it real over the next 17 days."
-
-That's the public commitment. You shipped on Day 1. You're not a course-taker anymore. You're a builder.
-
-> 💡 **Why this matters:** Most courses end Day 1 with "write something in a journal." OneMillion ends Day 1 with a live URL and a public commitment. You now have skin in the game. Day 4 (the hard day) doesn't feel like quitting an idea — it feels like quitting something real you already shipped.
-
-> 🔧 **Engineers:** Yes, this is just a Vercel template deploy. We use it as a psychological hook, not a technical exercise. The real Day 4 work (creating your own Next.js project locally with proper structure) still happens. Trust the process.
-
----
-
 ## Step 6: Run Day 1 Verification
 
 You're going to ask your coding harness to check your work. This is how every day ends — the AI verifies that you actually did what you were supposed to.
@@ -187,8 +176,8 @@ If needs revision, fix the issues and re-paste the verification prompt.
 - [ ] `.onemillion/project.json` exists and is valid JSON
 - [ ] `product_type` is one of `web_app`, `ai_agent`, or `hybrid`
 - [ ] `idea` is 2 sentences with a specific user and specific pain
-- [ ] Optional stretch: your Vercel template URL is live (e.g., `https://your-name-onemillion-day-1.vercel.app`)
-- [ ] You told at least one person you started (or sent the optional URL)
+- [ ] You can explain the OneMillion pipeline in plain language
+- [ ] You know which agent is helping today: `idea`
 - [ ] Verification ran and returned "Pass" (or you've addressed all revision notes)
 
 ---
@@ -243,4 +232,4 @@ Ask for one missing detail at a time if needed.
 
 ---
 
-→ **Done with Day 1?** Move to [Day 2 — Problem + Mom Test](../day-02-problem/learn.md).
+→ **Done with Day 1?** Move to [Day 2 — Problem + Research](../day-02-problem/learn.md).

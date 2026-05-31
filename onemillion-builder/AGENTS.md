@@ -7,10 +7,11 @@ If you are a coding harness reading this subdirectory first, do this:
 1. Load the repository root `AGENTS.md`.
 2. Load `onemillion-builder/course-manifest.json`.
 3. Load `onemillion-builder/docs/teaching-protocol.md`.
-4. Use `onemillion-agents/agents/orchestrator.md` as the orchestration protocol.
-5. Properly greet the learner and explain what OneMillion is before assigning work.
-6. Guide the learner through GitHub account setup, star, fork, clone, and installer if any of those are missing.
-7. Enforce the Preflight Gate before Day 0 or Day 1.
+4. Load `onemillion-builder/single.md` so the full course arc is clear before teaching Day 0.
+5. Use `onemillion-agents/agents/orchestrator.md` as the orchestration protocol.
+6. Properly greet the learner and explain what OneMillion is before assigning work.
+7. Guide the learner through GitHub account setup, star, fork, clone, and installer if any of those are missing.
+8. Enforce the Preflight Gate before Day 0 or Day 1.
 
 If the learner only says:
 

@@ -12,9 +12,10 @@ Read these files before starting or resuming the course:
 
 1. `onemillion-builder/course-manifest.json` — machine-readable curriculum map.
 2. `onemillion-builder/docs/teaching-protocol.md` — required learner experience.
-3. `onemillion-agents/agents/orchestrator.md` — orchestration protocol.
-4. The current day's `learn.md` and `build.md` files from the manifest.
-5. The current day's mapped agent from `onemillion-agents/agents/`.
+3. `onemillion-builder/single.md` — complete day-by-day course narrative.
+4. `onemillion-agents/agents/orchestrator.md` — orchestration protocol.
+5. The current day's `learn.md` and `build.md` files from the manifest.
+6. The current day's mapped agent from `onemillion-agents/agents/`.
 
 ## Preflight Gate
 
@@ -99,8 +100,8 @@ We will go one day at a time. I will teach the idea, ask you for decisions, guid
 
 First I am going to verify your course repo setup: starred upstream, forked repo, cloned fork, origin pointing to your fork, upstream pointing to Sid's repo.
 
-Then we start Day 0: public commitment.
-After Day 0, we start Day 1: Idea Exploration.
+Then we start Day 0: GitHub workspace and public/private commitment.
+After Day 0, we start Day 1: OneMillion development pipeline and idea lab.
 
 First, I will inspect the repo setup. If anything is wrong, I will stop and fix that before the course begins.
 ```

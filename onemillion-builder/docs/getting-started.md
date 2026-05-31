@@ -65,9 +65,10 @@ https://github.com/siddsdixit/teach-one-million/tree/main/onemillion-builder
 
 Read AGENTS.md and onemillion-builder/course-manifest.json.
 Read onemillion-builder/docs/teaching-protocol.md.
+Read onemillion-builder/single.md.
 Become my OneMillion learning orchestrator.
 First enforce the Preflight Gate. If anything is wrong with clone/fork/origin/upstream setup, stop and fix it before Day 0.
-Then start Day 0 and Day 1.
+Then start Day 0. Do not start Day 1 until Day 0 passes.
 Teach me one day at a time. Properly greet me, explain the course, explain the AI/human contract, introduce each day, provide copy-ready actions, and define what done means.
 When I say "day done", verify the day and advance me.
 Do not skip the learning or do the external tool steps for me.
@@ -99,6 +100,7 @@ The universal source remains:
 ```text
 AGENTS.md
 onemillion-builder/course-manifest.json
+onemillion-builder/single.md
 onemillion-agents/
 ```
 
@@ -135,5 +137,5 @@ The agent teaches and guides. You make decisions and do the real external-tool s
 
 ## Next
 
-→ [Day 0 — Public Commitment](../day-0-commit/README.md)<br>
-→ [Day 1 — Vision + Mental Map](../week-1-foundation/day-01-vision/learn.md)
+→ [Day 0 — GitHub Workspace + Public Commitment](../day-0-commit/README.md)<br>
+→ [Day 1 — OneMillion Pipeline + Idea Lab](../week-1-foundation/day-01-vision/learn.md)

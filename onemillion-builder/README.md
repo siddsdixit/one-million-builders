@@ -12,6 +12,8 @@
 <p align="center">
   <a href="START-HERE.md"><strong>Start Here</strong></a>
   &nbsp;•&nbsp;
+  <a href="single.md">Full Course Flow</a>
+  &nbsp;•&nbsp;
   <a href="#start-in-5-minutes">5-Minute Setup</a>
   &nbsp;•&nbsp;
   <a href="#course-roadmap">Course Roadmap</a>
@@ -92,6 +94,7 @@ https://github.com/siddsdixit/teach-one-million/tree/main/onemillion-builder
 
 Read AGENTS.md and onemillion-builder/course-manifest.json.
 Read onemillion-builder/docs/teaching-protocol.md.
+Read onemillion-builder/single.md.
 Become my OneMillion learning orchestrator.
 Properly greet me, explain the course, explain the AI/human contract, and guide me through GitHub setup, fork, clone, install, and Day 0.
 If I do not have GitHub yet, walk me through account creation with exact links.
@@ -101,13 +104,13 @@ When I say "day done", verify the day and advance me.
 Do not skip the learning or do the external tool steps for me.
 ```
 
-Need the slower walkthrough? Open [START-HERE.md](START-HERE.md).
+Need the slower walkthrough? Open [START-HERE.md](START-HERE.md). Want the whole day-by-day arc in one file? Open [single.md](single.md).
 
 ---
 
 ## How The Course Feels
 
-OneMillion is an agent-led apprenticeship. Open the repo in Claude Code, Cursor, Codex, Gemini, Antigravity, Copilot, or another coding harness. The harness reads `AGENTS.md` and `course-manifest.json`, then becomes your OneMillion learning orchestrator.
+OneMillion is an agent-led apprenticeship. Open the repo in Claude Code, Cursor, Codex, Gemini, Antigravity, Copilot, or another coding harness. The harness reads `AGENTS.md`, `course-manifest.json`, `docs/teaching-protocol.md`, and `single.md`, then becomes your OneMillion learning orchestrator.
 
 You move through focused agent modes:
 
@@ -143,6 +146,14 @@ Whenever the course asks you to create an account, API key, dashboard setting, o
 
 Worried about cost? Start on free tiers, create API keys only when the day asks for them, and read the pricing notes in the setup playbook before adding payment details. You can pause before any paid step.
 
+The course teaches the OneMillion development pipeline explicitly. You will learn what the `idea`, `spec`, `validate-spec`, `design`, `plan`, `build`, `review`, `test`, `guard`, `ship`, and `sell` agents do before you depend on them. The point is to learn the operating system: spec first, small slices, verified progress.
+
+```text
+idea -> research -> PRD -> validate spec -> design -> plan -> build -> review -> test -> guard -> ship -> sell
+```
+
+Tools arrive just in time. GitHub is required on Day 0 because your fork is the course workspace. Vercel appears when you deploy. Supabase appears when you add auth and database. Anthropic appears when the AI feature is specified. Monitoring appears when the product is live enough to need monitoring.
+
 ---
 
 ## Support Built In
@@ -165,7 +176,7 @@ Self-paced and cohort learners use the same curriculum, the same daily gates, an
 
 | Stage | Days | What you learn | What you have at the end |
 |---|---:|---|---|
-| **Foundation** | 1-6 | Idea, PRD, stack, GitHub, Vercel, Supabase | A live app with auth, database, and one core feature |
+| **Foundation** | 0-6 | GitHub workspace, OneMillion pipeline, idea, research, PRD, stack, Vercel, Supabase | A live app with auth, database, and one core feature |
 | **Make It AI** | 7-12 | AI spec, Claude API, streaming, tools, RAG, quality gates | A real AI feature inside your product |
 | **Ship & Sell** | 13-18 | Security, monitoring, landing page, outreach, demo | A launch-ready product and Builder Claim |
 
@@ -183,10 +194,10 @@ Self-paced and cohort learners use the same curriculum, the same daily gates, an
 
 | Day | Focus | Outcome |
 |---:|---|---|
-| [0](day-0-commit/README.md) | Public commitment + GitHub setup | Fork, clone, and commit to finishing |
-| [1](week-1-foundation/day-01-vision/learn.md) | Vision + mental map | Pick the product direction |
-| [2](week-1-foundation/day-02-problem/learn.md) | Problem + Mom Test | Validate pain before writing code |
-| [3](week-1-foundation/day-03-prd/learn.md) | PRD | Lock the MVP scope |
+| [0](day-0-commit/README.md) | GitHub workspace + commitment | Fork, clone, and public/private commitment |
+| [1](week-1-foundation/day-01-vision/learn.md) | OneMillion pipeline + idea lab | Understand the agents and pick the product direction |
+| [2](week-1-foundation/day-02-problem/learn.md) | Problem + research | Validate pain and compare alternatives before writing code |
+| [3](week-1-foundation/day-03-prd/learn.md) | PRD + user stories | Lock MVP scope, use cases, KPIs, and done criteria |
 | [4](week-1-foundation/day-04-stack/learn.md) | Stack + first deploy | Next.js app live on Vercel |
 | [5](week-1-foundation/day-05-auth/learn.md) | Auth + database | Supabase signup/login + first table |
 | [6](week-1-foundation/day-06-core-feature/learn.md) | Core feature | Main workflow working end-to-end |
