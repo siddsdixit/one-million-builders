@@ -22,7 +22,16 @@ Paste this:
 I am on OneMillion Day 9: Implementation Review.
 
 Act as the `review` agent for this day.
-First teach me the concept in plain language.
+First teach me implementation review in plain language:
+- what it means to compare built code against PRD, refined spec, design, architecture, and sprint brief
+- why "it works" is different from "it matches the product intent"
+- how to manually inspect the UI
+- how to decide whether the flow looks right and feels simple
+- how to review from the shoes of the target user
+- how to ask whether the sprint alleviates the pain point or unmet need
+- how to classify blockers, bugs, gaps, edge cases, and observations
+- how to fix what matters, defer what can wait, and keep building
+
 Then guide me one step at a time.
 Use the course manifest, single.md, and the current pipeline artifacts.
 Do not skip my human decisions.
@@ -37,28 +46,51 @@ Before the harness writes or changes anything, answer these decisions:
 - what to fix now
 - what to defer
 - whether drift is intentional
+- whether the UI looks like what I had in mind
+- whether the flow is simple and natural
+- whether the target user would understand what to do
+- whether the Day 8 sprint alleviates the pain point from Day 1
+- what should be sharpened before continuing
 
 ## Step 3: Produce The Day Output
 
 Expected output today:
 
 - `.onemillion/review-findings.md`
+- manual UI/product inspection notes inside the review findings
+- fix-now/defer/keep-building decisions
 
 Work with the harness until the output matches the day's purpose. Review generated artifacts before accepting them.
 
-## Step 4: External Tools
+## Step 4: Manual Product Inspection
+
+Open the local app or deployed URL and inspect the Day 8 workflow manually.
+
+Use this checklist:
+
+- Does the UI look like what I had in mind?
+- Does the main flow move naturally?
+- Is the first action obvious?
+- Is the language familiar to the target user?
+- Are the fields useful, necessary, and understandable?
+- Are loading, empty, error, success, and permission states reasonable?
+- Does the workflow reduce the pain point or unmet need from Day 1?
+- Would the target user trust this with their data?
+- What is the smallest change that would make it sharper?
+
+## Step 5: External Tools
 
 - No new external account is required today.
 
 If the harness mentions an external provider, it must also give the exact link, permission/settings, and QA check from `onemillion-builder/docs/account-setup.md`.
 
-## Step 5: Verify
+## Step 6: Verify
 
 Ask your harness:
 
 ```text
 Run the OneMillion verifier for Day 9.
-Inspect the relevant artifacts, app code, deployment links, and manual confirmations.
+Inspect the relevant artifacts, app code, deployment links, review findings, manual UI/product inspection notes, and manual confirmations.
 Record the result in .onemillion/state.json.
 Do not create separate verifier markdown files.
 ```
@@ -75,8 +107,12 @@ Before you close today, ask the orchestrator to update `.onemillion/state.json`:
 ## What Should Be True After Day 9
 
 - [ ] .onemillion/review-findings.md exists
+- [ ] manual UI/product inspection is included
+- [ ] target-user pain-point fit is assessed
 - [ ] blockers are fixed or explicitly deferred with reason
+- [ ] any deferrals have a next sprint or reason
 - [ ] code still builds
+- [ ] Day 8 core workflow still works locally or live
 
 ## If You Are Stuck
 

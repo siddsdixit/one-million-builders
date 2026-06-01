@@ -553,19 +553,31 @@
       "learning_focus": [
         "learn what code review means",
         "compare implementation to refined PRD",
+        "inspect UI manually against product intent",
+        "review the flow from the target user's shoes",
+        "assess whether the sprint alleviates the original pain point or unmet need",
+        "sharpen the product before continuing",
         "detect spec drift",
-        "classify blockers, bugs, edge cases, and observations"
+        "classify blockers, bugs, gaps, edge cases, and observations"
       ],
       "external_tools": [],
       "human_decisions": [
         "what to fix now",
         "what to defer",
-        "whether drift is intentional"
+        "whether drift is intentional",
+        "whether the UI looks like the learner had in mind",
+        "whether the flow is simple and natural",
+        "whether the target user would understand what to do",
+        "whether the Day 8 sprint alleviates the pain point"
       ],
       "completion_gate": [
         ".onemillion/review-findings.md exists",
+        "manual UI/product inspection is included",
+        "target-user pain-point fit is assessed",
         "blockers are fixed or explicitly deferred with reason",
-        "code still builds"
+        "deferrals have a next sprint or reason",
+        "code still builds",
+        "Day 8 core workflow still works locally or live"
       ]
     },
     {

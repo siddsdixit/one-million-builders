@@ -647,28 +647,41 @@ If unsure, choose Supabase-only. Use FastAPI only for complex backend logic, Pyt
 
 ## Day 9: Implementation Review
 
-**Purpose:** use the Review agent to compare the built app against the spec before writing more tests or AI.
+**Purpose:** use the Review agent and manual product inspection to compare the built app against the spec, design, target-user pain, and product intent before writing more tests or AI.
 
-**Why it matters:** working code can still be the wrong code. Day 9 teaches spec drift detection.
+**Why it matters:** working code can still be the wrong code. Day 9 teaches spec drift detection, UI inspection, target-user empathy, and product sharpening before the learner keeps building.
 
 **What the learner learns:**
 
 - what code review means
 - spec vs implementation
+- manual product inspection
+- how to inspect whether the UI looks like what the learner had in mind
+- how to judge whether the flow feels simple and natural
+- how to review from the target user's shoes
+- how to assess whether the sprint alleviates the original pain point or unmet need
 - blockers, bugs, edge cases, observations
 - when to fix now vs defer
 
 **What the learner does:**
 
 - runs review against `.onemillion/refined-prd.md`
+- opens the app and manually inspects the Day 8 workflow
+- asks whether the UI, copy, fields, and flow speak to the target user
 - reads `.onemillion/review-findings.md`
 - fixes blockers or explicitly defers non-critical issues
+- sharpens the product where the smallest change would improve usefulness
+- keeps building after blockers are resolved
 
 **Done means:**
 
 - `.onemillion/review-findings.md` exists
+- manual UI/product inspection is included
+- target-user pain-point fit is assessed
 - blockers are fixed or intentionally deferred with reason
+- deferrals have a next sprint or reason
 - app still builds
+- Day 8 workflow still works locally or live
 
 ## Day 10: QA + Tests
 
