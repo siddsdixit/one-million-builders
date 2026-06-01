@@ -765,37 +765,50 @@ If unsure, choose Supabase-only. Use FastAPI only for complex backend logic, Pyt
 
 ## Day 12: First AI Build
 
-**Purpose:** make the app call Claude securely from the server side.
+**Purpose:** make the app call the selected LLM securely from server-side code.
 
 **Why it matters:** the learner sees real AI output inside the product while keeping API keys server-side.
 
 **What the learner learns:**
 
 - server-side AI calls
-- Anthropic API key handling
+- selected provider API key handling
+- `.env.local`, `.env.example`, and Vercel env vars
 - prompt construction
+- safe product-data selection
+- Next.js route handler or server action for AI
 - local and live AI testing
+- secret leak detection
+- common AI error handling
 
 **What the learner does:**
 
-- creates Anthropic API key
-- stores `ANTHROPIC_API_KEY` locally and in deployment env vars
+- creates selected provider API key
+- stores provider key locally and in deployment env vars
+- updates `.env.example` with placeholder only
 - builds server route/action
 - adds UI trigger
 - tests output locally and live
+- scans for key leaks
 
 **Exact links:**
 
 - Anthropic Console: https://console.anthropic.com/
 - Anthropic API docs: https://docs.anthropic.com/en/api/overview
+- OpenAI API keys: https://platform.openai.com/api-keys
+- Google AI Studio API keys: https://aistudio.google.com/app/apikey
 - Vercel env vars: https://vercel.com/docs/projects/environment-variables
 
 **Done means:**
 
 - AI route/action exists
 - AI output appears in app
+- selected provider key is stored locally and in Vercel
+- `.env.example` has placeholders only
+- local app AI path works
 - live app AI path works
 - API key is not exposed to client code
+- common error states are handled
 
 ## Day 13: AI UX + Safety
 

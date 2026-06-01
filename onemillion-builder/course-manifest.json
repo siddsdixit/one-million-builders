@@ -686,10 +686,16 @@
       "resources": "onemillion-builder/day-12-first-ai-build/resources.md",
       "verifier": "onemillion-builder/docs/verification/agent/verify.md",
       "learning_focus": [
-        "call Claude from the server side",
-        "handle API keys safely",
+        "call the selected LLM from server-side code",
+        "handle selected provider API keys safely",
+        "store keys in .env.local and Vercel env vars",
+        "update .env.example with placeholders only",
+        "build a Next.js route handler or server action for the AI call",
         "build prompt inputs from product data",
-        "show AI output in the app"
+        "show AI output in the app",
+        "test locally and live",
+        "detect key leaks",
+        "handle missing key, invalid key, rate limit, timeout, and bad response errors"
       ],
       "external_tools": [
         "Anthropic",
@@ -698,13 +704,22 @@
       "human_decisions": [
         "prompt behavior",
         "sample inputs",
-        "first output quality"
+        "first output quality",
+        "selected provider and env var name",
+        "what product data is safe to send",
+        "whether output is displayed, saved, reviewed, edited, or acted on",
+        "user-facing error copy"
       ],
       "completion_gate": [
         "AI route or server action exists",
         "AI output appears in app",
+        "selected provider key is stored in .env.local",
+        "selected provider key is stored in Vercel env vars",
+        ".env.example has placeholders only",
         "API key is not exposed to client code",
-        "live app AI path works"
+        "local app AI path works",
+        "live app AI path works",
+        "common error states are handled"
       ]
     },
     {

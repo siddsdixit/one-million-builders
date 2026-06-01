@@ -178,8 +178,22 @@ with check (auth.uid() = owner_id);
 - Always create `.env.example` with placeholder values.
 - Supabase: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`
 - Server-only: `SUPABASE_SERVICE_ROLE_KEY` only if absolutely needed, never exposed to client code
-- AI: `ANTHROPIC_API_KEY`
+- AI: `ANTHROPIC_API_KEY` by course default, or `OPENAI_API_KEY` / `GEMINI_API_KEY` only if Day 11 selected that provider. AI provider keys are server-only and must never use `NEXT_PUBLIC_`.
 - Optional FastAPI: `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `CORS_ORIGINS`, `SENTRY_DSN`
+
+### AI Build Pattern
+
+For Day 12 AI work:
+
+- Read the AI feature section in `.onemillion/refined-prd.md` before changing code.
+- Use direct provider API/SDK calls from server-side Next.js route handlers or server actions by default.
+- Do not use LangChain, LangGraph, Langflow, Langfuse, CrewAI, Google ADK, or another AI framework unless Day 11 explicitly justified it.
+- Do not add tool calling unless Day 11 explicitly selected tool calling for the MVP.
+- Keep prompt construction server-side when it uses private product data.
+- Return user-safe output only; never return provider raw errors or secrets.
+- Handle missing key, invalid key, rate limit, timeout, and malformed model response.
+- Update `.env.example` with placeholders only.
+- Run a leak scan before declaring done: `rg "NEXT_PUBLIC_ANTHROPIC|NEXT_PUBLIC_OPENAI|NEXT_PUBLIC_GEMINI|sk-ant|sk-proj|AIza" .`
 
 ### Test Configuration (S0 — CRITICAL for Test phase)
 

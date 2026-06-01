@@ -14,9 +14,16 @@ Sid should record a walkthrough for Day 12: First AI Build.
 
 Cover:
 
-- call Claude from the server side
-- handle API keys safely
+- call the selected LLM from server-side code
+- create/get the selected provider API key
+- store the key in `.env.local` and Vercel env vars
+- update `.env.example` with placeholders only
+- explain why AI keys must never be `NEXT_PUBLIC_*`
+- build a Next.js route handler or server action
 - build prompt inputs from product data
 - show AI output in the app
+- test locally and live
+- run a key leak scan
+- handle missing key, invalid key, rate limit, timeout, and bad response errors
 
 End by showing the Day 12 done checklist and the exact `day done` verification moment.
