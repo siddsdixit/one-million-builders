@@ -691,24 +691,38 @@ If unsure, choose Supabase-only. Use FastAPI only for complex backend logic, Pyt
 
 **What the learner learns:**
 
+- what good QA means
 - good QA mindset
 - acceptance criteria as tests
 - manual QA vs automated tests
+- test plans and test cases
+- frontend/component testing
+- backend testing when a backend service exists
+- API testing
+- Playwright and Selenium-style E2E testing
 - happy paths, edge cases, and permission checks
+- auth, RLS, tenant, and RBAC checks
 - evidence-based verification
 
 **What the learner does:**
 
-- writes or reviews tests/manual QA checklist from acceptance criteria
+- writes or reviews `.onemillion/test-plan.md`
+- maps acceptance criteria to test cases
+- writes or reviews tests/manual QA checklist
 - runs local checks
 - tests the live Vercel URL
 - records QA result
 
 **Done means:**
 
+- `.onemillion/test-plan.md` exists
+- acceptance criteria are mapped to test cases
 - `.onemillion/test-results.md` exists
-- core tests or manual QA checklist pass
+- manual QA checklist is completed
+- automated tests run where the repo supports them
+- auth/RLS/tenant/RBAC checks are covered
 - live app passes critical path QA
+- failures are fixed or explicitly deferred with reason
 
 ## Day 11: AI Feature Spec
 

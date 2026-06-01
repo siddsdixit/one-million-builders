@@ -4,21 +4,29 @@
 
 ---
 
-## Ship-Ready Checklist (ALL AUTOMATED)
+## QA Mindset
 
-Before declaring "ready for Guard", every item must be verified by an automated test — not manual checks.
+Good QA combines manual inspection and automated proof.
 
-- [ ] All Tier 1 API contract tests pass — `pytest backend/tests/test_api/ -v`
-- [ ] All Tier 2 security tests pass — `pytest backend/tests/test_security/ -v`
-- [ ] All Tier 3 data integrity tests pass — `pytest backend/tests/test_data/ -v`
+- **Manual QA** checks whether the product makes sense to a human, works on the live URL, and handles realistic product flows.
+- **Automated QA** checks repeatable behavior so regressions are caught after future changes.
+- **Skipped checks are not passes.** Record skipped checks as limitations with a reason and next action.
+
+## Ship-Ready Checklist
+
+Before declaring "ready for Guard", critical behavior must have evidence. Evidence can be automated test output, manual QA results, screenshots, live URL checks, or documented limitations when automation is not feasible yet.
+
+- [ ] All Tier 1 API contract tests pass — Playwright request/Vitest for Next.js, pytest/httpx for FastAPI
+- [ ] All Tier 2 security tests pass — auth, IDOR, tenant/RBAC, injection, validation
+- [ ] All Tier 3 data integrity tests pass — CRUD/archive and persistence checks
 - [ ] All Tier 4 E2E tests pass — `npx playwright test`
-- [ ] All Tier 5 unit tests pass — `pytest backend/tests/test_services/ -v`
-- [ ] All Tier 6 performance benchmarks pass — `pytest backend/tests/test_performance/ -v`
+- [ ] All Tier 5 unit tests pass — Vitest/RTL for frontend/domain logic, pytest for FastAPI services
+- [ ] All Tier 6 performance benchmarks pass — basic local/live response checks
 - [ ] CI pipeline runs green — `.github/workflows/test.yml` committed
 - [ ] Backend coverage ≥ 80% on services/ — `pytest --cov=services --cov-report=term`
 - [ ] For agents: behavioral tests pass — `pytest backend/tests/test_agent/ -v`
 
-If ANY item fails, the test phase is BLOCKED. No manual verification fallbacks.
+If ANY critical item fails, the test phase is BLOCKED unless the builder explicitly accepts and documents the risk.
 Add limitations (things that genuinely cannot be automated) to the Limitations section of `.onemillion/test-results.md`.
 
 ---
@@ -28,11 +36,9 @@ Add limitations (things that genuinely cannot be automated) to the Limitations s
 All required before handoff to Guard:
 
 - `.onemillion/test-plan.md` — test cases written before any testing begins
-- `.onemillion/test-results.md` — summary with ACTUAL pytest/Playwright output, coverage numbers, performance benchmarks
-- `.onemillion/assets/test-report.pdf` — professional PDF report with charts and color-coded tables
-- `backend/tests/` — all pytest test files, organized by tier
-- `frontend/tests/e2e/` — all Playwright test files
-- `.github/workflows/test.yml` — CI pipeline
+- `.onemillion/test-results.md` — summary with actual manual QA evidence, automated command output, limitations, and verdict
+- Automated tests in the repo where appropriate for the selected architecture
+- `.github/workflows/test.yml` when the repo is ready for CI
 
 ---
 

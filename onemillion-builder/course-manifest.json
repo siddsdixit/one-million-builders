@@ -594,8 +594,15 @@
       "verifier": "onemillion-builder/docs/verification/agent/verify.md",
       "learning_focus": [
         "understand good QA",
+        "understand manual QA versus automated QA",
+        "generate a test plan and test cases",
         "write behavior checks from acceptance criteria",
+        "understand frontend/component testing",
+        "understand backend testing when a backend service exists",
+        "understand API testing",
+        "understand Playwright and Selenium-style E2E testing",
         "test happy paths and edge cases",
+        "test auth/RLS/tenant/RBAC permissions",
         "run local and live QA"
       ],
       "external_tools": [
@@ -604,13 +611,20 @@
       ],
       "human_decisions": [
         "critical paths to test manually",
+        "which tests should be automated now",
+        "which checks can remain manual for MVP",
         "acceptable risk",
         "QA evidence"
       ],
       "completion_gate": [
+        ".onemillion/test-plan.md exists",
+        "acceptance criteria are mapped to manual or automated test cases",
         ".onemillion/test-results.md exists",
-        "core tests or manual QA checklist pass",
-        "live app passes critical path QA"
+        "manual QA checklist is completed",
+        "automated tests run where the repo supports them",
+        "auth/RLS/tenant/RBAC permission checks are covered",
+        "live app passes critical path QA",
+        "failures are fixed or explicitly deferred with reason"
       ]
     },
     {
