@@ -77,4 +77,4 @@ If you've already graduated (Builder #N exists) and want to help run the next co
 
 ---
 
-→ Back to [README](../README.md) · [Self-serve start](../onemillion-builder/week-1-foundation/day-01-vision/learn.md) · [Builder Wall](../builders/README.md)
+→ Back to [README](../README.md) · [Self-serve start](../course/week-1-foundation/day-01-vision/learn.md) · [Builder Wall](../builders/README.md)

@@ -1,0 +1,1003 @@
+{
+  "course": "OneMillion Builder",
+  "version": "0.2.0",
+  "state_file": ".onemillion/state.json",
+  "progress_file": ".onemillion/state.json",
+  "default_product_dir": "my-onemillion-build",
+  "start_day": 0,
+  "completion_phrase": "day done",
+  "agent_root": "course/agents/agents",
+  "teaching_protocol": "course/docs/teaching-protocol.md",
+  "course_flow": "course/days/single.md",
+  "principle": "Agent guides. Learner decides. Learner touches real tools. Agent verifies.",
+  "preflight_day": {
+    "day": 0,
+    "title": "Orientation + Commitment + GitHub Workspace",
+    "path": "course/days/day-00-orientation/README.md",
+    "verifier_state": ".onemillion/state.json",
+    "completion_gate": [
+      "git worktree exists",
+      "AGENTS.md exists at repo root",
+      "course/course-manifest.json exists",
+      "origin points to learner fork",
+      "upstream points to siddsdixit/one-million-builders",
+      "learner confirms upstream repo is starred",
+      "learner answers Day 0 reflection questions",
+      "learner made public or private commitment"
+    ]
+  },
+  "preflight": {
+    "required": true,
+    "canonical_landing_page": "https://github.com/siddsdixit/one-million-builders/tree/main/course",
+    "upstream_repo": "siddsdixit/one-million-builders",
+    "upstream_url": "https://github.com/siddsdixit/one-million-builders.git",
+    "install_script": "course/install-agents.sh",
+    "required_actions": [
+      "star_upstream_repo",
+      "fork_upstream_repo",
+      "clone_own_fork",
+      "open_cloned_fork_in_coding_harness",
+      "configure_origin_as_learner_fork",
+      "configure_upstream_as_siddsdixit_repo"
+    ],
+    "hard_gate": [
+      "do_not_start_day_0_or_day_1_from_a_downloaded_zip",
+      "do_not_start_day_0_or_day_1_from_a_loose_folder",
+      "do_not_start_day_0_or_day_1_when_origin_points_to_upstream",
+      "stop_and_fix_clone_fork_origin_upstream_before_teaching"
+    ],
+    "completion_gate": [
+      "git worktree exists",
+      "AGENTS.md exists at repo root",
+      "course/course-manifest.json exists",
+      "origin points to learner fork",
+      "upstream points to siddsdixit/one-million-builders",
+      "learner confirms upstream repo is starred"
+    ]
+  },
+  "provider_setup_playbook": "course/docs/account-setup.md",
+  "provider_setup_links": {
+    "github_course_fork": {
+      "days": [
+        0
+      ],
+      "account": "https://github.com/signup",
+      "course_repo": "https://github.com/siddsdixit/one-million-builders",
+      "fork": "https://github.com/siddsdixit/one-million-builders/fork",
+      "cli": "https://cli.github.com/",
+      "qa": [
+        "origin points to learner fork",
+        "upstream points to siddsdixit/one-million-builders"
+      ]
+    },
+    "github_app_repo_vercel": {
+      "days": [
+        6
+      ],
+      "github_new_repo": "https://github.com/new",
+      "vercel_signup": "https://vercel.com/signup",
+      "vercel_import": "https://vercel.com/new",
+      "vercel_git_docs": "https://vercel.com/docs/deployments/git",
+      "qa": [
+        "app repo exists",
+        "live Vercel URL returns 200",
+        "push triggers redeploy"
+      ]
+    },
+    "supabase": {
+      "days": [
+        7,
+        8,
+        13,
+        14,
+        15
+      ],
+      "dashboard": "https://supabase.com/dashboard",
+      "new_project": "https://database.new",
+      "nextjs_auth": "https://supabase.com/docs/guides/auth/quickstarts/nextjs",
+      "api_keys": "https://supabase.com/docs/guides/getting-started/api-keys",
+      "redirect_urls": "https://supabase.com/docs/guides/auth/redirect-urls",
+      "rls": "https://supabase.com/docs/guides/database/postgres/row-level-security",
+      "qa": [
+        "signup works locally",
+        "signup works on live URL",
+        "RLS enabled",
+        "auth.uid policy exists"
+      ]
+    },
+    "anthropic": {
+      "days": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "console": "https://console.anthropic.com/",
+      "api_docs": "https://docs.anthropic.com/en/api/overview",
+      "vercel_env": "https://vercel.com/docs/projects/environment-variables",
+      "qa": [
+        "ANTHROPIC_API_KEY set locally and in Vercel",
+        "no NEXT_PUBLIC_ANTHROPIC leak",
+        "live AI route works"
+      ]
+    },
+    "monitoring": {
+      "days": [
+        16
+      ],
+      "sentry_signup": "https://sentry.io/signup/",
+      "sentry_nextjs": "https://docs.sentry.io/platforms/javascript/guides/nextjs/",
+      "vercel_analytics": "https://vercel.com/docs/analytics",
+      "uptimerobot_signup": "https://uptimerobot.com/signUp",
+      "uptimerobot_first_monitor": "https://help.uptimerobot.com/en/articles/11358364-how-to-create-your-first-monitor",
+      "qa": [
+        "Sentry receives test error",
+        "Vercel Analytics enabled",
+        "UptimeRobot monitor up",
+        "alert email verified"
+      ]
+    },
+    "domain_dns": {
+      "days": [
+        16
+      ],
+      "vercel_dashboard": "https://vercel.com/dashboard",
+      "vercel_domains": "https://vercel.com/docs/domains",
+      "cloudflare_registrar": "https://www.cloudflare.com/products/registrar/",
+      "porkbun": "https://porkbun.com",
+      "namecheap": "https://www.namecheap.com",
+      "dns_checker": "https://dnschecker.org",
+      "supabase_dashboard": "https://supabase.com/dashboard",
+      "supabase_redirect_urls": "https://supabase.com/docs/guides/auth/redirect-urls",
+      "qa": [
+        "custom domain loads app",
+        "valid SSL lock appears",
+        "auth redirect URLs updated if used"
+      ]
+    },
+    "loom_builder_claim": {
+      "days": [
+        18
+      ],
+      "loom": "https://www.loom.com/",
+      "loom_share": "https://loomhelp.zendesk.com/hc/en-us/articles/360002208157-How-to-share-your-recording",
+      "builder_claim_packet": "course/docs/builder-claim.md",
+      "builder_claim": "https://github.com/siddsdixit/one-million-builders/issues/new/choose",
+      "qa": [
+        "incognito can view Loom",
+        "incognito can open live app",
+        "Builder Claim form or fallback submitted"
+      ]
+    }
+  },
+  "utility_agents": [
+    "ask",
+    "debug",
+    "refactor",
+    "orchestrator",
+    "research",
+    "review",
+    "revise"
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Idea Agent + PRD Draft",
+      "primary_agent": "idea",
+      "supporting_agents": [
+        "ask"
+      ],
+      "lesson": "course/days/day-01-idea/learn.md",
+      "build": "course/days/day-01-idea/build.md",
+      "resources": "course/days/day-01-idea/resources.md",
+      "verifier": "course/docs/verification/agent/verify.md",
+      "learning_focus": [
+        "understand what makes a good idea",
+        "describe user pain and unmet need",
+        "identify data sources and formats",
+        "write user stories",
+        "define success criteria and KPIs",
+        "review an Idea-agent PRD draft"
+      ],
+      "external_tools": [],
+      "human_decisions": [
+        "target user",
+        "pain point",
+        "data sources",
+        "ideal solution",
+        "user stories",
+        "success criteria",
+        "KPIs",
+        "PRD edits"
+      ],
+      "completion_gate": [
+        ".onemillion/project.json",
+        ".onemillion/prd.md includes idea brief and first PRD",
+        "learner reviewed and saved PRD"
+      ]
+    },
+    {
+      "day": 2,
+      "title": "Validate The PRD",
+      "primary_agent": "idea",
+      "supporting_agents": [
+        "research"
+      ],
+      "lesson": "course/days/day-02-validate-prd/learn.md",
+      "build": "course/days/day-02-validate-prd/build.md",
+      "resources": "course/days/day-02-validate-prd/resources.md",
+      "verifier": "course/docs/verification/agent/verify.md",
+      "learning_focus": [
+        "review and edit the Day 1 PRD",
+        "validate pain with real users/customers",
+        "compare competitors and workarounds",
+        "define ICP",
+        "sanity-check TAM/SAM/SOM",
+        "separate full product vision from MVP",
+        "update the PRD from evidence"
+      ],
+      "external_tools": [
+        "phone",
+        "email",
+        "calendar",
+        "notes"
+      ],
+      "human_decisions": [
+        "who to interview",
+        "what evidence is strong enough",
+        "whether to keep, refine, or pivot",
+        "target ICP",
+        "MVP scope",
+        "PRD edits"
+      ],
+      "completion_gate": [
+        ".onemillion/prd.md includes Day 2 Learner Review",
+        ".onemillion/prd.md includes validation evidence",
+        ".onemillion/prd.md includes competitors/workarounds",
+        ".onemillion/prd.md includes ICP and TAM/SAM/SOM sanity",
+        ".onemillion/prd.md includes full product versus MVP",
+        ".onemillion/prd.md includes Keep/Refine/Pivot verdict"
+      ]
+    },
+    {
+      "day": 3,
+      "title": "Lock The Spec",
+      "primary_agent": "spec",
+      "supporting_agents": [
+        "validate-spec"
+      ],
+      "lesson": "course/days/day-03-spec/learn.md",
+      "build": "course/days/day-03-spec/build.md",
+      "resources": "course/days/day-03-spec/resources.md",
+      "verifier": "course/docs/verification/agent/verify.md",
+      "learning_focus": [
+        "turn validated PRD into a buildable spec",
+        "write functional requirements",
+        "break MVP into CRUD building blocks",
+        "lock MVP scope",
+        "write user stories",
+        "write use cases",
+        "write acceptance criteria",
+        "define KPIs",
+        "define done",
+        "use spec and validate-spec agents"
+      ],
+      "external_tools": [],
+      "human_decisions": [
+        "MVP functional requirements",
+        "core entities and CRUD actions",
+        "MVP stories",
+        "acceptance criteria",
+        "out-of-scope items",
+        "definition of done",
+        "spec lock"
+      ],
+      "completion_gate": [
+        ".onemillion/refined-prd.md exists",
+        ".onemillion/refined-prd.md includes Day 3 Locked Spec",
+        "functional requirements listed",
+        "core MVP entities and CRUD actions listed",
+        "features tagged MVP or POST-MVP",
+        "complete core flow listed",
+        "data schema and business rules listed",
+        "exactly 3 core user stories",
+        "2+ use cases",
+        "testable acceptance criteria",
+        "2+ KPIs/success signals",
+        "locked out-of-scope list",
+        "concrete definition of done"
+      ]
+    },
+    {
+      "day": 4,
+      "title": "Design The Product",
+      "primary_agent": "design",
+      "supporting_agents": [
+        "validate-spec"
+      ],
+      "lesson": "course/days/day-04-design/learn.md",
+      "build": "course/days/day-04-design/build.md",
+      "resources": "course/days/day-04-design/resources.md",
+      "verifier": "course/docs/verification/agent/verify.md",
+      "learning_focus": [
+        "turn refined PRD into screens and flows",
+        "explain what good product design means",
+        "choose design direction based on user audience and product type",
+        "decide mobile-first, desktop-first, or balanced responsive behavior",
+        "define MUI / Material Design 3 design language",
+        "design loading, empty, error, partial, full, and success states",
+        "create realistic seed data",
+        "review the mockup before code"
+      ],
+      "external_tools": [],
+      "human_decisions": [
+        "primary user flow",
+        "primary device",
+        "target audience design needs",
+        "visual direction",
+        "seed color and heading font",
+        "content density",
+        "navigation pattern",
+        "MUI / Material Design 3 component choices",
+        "screen priority",
+        "copy tone",
+        "mockup approval or revision"
+      ],
+      "completion_gate": [
+        ".onemillion/design-spec.md exists",
+        ".onemillion/design-system.md exists",
+        ".onemillion/screens/ contains main screen specs",
+        ".onemillion/seed-data.json exists",
+        "main screens and states are described",
+        "loading, empty, error, partial, full, and success states are covered",
+        "mobile and desktop behavior are described",
+        "MUI / Material Design 3 component patterns are named",
+        "learner approved the design direction"
+      ]
+    },
+    {
+      "day": 5,
+      "title": "Plan Architecture",
+      "primary_agent": "plan",
+      "supporting_agents": [
+        "validate-plan"
+      ],
+      "lesson": "course/days/day-05-plan-architecture/learn.md",
+      "build": "course/days/day-05-plan-architecture/build.md",
+      "resources": "course/days/day-05-plan-architecture/resources.md",
+      "verifier": "course/docs/verification/agent/verify.md",
+      "learning_focus": [
+        "understand architecture before coding",
+        "decide product type: web app, mobile-first responsive app, agent, or hybrid",
+        "choose frontend, backend, database, and AI boundaries",
+        "choose backend path: Supabase/Next.js by default, FastAPI plus Railway/Fly.io/Render only when justified",
+        "design secure architecture with auth, session handling, authorization, secrets, RLS, AI permissions, and rate/cost limits",
+        "decide single-user, multi-tenant, or public/community data model",
+        "decide whether RBAC is needed and define roles if it is",
+        "factor scalability, compliance, privacy, reliability, observability, cost, and integrations into architecture",
+        "create small self-contained sprint briefs as build contracts"
+      ],
+      "external_tools": [],
+      "human_decisions": [
+        "product type",
+        "backend path: Supabase-only or FastAPI with selected backend host",
+        "auth model",
+        "frontend/backend/database/AI boundaries",
+        "tenancy model",
+        "RBAC model",
+        "security model",
+        "data model",
+        "API boundary",
+        "scale and cost assumptions",
+        "sprint sequence",
+        "MVP technical scope"
+      ],
+      "completion_gate": [
+        ".onemillion/architecture.md exists",
+        ".onemillion/sprints/ exists",
+        "product type decision is recorded",
+        "backend path decision is recorded",
+        "tenancy model is recorded",
+        "RBAC decision is recorded",
+        "security model is recorded",
+        "data ownership boundaries are recorded",
+        "sprint briefs are small self-contained build contracts",
+        "validate-plan passes or findings are resolved"
+      ]
+    },
+    {
+      "day": 6,
+      "title": "App Shell + First Deploy",
+      "primary_agent": "build",
+      "supporting_agents": [
+        "debug",
+        "ship"
+      ],
+      "lesson": "course/days/day-06-app-shell/learn.md",
+      "build": "course/days/day-06-app-shell/build.md",
+      "resources": "course/days/day-06-app-shell/resources.md",
+      "verifier": "course/docs/verification/agent/verify.md",
+      "learning_focus": [
+        "create the app from the plan",
+        "understand repo structure",
+        "apply MUI baseline",
+        "deploy frontend to Vercel",
+        "verify live source matches local code"
+      ],
+      "external_tools": [
+        "GitHub",
+        "Vercel",
+        "terminal"
+      ],
+      "human_decisions": [
+        "product repo name",
+        "project name",
+        "Vercel project ownership"
+      ],
+      "completion_gate": [
+        "GitHub product repo exists",
+        "local app runs",
+        "Vercel deployment URL returns 200",
+        "live homepage matches local source markers"
+      ]
+    },
+    {
+      "day": 7,
+      "title": "Auth + Database",
+      "primary_agent": "build",
+      "supporting_agents": [
+        "ask",
+        "debug"
+      ],
+      "lesson": "course/days/day-07-auth-db/learn.md",
+      "build": "course/days/day-07-auth-db/build.md",
+      "resources": "course/days/day-07-auth-db/resources.md",
+      "verifier": "course/docs/verification/agent/verify.md",
+      "learning_focus": [
+        "create Supabase project",
+        "explain why authentication matters for trust, privacy, personalization, billing, audit trails, and safe AI actions",
+        "understand identity, session, authorization, and RLS",
+        "understand RBAC: Role-Based Access Control",
+        "plan single-tenant vs multi-tenant user hierarchy from the beginning",
+        "choose auth method",
+        "wire Supabase Auth into Next.js",
+        "create first tables with ownership fields",
+        "create profile, organization, membership, and role tables when needed",
+        "enable RLS",
+        "test second-user isolation",
+        "store env vars safely"
+      ],
+      "external_tools": [
+        "Supabase",
+        "Vercel"
+      ],
+      "human_decisions": [
+        "auth method",
+        "public vs protected routes",
+        "single-user vs team/multi-tenant model",
+        "profile, organization, membership, and role hierarchy",
+        "RBAC roles",
+        "RLS policy intent",
+        "redirect URLs"
+      ],
+      "completion_gate": [
+        "Supabase project exists",
+        "auth method is chosen and implemented",
+        "single-tenant or multi-tenant model is chosen intentionally",
+        "RBAC roles are defined when teams, organizations, or admin/member differences exist",
+        "signup works locally and live when signup is part of the product",
+        "login/logout works",
+        "protected routes reject unauthenticated users",
+        "RLS enabled on private tables",
+        "second-user isolation passes when private data exists",
+        "env vars are not leaked"
+      ]
+    },
+    {
+      "day": 8,
+      "title": "Core Build",
+      "primary_agent": "build",
+      "supporting_agents": [
+        "debug"
+      ],
+      "lesson": "course/days/day-08-core-build/learn.md",
+      "build": "course/days/day-08-core-build/build.md",
+      "resources": "course/days/day-08-core-build/resources.md",
+      "verifier": "course/docs/verification/agent/verify.md",
+      "learning_focus": [
+        "complete one useful sprint",
+        "understand vertical slice thinking",
+        "use the sprint brief as the build contract",
+        "build CRUD or archive from sprint brief",
+        "connect UI to Supabase",
+        "understand forms and validation",
+        "handle loading, empty, error, success, and permission states",
+        "ship and verify the main non-AI workflow"
+      ],
+      "external_tools": [
+        "Supabase",
+        "Vercel"
+      ],
+      "human_decisions": [
+        "which sprint brief is the Day 8 target",
+        "core entity fields",
+        "minimum usable workflow",
+        "CRUD or archive actions in scope",
+        "states that must be visible today",
+        "what to defer"
+      ],
+      "completion_gate": [
+        "exactly one useful sprint is selected and completed",
+        "core create/read/update/delete or archive works locally",
+        "data persists in Supabase",
+        "loading, empty, error, and success states are handled",
+        "protected routes still reject unauthenticated users",
+        "second user cannot see first user data when private data exists",
+        "deployed app works after the feature is pushed",
+        "live deployed workflow matches the local source/build",
+        "one meaningful sprint commit exists"
+      ]
+    },
+    {
+      "day": 9,
+      "title": "Implementation Review",
+      "primary_agent": "review",
+      "supporting_agents": [
+        "build"
+      ],
+      "lesson": "course/days/day-09-review/learn.md",
+      "build": "course/days/day-09-review/build.md",
+      "resources": "course/days/day-09-review/resources.md",
+      "verifier": "course/docs/verification/agent/verify.md",
+      "learning_focus": [
+        "learn what code review means",
+        "compare implementation to refined PRD",
+        "inspect UI manually against product intent",
+        "review the flow from the target user's shoes",
+        "assess whether the sprint alleviates the original pain point or unmet need",
+        "sharpen the product before continuing",
+        "detect spec drift",
+        "classify blockers, bugs, gaps, edge cases, and observations"
+      ],
+      "external_tools": [],
+      "human_decisions": [
+        "what to fix now",
+        "what to defer",
+        "whether drift is intentional",
+        "whether the UI looks like the learner had in mind",
+        "whether the flow is simple and natural",
+        "whether the target user would understand what to do",
+        "whether the Day 8 sprint alleviates the pain point"
+      ],
+      "completion_gate": [
+        ".onemillion/review-findings.md exists",
+        "manual UI/product inspection is included",
+        "target-user pain-point fit is assessed",
+        "blockers are fixed or explicitly deferred with reason",
+        "deferrals have a next sprint or reason",
+        "code still builds",
+        "Day 8 core workflow still works locally or live"
+      ]
+    },
+    {
+      "day": 10,
+      "title": "QA + Tests",
+      "primary_agent": "test",
+      "supporting_agents": [
+        "debug",
+        "build"
+      ],
+      "lesson": "course/days/day-10-qa-tests/learn.md",
+      "build": "course/days/day-10-qa-tests/build.md",
+      "resources": "course/days/day-10-qa-tests/resources.md",
+      "verifier": "course/docs/verification/agent/verify.md",
+      "learning_focus": [
+        "understand good QA",
+        "understand manual QA versus automated QA",
+        "generate a test plan and test cases",
+        "write behavior checks from acceptance criteria",
+        "understand frontend/component testing",
+        "understand backend testing when a backend service exists",
+        "understand API testing",
+        "understand Playwright and Selenium-style E2E testing",
+        "test happy paths and edge cases",
+        "test auth/RLS/tenant/RBAC permissions",
+        "run local and live QA"
+      ],
+      "external_tools": [
+        "Vercel",
+        "Supabase"
+      ],
+      "human_decisions": [
+        "critical paths to test manually",
+        "which tests should be automated now",
+        "which checks can remain manual for MVP",
+        "acceptable risk",
+        "QA evidence"
+      ],
+      "completion_gate": [
+        ".onemillion/test-plan.md exists",
+        "acceptance criteria are mapped to manual or automated test cases",
+        ".onemillion/test-results.md exists",
+        "manual QA checklist is completed",
+        "automated tests run where the repo supports them",
+        "auth/RLS/tenant/RBAC permission checks are covered",
+        "live app passes critical path QA",
+        "failures are fixed or explicitly deferred with reason"
+      ]
+    },
+    {
+      "day": 11,
+      "title": "AI Feature Spec",
+      "primary_agent": "spec",
+      "supporting_agents": [
+        "validate-spec"
+      ],
+      "lesson": "course/days/day-11-ai-spec/learn.md",
+      "build": "course/days/day-11-ai-spec/build.md",
+      "resources": "course/days/day-11-ai-spec/resources.md",
+      "verifier": "course/docs/verification/agent/verify.md",
+      "learning_focus": [
+        "understand adding AI means calling a large language model inside the app to do a specific job",
+        "define useful AI behavior",
+        "avoid AI decoration",
+        "understand simple AI feature versus agentic behavior",
+        "understand API key basics for Anthropic, OpenAI, and Google",
+        "understand secret-storage best practices",
+        "choose inputs and outputs",
+        "choose structured output when useful",
+        "understand tool calling at a high level",
+        "understand AI frameworks at a high level and why to skip them for now",
+        "write measurable AI acceptance criteria",
+        "define failure modes, privacy, latency, and cost budget"
+      ],
+      "external_tools": [],
+      "human_decisions": [
+        "AI job-to-be-done",
+        "provider/model preference",
+        "simple AI feature versus agentic workflow",
+        "what data the AI can see",
+        "whether tool calling is needed",
+        "quality bar",
+        "failure modes",
+        "privacy boundary",
+        "cost ceiling"
+      ],
+      "completion_gate": [
+        "refined PRD includes the selected AI feature",
+        "provider/model choice is recorded",
+        "API key and secret-storage plan is recorded",
+        "input/output contract is recorded",
+        "tool-calling decision is recorded",
+        "AI behavior is measurable",
+        "failure modes, privacy boundary, latency, and cost budget are recorded"
+      ]
+    },
+    {
+      "day": 12,
+      "title": "First AI Build",
+      "primary_agent": "build",
+      "supporting_agents": [
+        "debug"
+      ],
+      "lesson": "course/days/day-12-first-ai-build/learn.md",
+      "build": "course/days/day-12-first-ai-build/build.md",
+      "resources": "course/days/day-12-first-ai-build/resources.md",
+      "verifier": "course/docs/verification/agent/verify.md",
+      "learning_focus": [
+        "call the selected LLM from server-side code",
+        "handle selected provider API keys safely",
+        "store keys in .env.local and Vercel env vars",
+        "update .env.example with placeholders only",
+        "build a Next.js route handler or server action for the AI call",
+        "build prompt inputs from product data",
+        "show AI output in the app",
+        "test locally and live",
+        "detect key leaks",
+        "handle missing key, invalid key, rate limit, timeout, and bad response errors"
+      ],
+      "external_tools": [
+        "Anthropic",
+        "Vercel"
+      ],
+      "human_decisions": [
+        "prompt behavior",
+        "sample inputs",
+        "first output quality",
+        "selected provider and env var name",
+        "what product data is safe to send",
+        "whether output is displayed, saved, reviewed, edited, or acted on",
+        "user-facing error copy"
+      ],
+      "completion_gate": [
+        "AI route or server action exists",
+        "AI output appears in app",
+        "selected provider key is stored in .env.local",
+        "selected provider key is stored in Vercel env vars",
+        ".env.example has placeholders only",
+        "API key is not exposed to client code",
+        "local app AI path works",
+        "live app AI path works",
+        "common error states are handled"
+      ]
+    },
+    {
+      "day": 13,
+      "title": "Product Polish + UX Finish",
+      "primary_agent": "build",
+      "supporting_agents": [
+        "review",
+        "design"
+      ],
+      "lesson": "course/days/day-13-product-polish/learn.md",
+      "build": "course/days/day-13-product-polish/build.md",
+      "resources": "course/days/day-13-product-polish/resources.md",
+      "verifier": "course/docs/verification/agent/verify.md",
+      "learning_focus": [
+        "inspect the app from the target user's point of view",
+        "improve copy, hierarchy, labels, and navigation",
+        "add empty, loading, error, success, and partial states",
+        "make the AI feature understandable, retryable, and reviewable",
+        "fix mobile and desktop polish issues",
+        "update existing refined PRD/spec only if intended behavior changes"
+      ],
+      "external_tools": [
+        "Supabase",
+        "Vercel"
+      ],
+      "human_decisions": [
+        "target-user product feel",
+        "UX problems to fix now versus defer",
+        "AI output display/save/review/edit/accept behavior",
+        "AI waiting state",
+        "AI failure state",
+        "core workflow success state"
+      ],
+      "completion_gate": [
+        "main MVP flow is easy to understand without explanation",
+        "empty/loading/error/success states are present where needed",
+        "AI feature has clear waiting, output, retry, and review behavior",
+        "mobile and desktop layouts do not overlap or break",
+        "target-user pain point still feels central"
+      ]
+    },
+    {
+      "day": 14,
+      "title": "Security + Trust Review",
+      "primary_agent": "guard",
+      "supporting_agents": [
+        "review",
+        "build",
+        "test"
+      ],
+      "lesson": "course/days/day-14-security-trust-review/learn.md",
+      "build": "course/days/day-14-security-trust-review/build.md",
+      "resources": "course/days/day-14-security-trust-review/resources.md",
+      "verifier": "course/docs/verification/agent/verify.md",
+      "learning_focus": [
+        "understand authentication versus authorization",
+        "review owner-based access, tenancy, and RBAC",
+        "review Supabase RLS assumptions",
+        "scan for exposed server-only secrets",
+        "review AI data privacy and minimal context",
+        "understand prompt injection basics",
+        "decide whether RAG/tool use is skipped or justified",
+        "check cost, rate-limit, and abuse controls"
+      ],
+      "external_tools": [
+        "Supabase",
+        "Vercel",
+        "Anthropic"
+      ],
+      "human_decisions": [
+        "single-tenant, multi-tenant, or public/community data stance",
+        "whether RBAC is needed now",
+        "roles/actions if RBAC is needed",
+        "what data AI may receive",
+        "RAG/tool use skipped or justified",
+        "acceptable cost/rate limits",
+        "production-blocking trust risks"
+      ],
+      "completion_gate": [
+        "auth routes and protected pages behave correctly",
+        "owner, tenant, or RBAC checks exist where needed",
+        "Supabase RLS policies protect user/tenant data",
+        "no server-only secret is exposed to client code or git",
+        "AI route receives only allowed, minimal context",
+        "RAG/tool use is skipped or justified by the product",
+        "cost/rate/abuse controls are present or consciously deferred with reason",
+        "critical trust blockers are fixed before Day 15"
+      ]
+    },
+    {
+      "day": 15,
+      "title": "QA + Production Readiness",
+      "primary_agent": "test",
+      "supporting_agents": [
+        "guard",
+        "build",
+        "debug"
+      ],
+      "lesson": "course/days/day-15-qa-production-readiness/learn.md",
+      "build": "course/days/day-15-qa-production-readiness/build.md",
+      "resources": "course/days/day-15-qa-production-readiness/resources.md",
+      "verifier": "course/docs/verification/agent/verify.md",
+      "learning_focus": [
+        "turn acceptance criteria into final QA",
+        "run manual QA and automated tests where useful",
+        "test auth, data, AI, and live deployment critical paths",
+        "use AI pass/fail examples",
+        "classify blockers, fix-now items, accepted MVP risks, and deferrals",
+        "prepare for Day 16 production verification"
+      ],
+      "external_tools": [
+        "Supabase",
+        "Vercel",
+        "Anthropic"
+      ],
+      "human_decisions": [
+        "critical paths that must pass before shipping",
+        "which tests should be automated now",
+        "which tests can remain manual for MVP",
+        "AI pass/fail examples and quality threshold",
+        "what defects block Day 16",
+        "accepted non-critical risks"
+      ],
+      "completion_gate": [
+        "local build/test commands pass or failures are understood and fixed/deferred",
+        "manual QA covers the main user journey, auth, data, AI feature, and error states",
+        "automated tests cover the highest-risk behavior the repo can support",
+        "live deployment is checked for the critical path",
+        "AI pass/fail examples produce acceptable behavior",
+        "no Day 14 critical security/trust blocker remains",
+        "production-blocking bugs are fixed before Day 16",
+        "accepted risks are explicit in the existing state/verification trail"
+      ]
+    },
+    {
+      "day": 16,
+      "title": "Ship Production",
+      "primary_agent": "ship",
+      "supporting_agents": [
+        "guard",
+        "test",
+        "debug"
+      ],
+      "lesson": "course/days/day-16-ship-production/learn.md",
+      "build": "course/days/day-16-ship-production/build.md",
+      "resources": "course/days/day-16-ship-production/resources.md",
+      "verifier": "course/docs/verification/agent/verify.md",
+      "learning_focus": [
+        "production versus preview deployments",
+        "production environment variable audit",
+        "Vercel production deployment",
+        "Supabase Auth Site URL and redirect URL checks",
+        "Supabase RLS production confirmation",
+        "optional FastAPI backend deployment only if architecture selected it",
+        "live smoke tests",
+        "monitoring, analytics, uptime, and logs",
+        "custom domain optionality",
+        "rollback path and production recovery"
+      ],
+      "external_tools": [
+        "Vercel",
+        "Supabase",
+        "Sentry",
+        "Vercel Analytics",
+        "UptimeRobot",
+        "domain registrar if needed"
+      ],
+      "human_decisions": [
+        "production URL to publicize",
+        "custom domain or skip",
+        "monitoring choice",
+        "alert email/contact",
+        "optional FastAPI backend host if architecture selected FastAPI",
+        "acceptable production blockers versus deferrals"
+      ],
+      "completion_gate": [
+        "production URL returns 200 and does not show an application error",
+        "live app matches the current local/product source with a unique product marker",
+        "Vercel production environment variables are set by name, with no secret values committed",
+        "Supabase Site URL and redirect URLs include the production URL where auth is used",
+        "RLS/auth/tenant assumptions from Day 14 still hold in production",
+        "optional FastAPI backend is deployed and health-checked, or explicitly skipped because architecture did not select it",
+        "live smoke test covers the main flow, auth, data, and AI feature where applicable",
+        "monitoring/analytics/uptime is configured or intentionally deferred with reason",
+        "custom domain works or is explicitly skipped",
+        "rollback path is known and accessible",
+        ".onemillion/state.json includes the production live_url"
+      ]
+    },
+    {
+      "day": 17,
+      "title": "Brand + Marketing + Pricing + First Users",
+      "primary_agent": "sell",
+      "supporting_agents": [
+        "research",
+        "build",
+        "review"
+      ],
+      "lesson": "course/days/day-17-sell-users/learn.md",
+      "build": "course/days/day-17-sell-users/build.md",
+      "resources": "course/days/day-17-sell-users/resources.md",
+      "verifier": "course/docs/verification/agent/verify.md",
+      "learning_focus": [
+        "brand for an early product",
+        "positioning and category choice",
+        "benefit-first landing/product page copy",
+        "CTA design",
+        "MVP pricing stance",
+        "launch content for LinkedIn, X, and communities",
+        "first-user outreach without spamming",
+        "feedback capture and signal interpretation",
+        "SEO foundations and launch metrics"
+      ],
+      "external_tools": [
+        "email",
+        "LinkedIn",
+        "X",
+        "Reddit/Hacker News",
+        "Slack/Discord",
+        "Vercel",
+        "Plausible or Umami optional"
+      ],
+      "human_decisions": [
+        "product name and tone",
+        "category and differentiator",
+        "target buyer/user",
+        "CTA",
+        "pricing stance",
+        "who to contact first",
+        "where to post without spamming",
+        "which feedback changes product, copy, or Builder Claim"
+      ],
+      "completion_gate": [
+        "positioning statement is specific and benefit-first",
+        "landing/product page has headline, pain, solution, proof/demo, CTA, and basic SEO metadata",
+        "pricing stance is explicit, even if it is free beta",
+        "outreach list includes 5-10 real people or relevant communities",
+        "at least 3 direct outreach messages or posts are sent, or queued with a concrete send time",
+        "every outreach message includes the live URL and a clear ask",
+        "feedback signal or pending-response status is recorded honestly"
+      ]
+    },
+    {
+      "day": 18,
+      "title": "Demo Day + Builder Claim",
+      "primary_agent": "review",
+      "supporting_agents": [
+        "ship",
+        "sell",
+        "guard"
+      ],
+      "lesson": "course/days/day-18-demo/learn.md",
+      "build": "course/days/day-18-demo/build.md",
+      "resources": "course/days/day-18-demo/resources.md",
+      "verifier": "course/docs/verification/agent/verify.md",
+      "learning_focus": [
+        "demo storytelling",
+        "final verification",
+        "proof packet",
+        "Builder Claim submission"
+      ],
+      "external_tools": [
+        "Loom",
+        "GitHub Issues",
+        "Vercel"
+      ],
+      "human_decisions": [
+        "demo story",
+        "public ask",
+        "Builder profile details"
+      ],
+      "completion_gate": [
+        "public Loom URL",
+        "live app URL",
+        "Builder Claim issue submitted",
+        ".onemillion/state.json contains final verification summary"
+      ]
+    }
+  ]
+}

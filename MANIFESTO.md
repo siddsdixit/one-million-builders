@@ -85,4 +85,4 @@ You.
 
 > *Welcome to the crucible. The build starts Monday.*
 
-→ [Get Started](./onemillion-builder/getting-started.md) · [The 18 Days](./onemillion-builder/README.md) · [Join a Cohort](./cohort/README.md)
+→ [Get Started](./course/docs/getting-started.md) · [The 18 Days](./course/README.md) · [Join a Cohort](./cohort/README.md)
