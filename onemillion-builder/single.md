@@ -446,14 +446,20 @@ The harness should not compress days unless the learner explicitly asks and the 
 
 ## Day 5: Plan Architecture
 
-**Purpose:** use the Plan agent to turn spec + design into architecture, backend path, data model, and sprint briefs.
+**Purpose:** use the Plan agent to turn spec + design into architecture, product type, frontend/backend/database boundaries, security model, tenancy model, scalability assumptions, and sprint briefs.
 
-**Why it matters:** building without a plan causes agent drift. Day 5 teaches how software is broken into architecture and buildable slices.
+**Why it matters:** building without a plan causes agent drift. Day 5 is where the product becomes a system: secure enough, scalable enough, simple enough, and broken into buildable slices.
 
 **What the learner learns:**
 
-- architecture before code
+- what architecture means before code
+- product type: web app, mobile-first responsive app, agent, or hybrid
 - frontend/backend boundaries
+- database and ownership boundaries
+- secure architecture: auth, authorization, secrets, RLS, AI permissions, rate limits, and cost limits
+- single-user vs multi-tenant vs public/community data models
+- scalability as a planning input without overbuilding
+- compliance, privacy, reliability, observability, cost, integrations, and data import/export
 - data model thinking
 - API contracts
 - sprint briefs as build contracts
@@ -470,7 +476,10 @@ If unsure, choose Supabase-only. Use FastAPI only for complex backend logic, Pyt
 
 **What the learner does:**
 
+- decides product type
 - chooses Supabase-only or FastAPI backend path
+- chooses single-user, multi-tenant, or public/community tenancy
+- reviews security and permission boundaries
 - reviews architecture decisions
 - reviews data model and API boundaries
 - approves sprint sequence
@@ -479,6 +488,7 @@ If unsure, choose Supabase-only. Use FastAPI only for complex backend logic, Pyt
 
 - acts as the Plan agent
 - reads PRD, refined PRD, design spec, and design system
+- teaches architecture tradeoffs before generating artifacts
 - explains the backend path tradeoff
 - defaults to Supabase-only unless FastAPI is justified
 - creates `.onemillion/architecture.md`
@@ -489,7 +499,11 @@ If unsure, choose Supabase-only. Use FastAPI only for complex backend logic, Pyt
 
 - `.onemillion/architecture.md` exists
 - `.onemillion/sprints/` exists
+- product type decision is recorded
 - backend path decision is recorded
+- tenancy model is recorded
+- security model is recorded
+- sprint briefs are self-contained build contracts
 - validate-plan passes or findings are resolved
 
 ## Day 6: App Shell + First Deploy

@@ -369,23 +369,36 @@
       "verifier": "onemillion-builder/docs/verification/agent/verify.md",
       "learning_focus": [
         "understand architecture before coding",
-        "choose backend path",
-        "default to Next.js plus Supabase unless FastAPI is justified",
-        "map data model and API boundaries",
-        "create sprint briefs"
+        "decide product type: web app, mobile-first responsive app, agent, or hybrid",
+        "choose frontend, backend, database, and AI boundaries",
+        "choose backend path: Supabase/Next.js by default, FastAPI only when justified",
+        "design secure architecture with auth, authorization, secrets, RLS, AI permissions, and rate/cost limits",
+        "decide single-user, multi-tenant, or public/community data model",
+        "factor scalability, compliance, privacy, reliability, observability, cost, and integrations into architecture",
+        "create small self-contained sprint briefs as build contracts"
       ],
       "external_tools": [],
       "human_decisions": [
+        "product type",
         "backend path: Supabase-only or FastAPI",
+        "frontend/backend/database/AI boundaries",
+        "tenancy model",
+        "security model",
         "data model",
         "API boundary",
+        "scale and cost assumptions",
         "sprint sequence",
         "MVP technical scope"
       ],
       "completion_gate": [
         ".onemillion/architecture.md exists",
         ".onemillion/sprints/ exists",
+        "product type decision is recorded",
         "backend path decision is recorded",
+        "tenancy model is recorded",
+        "security model is recorded",
+        "data ownership boundaries are recorded",
+        "sprint briefs are small self-contained build contracts",
         "validate-plan passes or findings are resolved"
       ]
     },

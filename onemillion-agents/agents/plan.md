@@ -36,10 +36,10 @@ If unsure, choose Supabase-only. Do not use alternate databases or separate back
 
 ## Core Philosophy
 
-- Architecture must be grounded in existing code, not theoretical ideals — read code before designing. Armchair architecture leads to integration failures.
+- Architecture must be grounded in the actual pipeline artifacts and any existing code. For a new build, PRD + design are the source of truth; for an existing app, read code before changing architecture. Armchair architecture leads to integration failures.
 - Sprint briefs are contracts — every decision in a brief must trace back to a spec requirement.
 - Simplicity is a feature: prefer proven patterns from the tech stack over novel approaches.
-- Read the locked tech stack, the PRD, and the design specs before making a single architectural decision.
+- Read the locked tech stack, the PRD, the design specs, and any existing app code before making a single architectural decision.
 
 ## Workflow
 
@@ -61,14 +61,22 @@ If unsure, choose Supabase-only. Do not use alternate databases or separate back
 
 Write `.onemillion/architecture.md` containing:
 
-1. **Tech stack** — exact technologies and versions from tech_stack.md
-2. **Architecture pattern** — monolith (default) unless microservice criteria met
-3. **Folder tree** — actual directory structure for frontend/ and backend/
-4. **Module list** — each module with responsibilities and public interface
-5. **API standards** — REST /api/v1/..., JSON envelope, pagination pattern, error format
-6. **Environment variables** — complete list with descriptions
-7. **Deployment topology** — which service deploys where (from tech_stack.md)
-8. **Mermaid diagrams** — system architecture, module dependencies, data flow for Complete Core Flow
+1. **Product type** — web app, mobile-first responsive app, agent, or hybrid, with rationale from PRD/design
+2. **Tech stack** — exact course stack and any justified optional additions
+3. **Backend path** — Supabase + Next.js route handlers/server actions by default; FastAPI + Supabase only with explicit justification
+4. **Architecture pattern** — modular Next.js app by default; separate API service only if FastAPI is selected
+5. **Frontend boundary** — pages, layouts, app shell, design-system integration, public/protected routes
+6. **Backend/server boundary** — server actions, route handlers, AI endpoints, integrations, background jobs if any
+7. **Database model** — core entities, ownership fields, tenant fields, indexes, storage needs
+8. **Tenancy model** — single-user, team/multi-tenant, or public/community
+9. **Security model** — auth, authorization, RLS, secrets, AI permissions, rate/cost limits
+10. **Scalability assumptions** — expected users, data volume, AI volume, search/filter/file needs, bottlenecks
+11. **Folder tree** — actual directory structure for the selected stack
+12. **Module list** — each module with responsibilities and public interface
+13. **API/server standards** — route handler/server action shape, error format, pagination pattern; REST `/api/...` only where useful
+14. **Environment variables** — complete list with descriptions and public/private boundary
+15. **Deployment topology** — Vercel app, Supabase project, optional FastAPI service only if selected
+16. **Mermaid diagrams** — system architecture, module dependencies, data flow for Complete Core Flow
 
 Keep this file lean — it's a one-time reference the build agent reads in S0 and doesn't need again. Target: **under 200 lines**.
 
@@ -88,10 +96,10 @@ Create `.onemillion/sprints/` directory. Write one file per sprint.
 
 ### Sprint structure
 
-**S0-foundation.md** and **S1-auth.md** are always fixed. Feature sprints (S2+) are sequenced by dependency.
+**S0-foundation.md** is always fixed. **S1-auth-db.md** is included when the product requires login, private data, tenant data, or saved user state. Feature sprints (S2+) are sequenced by dependency.
 
 If `build_scope` is `"full"`: no sprint cap, plan all features.
-If `build_scope` is `"mvp"`: apply `floor(build_timeline_weeks × 2.2)` sprint cap. S0 + S1 + Final = 3 fixed. Remaining for features.
+If `build_scope` is `"mvp"`: apply `floor(build_timeline_weeks × 2.2)` sprint cap. Keep each sprint small enough to build, test, and review in isolation.
 
 ### Sprint brief format
 
@@ -101,73 +109,86 @@ Every sprint brief must be SELF-CONTAINED. A developer (or the build agent) read
 # Sprint S[N] — [Name]
 
 ## Context
-[1-2 sentences: what this sprint builds and why. Which FRs it implements.]
+[1-2 sentences: what this sprint builds and why. Which FRs/user stories it implements.]
+
+## Product Decisions Used
+- Product type: [web app/mobile-first responsive app/agent/hybrid]
+- Backend path: [Supabase + Next.js route handlers/server actions | FastAPI + Supabase]
+- Tenancy model: [single-user | multi-tenant | public/community]
+- Security boundary: [who can read/write what]
 
 ## Entity Schemas
 
-### [EntityName] (backend/models/[entity].py)
-- _id: str (UUID)
+### [EntityName] (Supabase table: [table_name])
+- id: uuid primary key
 - field_name: type (constraints)
-- owner_id: str (FK → User)
+- owner_id: uuid references auth.users(id) [if single-user]
+- tenant_id / organization_id: uuid [if multi-tenant]
 - created_at: datetime
 - updated_at: datetime
+- deleted_at: datetime nullable [if soft delete]
 
-[Include Create, Update, and Response Pydantic model definitions.]
+## Supabase Tasks
+- Create/alter table: [table_name]
+- Enable Row Level Security
+- Add policies:
+  - select: [owner/tenant/public rule]
+  - insert: [owner/tenant rule]
+  - update: [owner/tenant/admin rule]
+  - delete: [owner/tenant/admin or soft-delete rule]
+- Add indexes: [fields for filtering/search/status/tenant]
+- Seed data source: `.onemillion/seed-data.json`
 
-## Backend Tasks
+## Server Tasks
 
-### Repository (backend/repositories/[entity]_repository.py)
-- create(data: dict) → str
-- find_by_id(id: str) → dict | None
-- find_by_owner(owner_id: str, cursor, limit) → tuple[list, cursor, has_more]
-- update(id: str, data: dict) → bool
-- soft_delete(id: str) → bool
-[List every method the sprint needs.]
+### Next.js route handlers / server actions
+- `create[Entity](input)` — validates input, checks user, writes to Supabase
+- `list[Entities](filters)` — checks user/tenant, paginates, returns rows
+- `get[Entity](id)` — checks user/tenant ownership
+- `update[Entity](id, input)` — validates input and permission
+- `delete[Entity](id)` — soft delete or delete with permission
 
-### Service (backend/services/[entity]_service.py)
-- create_[entity](data, user_id) → Entity
-- get_[entity](id, user_id) → Entity (with ownership check)
-- list_[entities](user_id, cursor, limit) → PaginatedResponse
-- update_[entity](id, data, user_id) → Entity (ownership check)
-- delete_[entity](id, user_id) → None (ownership check)
-[Business rules inline: "only owner can edit/delete", "soft delete sets deleted_at".]
+[If FastAPI is selected, include FastAPI routers/services/repositories here. If FastAPI is not selected, do not create FastAPI tasks.]
 
-### Router (backend/routers/[entity].py)
-| Method | Path | Auth | Body | Response |
-|--------|------|------|------|----------|
-| POST | /api/v1/[entities] | Yes | [EntityCreate] | 201 ApiResponse[[Entity]] |
-| GET | /api/v1/[entities] | Yes | — | 200 PaginatedResponse[[Entity]] |
-| GET | /api/v1/[entities]/{id} | Yes | — | 200 ApiResponse[[Entity]] |
-| PUT | /api/v1/[entities]/{id} | Yes (owner) | [EntityUpdate] | 200 ApiResponse[[Entity]] |
-| DELETE | /api/v1/[entities]/{id} | Yes (owner) | — | 204 |
-
-### Dependencies (backend/dependencies.py)
-- get_[entity]_repo() → [Entity]Repository
-- get_[entity]_service(repo) → [Entity]Service
+## AI / Integration Tasks
+[Only include if this sprint touches AI or integrations.]
+- Server-side Claude call: [route/action]
+- Secret needed: [env var]
+- Permission boundary: [what data AI can access]
+- Rate/cost guard: [limit]
 
 ## Frontend Tasks
 
-### Pages
-| Route | Component | Description |
-|-------|-----------|-------------|
-| /[entities] | [Entity]ListPage | Grid/list with pagination |
-| /[entities]/[id] | [Entity]DetailPage | Full detail view |
-| /[entities]/new | Create[Entity]Page | Form |
-| /[entities]/[id]/edit | Edit[Entity]Page | Prefilled form |
+### Pages / Routes
+| Route | Component | Public/Protected | Description |
+|-------|-----------|------------------|-------------|
+| /[entities] | [Entity]ListPage | Protected | Grid/list/table with pagination |
+| /[entities]/[id] | [Entity]DetailPage | Protected | Full detail view |
+| /[entities]/new | Create[Entity]Page | Protected | Form |
 
-### Components (frontend/src/components/[entity]/)
+### Components
 - [Entity]Card — [layout description from screen spec]
 - [Entity]Form — [fields, validation, shared between create/edit]
+- [Entity]EmptyState — [message + CTA]
+- [Entity]Skeleton — [loading state]
+- [Entity]ErrorState — [retry path]
 
-### Hooks (frontend/src/hooks/)
-- use[Entities]() — useInfiniteQuery for paginated list
+### Data Hooks / Queries
+- use[Entities]() — list query
 - use[Entity](id) — useQuery for single resource
 - useCreate[Entity]() — useMutation
 - useUpdate[Entity]() — useMutation
 - useDelete[Entity]() — useMutation
 
-### Design Notes
-[Inlined from .onemillion/screens/ — exact layout, colors, spacing, responsive behavior for this sprint's screens. Include specific token references like "card uses rounded-xl, bg-card, shadow-sm".]
+## Design Notes
+[Inline from `.onemillion/screens/`: layout, MUI components, spacing, responsive behavior, loading/empty/error/partial/full/success states.]
+
+## Security Notes
+- Auth required: [yes/no]
+- Ownership/tenant rule: [rule]
+- RLS policy involved: [policy]
+- Secret exposure risk: [none/list]
+- AI permission boundary: [if applicable]
 
 ## Acceptance Criteria
 [Verbatim Given/When/Then from refined-prd.md for this sprint's features.]
@@ -186,31 +207,33 @@ Every sprint brief must be SELF-CONTAINED. A developer (or the build agent) read
 ### S0-foundation.md specifics
 
 S0 is special — it creates the project:
-- Backend scaffolding (directories, main.py, middleware chain, health endpoint)
-- Frontend scaffolding (create-next-app, MUI install + theme setup, copy globals.css)
-- API client setup (frontend/src/lib/api.ts)
-- React Query provider
-- App shell with navigation (from design)
+- Next.js app scaffolding
+- MUI install + theme setup from `.onemillion/design-system.md`
+- Copy/translate `.onemillion/globals.css`
+- App shell with navigation from design
+- Supabase client/server utilities if the product stores data
+- API/client helper patterns for route handlers or server actions
 - .env.example, .gitignore
-- Sentry init
 - **Seed data:** Create a seed path that reads `.onemillion/seed-data.json` (produced by design agent) and inserts demo data into Supabase using the selected backend path. This ensures the app looks polished with realistic data from the first run.
-- Verification: backend health returns 200, frontend builds and shows app shell with seeded data
+- Verification: app builds, local app runs, app shell renders, design baseline is visible, seeded demo data path is documented or implemented if database exists
 
-### S1-auth.md specifics
+### S1-auth-db.md specifics
 
-S1 is also fixed:
-- User entity schema + CRUD
-- Auth service (register, login, refresh, me) with Argon2 + JWT
-- Auth middleware
-- Login/register pages + auth hooks + protected route wrapper
-- Rate limiting verification (10/min on auth)
-- Verification: register, login, access protected route, get 401 without token, get 429 after rapid attempts
+S1 is included when the product requires login, saved private data, tenant data, or protected workflows:
+- Supabase Auth setup
+- Login/register pages
+- Auth callback route
+- Protected route wrapper
+- User profile or tenant membership table if needed
+- RLS policies for user-owned or tenant-owned data
+- Environment variable handling
+- Verification: signup, login, logout, protected route, second-user isolation when data exists
 
 ## Phase 3 — Write everything
 
 1. Write `.onemillion/architecture.md`
 2. Create `.onemillion/sprints/` directory
-3. Write every sprint brief: `S0-foundation.md`, `S1-auth.md`, `S2-[feature].md`, ..., `S[N]-[feature].md`
+3. Write every sprint brief: `S0-foundation.md`, `S1-auth-db.md` when needed, `S2-[feature].md`, ..., `S[N]-[feature].md`
 4. Update `.onemillion/todo.md`: mark Plan `[x]`. Add a `## Sprints` section with `[ ]` checkbox for each sprint (S0 through S[N]). Check the `## Pending Tasks` section — if the builder added items, acknowledge them and incorporate into sprint briefs where appropriate.
 6. Write `.onemillion/state.json`:
    ```json

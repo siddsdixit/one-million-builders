@@ -10,11 +10,14 @@
 
 ## Before You Start
 
-- [ ] Previous day is verified in `.onemillion/state.json`.
-- [ ] You are in the correct product/course workspace.
+- [ ] Day 4 is verified in `.onemillion/state.json`.
+- [ ] `.onemillion/refined-prd.md` exists.
+- [ ] `.onemillion/design-spec.md` exists.
+- [ ] `.onemillion/design-system.md` exists.
+- [ ] `.onemillion/screens/` exists.
 - [ ] You have read [learn.md](./learn.md).
 
-## Step 1: Ask The Harness To Teach The Day
+## Step 1: Ask The Harness To Teach Architecture
 
 Paste this:
 
@@ -22,46 +25,162 @@ Paste this:
 I am on OneMillion Day 5: Plan Architecture.
 
 Act as the `plan` agent for this day.
-First teach me the concept in plain language.
-Then guide me one step at a time.
-Use the course manifest, single.md, and the current pipeline artifacts.
+First teach me architecture in plain language:
+- what architecture means
+- why architecture comes after PRD/spec/design and before code
+- how to decide frontend, backend, database, and AI boundaries
+- when to build a web app, mobile-first web app, agent, or hybrid
+- when a lightweight backend is enough
+- when FastAPI or a heavier backend is justified
+- how secure architecture works
+- what single-tenant vs multi-tenant means
+- how scalability, cost, compliance, reliability, and integrations shape architecture
+- why sprint briefs are build contracts for LLMs
+
+Then read the current pipeline artifacts and guide me one decision at a time.
+Do not start coding.
+Do not create external accounts.
 Do not skip my human decisions.
 Do not create paperwork-only files.
-When an external provider is needed, give the exact full URL and QA check.
 ```
 
-## Step 2: Make The Human Decisions
+## Step 2: Review Inputs
 
-Before the harness writes or changes anything, answer these decisions:
+The harness should read:
 
-- backend path: Supabase-only or FastAPI
-- data model
-- API boundary
-- sprint sequence
-- MVP technical scope
+- `.onemillion/refined-prd.md`
+- `.onemillion/design-spec.md`
+- `.onemillion/design-system.md`
+- `.onemillion/screens/`
+- `.onemillion/seed-data.json`
+- `.onemillion/state.json`
+- the course tech stack rules
 
-## Step 3: Produce The Day Output
+If any required artifact is missing, stop and fix the previous day before planning.
 
-Expected output today:
+## Step 3: Make The Architecture Decisions
+
+Before the harness writes `architecture.md`, answer these.
+
+### Product Shape
+
+- Is this a web app, mobile-first responsive app, agent, or hybrid?
+- Who uses it most often?
+- What device do they probably use first?
+- Does the product need app screens, conversation, automation, or all of these?
+
+### Frontend Boundary
+
+- What pages exist?
+- Which screens are public?
+- Which screens require login?
+- Which UI states from Day 4 must be implemented first?
+- Which MUI components matter most: tables, cards, forms, chips, dialogs, drawers, tabs, charts, etc.?
+
+### Backend Boundary
+
+Choose one:
+
+```text
+Default: Supabase + Next.js route handlers/server actions
+Optional: FastAPI + Supabase only when the product has a real backend reason
+```
+
+Use FastAPI only if the PRD/design needs complex Python logic, background jobs, heavy integrations, enterprise API boundaries, long-running workflows, or Python libraries.
+
+### Database Boundary
+
+- What are the main entities?
+- Who owns each entity?
+- Which records are public, private, or tenant-owned?
+- What fields support filtering, sorting, search, and status?
+- What audit fields are needed?
+
+### Tenancy
+
+Choose one:
+
+- single-user ownership
+- team/multi-tenant ownership
+- public/community data model
+
+If the customer is a company, school, clinic, agency, or team, strongly consider multi-tenant from the beginning.
+
+### Security
+
+- What requires login?
+- What requires owner permission?
+- What requires admin or manager permission?
+- What data must never cross user or tenant boundaries?
+- Which secrets exist?
+- Which server routes call AI?
+- What needs rate limits or cost limits?
+
+### Scalability And Operations
+
+- How many users or tenants do you expect first?
+- How much data per user or tenant?
+- Which tables may grow fastest?
+- Will the product need search, files, scheduled jobs, webhooks, or integrations?
+- What would break if 10 people used it tomorrow? What about 1,000?
+- What can be deferred without making the MVP unsafe?
+
+## Step 4: Produce The Day Output
+
+Expected output:
 
 - `.onemillion/architecture.md`
 - `.onemillion/sprints/`
 
-Work with the harness until the output matches the day's purpose. Review generated artifacts before accepting them.
+The architecture should include:
 
-## Step 4: External Tools
+- product type
+- stack
+- backend path
+- tenancy model
+- security model
+- data model
+- API/server action boundaries
+- AI boundary if applicable
+- deployment topology
+- environment variables
+- module map
+- data flow
+- scalability and operational assumptions
+- explicit deferred decisions
 
-- No new external account is required today.
+Each sprint brief should include:
 
-If the harness mentions an external provider, it must also give the exact link, permission/settings, and QA check from `onemillion-builder/docs/account-setup.md`.
+- context
+- entities and fields
+- backend/server actions
+- frontend pages/components
+- design notes
+- acceptance criteria
+- verification gate
+- expected commit message
 
-## Step 5: Verify
+The build agent should be able to read one sprint brief and know exactly what to build and how to verify it.
+
+## Step 5: Validate The Plan
+
+Ask the harness:
+
+```text
+Run validate-plan thinking for Day 5.
+Check that the refined PRD, design spec, architecture, and sprint briefs tell one coherent story.
+Find contradictions, missing security/tenancy decisions, oversized sprints, missing design notes, and features that drift from the MVP.
+Fix the plan before Day 5 is marked done.
+```
+
+## Step 6: Verify
 
 Ask your harness:
 
 ```text
 Run the OneMillion verifier for Day 5.
-Inspect the relevant artifacts, app code, deployment links, and manual confirmations.
+Inspect .onemillion/architecture.md and .onemillion/sprints/.
+Confirm product type, backend path, tenancy model, security model, data model, and sprint build contracts are present.
 Record the result in .onemillion/state.json.
 Do not create separate verifier markdown files.
 ```
@@ -77,9 +196,15 @@ Before you close today, ask the orchestrator to update `.onemillion/state.json`:
 
 ## What Should Be True After Day 5
 
-- [ ] .onemillion/architecture.md exists
-- [ ] .onemillion/sprints/ exists
+- [ ] `.onemillion/architecture.md` exists
+- [ ] `.onemillion/sprints/` exists
+- [ ] product type decision is recorded
 - [ ] backend path decision is recorded
+- [ ] tenancy model is recorded
+- [ ] security model is recorded
+- [ ] data model and ownership boundaries are recorded
+- [ ] scalability and cost assumptions are recorded
+- [ ] sprint briefs are small, self-contained build contracts
 - [ ] validate-plan passes or findings are resolved
 
 ## If You Are Stuck
@@ -88,18 +213,17 @@ Paste this into your harness:
 
 ```text
 I am on OneMillion Day 5: Plan Architecture.
-I am stuck on this part:
-[paste the step or artifact]
+I am stuck on this architecture decision:
+[product type / backend path / tenancy / security / database / sprint sequence / other]
 
-Here is what I expected:
-[describe]
+Here is what the PRD says:
+[paste relevant part]
 
-Here is what happened:
-[describe]
+Here is what the design implies:
+[paste relevant part]
 
-Help me find the smallest next action. Teach the concept if I am missing it. Do not skip the learning moment.
+Help me choose the simplest architecture that is secure enough, scalable enough, and buildable in small sprint briefs. Teach the concept before giving the recommendation.
 ```
-
 
 ---
 

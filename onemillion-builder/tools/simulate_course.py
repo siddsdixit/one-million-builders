@@ -362,6 +362,94 @@ def test_day4_design_verifier(results: list[Result], tmp: Path) -> None:
     record(results, "day4_design_artifacts_pass_schema_verifier", passed, proc.stdout)
 
 
+def create_day5_architecture_project(tmp: Path) -> Path:
+    product = tmp / "day5-architecture-product"
+    om = product / ".onemillion"
+    sprints = om / "sprints"
+    sprints.mkdir(parents=True)
+    (om / "architecture.md").write_text(
+        """# Architecture
+
+## Product Type
+web app, desktop-first responsive app for studio owners.
+
+## Backend Path
+Supabase-only with Next.js route handlers/server actions. FastAPI is not justified for the MVP.
+
+## Tenancy
+single-user ownership for MVP using owner_id. organization_id can be added later if studio teams become required.
+
+## Security
+Supabase Auth, Row Level Security, owner_id checks, no service role key in browser, ANTHROPIC_API_KEY server-side only, rate/cost limits for AI.
+
+## Data Model
+clients, follow_ups, messages, owner_id, created_at, updated_at, deleted_at.
+
+## API
+Next.js server actions for create/list/update/delete, JSON error format, cursor pagination.
+
+## Frontend
+Next.js, React, MUI, dashboard, client detail, follow-up approval form.
+
+## Deployment
+Vercel app plus Supabase project.
+
+## Scalability
+Designed for first 100 studio owners, thousands of clients, indexed owner_id/status/date filters, simple AI request limits.
+"""
+    )
+    (sprints / "S0-foundation.md").write_text(
+        """# Sprint S0 - Foundation
+
+## Context
+Create app shell.
+
+## Product Decisions Used
+- Product type: web app
+- Backend path: Supabase + Next.js route handlers/server actions
+- Tenancy model: single-user
+- Security boundary: owner_id
+
+## Frontend Tasks
+Create Next.js + MUI app shell.
+
+## Design Notes
+Use dashboard screen spec.
+
+## Acceptance Criteria
+- [ ] Given the app runs, when the owner opens it, then the dashboard shell appears.
+
+## Verification Gate
+1. Run local app -> dashboard shell appears.
+
+## Git Commit
+`feat: foundation`
+"""
+    )
+    return product
+
+
+def test_day5_architecture_verifier(results: list[Result], tmp: Path) -> None:
+    product = create_day5_architecture_project(tmp)
+    proc = run(
+        [
+            "python3",
+            str(REPO / "onemillion-builder/docs/verification/scripts/verify.py"),
+            "5",
+            "--project-dir",
+            str(product),
+            "--schema-dir",
+            str(REPO / "onemillion-builder/docs/verification/schema"),
+            "--write-report",
+        ],
+        REPO,
+    )
+    state_path = product / ".onemillion/state.json"
+    state = json.loads(state_path.read_text()) if state_path.exists() else {}
+    passed = proc.returncode == 0 and state.get("last_verified_day") == 5
+    record(results, "day5_architecture_artifacts_pass_schema_verifier", passed, proc.stdout)
+
+
 def test_day6_deployment_source_match(results: list[Result], tmp: Path) -> None:
     product = tmp / "deploy-match-product"
     (product / "app").mkdir(parents=True)
@@ -469,6 +557,7 @@ def main() -> int:
         test_day0_state(results, fork_repo)
         test_day1_verifier(results, tmp)
         test_day4_design_verifier(results, tmp)
+        test_day5_architecture_verifier(results, tmp)
         test_day6_deployment_source_match(results, tmp)
         code = print_report(results)
         if args.keep:

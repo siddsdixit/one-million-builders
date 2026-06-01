@@ -212,7 +212,7 @@ Self-paced and cohort learners use the same curriculum, the same daily gates, an
 | [2](day-02-validate-prd/learn.md) | Validate the PRD | User evidence, ICP, MVP, and PRD validation update |
 | [3](day-03-spec/learn.md) | Lock the spec | Functional requirements, CRUD blocks, user stories, acceptance criteria, KPIs, and done criteria |
 | [4](day-04-design/learn.md) | Design the product | Audience-based design, MUI design system, screens, flows, states, seed data, and mockup approval |
-| [5](day-05-plan-architecture/learn.md) | Plan architecture | Backend path decision, architecture, and sprint briefs |
+| [5](day-05-plan-architecture/learn.md) | Plan architecture | Product type, secure architecture, tenancy, backend path, scale assumptions, and sprint briefs |
 | [6](day-06-app-shell/learn.md) | App shell + first deploy | Next.js + MUI app live on Vercel |
 | [7](day-07-auth-db/learn.md) | Auth + database | Supabase signup/login, tables, and RLS |
 | [8](day-08-core-build/learn.md) | Core build | Main workflow working end-to-end |

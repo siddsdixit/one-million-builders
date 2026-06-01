@@ -25,11 +25,26 @@
       "type": "markdown_required_sections",
       "path": ".onemillion/architecture.md",
       "required_headings": [
+        "Product Type",
         "Backend Path",
+        "Tenancy",
+        "Security",
         "Data Model",
         "API",
         "Frontend",
-        "Deployment"
+        "Deployment",
+        "Scalability"
+      ]
+    },
+    {
+      "id": "product_type_recorded",
+      "type": "file_contains",
+      "path": ".onemillion/architecture.md",
+      "any_of_strings": [
+        "web app",
+        "mobile-first",
+        "agent",
+        "hybrid"
       ]
     },
     {
@@ -39,7 +54,34 @@
       "any_of_strings": [
         "Supabase-only",
         "Supabase only",
+        "Next.js route",
+        "server action",
         "FastAPI"
+      ]
+    },
+    {
+      "id": "tenancy_model_recorded",
+      "type": "file_contains",
+      "path": ".onemillion/architecture.md",
+      "any_of_strings": [
+        "single-user",
+        "single tenant",
+        "multi-tenant",
+        "tenant_id",
+        "organization_id",
+        "public/community"
+      ]
+    },
+    {
+      "id": "security_model_recorded",
+      "type": "file_contains",
+      "path": ".onemillion/architecture.md",
+      "any_of_strings": [
+        "Row Level Security",
+        "RLS",
+        "authorization",
+        "owner_id",
+        "tenant_id"
       ]
     },
     {
@@ -53,17 +95,30 @@
       "id": "sprint_brief_has_build_contract",
       "type": "file_contains",
       "path_pattern": ".onemillion/sprints/*.md",
-      "any_of_strings": [
+      "required_strings": [
         "Acceptance Criteria",
-        "Verification Gate",
-        "Design Notes"
+        "Verification Gate"
+      ],
+      "any_of_strings": [
+        "Design Notes",
+        "Frontend Tasks",
+        "Backend Tasks",
+        "Server Tasks"
       ]
     }
   ],
   "manual_checks": [
     {
+      "id": "product_type_approved",
+      "ask": "Did you approve the product type decision: web app, mobile-first responsive app, agent, or hybrid?"
+    },
+    {
       "id": "backend_path_approved",
       "ask": "Did you approve the backend path decision: Supabase-only unless FastAPI is clearly justified?"
+    },
+    {
+      "id": "security_tenancy_approved",
+      "ask": "Did you review and approve the security and tenancy model before moving to build?"
     },
     {
       "id": "plan_validation_complete",
