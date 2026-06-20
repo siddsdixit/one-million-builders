@@ -71,4 +71,4 @@ You can request removal at any time. Once removed, the number is retired (we don
 
 ---
 
-→ Back to [README](../README.md) · [Apply for next cohort](../cohort/README.md) · [18-Day Course](../course/README.md)
+→ [Course Landing](../course/README.md) · [Apply for next cohort](../cohort/README.md)

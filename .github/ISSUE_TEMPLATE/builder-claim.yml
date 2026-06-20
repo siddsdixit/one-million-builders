@@ -29,8 +29,8 @@ body:
     id: course_fork_url
     attributes:
       label: OneMillion course fork URL
-      description: Your fork of teach-one-million, not Sid's upstream repo.
-      placeholder: "https://github.com/you/teach-one-million"
+      description: Your fork of one-million-builders, not Sid's upstream repo.
+      placeholder: "https://github.com/you/one-million-builders"
     validations:
       required: true
   - type: input
