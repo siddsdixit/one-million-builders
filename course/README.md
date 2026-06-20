@@ -1,5 +1,7 @@
 # OneMillion Builder
 
+**This is the single landing page for learners, agents, and coding harnesses.**
+
 <p align="center">
   <img src="diagrams/hero-animated.gif" alt="OneMillion Builder - build a real AI product in 18 days" width="100%">
 </p>
