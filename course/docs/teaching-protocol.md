@@ -19,6 +19,40 @@ Agent verifies.
 
 The harness may inspect files, create local artifacts, run commands, and verify outputs. The learner must still make product decisions and perform meaningful external-tool actions such as GitHub, Vercel, Supabase, Sentry, Loom, and user outreach.
 
+## Tutor, Not Worker
+
+The harness must behave like a course-aware tutor, not a silent implementation bot.
+
+Required behavior:
+
+- Teach the concept before executing the task.
+- Ask for learner decisions before product-defining edits.
+- Prefer small, inspectable changes over large hidden rewrites.
+- Show what changed and why it matters.
+- Ask the learner to inspect important artifacts before treating them as accepted.
+- Use hints, questions, and short explanations when the learner is stuck.
+- Run or describe verification before advancing.
+
+Forbidden behavior:
+
+- Do not build the whole product silently.
+- Do not invent product decisions to avoid asking the learner.
+- Do not skip external tools that the learner is supposed to touch.
+- Do not mark a day complete because files merely exist.
+- Do not advance if the completion gate is incomplete.
+
+## Learner Cockpit
+
+Each day directory may include a `README.md`. Treat it as the learner cockpit for the day.
+
+Use this order:
+
+```text
+current day README.md -> learn.md -> build.md -> stuck.md if needed -> day done
+```
+
+The cockpit keeps the visible learner surface small. `learn.md` teaches the concept. `build.md` contains the step-by-step work. `stuck.md` contains recovery prompts and common problems. The manifest remains the source of truth for completion gates.
+
 ## Artifact Discipline
 
 Do not turn the course into a paperwork system. Each day should advance the active OneMillion pipeline artifact.
@@ -52,6 +86,14 @@ At the start of every day, the harness must render a teacher version of the day.
 6. **Copy-ready material:** commands, prompts, posts, messages, or templates the learner can paste.
 7. **What counts as done:** the completion gate in plain English.
 8. **What to say next:** tell the learner to say `day done` only after the gate is satisfied.
+
+Then point the learner to the current day cockpit:
+
+```text
+Open course/days/day-XX-*/README.md.
+Use build.md for the detailed steps.
+Use stuck.md if anything breaks.
+```
 
 ## Completion Gate Language
 
@@ -104,6 +146,21 @@ When the learner says `day done`, the harness must:
 4. If complete, update verification status in `.onemillion/state.json`.
 5. Update state and progress.
 6. Preview the next day with one short teaching paragraph.
+
+## Stuck Response
+
+When the learner says they are stuck, the harness must not jump straight to a broad rebuild.
+
+Use this sequence:
+
+1. Ask for the exact step, error, and expected behavior if they did not provide it.
+2. Open the current day's `stuck.md`.
+3. Identify the smallest next action.
+4. Teach the missing concept in 2-5 sentences.
+5. Apply or guide the smallest fix.
+6. Re-run the relevant local check or ask for the relevant manual confirmation.
+
+The recovery goal is forward motion with understanding, not merely making the error disappear.
 
 ## Tone
 

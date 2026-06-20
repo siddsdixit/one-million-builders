@@ -1,5 +1,15 @@
 # Start Here
 
+If you only remember one thing: **open the course in your fork, ask your coding harness to become the OneMillion learning orchestrator, then follow one day at a time.**
+
+The learner path is intentionally small:
+
+```text
+START-HERE.md -> current day README.md -> build.md -> stuck.md if needed -> day done
+```
+
+Everything else in the repo supports that loop.
+
 Use the coding harness you already like: Claude Code, Cursor, Codex, Gemini, Antigravity, Copilot, or another tool that can read a GitHub repo and work in files.
 
 The simplest start is to paste this into your harness:
@@ -91,11 +101,26 @@ Do not skip the learning or do the external tool steps for me.
 
 If your harness cannot read GitHub links reliably, open your cloned fork locally and paste the same prompt.
 
+## Daily Loop
+
+Every day follows the same rhythm:
+
+1. Open the current day `README.md`.
+2. Read the outcome and decisions.
+3. Ask your harness to teach the day.
+4. Follow `build.md` one step at a time.
+5. Use `stuck.md` if anything breaks or feels unclear.
+6. Ask the harness to verify the completion gate.
+7. Say `day done` only after the gate is true.
+8. Commit meaningful progress.
+
+This loop is more important than speed. Do not skip the review or done checklist.
+
 ---
 
-## Optional Native Adapter Install
+## Preflight Installer
 
-Some harnesses work better when their native rules/agents are installed locally. The installer also enforces the fork-first preflight.
+Run the installer from the forked clone before Day 0 is marked done. It enforces the fork-first preflight, creates the course state files, and installs local OneMillion harness adapters.
 
 From the cloned repo:
 
@@ -103,9 +128,9 @@ From the cloned repo:
 ./course/install-agents.sh
 ```
 
-If GitHub CLI is installed and authenticated, this will star the upstream repo, create or verify your fork, set `origin` to your fork, set `upstream` to Sid's repo, create `.onemillion/state.json`, and add local adapters for Claude Code, Cursor, Antigravity, Gemini, and GitHub Copilot.
+If GitHub CLI is installed and authenticated, this will star the upstream repo, create or verify your fork, set `origin` to your fork, set `upstream` to Sid's repo, create `.onemillion/state.json`, write `.onemillion/tooling-preflight.md`, and add local adapters for Claude Code, Codex, OpenCode, Cursor, Antigravity, Gemini CLI, and GitHub Copilot.
 
-If GitHub CLI is not available, the installer stops until your git remotes are correct. You do not need native adapters if your harness is already following `AGENTS.md`, but the clone/fork/upstream preflight is still mandatory.
+If GitHub CLI is not available, do the fork/star steps in the browser and set remotes manually, then rerun the installer. A generic harness can still follow `AGENTS.md`, but Day 0 should not be marked done until the installer has created the state/tooling files or the harness has explicitly repaired them from the manifest.
 
 ---
 

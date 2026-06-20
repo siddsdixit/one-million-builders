@@ -171,16 +171,35 @@ def test_installer_succeeds_in_fork_like_clone(results: list[Result], tmp: Path)
         ".claude/agents/orchestrator.md",
         ".cursor/rules/onemillion-course.mdc",
         ".agents/rules/onemillion-course.md",
+        ".agents/skills/tech_stack/SKILL.md",
+        ".codex/config.toml",
+        ".codex/agents/orchestrator.toml",
+        ".opencode/agents/orchestrator.md",
+        ".opencode/skills/tech_stack/SKILL.md",
+        ".gemini/settings.json",
+        "opencode.json",
         ".gemini/GEMINI.md",
         ".github/copilot-instructions.md",
         ".onemillion/state.json",
         ".onemillion/tooling-preflight.md",
     ]
     missing = [path for path in expected if not (repo / path).exists()]
-    passed = proc.returncode == 0 and not missing
+    count_checks = {
+        ".claude/agents": len(list((repo / ".claude/agents").glob("*.md"))),
+        ".claude/skills": len(list((repo / ".claude/skills").glob("*/SKILL.md"))),
+        ".codex/agents": len(list((repo / ".codex/agents").glob("*.toml"))),
+        ".agents/skills": len(list((repo / ".agents/skills").glob("*/SKILL.md"))),
+        ".opencode/agents": len(list((repo / ".opencode/agents").glob("*.md"))),
+        ".opencode/skills": len(list((repo / ".opencode/skills").glob("*/SKILL.md"))),
+    }
+    too_few = {path: count for path, count in count_checks.items() if count < 5}
+    passed = proc.returncode == 0 and not missing and not too_few
     details = proc.stdout
     if missing:
         details += "\nMissing: " + ", ".join(missing)
+    if too_few:
+        details += "\nToo few generated files: " + ", ".join(f"{path}={count}" for path, count in too_few.items())
+    details += "\nGenerated adapter counts: " + ", ".join(f"{path}={count}" for path, count in count_checks.items())
     record(results, "installer_succeeds_in_fork_like_clone", passed, details)
     return repo
 

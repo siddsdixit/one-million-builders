@@ -1,0 +1,69 @@
+[
+  {
+    "id": "ea_first_timer",
+    "name": "Maria",
+    "label": "Executive assistant - first-time builder",
+    "background": "Senior executive assistant at a 90-person SaaS company. Excellent with Google Workspace, Slack, calendars, and spreadsheets. New to terminal, Git, deployment, and database terms.",
+    "product_type": "web_app",
+    "idea": "Executive assistants lose track of action items after executive meetings because notes, email threads, Slack messages, and calendar follow-ups are scattered. I want an approval-based executive follow-up tracker that shows what needs attention today and drafts reminders without sending anything automatically.",
+    "target_user": "executive assistants supporting busy founders and executives",
+    "likely_blockers": [
+      "terminal vocabulary",
+      "GitHub fork/clone",
+      "too many external accounts",
+      "fear of breaking things",
+      "getting stuck alone",
+      "API keys and pricing anxiety"
+    ],
+    "success_criteria": [
+      "plain language",
+      "exact commands",
+      "browser-first setup",
+      "private commitment option",
+      "visible daily progress",
+      "recovery path"
+    ]
+  },
+  {
+    "id": "ea_confidentiality",
+    "name": "Danielle",
+    "label": "Executive assistant - confidentiality sensitive",
+    "background": "Executive assistant to a CEO in healthcare services. Handles confidential meeting notes, inbox snippets, travel, and personnel-sensitive information. Comfortable with no-code tools but cautious about AI data sharing.",
+    "product_type": "web_app",
+    "idea": "Executive assistants need to prepare follow-up summaries from meeting notes, but many notes include confidential names, compensation details, health information, or board-sensitive topics. I want a private follow-up drafting tool that lets the EA redact sensitive details before AI sees them and keeps every draft approval-based.",
+    "target_user": "executive assistants handling confidential executive workflows",
+    "likely_blockers": [
+      "security concerns around generated code",
+      "API keys and pricing anxiety",
+      "too many external accounts",
+      "fear of breaking things"
+    ],
+    "success_criteria": [
+      "security/guardrail signal",
+      "cost clarity",
+      "recovery path",
+      "clear scope locks"
+    ]
+  },
+  {
+    "id": "ea_calendar_ops",
+    "name": "Priya",
+    "label": "Executive assistant - calendar and operations power user",
+    "background": "EA and operations lead at a 150-person startup. Strong in spreadsheets, Airtable, Google Calendar, and process docs. Wants to build but will abandon if setup feels too developer-centric.",
+    "product_type": "hybrid",
+    "idea": "EAs manually chase meeting prep and post-meeting follow-ups across recurring leadership meetings. I want a meeting operations dashboard that tracks recurring meeting prep, missing pre-reads, follow-ups, and reviewable reminder drafts.",
+    "target_user": "executive assistants and operations coordinators managing recurring leadership meetings",
+    "likely_blockers": [
+      "not wanting to touch deployment details",
+      "scope creep",
+      "terminal vocabulary",
+      "generic UI output"
+    ],
+    "success_criteria": [
+      "decision checkpoints",
+      "clear scope locks",
+      "exact commands",
+      "design review moments"
+    ]
+  }
+]

@@ -22,6 +22,9 @@
       "origin points to learner fork",
       "upstream points to siddsdixit/one-million-builders",
       "learner confirms upstream repo is starred",
+      "course/install-agents.sh has run successfully",
+      ".onemillion/state.json exists",
+      ".onemillion/tooling-preflight.md exists",
       "learner answers Day 0 reflection questions",
       "learner made public or private commitment"
     ]
@@ -52,7 +55,10 @@
       "course/course-manifest.json exists",
       "origin points to learner fork",
       "upstream points to siddsdixit/one-million-builders",
-      "learner confirms upstream repo is starred"
+      "learner confirms upstream repo is starred",
+      "course/install-agents.sh has run successfully",
+      ".onemillion/state.json exists",
+      ".onemillion/tooling-preflight.md exists"
     ]
   },
   "provider_setup_playbook": "course/docs/account-setup.md",

@@ -245,6 +245,10 @@ upsert_marked_block() {
   fi
 }
 
+toml_escape_multiline() {
+  sed 's/"""/\\""\\""/g' "$1"
+}
+
 install_global_harness_adapters() {
   if [[ "$INSTALL_GLOBAL_ADAPTERS" != "1" ]]; then
     status_line "- SKIP Global harness adapters: disabled by ONEMILLION_INSTALL_GLOBAL_ADAPTERS=0"
@@ -459,10 +463,69 @@ EOF
 fi
 
 mkdir -p "$ROOT_DIR/.claude/agents" "$ROOT_DIR/.claude/skills" "$ROOT_DIR/.claude/commands"
-mkdir -p "$ROOT_DIR/.cursor/rules" "$ROOT_DIR/.agents/rules" "$ROOT_DIR/.gemini" "$ROOT_DIR/.github/instructions"
+mkdir -p "$ROOT_DIR/.cursor/rules" "$ROOT_DIR/.agents/rules" "$ROOT_DIR/.agents/skills"
+mkdir -p "$ROOT_DIR/.codex/agents"
+mkdir -p "$ROOT_DIR/.opencode/agents" "$ROOT_DIR/.opencode/skills"
+mkdir -p "$ROOT_DIR/.gemini" "$ROOT_DIR/.github/instructions"
 
 cp "$ROOT_DIR"/course/agents/agents/*.md "$ROOT_DIR/.claude/agents/"
 cp -R "$ROOT_DIR"/course/agents/skills/. "$ROOT_DIR/.claude/skills/"
+cp -R "$ROOT_DIR"/course/agents/skills/. "$ROOT_DIR/.agents/skills/"
+cp -R "$ROOT_DIR"/course/agents/skills/. "$ROOT_DIR/.opencode/skills/"
+
+for AGENT_FILE in "$ROOT_DIR"/course/agents/agents/*.md; do
+  AGENT_BASENAME="$(basename "$AGENT_FILE" .md)"
+  CODEX_AGENT_NAME="${AGENT_BASENAME//-/_}"
+  cat > "$ROOT_DIR/.codex/agents/${AGENT_BASENAME}.toml" <<EOF
+name = "$CODEX_AGENT_NAME"
+description = "OneMillion $AGENT_BASENAME agent. Use for the matching course phase or when the orchestrator delegates this role."
+developer_instructions = """
+$(toml_escape_multiline "$AGENT_FILE")
+"""
+EOF
+
+  OPENCODE_MODE="subagent"
+  if [[ "$AGENT_BASENAME" == "onemillion" || "$AGENT_BASENAME" == "orchestrator" ]]; then
+    OPENCODE_MODE="primary"
+  fi
+
+  cat > "$ROOT_DIR/.opencode/agents/${AGENT_BASENAME}.md" <<EOF
+---
+description: OneMillion $AGENT_BASENAME agent. Use for the matching course phase or when the orchestrator delegates this role.
+mode: $OPENCODE_MODE
+permission:
+  edit: ask
+  bash: ask
+  skill:
+    "*": allow
+---
+
+$(cat "$AGENT_FILE")
+EOF
+done
+
+cat > "$ROOT_DIR/.codex/config.toml" <<'RULE'
+[agents]
+max_threads = 6
+max_depth = 1
+RULE
+
+cat > "$ROOT_DIR/opencode.json" <<'JSON'
+{
+  "$schema": "https://opencode.ai/config.json",
+  "instructions": [
+    "AGENTS.md",
+    "course/docs/teaching-protocol.md",
+    "course/days/single.md",
+    "course/agents/agents/orchestrator.md"
+  ],
+  "permission": {
+    "skill": {
+      "*": "allow"
+    }
+  }
+}
+JSON
 
 cat > "$ROOT_DIR/.claude/commands/onemillion.md" <<'RULE'
 # OneMillion
@@ -517,10 +580,21 @@ Read the repository root `AGENTS.md` first.
 Use the course manifest and portable agent files to become the OneMillion learning orchestrator.
 Follow `course/docs/teaching-protocol.md`.
 Read `course/days/single.md` for the full development pipeline and day-by-day flow.
+Use `course/agents/agents/` as the OneMillion source agent library.
+Use `course/agents/skills/` as the OneMillion source skill library.
 
 Before Day 0 or Day 1, enforce the Preflight Gate in `AGENTS.md`. If the repo is not a git clone with an `origin` fork and `upstream` set to `siddsdixit/one-million-builders`, stop and fix the setup first.
 Do not give bare task assignments. Properly greet the learner, explain the course, introduce the current day, provide copy-ready actions, and define what done means. When naming an external provider, include the exact full clickable URL from `course/docs/account-setup.md`.
 RULE
+
+cat > "$ROOT_DIR/.gemini/settings.json" <<'JSON'
+{
+  "contextFileName": [
+    "GEMINI.md",
+    "AGENTS.md"
+  ]
+}
+JSON
 
 cat > "$ROOT_DIR/.github/copilot-instructions.md" <<'RULE'
 # OneMillion Course Instructions
@@ -556,7 +630,14 @@ REQUIRED_INSTALL_PATHS=(
   ".claude/commands/onemillion.md"
   ".cursor/rules/onemillion-course.mdc"
   ".agents/rules/onemillion-course.md"
+  ".agents/skills/tech_stack/SKILL.md"
+  ".codex/config.toml"
+  ".codex/agents/orchestrator.toml"
+  ".opencode/agents/orchestrator.md"
+  ".opencode/skills/tech_stack/SKILL.md"
+  "opencode.json"
   ".gemini/GEMINI.md"
+  ".gemini/settings.json"
   ".github/copilot-instructions.md"
   ".github/instructions/onemillion-course.instructions.md"
 )
@@ -584,6 +665,10 @@ done
 
 CLAUDE_AGENT_COUNT="$(find "$ROOT_DIR/.claude/agents" -maxdepth 1 -type f -name "*.md" | wc -l | tr -d ' ')"
 CLAUDE_SKILL_COUNT="$(find "$ROOT_DIR/.claude/skills" -mindepth 2 -maxdepth 2 -type f -name "SKILL.md" | wc -l | tr -d ' ')"
+CODEX_AGENT_COUNT="$(find "$ROOT_DIR/.codex/agents" -maxdepth 1 -type f -name "*.toml" | wc -l | tr -d ' ')"
+CODEX_SKILL_COUNT="$(find "$ROOT_DIR/.agents/skills" -mindepth 2 -maxdepth 2 -type f -name "SKILL.md" | wc -l | tr -d ' ')"
+OPENCODE_AGENT_COUNT="$(find "$ROOT_DIR/.opencode/agents" -maxdepth 1 -type f -name "*.md" | wc -l | tr -d ' ')"
+OPENCODE_SKILL_COUNT="$(find "$ROOT_DIR/.opencode/skills" -mindepth 2 -maxdepth 2 -type f -name "SKILL.md" | wc -l | tr -d ' ')"
 
 if (( CLAUDE_AGENT_COUNT < 10 )); then
   MISSING_PATHS+=(".claude/agents/*.md expected at least 10 files, found $CLAUDE_AGENT_COUNT")
@@ -591,6 +676,22 @@ fi
 
 if (( CLAUDE_SKILL_COUNT < 5 )); then
   MISSING_PATHS+=(".claude/skills/*/SKILL.md expected at least 5 files, found $CLAUDE_SKILL_COUNT")
+fi
+
+if (( CODEX_AGENT_COUNT < 10 )); then
+  MISSING_PATHS+=(".codex/agents/*.toml expected at least 10 files, found $CODEX_AGENT_COUNT")
+fi
+
+if (( CODEX_SKILL_COUNT < 5 )); then
+  MISSING_PATHS+=(".agents/skills/*/SKILL.md expected at least 5 files, found $CODEX_SKILL_COUNT")
+fi
+
+if (( OPENCODE_AGENT_COUNT < 10 )); then
+  MISSING_PATHS+=(".opencode/agents/*.md expected at least 10 files, found $OPENCODE_AGENT_COUNT")
+fi
+
+if (( OPENCODE_SKILL_COUNT < 5 )); then
+  MISSING_PATHS+=(".opencode/skills/*/SKILL.md expected at least 5 files, found $OPENCODE_SKILL_COUNT")
 fi
 
 if (( ${#MISSING_PATHS[@]} > 0 )); then
@@ -627,8 +728,10 @@ echo
 echo "Verified harness support:"
 echo "  Codex / generic AGENTS.md: AGENTS.md"
 echo "  Claude Code: .claude/agents, .claude/skills, .claude/commands/onemillion.md"
+echo "  Codex: AGENTS.md, .codex/agents, .agents/skills"
 echo "  Cursor: .cursor/rules/onemillion-course.mdc"
-echo "  Gemini: .gemini/GEMINI.md"
+echo "  OpenCode: AGENTS.md, opencode.json, .opencode/agents, .opencode/skills"
+echo "  Gemini CLI: .gemini/GEMINI.md and .gemini/settings.json"
 echo "  Antigravity / generic agent harnesses: .agents/rules/onemillion-course.md"
 echo "  GitHub Copilot: .github/copilot-instructions.md and .github/instructions/onemillion-course.instructions.md"
 if [[ "$INSTALL_GLOBAL_ADAPTERS" == "1" ]]; then

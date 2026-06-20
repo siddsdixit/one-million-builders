@@ -4,15 +4,17 @@ Portable agent instructions for the OneMillion builder course.
 
 These files are the source that any coding harness can read:
 
-- Claude Code can use them directly or copy them into `.claude/agents/`.
+- Claude Code can use copied agents and skills in `.claude/`.
 - Cursor can read them through `AGENTS.md` or generated `.cursor/rules/`.
-- Codex can read `AGENTS.md` and these agent files.
-- Gemini and Antigravity can use harness-specific rule files that point back here.
+- Codex can read `AGENTS.md`, project custom agents in `.codex/agents/`, and skills in `.agents/skills/`.
+- OpenCode can read `AGENTS.md`, project agents in `.opencode/agents/`, and skills in `.opencode/skills/`.
+- Gemini CLI can read `.gemini/GEMINI.md` and `.gemini/settings.json`, which point back to this library.
+- Antigravity can use the generated plugin/rule files that copy this library.
 
 The course does not depend on a login or one hosted extension for the first version. The reliable path is:
 
 ```text
-clone repo → open in favorite coding harness → ask it to read AGENTS.md → start Day 1
+clone repo → run ./course/install-agents.sh → open in favorite coding harness → start Day 0
 ```
 
 ## Core Flow
@@ -38,4 +40,3 @@ Source imported from:
 ```text
 /Users/siddsdixit/Documents/omc/Plugin/source
 ```
-

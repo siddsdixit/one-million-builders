@@ -19,6 +19,8 @@
   <a href="#course-roadmap">Course Roadmap</a>
   &nbsp;•&nbsp;
   <a href="docs/FAQ.md">FAQ</a>
+  &nbsp;•&nbsp;
+  <a href="docs/course-format.md">Course Format</a>
 </p>
 
 <p align="center">
@@ -166,6 +168,10 @@ Tools arrive just in time. GitHub is required on Day 0 because your fork is the 
 
 The repo is intentionally organized so the learner-facing surface stays small:
 
+```text
+START-HERE.md -> current day README.md -> build.md -> stuck.md if needed -> day done
+```
+
 | Folder | What it contains |
 |---|---|
 | `course/` | Day 0-18 lessons, build guides, resources, Loom plans, and the full flow. |
@@ -201,13 +207,13 @@ Self-paced and cohort learners use the same curriculum, the same daily gates, an
 | **Ship + Sell** | 16-18 | production verification, monitoring/domain, brand, pricing, first users, demo | A launch-ready product and Builder Claim |
 
 <p align="center">
-  <a href="days/day-01-idea/learn.md"><strong>Days 1-5: Foundation</strong></a>
+  <a href="days/day-01-idea/README.md"><strong>Days 1-5: Foundation</strong></a>
   &nbsp;•&nbsp;
-  <a href="days/day-06-app-shell/learn.md"><strong>Days 6-10: Build + QA</strong></a>
+  <a href="days/day-06-app-shell/README.md"><strong>Days 6-10: Build + QA</strong></a>
   &nbsp;•&nbsp;
-  <a href="days/day-11-ai-spec/learn.md"><strong>Days 11-15: AI + Readiness</strong></a>
+  <a href="days/day-11-ai-spec/README.md"><strong>Days 11-15: AI + Readiness</strong></a>
   &nbsp;•&nbsp;
-  <a href="days/day-16-ship-production/learn.md"><strong>Days 16-18: Ship + Sell</strong></a>
+  <a href="days/day-16-ship-production/README.md"><strong>Days 16-18: Ship + Sell</strong></a>
 </p>
 
 ---
@@ -217,24 +223,24 @@ Self-paced and cohort learners use the same curriculum, the same daily gates, an
 | Day | Focus | Outcome |
 |---:|---|---|
 | [0](days/day-00-orientation/README.md) | Orientation + commitment | Mission, pipeline, reflection, fork, clone, and public/private commitment |
-| [1](days/day-01-idea/learn.md) | Idea agent + PRD draft | Learn good ideas, define user pain, and review first PRD |
-| [2](days/day-02-validate-prd/learn.md) | Validate the PRD | User evidence, ICP, MVP, and PRD validation update |
-| [3](days/day-03-spec/learn.md) | Lock the spec | Functional requirements, CRUD blocks, user stories, acceptance criteria, KPIs, and done criteria |
-| [4](days/day-04-design/learn.md) | Design the product | Audience-based design, MUI design system, screens, flows, states, seed data, and mockup approval |
-| [5](days/day-05-plan-architecture/learn.md) | Plan architecture | Product type, secure architecture, tenancy, backend path, scale assumptions, and sprint briefs |
-| [6](days/day-06-app-shell/learn.md) | App shell + first deploy | Next.js + MUI app live on Vercel |
-| [7](days/day-07-auth-db/learn.md) | Auth + database | Supabase signup/login, tables, and RLS |
-| [8](days/day-08-core-build/learn.md) | Core build | Main workflow working end-to-end |
-| [9](days/day-09-review/learn.md) | Implementation review | Spec drift and code review findings |
-| [10](days/day-10-qa-tests/learn.md) | QA + tests | Core behavior verified locally and live |
-| [11](days/day-11-ai-spec/learn.md) | AI feature spec | Measurable AI behavior |
-| [12](days/day-12-first-ai-build/learn.md) | First AI build | Selected LLM output in your app |
-| [13](days/day-13-product-polish/learn.md) | Product polish + UX finish | Clear flow, complete states, AI UX, mobile/desktop polish |
-| [14](days/day-14-security-trust-review/learn.md) | Security + trust review | Auth, authorization, tenancy/RBAC, RLS, secrets, AI privacy, cost/rate controls |
-| [15](days/day-15-qa-production-readiness/learn.md) | QA + production readiness | Final manual/automated QA, AI pass/fail examples, live critical path, production blockers |
-| [16](days/day-16-ship-production/learn.md) | Ship production | Production env vars, Supabase checks, live smoke tests, monitoring, rollback |
-| [17](days/day-17-sell-users/learn.md) | Brand + marketing + pricing + first users | Positioning, product page, pricing, launch posts, outreach, feedback |
-| [18](days/day-18-demo/learn.md) | Demo Day + Builder Claim | Loom demo + Builder Claim |
+| [1](days/day-01-idea/README.md) | Idea agent + PRD draft | Learn good ideas, define user pain, and review first PRD |
+| [2](days/day-02-validate-prd/README.md) | Validate the PRD | User evidence, ICP, MVP, and PRD validation update |
+| [3](days/day-03-spec/README.md) | Lock the spec | Functional requirements, CRUD blocks, user stories, acceptance criteria, KPIs, and done criteria |
+| [4](days/day-04-design/README.md) | Design the product | Audience-based design, MUI design system, screens, flows, states, seed data, and mockup approval |
+| [5](days/day-05-plan-architecture/README.md) | Plan architecture | Product type, secure architecture, tenancy, backend path, scale assumptions, and sprint briefs |
+| [6](days/day-06-app-shell/README.md) | App shell + first deploy | Next.js + MUI app live on Vercel |
+| [7](days/day-07-auth-db/README.md) | Auth + database | Supabase signup/login, tables, and RLS |
+| [8](days/day-08-core-build/README.md) | Core build | Main workflow working end-to-end |
+| [9](days/day-09-review/README.md) | Implementation review | Spec drift and code review findings |
+| [10](days/day-10-qa-tests/README.md) | QA + tests | Core behavior verified locally and live |
+| [11](days/day-11-ai-spec/README.md) | AI feature spec | Measurable AI behavior |
+| [12](days/day-12-first-ai-build/README.md) | First AI build | Selected LLM output in your app |
+| [13](days/day-13-product-polish/README.md) | Product polish + UX finish | Clear flow, complete states, AI UX, mobile/desktop polish |
+| [14](days/day-14-security-trust-review/README.md) | Security + trust review | Auth, authorization, tenancy/RBAC, RLS, secrets, AI privacy, cost/rate controls |
+| [15](days/day-15-qa-production-readiness/README.md) | QA + production readiness | Final manual/automated QA, AI pass/fail examples, live critical path, production blockers |
+| [16](days/day-16-ship-production/README.md) | Ship production | Production env vars, Supabase checks, live smoke tests, monitoring, rollback |
+| [17](days/day-17-sell-users/README.md) | Brand + marketing + pricing + first users | Positioning, product page, pricing, launch posts, outreach, feedback |
+| [18](days/day-18-demo/README.md) | Demo Day + Builder Claim | Loom demo + Builder Claim |
 
 ---
 
@@ -279,7 +285,7 @@ The only hard requirement is that you keep going one verified day at a time.
 | [DeliverableDash example artifacts](docs/examples/deliverabledash/README.md) | Shows what a finished course trail can look like. |
 | [Sample finished app shape](docs/examples/deliverabledash/app/README.md) | Gives you a concrete reference for the end state. |
 | [Daily verification trail](docs/verification/README.md) | Proves each day passed before you advanced. |
-| [Day 18 demo](days/day-18-demo/learn.md) | Turns your product into something people can understand. |
+| [Day 18 demo](days/day-18-demo/README.md) | Turns your product into something people can understand. |
 | [Share templates](docs/share-templates.md) | Helps you build in public without staring at a blank post. |
 
 The product is useful. The proof trail is useful. The repeatable way of building is the real prize.

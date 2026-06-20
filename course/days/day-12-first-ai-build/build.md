@@ -31,7 +31,9 @@ First teach me the concept in plain language:
 - how to update .env.example with placeholders only
 - how to build a Next.js route handler or server action for the AI call
 - how to pass product data into the prompt safely
+- how to redact sensitive details before AI sees the input
 - how to show AI output in the UI
+- how to keep AI output draft-only until the user approves it
 - how to test locally and live
 - how to detect key leaks
 - how to handle missing key, invalid key, rate limit, timeout, and bad response errors
@@ -87,9 +89,11 @@ Do not add tool calling unless Day 11 explicitly required it.
 
 Implement:
 - request validation
+- redaction or explicit field filtering before prompt construction when sensitive data exists
 - prompt construction from safe product data
 - model/provider call
 - user-safe response shape
+- draft/review behavior before any save, send, schedule, or irreversible action
 - missing key error
 - provider error handling
 - timeout/rate-limit friendly error
@@ -108,6 +112,7 @@ The UI should include:
 - success state showing AI output
 - error state with user-friendly copy
 - clear indication that AI output should be reviewed before trust/action if needed
+- no automatic send, schedule, share, or final save for confidential assistant-style workflows
 
 Keep it simple. Day 13 will improve AI UX and safety.
 ```
@@ -173,7 +178,9 @@ Before the harness writes or changes anything, answer these decisions:
 - first output quality
 - selected provider and env var name
 - what product data is safe to send
+- what product data must be redacted before sending to AI
 - whether output is displayed only, saved, reviewed, edited, or acted on
+- whether the user must approve before save/send/schedule/action
 - user-facing error copy
 
 ## Step 3: Produce The Day Output
@@ -183,8 +190,10 @@ Expected output today:
 - selected provider key stored safely
 - `.env.example` updated with placeholder only
 - server-side AI route or server action
+- redaction or safe-field filtering when sensitive workflow data exists
 - UI trigger for the AI feature
 - AI output displayed in the app
+- review/edit step before any final action for assistant-style workflows
 - local AI verification
 - live AI verification after Vercel env var is set
 - secret leak scan result
@@ -237,6 +246,8 @@ Before you close today, ask the orchestrator to update `.onemillion/state.json`:
 - [ ] selected provider key is stored in Vercel env vars
 - [ ] `.env.example` has placeholders only
 - [ ] API key is not exposed to client code
+- [ ] sensitive data is redacted or filtered before the AI call when applicable
+- [ ] AI output remains draft/review-only before any send, schedule, share, final save, or irreversible action
 - [ ] local app AI path works
 - [ ] live app AI path works
 - [ ] common error states are handled

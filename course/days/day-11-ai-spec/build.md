@@ -31,6 +31,8 @@ First teach me the concept in plain language:
 - how to store API keys safely in .env.local and deployment env vars
 - why AI keys must never be exposed as NEXT_PUBLIC_* or client-side code
 - inputs, outputs, structured output, and prompt plan
+- redaction boundaries for confidential notes, names, compensation, health, legal, board, client, inbox, calendar, or personnel-sensitive data
+- approval-based output: no automatic sending, scheduling, or irreversible action unless explicitly approved by the user
 - tool calling: what it means, when it helps, and what boundaries it needs
 - AI frameworks such as Google ADK, LangChain, LangGraph, Langflow, Langfuse, and CrewAI, and why we skip them for now unless the product truly needs them
 - measurable AI quality, failure modes, privacy, latency, and cost
@@ -81,11 +83,13 @@ Include:
 - provider/model recommendation
 - input contract
 - output contract
+- redaction/pre-processing contract for sensitive data
 - structured output schema if useful
 - prompt plan
 - examples of good output and bad output
 - privacy/permission boundary
-- whether output is saved, edited, reviewed, or acted on
+- whether output is displayed, saved, edited, reviewed, sent, scheduled, or acted on
+- human approval rule before any save, send, schedule, or irreversible action
 - tool-calling boundary, even if no tools are used yet
 - measurable acceptance criteria
 - eval criteria
@@ -148,8 +152,10 @@ Before the harness writes or changes anything, answer these decisions:
 - provider/model preference
 - simple AI feature versus agentic workflow
 - what data the AI can see
+- what data must be redacted before AI sees it
 - whether tool calling is needed
 - whether output is saved, edited, reviewed, or acted on
+- whether the user must approve output before saving, sending, scheduling, or acting
 - quality bar
 - failure modes
 - privacy boundary
@@ -161,6 +167,7 @@ Expected output today:
 
 - updated `.onemillion/refined-prd.md` with an AI feature section
 - updated architecture or existing sprint notes only if needed
+- explicit redaction and approval rules if the workflow touches confidential, personnel, client, health, board, compensation, inbox, calendar, or meeting-note data
 
 Work with the harness until the output matches the day's purpose. Review generated artifacts before accepting them.
 
@@ -203,6 +210,8 @@ Before you close today, ask the orchestrator to update `.onemillion/state.json`:
 - [ ] provider/model choice is recorded
 - [ ] API key and secret-storage plan is recorded
 - [ ] input/output contract is recorded
+- [ ] redaction boundary is recorded when sensitive workflow data exists
+- [ ] human approval is required before any AI output is sent, scheduled, saved as final, or used for an irreversible action
 - [ ] tool-calling decision is recorded
 - [ ] AI behavior is measurable
 - [ ] failure modes, privacy boundary, latency, and cost budget are recorded

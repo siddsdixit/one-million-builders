@@ -38,6 +38,17 @@ class PersonaResult:
     artifacts: list[str]
 
 
+@dataclass
+class DayMatrixResult:
+    persona_id: str
+    label: str
+    day: int
+    day_dir: str
+    passed: bool
+    checks: list[str]
+    frictions: list[str]
+
+
 def run(cmd: list[str], cwd: Path, timeout: int = 30) -> subprocess.CompletedProcess[str]:
     return subprocess.run(
         cmd,
@@ -51,6 +62,190 @@ def run(cmd: list[str], cwd: Path, timeout: int = 30) -> subprocess.CompletedPro
 
 def load_personas(path: Path = PERSONAS_PATH) -> list[dict]:
     return json.loads(path.read_text())
+
+
+def day_dirs() -> list[tuple[int, Path]]:
+    dirs: list[tuple[int, Path]] = [(0, ROOT / "days/day-00-orientation")]
+    for path in sorted((ROOT / "days").glob("day-[0-9][0-9]-*")):
+        day = int(path.name.split("-", 2)[1])
+        if day != 0:
+            dirs.append((day, path))
+    return dirs
+
+
+def read_day_surface(path: Path) -> str:
+    parts: list[str] = []
+    for name in ["README.md", "learn.md", "build.md", "stuck.md", "resources.md", "loom.md"]:
+        file = path / name
+        if file.exists():
+            parts.append(file.read_text())
+    return "\n".join(parts)
+
+
+def has_any(text: str, terms: list[str]) -> bool:
+    lower = text.lower()
+    return any(term.lower() in lower for term in terms)
+
+
+def simulate_persona_day(persona: dict, day: int, path: Path) -> DayMatrixResult:
+    text = read_day_surface(path)
+    lower = text.lower()
+    checks: list[str] = []
+    frictions: list[str] = []
+
+    def require(condition: bool, check: str, friction: str) -> None:
+        if condition:
+            checks.append(check)
+        else:
+            frictions.append(friction)
+
+    require((path / "README.md").exists(), "day README exists", "missing day README cockpit")
+    require((path / "stuck.md").exists(), "stuck guide exists", "missing day stuck guide")
+    if day > 0:
+        for name in ["learn.md", "build.md", "resources.md", "loom.md"]:
+            require((path / name).exists(), f"{name} exists", f"missing {name}")
+        require("teach me" in lower or "plain language" in lower, "plain-language tutor prompt present", "missing plain-language tutor instruction")
+        require("do not advance" in lower or "completion gate" in lower, "completion gate guard present", "missing completion-gate guard")
+    else:
+        require("welcome" in lower and "day 0" in lower, "welcome orientation present", "missing Day 0 welcome orientation")
+
+    blockers = set(persona.get("likely_blockers", []))
+    criteria = set(persona.get("success_criteria", []))
+
+    if "terminal vocabulary" in blockers:
+        if day in {0, 1, 6, 7, 12}:
+            require(
+                has_any(text, ["exact command", "copy", "paste", "recover", "stuck"]),
+                "terminal-new learner support present",
+                "terminal-new learner needs exact copy/paste or recovery support",
+            )
+
+    if "GitHub fork/clone" in blockers:
+        if day == 0:
+            require(has_any(text, ["fork", "clone", "github"]), "GitHub fork/clone support present", "Day 0 lacks GitHub fork/clone guidance")
+        if day == 6:
+            require("github" in lower and "vercel" in lower, "GitHub-to-Vercel deploy support present", "Day 6 lacks GitHub/Vercel deploy guidance")
+
+    if "too many external accounts" in blockers:
+        if day in {6, 7, 12, 16, 18}:
+            require(
+                has_any(text, ["account-setup", "exact", "https://"]),
+                "external-account setup support present",
+                "external-account day needs exact link or account setup playbook",
+            )
+
+    if "fear of breaking things" in blockers or "getting stuck alone" in blockers or "imposter syndrome" in blockers:
+        require(
+            "stuck" in lower or "recover" in lower,
+            "recovery path present",
+            "learner needs a visible recovery path",
+        )
+
+    if "scope creep" in blockers or "clear scope locks" in criteria:
+        if day in {1, 2, 3, 5, 8, 11, 12}:
+            require(
+                has_any(text, ["mvp", "scope", "ignore today", "one useful", "do not add"]),
+                "scope-control language present",
+                "scope-sensitive persona needs explicit scope control",
+            )
+
+    if "not wanting to touch deployment details" in blockers:
+        if day in {6, 16}:
+            require("vercel" in lower and has_any(text, ["live", "deploy"]), "deployment path explicit", "deployment-heavy day needs explicit Vercel/live path")
+
+    if "generic UI output" in blockers or "unclear visual quality bar" in blockers or "feeling the app is too ugly to share" in blockers:
+        if day in {4, 13, 18}:
+            require(
+                has_any(text, ["mui", "design", "mockup", "polish", "screens", "visual"]),
+                "design quality support present",
+                "design-sensitive persona needs visible design quality support",
+            )
+
+    if "course feels too beginner" in blockers or "wants to skip gates" in blockers:
+        require(
+            has_any(text, ["verify", "completion gate", "quality", "architecture", "guard"]),
+            "verification rigor present",
+            "experienced learner needs visible rigor or verification",
+        )
+
+    if "security concerns around generated code" in blockers:
+        if day in {5, 7, 10, 11, 12, 14, 15, 16}:
+            require(
+                has_any(text, ["security", "rls", "secret", "privacy", "auth"]),
+                "security guardrail present",
+                "security-sensitive persona needs security/auth/privacy guardrails",
+            )
+
+    if "API keys and pricing anxiety" in blockers:
+        if day in {11, 12, 15}:
+            require(has_any(text, ["api key", "secret", "cost", "pricing"]), "API key/cost support present", "API-key anxious persona needs key and cost guidance")
+
+    if "confidentiality" in persona.get("id", "") or "confidential" in persona.get("background", "").lower():
+        if day in {5, 7, 10, 11, 12, 14, 16}:
+            require(
+                has_any(text, ["private", "privacy", "rls", "redact", "redaction", "secret", "approval"]),
+                "confidential-data boundary present",
+                "confidential EA needs privacy/RLS/redaction/approval boundary",
+            )
+        if day in {11, 12}:
+            require(
+                has_any(text, ["redact", "redaction"]) and has_any(text, ["approve", "approval", "review"]),
+                "AI redaction and approval support present",
+                "confidential EA needs explicit AI redaction and approval support",
+            )
+
+    if "assistant" in persona.get("target_user", "").lower() or "assistant" in persona.get("background", "").lower():
+        if day in {1, 2, 4, 8, 11, 12, 17}:
+            require(
+                has_any(text, ["approval", "review", "draft", "send", "follow-up", "assistant", "workflow"]),
+                "assistant workflow language present",
+                "assistant persona needs draft/review/follow-up workflow language",
+            )
+
+    return DayMatrixResult(
+        persona_id=persona["id"],
+        label=f"{persona['name']} - {persona['label']}",
+        day=day,
+        day_dir=str(path.relative_to(ROOT)),
+        passed=not frictions,
+        checks=checks,
+        frictions=frictions,
+    )
+
+
+def simulate_persona_day_matrix(personas: list[dict]) -> list[DayMatrixResult]:
+    results: list[DayMatrixResult] = []
+    for persona in personas:
+        for day, path in day_dirs():
+            results.append(simulate_persona_day(persona, day, path))
+    return results
+
+
+def render_day_matrix_report(results: list[DayMatrixResult]) -> str:
+    passed = sum(1 for result in results if result.passed)
+    by_persona: dict[str, list[DayMatrixResult]] = {}
+    for result in results:
+        by_persona.setdefault(result.label, []).append(result)
+
+    lines = [
+        "# Persona Day-By-Day Simulation Report",
+        "",
+        f"Summary: {passed}/{len(results)} persona-day checks passed.",
+        "",
+        "This is a synthetic course-surface matrix. It checks every persona against Day 0-18 learner materials for setup clarity, recovery paths, scope control, account guidance, security/privacy guardrails, and persona-specific friction. It does not create real GitHub, Vercel, Supabase, Loom, or AI-provider accounts.",
+        "",
+    ]
+    for label, persona_results in by_persona.items():
+        persona_passed = sum(1 for result in persona_results if result.passed)
+        lines.extend([f"## {label}", "", f"Persona summary: {persona_passed}/{len(persona_results)} days passed.", ""])
+        for result in persona_results:
+            status = "PASS" if result.passed else "NEEDS ATTENTION"
+            lines.append(f"- Day {result.day}: {status} (`{result.day_dir}`)")
+            if result.frictions:
+                for friction in result.frictions:
+                    lines.append(f"  - {friction}")
+        lines.append("")
+    return "\n".join(lines)
 
 
 def create_persona_project(persona: dict, repo: Path) -> Path:
@@ -460,13 +655,23 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Run persona-based OneMillion course simulation")
     parser.add_argument("--personas", default=str(PERSONAS_PATH), help="Path to personas.json")
     parser.add_argument("--report", default="", help="Optional path to write markdown report")
+    parser.add_argument("--all-days", action="store_true", help="Run every persona against Day 0-18 learner surfaces")
     parser.add_argument("--keep", action="store_true", help="Keep temp simulation directory")
     args = parser.parse_args()
+
+    personas = load_personas(Path(args.personas))
+    if args.all_days:
+        results = simulate_persona_day_matrix(personas)
+        report = render_day_matrix_report(results)
+        print(report)
+        if args.report:
+            Path(args.report).write_text(report)
+        return 0 if all(result.passed for result in results) else 1
 
     tmp_obj = tempfile.TemporaryDirectory(prefix="onemillion-personas-")
     tmp = Path(tmp_obj.name)
     try:
-        results = [simulate_persona(persona, tmp) for persona in load_personas(Path(args.personas))]
+        results = [simulate_persona(persona, tmp) for persona in personas]
         report = render_report(results)
         print(report)
         if args.report:

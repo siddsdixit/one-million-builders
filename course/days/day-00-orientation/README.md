@@ -96,6 +96,9 @@ What counts as done for Day 0:
 - `origin` points to your fork.
 - `upstream` points to Sid's repo.
 - You starred/forked the upstream repo.
+- `./course/install-agents.sh` has run successfully.
+- `.onemillion/state.json` and `.onemillion/tooling-preflight.md` exist.
+- Local OneMillion harness adapters exist for the learner's available tools.
 - You made the public or private commitment.
 
 After those are true, come back and type:
@@ -208,6 +211,19 @@ Run this from the repo root if you have not already:
 ./course/install-agents.sh
 ```
 
+This installs the local OneMillion agent/skill adapters, including:
+
+- Claude Code agents, skills, and `/onemillion` command in `.claude/`
+- Codex custom agents in `.codex/agents/` and Codex-compatible skills in `.agents/skills/`
+- OpenCode agents in `.opencode/agents/`, skills in `.opencode/skills/`, and `opencode.json`
+- Cursor rule in `.cursor/rules/onemillion-course.mdc`
+- Gemini CLI context in `.gemini/GEMINI.md` and `.gemini/settings.json`
+- Antigravity/generic agent rule in `.agents/rules/onemillion-course.md`
+- GitHub Copilot instructions in `.github/`
+- `.onemillion/state.json` and `.onemillion/tooling-preflight.md`
+
+The portable source library lives in `course/agents/agents/` and `course/agents/skills/`. The installer copies or points each harness to that library in the closest native format the harness supports.
+
 ### If You Do Not Have GitHub Yet
 
 1. Create an account: https://github.com/signup
@@ -240,6 +256,9 @@ You pass Day 0 setup only when:
 - `upstream` contains `siddsdixit/one-million-builders`.
 - You are not working from a downloaded zip.
 - Your harness can read `AGENTS.md` and `course/course-manifest.json`.
+- `.onemillion/state.json` exists.
+- `.onemillion/tooling-preflight.md` exists.
+- Installed harness adapters exist for the available tools, including Claude, Codex, OpenCode, Cursor, Gemini CLI, Antigravity/generic agents, and GitHub Copilot.
 
 ---
 
